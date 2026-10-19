@@ -14,7 +14,8 @@ Create it in the **EU jurisdiction** so the signatures are stored in the EU:
 pnpm wrangler d1 create public-order-eu --jurisdiction eu
 ```
 
-Paste the returned `database_id` into `wrangler.toml`, then create the tables:
+Paste the returned `database_id` into `wrangler.toml`. The production build creates the
+tables (see step 3). To apply the migrations by hand instead:
 
 ```sh
 pnpm db:migrate:remote
@@ -40,15 +41,25 @@ directory". If that happened, delete the Worker and create a Pages project inste
 | Setting | Value |
 | --- | --- |
 | Framework preset | Astro |
-| Build command | `pnpm build` |
+| Build command | `pnpm build:pages` |
 | Build output directory | `dist` |
 | Environment variable (build) | `PUBLIC_TURNSTILE_SITE_KEY` = your Turnstile site key |
 | Environment variable | `PNPM_VERSION` = `11.3.0` (same as `packageManager` in `package.json`) |
+| Secret | `CLOUDFLARE_API_TOKEN` = an API token that can only edit D1 (see below) |
+| Environment variable | `CLOUDFLARE_ACCOUNT_ID` = your account ID |
 
 Pages detects pnpm from `pnpm-lock.yaml`. Its default pnpm version is older and cannot
 read this lockfile, which is why `PNPM_VERSION` is needed. The Node version comes from
 `.node-version` in the repository, so no `NODE_VERSION` variable is needed. Use the
 latest build system version (**Settings → Build**); older ones cannot install it.
+
+`pnpm build:pages` (`scripts/pages-build.sh`) applies pending D1 migrations before it
+builds, but only on the `main` branch: preview branches never touch the production
+database. If a migration fails, the build fails and nothing is deployed. Create the
+token under **My Profile → API Tokens → Create Token → Custom token** with the single
+permission **Account → D1 → Edit**, limited to this account. Add the token and the
+account ID to the **Production** environment only, so preview builds never get them. The
+account ID is on the account's overview page.
 
 Pages reads the D1 binding and `[vars]` from `wrangler.toml`. Check that the binding
 `DB` appears under **Settings → Bindings** after the first deploy.

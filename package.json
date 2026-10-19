@@ -11,6 +11,7 @@
     "dev": "astro dev",
     "dev:api": "mkdir -p .wrangler/api-only && wrangler pages dev .wrangler/api-only --port 8788 --show-interactive-dev-session=false",
     "build": "astro build",
+    "build:pages": "scripts/pages-build.sh",
     "preview": "pnpm build && wrangler pages dev",
     "check": "astro check && tsc -p functions/tsconfig.json --noEmit",
     "test": "vitest run",
