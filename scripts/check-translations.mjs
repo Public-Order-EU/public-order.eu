@@ -2,7 +2,8 @@
 /**
  * Translation report: compares every UI dictionary with English and lists
  * missing keys, unknown keys, {placeholder} mismatches (! = error, ? = check) and array-length
- * differences, plus which long-form pages exist per language.
+ * differences, plus which long-form pages exist per language. Pages and FAQ files are parsed
+ * as the build parses them, so a YAML mistake shows up here rather than in `pnpm build`.
  *
  *   pnpm i18n:check          report for all languages
  *   pnpm i18n:check de fr    report for some languages
@@ -13,6 +14,7 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parse as parseYaml } from 'yaml';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const uiDir = join(root, 'src/i18n/ui');
@@ -60,6 +62,34 @@ function compare(base, other, path, out) {
   }
 }
 
+/** Frontmatter must be valid YAML with a title and a description. */
+function checkPage(file) {
+  const front = readFileSync(file, 'utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!front) return `no frontmatter`;
+  try {
+    const data = parseYaml(front[1]);
+    for (const key of ['title', 'description']) if (!data?.[key]) return `frontmatter has no ${key}`;
+  } catch (error) {
+    return `frontmatter is not valid YAML (${error.message.split('\n')[0]})`;
+  }
+}
+
+const faqItems = (lang) => parseYaml(readFileSync(join(faqDir, `${lang}.yaml`), 'utf8'))?.items;
+const enFaqCount = faqItems('en').length;
+
+/** The FAQ must be valid YAML with as many questions as English, each with a q and an a. */
+function checkFaq(lang) {
+  try {
+    const items = faqItems(lang);
+    if (!Array.isArray(items)) return 'no items list';
+    if (items.length !== enFaqCount) return `${items.length} items, English has ${enFaqCount}`;
+    const bad = items.findIndex((item) => !item?.q || !item?.a);
+    if (bad !== -1) return `item ${bad + 1} needs a q and an a`;
+  } catch (error) {
+    return `not valid YAML (${error.message.split('\n')[0]})`;
+  }
+}
+
 const total = countLeaves(en);
 
 const requested = process.argv.slice(2);
@@ -72,8 +102,19 @@ for (const lang of langs) {
   compare(en, dict, '', out);
   const status = dict._status || 'untranslated';
   const done = total - out.missingStrings;
-  const pages = pageSlugs.map((slug) => (existsSync(join(pagesDir, lang, `${slug}.md`)) ? `✓ ${slug}` : `✗ ${slug}`));
-  const faq = existsSync(join(faqDir, `${lang}.yaml`)) ? '✓ faq' : '✗ faq';
+  const pages = pageSlugs.map((slug) => {
+    const file = join(pagesDir, lang, `${slug}.md`);
+    if (!existsSync(file)) return `✗ ${slug}`;
+    const problem = checkPage(file);
+    if (problem) out.problems.push(`pages/${lang}/${slug}.md: ${problem}`);
+    return problem ? `! ${slug}` : `✓ ${slug}`;
+  });
+  let faq = '✗ faq';
+  if (existsSync(join(faqDir, `${lang}.yaml`))) {
+    const problem = checkFaq(lang);
+    if (problem) out.problems.push(`faq/${lang}.yaml: ${problem}`);
+    faq = problem ? '! faq' : '✓ faq';
+  }
 
   console.log(`\n${lang}  [${status}]  UI ${done}/${total} strings  |  ${[...pages, faq].join('  ')}`);
   for (const p of out.problems) console.log(`  ! ${p}`);
@@ -85,6 +126,8 @@ for (const lang of langs) {
     console.log(`  ✗ marked complete but not finished`);
     failed = true;
   }
+  // A file that does not parse breaks the build, whatever the language's status.
+  if ([...pages, faq].some((p) => p.startsWith('!'))) failed = true;
 }
 console.log('');
 process.exit(failed ? 1 : 0);

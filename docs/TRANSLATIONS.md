@@ -68,7 +68,9 @@ updated: 2026-10-19
 ```
 
 - `title` and `description` are used in the page heading, the search result and the
-  social-media preview. Keep the description under about 160 characters.
+  social-media preview. Keep the description under about 160 characters. If a value
+  contains a colon followed by a space (`Initiative: fünf …`), put it in double quotes, or
+  the page will not build; `pnpm i18n:check` reports this.
 - `updated` is the date of the last change *in meaning*. Keep the English date unless the
   translation was made from a newer version.
 - Keep Markdown formatting (`##` headings, `**bold**`, lists) and relative links such as
