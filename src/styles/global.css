@@ -92,6 +92,14 @@
     text-wrap: pretty;
   }
 
+  /* The privacy tables' middle column holds single words (Yes, No, Automatic): keep
+     them whole, so the column takes the width of its longest word instead of "Si / m". */
+  td:nth-child(2),
+  th:nth-child(2) {
+    overflow-wrap: normal;
+    hyphens: manual;
+  }
+
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-navy-600 dark:outline-accent-400;
   }
