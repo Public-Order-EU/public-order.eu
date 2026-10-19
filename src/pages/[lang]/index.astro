@@ -40,7 +40,8 @@ const t = getDictionary(lang);
 
   <!-- Key points -->
   <section class="container-page grid gap-8 py-16 lg:grid-cols-[minmax(0,20rem)_1fr] lg:gap-16 lg:py-20" aria-labelledby="points-title">
-    <div>
+    <!-- On wide screens the heading stays in view (below the sticky header) while the proposals scroll past. -->
+    <div class="lg:sticky lg:top-24 lg:self-start">
       <h2 id="points-title" class="section-title">{t.home.pointsTitle}</h2>
       <p class="mt-4 text-slate-700 dark:text-slate-300">{t.home.pointsIntro}</p>
       <p class="mt-6">
