@@ -17,6 +17,8 @@ test('a signature can be withdrawn with its code, typed loosely', async ({ page 
 
   await page.locator(`a[href="/en/delete/"]`).first().click();
   await page.waitForURL('**/en/delete/');
+  // Prefilled from this tab's session storage; typed by hand it may look like this:
+  await expect(page.locator('#del-code')).toHaveValue(code);
   // Lower case, spaces instead of dashes: still accepted.
   await page.locator('#del-code').fill(` ${code.toLowerCase().replaceAll('-', ' ')} `);
   await page.locator('[data-delete-form] button[type="submit"]').click();
@@ -33,6 +35,13 @@ test('a signature can be withdrawn with its code, typed loosely', async ({ page 
   await page.locator('[data-delete-form] button[type="submit"]').click();
   await expect(result).toHaveText(en.delete.notFound);
   expect(counter()).toBe(before - 1);
+});
+
+test('the code is not prefilled in a tab that did not sign', async ({ page, context }) => {
+  await sign(page, unique('withdraw-other-tab').name);
+  const other = await context.newPage();
+  await other.goto('/en/delete/');
+  await expect(other.locator('#del-code')).toHaveValue('');
 });
 
 test('a malformed code is rejected', async ({ page }) => {

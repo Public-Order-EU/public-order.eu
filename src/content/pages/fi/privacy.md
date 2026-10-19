@@ -75,7 +75,7 @@ Sinulla on myös oikeus tehdä valitus tietosuojaviranomaiselle, erityisesti sii
 Tämä verkkosivusto **ei aseta evästeitä**. Se tallentaa omaan selaimeesi kaksi asiaa, joista kumpaakaan ei koskaan lähetetä meille:
 
 - jos vaihdat vaalean ja tumman tilan välillä, valintasi tallennetaan selaimesi **paikalliseen tallennustilaan** (local storage);
-- heti allekirjoittamisen jälkeen peruutuskoodisi säilytetään selaimesi **istuntokohtaisessa tallennustilassa** (session storage), jotta kiitossivu voi näyttää sen. Se poistetaan, kun perut allekirjoituksesi, ja selaimesi poistaa sen, kun suljet välilehden.
+- heti allekirjoittamisen jälkeen peruutuskoodisi säilytetään selaimesi **istuntokohtaisessa tallennustilassa** (session storage), jotta kiitossivu voi näyttää sen ja peruutussivu voi täyttää sen puolestasi. Se poistetaan, kun perut allekirjoituksesi, ja selaimesi poistaa sen, kun suljet välilehden.
 
 ## 9. Tietoturva
 

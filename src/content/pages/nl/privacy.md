@@ -75,7 +75,7 @@ U hebt ook het recht om een klacht in te dienen bij een toezichthoudende autorit
 Deze website plaatst **geen cookies**. Ze slaat twee dingen op in uw eigen browser, en geen van beide wordt ooit naar ons verzonden:
 
 - als u wisselt tussen lichte en donkere modus, wordt uw keuze opgeslagen in de **lokale opslag** (local storage) van uw browser;
-- direct nadat u hebt ondertekend, wordt uw intrekkingscode bewaard in de **sessieopslag** (session storage) van uw browser, zodat de bedankpagina hem kan tonen. Hij wordt verwijderd wanneer u uw handtekening intrekt, en uw browser wist hem wanneer u het tabblad sluit.
+- direct nadat u hebt ondertekend, wordt uw intrekkingscode bewaard in de **sessieopslag** (session storage) van uw browser, zodat de bedankpagina hem kan tonen en de intrekkingspagina hem voor u kan invullen. Hij wordt verwijderd wanneer u uw handtekening intrekt, en uw browser wist hem wanneer u het tabblad sluit.
 
 ## 9. Beveiliging
 

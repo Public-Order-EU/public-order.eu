@@ -75,7 +75,7 @@ Teil on ka õigus esitada kaebus andmekaitse järelevalveasutusele, eelkõige se
 See veebileht **ei sea ühtegi küpsist**. See salvestab teie enda brauserisse kaks asja, ja kumbagi ei saadeta kunagi meile:
 
 - kui vahetate heleda ja tumeda kujunduse vahel, salvestatakse teie valik brauseri **kohalikku salvestusruumi** (local storage);
-- vahetult pärast allkirjastamist hoitakse teie tagasivõtmiskoodi brauseri **seansisalvestuses** (session storage), et tänulehel seda kuvada. See eemaldatakse, kui võtate allkirja tagasi, ja brauser kustutab selle, kui sulgete vahekaardi.
+- vahetult pärast allkirjastamist hoitakse teie tagasivõtmiskoodi brauseri **seansisalvestuses** (session storage), et tänulehel seda kuvada ja tagasivõtmise lehel see teie eest ette täita. See eemaldatakse, kui võtate allkirja tagasi, ja brauser kustutab selle, kui sulgete vahekaardi.
 
 ## 9. Turvalisus
 

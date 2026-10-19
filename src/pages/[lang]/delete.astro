@@ -62,6 +62,15 @@ const [noCodeBefore, noCodeAfter] = t.delete.noCodeText.split('{email}');
     const messages = JSON.parse(form.dataset.messages || '{}') as Record<string, string>;
     const result = form.querySelector<HTMLElement>('[data-result]')!;
     const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const input = form.querySelector<HTMLInputElement>('#del-code')!;
+
+    // Signed in this tab? Then the code is still in session storage (see thanks.astro).
+    try {
+      const { code } = JSON.parse(sessionStorage.getItem('signature') || '{}') as { code?: string };
+      if (code && !input.value) input.value = code;
+    } catch {
+      /* storage unavailable */
+    }
 
     const show = (key: string, ok: boolean) => {
       result.textContent = messages[key] || messages.generic;

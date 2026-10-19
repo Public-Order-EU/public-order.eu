@@ -75,7 +75,7 @@ Ha inoltre il diritto di proporre reclamo a un’autorità di controllo per la p
 Questo sito **non imposta alcun cookie**. Memorizza due elementi nel suo browser, e nessuno dei due ci viene mai inviato:
 
 - se passa dalla modalità chiara a quella scura, la sua scelta viene salvata nella **memoria locale** (local storage) del browser;
-- subito dopo la firma, il suo codice di ritiro viene conservato nella **memoria di sessione** (session storage) del browser, in modo che la pagina di ringraziamento possa mostrarlo. Viene rimosso quando ritira la firma, e il browser lo cancella alla chiusura della scheda.
+- subito dopo la firma, il suo codice di ritiro viene conservato nella **memoria di sessione** (session storage) del browser, in modo che la pagina di ringraziamento possa mostrarlo e la pagina di ritiro possa compilarlo per lei. Viene rimosso quando ritira la firma, e il browser lo cancella alla chiusura della scheda.
 
 ## 9. Sicurezza
 

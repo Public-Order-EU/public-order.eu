@@ -75,7 +75,7 @@ Du har också rätt att lämna in ett klagomål till en tillsynsmyndighet för d
 Den här webbplatsen placerar **inga kakor**. Den lagrar två saker i din egen webbläsare, och ingen av dem skickas någonsin till oss:
 
 - om du växlar mellan ljust och mörkt läge sparas ditt val i webbläsarens **lokala lagring**;
-- direkt efter att du skrivit under sparas din återkallelsekod i webbläsarens **sessionslagring**, så att tacksidan kan visa den. Den tas bort när du återkallar din underskrift, och webbläsaren raderar den när du stänger fliken.
+- direkt efter att du skrivit under sparas din återkallelsekod i webbläsarens **sessionslagring**, så att tacksidan kan visa den och återkallelsesidan kan fylla i den åt dig. Den tas bort när du återkallar din underskrift, och webbläsaren raderar den när du stänger fliken.
 
 ## 9. Säkerhet
 

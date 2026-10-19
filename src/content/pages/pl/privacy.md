@@ -75,7 +75,7 @@ Masz także prawo wnieść skargę do organu nadzorczego ds. ochrony danych, w s
 Ta strona **nie ustawia żadnych plików cookie**. Zapisuje w Twojej przeglądarce dwie rzeczy, z których żadna nigdy nie jest do nas wysyłana:
 
 - jeśli przełączysz jasny lub ciemny motyw, Twój wybór jest zapisywany w **pamięci lokalnej** (local storage) przeglądarki;
-- tuż po podpisaniu petycji Twój kod wycofania jest przechowywany w **pamięci sesji** (session storage) przeglądarki, aby strona z podziękowaniem mogła go wyświetlić. Jest usuwany po wycofaniu podpisu, a przeglądarka usuwa go po zamknięciu karty.
+- tuż po podpisaniu petycji Twój kod wycofania jest przechowywany w **pamięci sesji** (session storage) przeglądarki, aby strona z podziękowaniem mogła go wyświetlić, a strona wycofania podpisu – wpisać go za Ciebie. Jest usuwany po wycofaniu podpisu, a przeglądarka usuwa go po zamknięciu karty.
 
 ## 9. Bezpieczeństwo
 

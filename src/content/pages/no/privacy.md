@@ -75,7 +75,7 @@ Du har også rett til å klage til et tilsynsorgan for personvern, særlig i EU-
 Dette nettstedet setter **ingen informasjonskapsler**. Det lagrer to ting i din egen nettleser, og ingen av dem sendes noensinne til oss:
 
 - hvis du bytter mellom lys og mørk modus, lagres valget ditt i nettleserens **lokale lagring** (local storage);
-- rett etter at du har skrevet under, oppbevares tilbaketrekkingskoden din i nettleserens **øktlagring** (session storage), slik at takkesiden kan vise den. Den fjernes når du trekker underskriften tilbake, og nettleseren sletter den når du lukker fanen.
+- rett etter at du har skrevet under, oppbevares tilbaketrekkingskoden din i nettleserens **øktlagring** (session storage), slik at takkesiden kan vise den og tilbaketrekkingssiden kan fylle den inn for deg. Den fjernes når du trekker underskriften tilbake, og nettleseren sletter den når du lukker fanen.
 
 ## 9. Sikkerhet
 

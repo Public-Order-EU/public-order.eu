@@ -75,7 +75,7 @@ Vous avez également le droit d’introduire une réclamation auprès d’une au
 Ce site **ne dépose aucun cookie**. Il enregistre deux éléments dans votre propre navigateur, et aucun n’est jamais envoyé vers nos serveurs :
 
 - si vous basculez entre le mode clair et le mode sombre, votre choix est enregistré dans le **stockage local** de votre navigateur ;
-- juste après votre signature, votre code de retrait est conservé dans le **stockage de session** de votre navigateur, afin que la page de remerciement puisse l’afficher. Il est effacé lorsque vous retirez votre signature, et votre navigateur le supprime à la fermeture de l’onglet.
+- juste après votre signature, votre code de retrait est conservé dans le **stockage de session** de votre navigateur, afin que la page de remerciement puisse l’afficher et que la page de retrait puisse le pré-remplir. Il est effacé lorsque vous retirez votre signature, et votre navigateur le supprime à la fermeture de l’onglet.
 
 ## 9. Sécurité
 

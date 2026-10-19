@@ -75,7 +75,7 @@ Tem também o direito de apresentar uma reclamação a uma autoridade de control
 Este sítio Web **não define cookies**. Guarda duas coisas no seu próprio navegador, e nenhuma delas nos é alguma vez enviada:
 
 - se alternar entre o modo claro e o modo escuro, a sua escolha é guardada no **armazenamento local** do navegador;
-- logo após assinar, o seu código de retirada é mantido no **armazenamento de sessão** do navegador, para que a página de agradecimento o possa mostrar. É removido quando retira a assinatura, e o navegador elimina-o quando fecha o separador.
+- logo após assinar, o seu código de retirada é mantido no **armazenamento de sessão** do navegador, para que a página de agradecimento o possa mostrar e a página de retirada o possa preencher por si. É removido quando retira a assinatura, e o navegador elimina-o quando fecha o separador.
 
 ## 9. Segurança
 

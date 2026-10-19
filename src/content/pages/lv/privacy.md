@@ -75,7 +75,7 @@ Jums ir arī tiesības iesniegt sūdzību datu aizsardzības uzraudzības iestā
 Šī vietne **neizveido nevienu sīkdatni**. Tā saglabā divas lietas jūsu pašu pārlūkprogrammā, un neviena no tām nekad netiek nosūtīta mums:
 
 - ja pārslēdzat gaišo un tumšo režīmu, jūsu izvēle tiek saglabāta pārlūkprogrammas **vietējā krātuvē** (local storage);
-- uzreiz pēc parakstīšanās jūsu atsaukšanas kods tiek glabāts pārlūkprogrammas **sesijas krātuvē** (session storage), lai pateicības lapā to varētu parādīt. Tas tiek noņemts, kad atsaucat parakstu, un pārlūkprogramma to izdzēš, kad aizverat cilni.
+- uzreiz pēc parakstīšanās jūsu atsaukšanas kods tiek glabāts pārlūkprogrammas **sesijas krātuvē** (session storage), lai pateicības lapā to varētu parādīt un atsaukšanas lapā to varētu aizpildīt jūsu vietā. Tas tiek noņemts, kad atsaucat parakstu, un pārlūkprogramma to izdzēš, kad aizverat cilni.
 
 ## 9. Drošība
 

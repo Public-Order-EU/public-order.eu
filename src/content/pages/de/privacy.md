@@ -75,7 +75,7 @@ Sie haben außerdem das Recht, bei einer Datenschutz-Aufsichtsbehörde Beschwerd
 Diese Website setzt **keine Cookies**. Sie legt zwei Dinge in Ihrem eigenen Browser ab, die nie an uns übermittelt werden:
 
 - Wenn Sie zwischen hellem und dunklem Modus wechseln, wird Ihre Wahl im **lokalen Speicher** (Local Storage) Ihres Browsers gespeichert;
-- unmittelbar nach dem Unterschreiben wird Ihr Rückzugscode im **Sitzungsspeicher** (Session Storage) Ihres Browsers abgelegt, damit die Dankesseite ihn anzeigen kann. Er wird entfernt, wenn Sie Ihre Unterschrift zurückziehen, und Ihr Browser löscht ihn, wenn Sie den Tab schließen.
+- unmittelbar nach dem Unterschreiben wird Ihr Rückzugscode im **Sitzungsspeicher** (Session Storage) Ihres Browsers abgelegt, damit die Dankesseite ihn anzeigen und die Rückzugsseite ihn für Sie eintragen kann. Er wird entfernt, wenn Sie Ihre Unterschrift zurückziehen, und Ihr Browser löscht ihn, wenn Sie den Tab schließen.
 
 ## 9. Sicherheit
 

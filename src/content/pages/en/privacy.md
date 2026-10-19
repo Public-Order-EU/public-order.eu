@@ -75,7 +75,7 @@ You also have the right to lodge a complaint with a data protection supervisory 
 This website sets **no cookies**. It stores two things in your own browser, and neither is ever sent to us:
 
 - if you switch between light and dark mode, your choice is saved in your browser's **local storage**;
-- right after you sign, your withdrawal code is kept in your browser's **session storage**, so that the thank-you page can show it. It is removed when you withdraw your signature, and your browser deletes it when you close the tab.
+- right after you sign, your withdrawal code is kept in your browser's **session storage**, so that the thank-you page can show it and the withdrawal page can fill it in for you. It is removed when you withdraw your signature, and your browser deletes it when you close the tab.
 
 ## 9. Security
 

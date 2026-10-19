@@ -75,7 +75,7 @@ Taip pat turite teisę pateikti skundą duomenų apsaugos priežiūros instituci
 Ši svetainė **nenustato jokių slapukų**. Jūsų naršyklėje ji išsaugo du dalykus, ir nė vienas jų niekada mums nesiunčiamas:
 
 - jei perjungiate šviesų ir tamsų režimą, jūsų pasirinkimas išsaugomas jūsų naršyklės **vietinėje saugykloje** (local storage);
-- iškart po pasirašymo jūsų atšaukimo kodas laikomas jūsų naršyklės **sesijos saugykloje** (session storage), kad padėkos puslapis galėtų jį parodyti. Jis pašalinamas, kai atšaukiate parašą, o naršyklė jį ištrina uždarius skirtuką.
+- iškart po pasirašymo jūsų atšaukimo kodas laikomas jūsų naršyklės **sesijos saugykloje** (session storage), kad padėkos puslapis galėtų jį parodyti, o atšaukimo puslapis – įrašyti jį už jus. Jis pašalinamas, kai atšaukiate parašą, o naršyklė jį ištrina uždarius skirtuką.
 
 ## 9. Sauga
 

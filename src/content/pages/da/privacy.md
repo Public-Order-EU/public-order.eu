@@ -75,7 +75,7 @@ Du har også ret til at indgive en klage til en tilsynsmyndighed for databeskytt
 Dette websted sætter **ingen cookies**. Det gemmer to ting i din egen browser, og ingen af dem sendes nogensinde til os:
 
 - hvis du skifter mellem lys og mørk tilstand, gemmes dit valg i browserens **lokale lager** (local storage);
-- lige efter du har skrevet under, opbevares din tilbagetrækningskode i browserens **sessionslager** (session storage), så takkesiden kan vise den. Den fjernes, når du trækker din underskrift tilbage, og din browser sletter den, når du lukker fanen.
+- lige efter du har skrevet under, opbevares din tilbagetrækningskode i browserens **sessionslager** (session storage), så takkesiden kan vise den, og tilbagetrækningssiden kan udfylde den for dig. Den fjernes, når du trækker din underskrift tilbage, og din browser sletter den, når du lukker fanen.
 
 ## 9. Sikkerhed
 

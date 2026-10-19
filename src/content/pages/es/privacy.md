@@ -75,7 +75,7 @@ También tiene derecho a presentar una reclamación ante una autoridad de contro
 Este sitio web **no instala cookies**. Guarda dos cosas en su propio navegador, y ninguna de ellas se nos envía nunca:
 
 - si cambia entre el modo claro y el oscuro, su elección se guarda en el **almacenamiento local** de su navegador;
-- justo después de firmar, su código de retirada se conserva en el **almacenamiento de sesión** de su navegador, para que la página de agradecimiento pueda mostrarlo. Se elimina cuando retira su firma, y su navegador lo borra al cerrar la pestaña.
+- justo después de firmar, su código de retirada se conserva en el **almacenamiento de sesión** de su navegador, para que la página de agradecimiento pueda mostrarlo y la página de retirada pueda rellenarlo por usted. Se elimina cuando retira su firma, y su navegador lo borra al cerrar la pestaña.
 
 ## 9. Seguridad
 
