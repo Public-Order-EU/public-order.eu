@@ -43,11 +43,12 @@ directory". If that happened, delete the Worker and create a Pages project inste
 | Build command | `pnpm build` |
 | Build output directory | `dist` |
 | Environment variable (build) | `PUBLIC_TURNSTILE_SITE_KEY` = your Turnstile site key |
-| Environment variable | `NODE_VERSION` = `22` |
 | Environment variable | `PNPM_VERSION` = `11.3.0` (same as `packageManager` in `package.json`) |
 
 Pages detects pnpm from `pnpm-lock.yaml`. Its default pnpm version is older and cannot
-read this lockfile, which is why `PNPM_VERSION` is needed.
+read this lockfile, which is why `PNPM_VERSION` is needed. The Node version comes from
+`.node-version` in the repository, so no `NODE_VERSION` variable is needed. Use the
+latest build system version (**Settings → Build**); older ones cannot install it.
 
 Pages reads the D1 binding and `[vars]` from `wrangler.toml`. Check that the binding
 `DB` appears under **Settings → Bindings** after the first deploy.
