@@ -1,0 +1,149 @@
+---
+import '@fontsource-variable/source-serif-4/wght.css';
+import '@fontsource-variable/public-sans/wght.css';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import UntranslatedNotice from '../components/UntranslatedNotice.astro';
+import { siteConfig } from '../site.config';
+import { defaultLocale, localeInfo, type Locale } from '../i18n/locales';
+import { getDictionary, isLocaleComplete, localePath, uiReadyLocales } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+  /** Path without the locale, e.g. "faq" ("" for the homepage). */
+  slug: string;
+  /** Page title (the site name is appended automatically). */
+  title: string;
+  description?: string;
+  /**
+   * Locales in which this page is genuinely translated. Defaults to every
+   * locale whose UI dictionary is complete.
+   */
+  translated?: Locale[];
+  /** True when the content shown is the English fallback. */
+  isFallback?: boolean;
+  noindex?: boolean;
+  ogType?: 'website' | 'article';
+  /** Extra JSON-LD objects for this page. */
+  jsonLd?: Record<string, unknown>[];
+}
+
+const {
+  lang,
+  slug,
+  title,
+  description,
+  translated = uiReadyLocales(),
+  isFallback = !isLocaleComplete(lang),
+  noindex = false,
+  ogType = 'website',
+  jsonLd = [],
+} = Astro.props;
+
+const t = getDictionary(lang);
+const site = Astro.site ?? new URL(siteConfig.url);
+const abs = (path: string) => new URL(path, site).href;
+
+const isHome = slug === '';
+const fullTitle = isHome ? `${t.meta.siteName} — ${title}` : `${title} | ${t.meta.siteName}`;
+const metaDescription = description ?? t.meta.description;
+
+// Untranslated copies point their canonical at the English original, so search
+// engines index one version and don't treat the others as duplicates.
+const showFallbackNotice = isFallback && lang !== defaultLocale;
+const canonical = abs(localePath(showFallbackNotice ? defaultLocale : lang, slug));
+const alternates = translated.map((l) => ({ lang: l, href: abs(localePath(l, slug)) }));
+
+const ogImage = abs('/og/default.png');
+const ogLocale = localeInfo[showFallbackNotice ? defaultLocale : lang].ogLocale;
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: t.meta.siteName,
+    url: abs(localePath(lang)),
+    inLanguage: lang,
+  },
+  ...jsonLd,
+];
+---
+
+<!doctype html>
+<html lang={lang} dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={metaDescription} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={canonical} />
+
+    {
+      !noindex && !showFallbackNotice && alternates.length > 1 && (
+        <>
+          {alternates.map((a) => (
+            <link rel="alternate" hreflang={a.lang} href={a.href} />
+          ))}
+          <link rel="alternate" hreflang="x-default" href={abs(localePath(defaultLocale, slug))} />
+        </>
+      )
+    }
+
+    <meta name="theme-color" content="#f8f6f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b142a" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Open Graph / social cards -->
+    <meta property="og:site_name" content={t.meta.siteName} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={ogLocale} />
+    {
+      !showFallbackNotice &&
+        alternates
+          .filter((a) => a.lang !== lang)
+          .map((a) => <meta property="og:locale:alternate" content={localeInfo[a.lang].ogLocale} />)
+    }
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={t.meta.ogImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+    <!-- Apply the saved / preferred colour scheme before first paint (no flash). -->
+    <script is:inline>
+      (function () {
+        var stored = null;
+        try { stored = localStorage.getItem('theme'); } catch (e) {}
+        var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.classList.add('js');
+      })();
+    </script>
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <a
+      href="#main"
+      class="sr-only z-50 border-2 border-navy-900 bg-white px-4 py-2 font-semibold text-navy-900 focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
+    >
+      {t.nav.skipToContent}
+    </a>
+    <Header lang={lang} slug={slug} />
+    {showFallbackNotice && <UntranslatedNotice lang={lang} />}
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

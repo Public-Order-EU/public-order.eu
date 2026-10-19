@@ -1,0 +1,238 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Dark mode follows the `.dark` class set on <html> by the inline theme script. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /*
+   * Self-hosted variable fonts (imported in BaseLayout, bundled into /_astro/):
+   * no third-party requests, and the CSP stays at font-src 'self'.
+   */
+  --font-sans: "Public Sans Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  --font-serif: "Source Serif 4 Variable", "Iowan Old Style", "Palatino Linotype", Georgia, Cambria, serif;
+
+  /* Institutional deep navy. */
+  --color-navy-50: #f2f5fb;
+  --color-navy-100: #e3e9f5;
+  --color-navy-200: #c4d0e8;
+  --color-navy-300: #97abd3;
+  --color-navy-400: #6481b9;
+  --color-navy-500: #41609f;
+  --color-navy-600: #2f4a85;
+  --color-navy-700: #263c6c;
+  --color-navy-800: #1b2c52;
+  --color-navy-900: #12203f;
+  --color-navy-950: #0b142a;
+
+  /* Warm paper and ink, for an editorial (not app-like) feel. */
+  --color-paper: #f8f6f1;
+  --color-paper-deep: #efeadf;
+  --color-rule: #d6cfc1;
+  --color-ink: #161b26;
+
+  /* Restrained accent: focus on dark backgrounds, progress bar, one rule. */
+  --color-accent-400: #f5c84c;
+  --color-accent-500: #e6b325;
+  --color-accent-700: #8a6508;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    /* Height of the sticky header plus a little air: anchor targets and focused fields stay visible. */
+    scroll-padding-top: 5.5rem;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-paper font-sans text-[1.0625rem] leading-relaxed text-ink antialiased
+      dark:bg-navy-950 dark:text-slate-200;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif text-navy-900 dark:text-white;
+    text-wrap: balance;
+    font-optical-sizing: auto;
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-navy-600 dark:outline-accent-400;
+  }
+
+  /* On navy panels the navy focus ring would be invisible. */
+  .on-dark :focus-visible {
+    @apply outline-accent-400;
+  }
+
+  ::selection {
+    @apply bg-accent-400 text-ink;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  /* Respect the visitor's motion preference everywhere, not just for scrolling. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /*
+   * Buttons. A transparent border keeps their outline visible in Windows
+   * high-contrast mode, where backgrounds are dropped.
+   */
+  .btn-primary,
+  .btn-secondary,
+  .btn-light {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-[3px] border border-transparent px-5 py-2.5
+      text-base font-semibold no-underline transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply bg-navy-800 text-white hover:bg-navy-950
+      dark:bg-paper dark:text-navy-950 dark:hover:bg-white;
+  }
+  .btn-secondary {
+    @apply border-navy-800 bg-transparent text-navy-900 hover:bg-navy-800 hover:text-white
+      dark:border-navy-300 dark:text-white dark:hover:bg-paper dark:hover:text-navy-950;
+  }
+  .btn-light {
+    @apply bg-paper text-navy-950 hover:bg-white;
+  }
+
+  /* A plain bordered panel (no shadows, no rounded "cards"). */
+  .box {
+    @apply border border-rule bg-white p-6 sm:p-8 dark:border-navy-800 dark:bg-navy-900;
+  }
+
+  /* Text link with a visible underline (not colour alone, WCAG 1.4.1). */
+  .link {
+    @apply font-semibold text-navy-800 underline decoration-1 underline-offset-[0.2em] hover:decoration-2
+      dark:text-navy-200;
+  }
+
+  /* Small-caps style label above headings. */
+  .eyebrow {
+    @apply text-xs font-bold tracking-[0.14em] text-navy-700 uppercase dark:text-navy-200;
+  }
+
+  /* Section heading with a short rule above it. */
+  .section-title {
+    @apply text-3xl leading-tight font-semibold sm:text-4xl;
+  }
+
+  .lead {
+    @apply text-lg leading-relaxed text-slate-700 sm:text-xl dark:text-slate-300;
+  }
+
+  .field-label {
+    @apply mb-1 block text-sm font-semibold text-ink dark:text-slate-100;
+  }
+  .field-input {
+    @apply block min-h-11 w-full rounded-[3px] border border-slate-500 bg-white px-3 py-2.5 text-base text-ink
+      transition-[border-color,box-shadow] placeholder:text-slate-500 hover:border-slate-700
+      focus:border-navy-700 focus:ring-3 focus:ring-navy-500/25 focus:outline-none
+      aria-[invalid=true]:border-red-700 aria-[invalid=true]:focus:ring-red-700/25
+      dark:border-navy-400 dark:bg-navy-950 dark:text-slate-100 dark:placeholder:text-slate-400
+      dark:hover:border-navy-300 dark:focus:border-navy-200 dark:focus:ring-navy-300/30
+      dark:aria-[invalid=true]:border-red-400 dark:aria-[invalid=true]:focus:ring-red-400/30;
+  }
+  /* The ring replaces the outline on inputs; in high-contrast mode keep a real outline. */
+  @media (forced-colors: active) {
+    .field-input:focus {
+      outline: 2px solid CanvasText;
+      outline-offset: 2px;
+    }
+  }
+
+  /* Native select with our own chevron, so it matches the text inputs. */
+  .field-select {
+    @apply cursor-pointer appearance-none pr-10;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23475569' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+  }
+  .dark .field-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2397abd3' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  }
+  /* "Select your country" (the empty, required option) looks like a placeholder. */
+  .field-select:invalid {
+    @apply text-slate-600 dark:text-slate-400;
+  }
+  .field-select option {
+    @apply text-ink dark:bg-navy-950 dark:text-slate-100;
+  }
+
+  /* Checkboxes drawn to match the inputs (native ones ignore the site's dark mode). */
+  .field-check {
+    @apply mt-0.5 size-5 shrink-0 cursor-pointer appearance-none rounded-[2px] border border-slate-500 bg-white
+      transition-colors hover:border-slate-700 checked:border-navy-800 checked:bg-navy-800
+      focus-visible:ring-3 focus-visible:ring-navy-500/30 focus-visible:outline-2 focus-visible:outline-offset-2
+      aria-[invalid=true]:border-red-700
+      dark:border-navy-300 dark:bg-navy-950 dark:hover:border-navy-200 dark:checked:border-navy-200
+      dark:checked:bg-navy-200 dark:focus-visible:ring-navy-300/30 dark:aria-[invalid=true]:border-red-400;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0.875rem;
+  }
+  .field-check:checked {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m3.5 8.5 3 3 6-7'/%3e%3c/svg%3e");
+  }
+  .dark .field-check:checked {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%230b142a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m3.5 8.5 3 3 6-7'/%3e%3c/svg%3e");
+  }
+  /* High-contrast mode drops our colours; fall back to the system checkbox. */
+  @media (forced-colors: active) {
+    .field-check {
+      appearance: auto;
+    }
+  }
+
+  .field-help {
+    @apply mt-1 text-sm text-slate-700 dark:text-slate-400;
+  }
+
+  /* Status messages: text and a left rule, never colour alone. */
+  .msg-error {
+    @apply border-l-4 border-red-700 bg-red-50 px-4 py-3 text-sm font-medium text-red-900
+      dark:border-red-400 dark:bg-red-950/50 dark:text-red-100;
+  }
+  .msg-success {
+    @apply border-l-4 border-green-700 bg-green-50 px-4 py-3 text-sm font-medium text-green-900
+      dark:border-green-400 dark:bg-green-950/50 dark:text-green-100;
+  }
+  .msg-notice {
+    @apply border-l-4 border-accent-500 bg-accent-400/15 px-4 py-3 text-sm text-ink dark:text-slate-100;
+  }
+}

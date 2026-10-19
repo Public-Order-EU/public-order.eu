@@ -1,0 +1,24 @@
+---
+/** The ruled title block at the top of inner pages. */
+interface Props {
+  title: string;
+  lead?: string;
+  eyebrow?: string;
+  /** Narrow pages (forms, confirmations) align the title with their content. */
+  narrow?: boolean;
+  /** Language of the title and lead when it differs from the page (English fallback content). */
+  contentLang?: string;
+}
+const { title, lead, eyebrow, narrow = false, contentLang } = Astro.props;
+---
+
+<div class="border-b border-rule dark:border-navy-800">
+  <div class="container-page py-10 md:py-14">
+    <div class:list={[narrow ? 'mx-auto max-w-2xl' : 'max-w-3xl']}>
+      {eyebrow && <p class="eyebrow mb-3">{eyebrow}</p>}
+      <h1 class="text-4xl leading-tight font-semibold tracking-tight sm:text-5xl" lang={contentLang}>{title}</h1>
+      {lead && <p class="lead mt-5" lang={contentLang}>{lead}</p>}
+      <slot />
+    </div>
+  </div>
+</div>

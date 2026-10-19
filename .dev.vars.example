@@ -1,0 +1,7 @@
+# Local secrets for `wrangler pages dev`. Copy to .dev.vars (git-ignored).
+# This is Cloudflare's official Turnstile test secret: it always passes.
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+# Any long random string. Used to hash e-mail addresses and deletion codes.
+HASH_SALT=change-me-to-a-long-random-string
+# Allow posts from the local dev server.
+SITE_ORIGIN=http://localhost:8788

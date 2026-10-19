@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import { siteConfig } from '../../site.config';
+import type { Locale } from '../../i18n/locales';
+import { format, getDictionary, localeStaticPaths } from '../../i18n/utils';
+
+export const getStaticPaths = localeStaticPaths;
+
+const lang = Astro.params.lang as Locale;
+const t = getDictionary(lang);
+const p = t.press;
+const email = siteConfig.contact.press;
+const [contactBefore, contactAfter] = p.contactText.split('{email}');
+const goal = new Intl.NumberFormat(lang).format(siteConfig.signatureGoal);
+const host = new URL(siteConfig.url).host;
+
+const facts = [
+  { term: p.facts.name, value: t.meta.siteName },
+  { term: p.facts.website, value: host, href: siteConfig.url },
+  { term: p.facts.type, value: p.facts.typeText },
+  { term: p.facts.addressees, value: p.facts.addresseesText },
+  { term: p.facts.goal, value: format(p.facts.goalText, { goal }) },
+  { term: p.facts.data, value: p.facts.dataText },
+];
+
+const texts = [
+  { id: 'short', label: p.shortLabel, text: p.short },
+  { id: 'long', label: p.longLabel, text: p.long },
+];
+
+/** Previews sit on the background each file is made for. */
+const assets = [
+  { name: p.assets.emblem, file: 'emblem', dark: false, wide: false },
+  { name: p.assets.emblemInverse, file: 'emblem-inverse', dark: true, wide: false },
+  { name: p.assets.wordmark, file: 'wordmark', dark: false, wide: true },
+  { name: p.assets.wordmarkInverse, file: 'wordmark-inverse', dark: true, wide: true },
+];
+---
+
+<BaseLayout lang={lang} slug="press" title={p.title} description={p.lead}>
+  <PageIntro title={p.title} lead={p.lead} />
+
+  <div class="container-page py-12 md:py-16">
+    <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,20rem)] lg:gap-16">
+      <section aria-labelledby="facts-title">
+        <h2 id="facts-title" class="text-2xl font-semibold">{p.factsTitle}</h2>
+        <dl class="mt-5 border-t border-rule dark:border-navy-800">
+          {
+            facts.map((f) => (
+              <div class="grid gap-1 border-b border-rule py-4 sm:grid-cols-[10rem_1fr] sm:gap-6 dark:border-navy-800">
+                <dt class="font-semibold text-ink dark:text-white">{f.term}</dt>
+                <dd class="text-slate-800 dark:text-slate-300">
+                  {f.href ? <a href={f.href} class="link">{f.value}</a> : f.value}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </section>
+
+      <aside class="box self-start border-t-4 border-t-navy-800 dark:border-t-accent-400" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="text-xl font-semibold">{p.contactTitle}</h2>
+        <p class="mt-3 text-slate-800 dark:text-slate-300">
+          {contactBefore}<a href={`mailto:${email}`} class="link break-all">{email}</a>{contactAfter}
+        </p>
+        <p class="mt-4 text-sm text-slate-700 dark:text-slate-400">{p.anonymity}</p>
+      </aside>
+    </div>
+
+    <section class="mt-16 max-w-3xl" aria-labelledby="about-title">
+      <h2 id="about-title" class="text-2xl font-semibold">{p.boilerplateTitle}</h2>
+      <p class="mt-2 text-slate-700 dark:text-slate-300">{p.boilerplateIntro}</p>
+      {
+        texts.map((x) => (
+          <div class="mt-8">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <h3 id={`text-${x.id}`} class="text-lg font-semibold">{x.label}</h3>
+              <button
+                type="button"
+                class="btn-secondary min-h-10 px-4 py-1.5 text-sm"
+                data-copy-text={x.text}
+                data-copied-label={p.copied}
+                aria-describedby={`text-${x.id}`}
+                hidden
+              >
+                {p.copyText}
+              </button>
+            </div>
+            <blockquote class="mt-3 border-l-4 border-accent-500 pl-5 font-serif text-lg text-ink dark:text-slate-100">
+              <p>{x.text}</p>
+            </blockquote>
+          </div>
+        ))
+      }
+    </section>
+
+    <section class="mt-16" aria-labelledby="assets-title">
+      <h2 id="assets-title" class="text-2xl font-semibold">{p.assetsTitle}</h2>
+      <p class="mt-2 max-w-3xl text-slate-700 dark:text-slate-300">{p.assetsIntro}</p>
+      <ul class="mt-6 grid gap-6 sm:grid-cols-2">
+        {
+          assets.map((a) => (
+            <li class:list={['border border-rule dark:border-navy-800', a.wide && 'sm:col-span-2 lg:col-span-1']}>
+              <div
+                class:list={[
+                  'flex h-40 items-center justify-center p-6',
+                  a.dark ? 'bg-navy-900' : 'bg-white dark:bg-paper',
+                ]}
+              >
+                <img
+                  src={`/press/${a.file}.svg`}
+                  alt=""
+                  class:list={[a.wide ? 'max-h-20 w-full max-w-sm' : 'h-24 w-24', 'object-contain']}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-rule px-4 py-3 dark:border-navy-800">
+                <p class="font-semibold text-ink dark:text-white">{a.name}</p>
+                <p class="flex gap-4 text-sm">
+                  {['svg', 'png'].map((ext) => (
+                    <a href={`/press/${a.file}.${ext}`} download class="link">
+                      {ext.toUpperCase()}
+                      <span class="sr-only">, {format(t.a11y.download, { name: a.name })}</span>
+                    </a>
+                  ))}
+                </p>
+              </div>
+            </li>
+          ))
+        }
+        <li class="border border-rule sm:col-span-2 dark:border-navy-800">
+          <div class="bg-navy-900 p-4">
+            <img src="/og/default.png" alt="" width="1200" height="630" class="mx-auto w-full max-w-xl" loading="lazy" decoding="async" />
+          </div>
+          <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-rule px-4 py-3 dark:border-navy-800">
+            <p class="font-semibold text-ink dark:text-white">{p.assets.social} <span class="font-normal text-slate-700 dark:text-slate-400">· 1200 × 630</span></p>
+            <a href="/og/default.png" download class="link text-sm">
+              PNG<span class="sr-only">, {format(t.a11y.download, { name: p.assets.social })}</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="mt-16 max-w-3xl" aria-labelledby="usage-title">
+      <h2 id="usage-title" class="text-2xl font-semibold">{p.usageTitle}</h2>
+      <ul class="mt-4 list-disc space-y-2 pl-6 text-slate-800 marker:text-accent-700 dark:text-slate-300 dark:marker:text-accent-400">
+        {p.usage.map((rule) => <li>{rule}</li>)}
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  import { initCopyButtons } from '../../scripts/copy';
+  initCopyButtons();
+</script>

@@ -1,0 +1,44 @@
+{
+  "name": "public-order-eu",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.3.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "dev:api": "mkdir -p .wrangler/api-only && wrangler pages dev .wrangler/api-only --port 8788 --show-interactive-dev-session=false",
+    "build": "astro build",
+    "preview": "pnpm build && wrangler pages dev",
+    "check": "astro check && tsc -p functions/tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:e2e": "pnpm build && playwright test",
+    "test:all": "pnpm test && pnpm test:e2e",
+    "i18n:check": "node scripts/check-translations.mjs",
+    "db:migrate:local": "wrangler d1 migrations apply public-order-eu --local",
+    "db:migrate:remote": "wrangler d1 migrations apply public-order-eu --remote",
+    "deploy": "pnpm build && wrangler pages deploy",
+    "brand": "scripts/brand/render.sh",
+    "hash-email": "node scripts/hash-email.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/public-sans": "^5.3.0",
+    "@fontsource-variable/source-serif-4": "^5.3.1",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.4.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.14.0",
+    "@cloudflare/workers-types": "^5.20261016.1",
+    "@playwright/test": "^1.64.1",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5",
+    "wrangler": "^4.151.1"
+  }
+}

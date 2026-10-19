@@ -1,0 +1,123 @@
+---
+import { siteConfig } from '../site.config';
+import type { Locale } from '../i18n/locales';
+import { format, getDictionary } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+  class?: string;
+}
+const { lang, class: className } = Astro.props;
+const t = getDictionary(lang);
+
+const nf = new Intl.NumberFormat(lang);
+const goal = siteConfig.signatureGoal;
+const initial = siteConfig.fallbackCount;
+const showNumber = initial >= siteConfig.showCountFrom;
+const percent = Math.min(100, Math.round((initial / goal) * 100));
+const goalText = format(t.counter.goal, { goal: nf.format(goal) });
+---
+
+<!--
+  No aria-live: the count refreshes in the background (once after load, then every
+  minute while on screen) and announcing it would only interrupt screen reader users. The progress bar carries the value as text.
+-->
+<div
+  class:list={[className]}
+  data-counter
+  data-goal={goal}
+  data-offset={siteConfig.countOffset}
+  data-threshold={siteConfig.showCountFrom}
+  data-lang={lang}
+  data-progress-template={t.counter.progress}
+>
+  <p class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+    <span data-count-wrap hidden={!showNumber}>
+      <span data-count class="font-serif text-4xl font-semibold text-navy-900 tabular-nums sm:text-5xl dark:text-white">{nf.format(initial)}</span>
+      <span class="ml-1 text-base font-medium text-slate-700 dark:text-slate-300">{t.counter.label}</span>
+    </span>
+    <span class="text-sm font-semibold text-slate-700 tabular-nums dark:text-slate-300">{goalText}</span>
+  </p>
+  <div
+    class="mt-3 h-2 w-full overflow-hidden bg-paper-deep outline-1 outline-rule dark:bg-navy-800 dark:outline-navy-700"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow={percent}
+    aria-valuetext={format(t.counter.progress, { percent })}
+    aria-label={goalText}
+    data-progress
+  >
+    <div class="h-full bg-navy-800 transition-[width] duration-700 dark:bg-accent-400" style={`width:${percent}%`} data-bar></div>
+  </div>
+  <p class="mt-2 text-xs text-slate-600 dark:text-slate-400">{t.counter.approx}</p>
+</div>
+
+<script>
+  /**
+   * The count is fetched once after load, then every minute, but only while a
+   * counter is on screen and the tab is visible: no requests from background tabs
+   * or from visitors reading further down the page. The API caches the count for
+   * 60 seconds, so polling faster would only return the same number.
+   */
+  const POLL_MS = 60_000;
+
+  const counters = [...document.querySelectorAll<HTMLElement>('[data-counter]')];
+  const onScreen = new Set<Element>();
+  let lastFetch = 0;
+  let timer: number | undefined;
+
+  function render(el: HTMLElement, count: number) {
+    const goal = Number(el.dataset.goal);
+    const total = count + Number(el.dataset.offset || 0);
+    const percent = Math.min(100, Math.round((total / goal) * 100));
+    const nf = new Intl.NumberFormat(el.dataset.lang);
+
+    el.querySelector('[data-count]')!.textContent = nf.format(total);
+    el.querySelector<HTMLElement>('[data-count-wrap]')!.hidden = total < Number(el.dataset.threshold || 0);
+    el.querySelector<HTMLElement>('[data-bar]')!.style.width = `${percent}%`;
+    const bar = el.querySelector<HTMLElement>('[data-progress]')!;
+    bar.setAttribute('aria-valuenow', String(percent));
+    bar.setAttribute('aria-valuetext', (el.dataset.progressTemplate || '').replace('{percent}', String(percent)));
+  }
+
+  async function refresh() {
+    lastFetch = Date.now();
+    try {
+      const res = await fetch('/api/count', { headers: { Accept: 'application/json' } });
+      if (!res.ok) return;
+      const data = (await res.json()) as { count?: number };
+      if (typeof data.count === 'number') counters.forEach((el) => render(el, data.count!));
+    } catch {
+      /* keep the number we have */
+    }
+  }
+
+  /** (Re)plans the next refresh; coming back to the tab after a minute or more refreshes at once. */
+  function schedule() {
+    clearTimeout(timer);
+    if (document.hidden || onScreen.size === 0) return;
+    timer = window.setTimeout(
+      async () => {
+        await refresh();
+        schedule();
+      },
+      Math.max(0, lastFetch + POLL_MS - Date.now()),
+    );
+  }
+
+  if (counters.length) {
+    refresh();
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) onScreen.add(entry.target);
+          else onScreen.delete(entry.target);
+        }
+        schedule();
+      });
+      counters.forEach((el) => observer.observe(el));
+      document.addEventListener('visibilitychange', schedule);
+    }
+  }
+</script>

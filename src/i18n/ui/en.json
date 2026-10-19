@@ -1,0 +1,225 @@
+{
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "A European petition to protect the right to peaceful protest by firmly stopping riot violence — within the rule of law and the European Convention on Human Rights.",
+    "ogImageAlt": "European Public Order Initiative — Protect peaceful protest. Stop riot violence."
+  },
+  "nav": {
+    "home": "Home",
+    "petition": "Petition",
+    "faq": "FAQ",
+    "share": "Share",
+    "press": "Press",
+    "privacy": "Privacy",
+    "legal": "Legal notice",
+    "delete": "Withdraw signature",
+    "sign": "Sign the petition",
+    "menu": "Menu",
+    "skipToContent": "Skip to content",
+    "language": "Language",
+    "mainNavigation": "Main navigation",
+    "themeToggle": "Switch between light and dark mode",
+    "darkMode": "Dark mode"
+  },
+  "home": {
+    "title": "Protect peaceful protest. Stop riot violence.",
+    "eyebrow": "A petition to European and national decision-makers",
+    "headline": "Protect the right to protest. Stop the violence that undermines it.",
+    "lead": "Peaceful protest is a fundamental right in every European democracy. Arson, looting and attacks on people endanger residents, emergency workers and peaceful demonstrators alike. We ask for clear, lawful measures that stop the violent minority — so that everyone else can keep exercising their rights safely.",
+    "readFull": "Read the full petition",
+    "pointsTitle": "What we are asking for",
+    "pointsIntro": "Five proposals, each to be adopted through democratic processes and applied with full legal safeguards.",
+    "points": [
+      {
+        "title": "Protect peaceful protest",
+        "text": "The freedom of peaceful assembly must be guaranteed and actively protected. Peaceful participants must never be treated as offenders because others turn violent."
+      },
+      {
+        "title": "Stop violence firmly",
+        "text": "Arson, looting and attacks on people, police, emergency services or property must be stopped promptly and prosecuted consistently."
+      },
+      {
+        "title": "Military support as a last resort",
+        "text": "When ordinary police resources are demonstrably overwhelmed, armed forces should be able to support civilian authorities — only under a clear legal framework, civilian command and parliamentary oversight."
+      },
+      {
+        "title": "Detention and return, after due process",
+        "text": "People without legal residence who take part in serious violence should be held temporarily in simple, humane facilities and, after due process, prioritised for return — never in breach of the principle of non-refoulement."
+      },
+      {
+        "title": "A shared European entry ban",
+        "text": "Strengthen a common European mechanism so that people convicted of serious public-order offences during riots can be refused entry across Europe, with individual assessment and judicial review."
+      }
+    ],
+    "goalTitle": "Our goal",
+    "goalText": "Protect the right to protest by removing the violent minority from it.",
+    "ctaTitle": "Add your name",
+    "ctaText": "Every signature strengthens the call for a firm, lawful and rights-respecting response to riot violence.",
+    "ctaButton": "Sign the petition",
+    "shareTitle": "Help the petition reach more people",
+    "shareText": "Share the petition with friends, family and colleagues who care about safe streets and the right to protest.",
+    "shareButton": "Ways to share"
+  },
+  "counter": {
+    "label": "signatures",
+    "goal": "Goal: {goal}",
+    "progress": "{percent}% of the goal",
+    "approx": "The counter is updated every minute and may be approximate."
+  },
+  "form": {
+    "title": "Sign the petition",
+    "intro": "It takes less than a minute. We only ask for what is necessary.",
+    "name": "Full name",
+    "nameHelp": "Your name is never published.",
+    "country": "Country of residence",
+    "countryPlaceholder": "Select your country",
+    "otherCountry": "Other country",
+    "email": "E-mail address",
+    "optional": "optional",
+    "emailHelp": "Used only to prevent duplicate signatures — unless you tick the box below.",
+    "updates": "Send me a short update when the petition is handed over (at most a few e-mails).",
+    "consent": "I am at least 16 years old and I explicitly consent to my name, country and, if given, e-mail address being processed for this petition as described in the {privacyLink}.",
+    "privacyLinkText": "privacy policy",
+    "submit": "Sign the petition",
+    "submitting": "Signing…",
+    "humanCheck": "Security check by Cloudflare Turnstile — privacy-friendly, no tracking cookies.",
+    "noscript": "JavaScript is disabled. You can still sign: your signature will be stored and counted after a manual check, because the automated security check needs JavaScript.",
+    "errors": {
+      "generic": "Something went wrong. Please try again in a moment.",
+      "network": "We could not reach the server. Please check your connection and try again.",
+      "invalid_name": "Please enter your name (2 to 100 characters).",
+      "invalid_country": "Please select your country.",
+      "invalid_email": "Please enter a valid e-mail address, or leave the field empty.",
+      "consent_required": "Please confirm your consent to sign.",
+      "captcha_failed": "The security check failed. Please reload the page and try again.",
+      "duplicate": "This e-mail address has already been used to sign the petition. Thank you!",
+      "forbidden": "This request was rejected. Please sign directly on public-order.eu.",
+      "rate_limited": "Too many attempts. Please wait a few minutes and try again."
+    }
+  },
+  "thanks": {
+    "title": "Thank you for signing",
+    "lead": "Your signature has been recorded. Thank you for standing up for both the right to protest and the safety of our communities.",
+    "pending": "Because the automated security check could not run, your signature will be counted after a manual review.",
+    "codeTitle": "Your personal withdrawal code",
+    "codeText": "Keep this code if you may want to withdraw your signature later. We store it only in encrypted (hashed) form, so we cannot show it to you again.",
+    "codeCopy": "Copy code",
+    "codeCopied": "Copied",
+    "nextTitle": "What next?",
+    "nextText": "The most useful thing you can do now is to share the petition with people you know.",
+    "shareButton": "Share the petition",
+    "backHome": "Back to the homepage"
+  },
+  "delete": {
+    "title": "Withdraw your signature",
+    "lead": "You can withdraw your signature at any time. It will be deleted permanently and the counter adjusted.",
+    "codeLabel": "Withdrawal code",
+    "codeHelp": "The code shown after you signed, for example ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Delete my signature",
+    "noCodeTitle": "Lost your code?",
+    "noCodeText": "Write to {email} from the e-mail address you signed with, or — if you signed without an e-mail address — tell us your name, country and approximate date of signing. We will handle your request within 30 days.",
+    "success": "Your signature has been deleted.",
+    "notFound": "No signature was found for this code. Please check it and try again.",
+    "invalid": "Please enter a valid withdrawal code."
+  },
+  "share": {
+    "title": "How to share",
+    "lead": "The petition only works if it reaches people. Here are a few simple ways to help — none of them load tracking scripts on this site.",
+    "linksTitle": "Share on social media",
+    "copyTitle": "Copy the link",
+    "copyButton": "Copy link",
+    "copied": "Link copied",
+    "nativeShare": "Share…",
+    "messagesTitle": "Suggested messages",
+    "messagesIntro": "Feel free to copy, adapt or translate these.",
+    "messages": [
+      "Peaceful protest is a right. Riot violence is not. I signed the European Public Order Initiative — will you?",
+      "Protect the right to protest by stopping the violent minority — within the rule of law and human rights. Sign here:",
+      "Arson, looting and attacks on people endanger everyone, including peaceful demonstrators. I support firm, lawful measures. Add your name:"
+    ],
+    "copyMessage": "Copy message",
+    "offlineTitle": "Talk about it",
+    "offlineText": "Conversations with friends, colleagues and local representatives matter more than any post. Please share the petition honestly and respectfully — including with people who disagree.",
+    "guidelinesTitle": "Please keep it respectful",
+    "guidelinesText": "Do not use the petition to target individuals or groups. We stand against violence by anyone, and for the rights of everyone.",
+    "emailSubject": "Please sign: European Public Order Initiative"
+  },
+  "press": {
+    "title": "Press and media",
+    "lead": "Background information, ready-to-use texts and the emblem of the European Public Order Initiative. You are welcome to quote and reproduce them.",
+    "contactTitle": "Press enquiries",
+    "contactText": "For questions, statements and background information, please write to {email}.",
+    "anonymity": "For their safety, we do not publish the names of the people behind the initiative. Please send all enquiries to the press address.",
+    "factsTitle": "Key facts",
+    "facts": {
+      "name": "Name",
+      "website": "Website",
+      "type": "Type",
+      "typeText": "An independent, non-partisan citizens' petition. It is not a registered European Citizens' Initiative under Regulation (EU) 2019/788 and is not affiliated with the European Union or any of its institutions.",
+      "addressees": "Addressed to",
+      "addresseesText": "The Members of the European Parliament, the European Commission, the Council of the European Union, and the governments and parliaments of the Member States of the European Union and the European Economic Area.",
+      "goal": "Goal",
+      "goalText": "{goal} signatures",
+      "data": "Data collected",
+      "dataText": "Name, country of residence and, optionally, an e-mail address. Names are never published; only totals and the number of signatures per country are reported."
+    },
+    "boilerplateTitle": "About the initiative",
+    "boilerplateIntro": "Use these texts as they are, or shorten them as needed.",
+    "shortLabel": "Short version",
+    "short": "The European Public Order Initiative is an independent, non-partisan citizens' petition that calls for firm, lawful measures against riot violence in order to protect the right to peaceful protest.",
+    "longLabel": "Long version",
+    "long": "The European Public Order Initiative is an independent, non-partisan citizens' petition addressed to European and national decision-makers. It asks for five measures: to protect peaceful protest; to stop arson, looting and attacks on people promptly and prosecute them consistently; to allow armed forces to support civilian authorities as a last resort, under civilian command and parliamentary oversight; to hold people without legal residence who take part in serious violence temporarily in humane facilities and, after due process, prioritise their return, never in breach of the principle of non-refoulement; and to strengthen a shared European entry ban for people convicted of serious public-order offences, with individual assessment and judicial review. Every measure must be adopted democratically and respect national constitutions, the European Convention on Human Rights and the Charter of Fundamental Rights of the European Union. The petition is not affiliated with the European Union or any of its institutions.",
+    "copyText": "Copy text",
+    "copied": "Copied",
+    "assetsTitle": "Emblem and images",
+    "assetsIntro": "The SVG files scale to any size. Use the PNG files where SVG is not supported.",
+    "assets": {
+      "emblem": "Emblem",
+      "emblemInverse": "Emblem for dark backgrounds",
+      "wordmark": "Emblem with name",
+      "wordmarkInverse": "Emblem with name, for dark backgrounds",
+      "social": "Social media image"
+    },
+    "usageTitle": "Using the emblem",
+    "usage": [
+      "Do not alter, recolour, crop or distort the emblem.",
+      "Leave clear space around it of at least a quarter of its width.",
+      "Do not use it in a way that suggests endorsement by, or affiliation with, the European Union or any of its institutions.",
+      "Do not use it to promote a political party, a candidate or a commercial product."
+    ]
+  },
+  "rights": {
+    "title": "Our commitment to the rule of law",
+    "text": "This petition does not call for any illegal action. Every measure it proposes must be adopted through democratic, lawful processes and applied in full respect of national constitutions, the European Convention on Human Rights, the Charter of Fundamental Rights of the European Union and international refugee law, including the principle of non-refoulement. Measures must target conduct — never nationality, ethnicity, religion or political opinion.",
+    "short": "This petition calls for no illegal action and fully respects national constitutions and the European Convention on Human Rights."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "lead": "Honest answers to the questions and objections we hear most often."
+  },
+  "petition": {
+    "signCta": "Agree? Add your name."
+  },
+  "footer": {
+    "about": "An independent, non-partisan citizens' petition. Not affiliated with the European Union or any of its institutions.",
+    "contact": "Contact",
+    "rights": "Rights & rules",
+    "pressKit": "Press and media",
+    "source": "Source code"
+  },
+  "notice": {
+    "untranslated": "This page is not yet available in {language}. The English version is shown below.",
+    "help": "Help us translate"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or has moved.",
+    "back": "Go to the homepage"
+  },
+  "a11y": {
+    "newTab": "(opens in a new tab)",
+    "download": "Download {name}"
+  }
+}

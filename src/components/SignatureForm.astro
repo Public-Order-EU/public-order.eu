@@ -1,0 +1,215 @@
+---
+import { siteConfig } from '../site.config';
+import { countryCodes, OTHER_COUNTRY } from '../data/countries';
+import type { Locale } from '../i18n/locales';
+import { getDictionary, localePath } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+const t = getDictionary(lang);
+
+// Country names in the visitor's language, generated at build time.
+const regionNames = new Intl.DisplayNames([lang, 'en'], { type: 'region' });
+const countries = countryCodes
+  .map((code) => ({ code, name: regionNames.of(code) ?? code }))
+  .sort((a, b) => a.name.localeCompare(b.name, lang));
+
+const [consentBefore, consentAfter] = t.form.consent.split('{privacyLink}');
+---
+
+<form
+  id="signature-form"
+  action="/api/sign"
+  method="post"
+  class="space-y-5"
+  data-signature-form
+  data-lang={lang}
+  data-thanks-url={localePath(lang, 'thanks')}
+  data-errors={JSON.stringify(t.form.errors)}
+  data-submitting={t.form.submitting}
+>
+  <input type="hidden" name="lang" value={lang} />
+
+  <!-- Honeypot: hidden from people, often filled in by bots. -->
+  <div class="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
+    <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+  </div>
+
+  <div>
+    <label for="sig-name" class="field-label">{t.form.name}</label>
+    <input
+      id="sig-name"
+      name="name"
+      type="text"
+      class="field-input"
+      autocomplete="name"
+      required
+      minlength="2"
+      maxlength="100"
+      aria-describedby="sig-name-help"
+    />
+    <p id="sig-name-help" class="field-help">{t.form.nameHelp}</p>
+  </div>
+
+  <div>
+    <label for="sig-country" class="field-label">{t.form.country}</label>
+    <select id="sig-country" name="country" class="field-input field-select" autocomplete="country" required>
+      <option value="" disabled selected>{t.form.countryPlaceholder}</option>
+      {countries.map((c) => <option value={c.code}>{c.name}</option>)}
+      <option value={OTHER_COUNTRY}>{t.form.otherCountry}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="sig-email" class="field-label">
+      {t.form.email} <span class="font-normal text-slate-600 dark:text-slate-400">({t.form.optional})</span>
+    </label>
+    <input
+      id="sig-email"
+      name="email"
+      type="email"
+      class="field-input"
+      autocomplete="email"
+      inputmode="email"
+      maxlength="254"
+      aria-describedby="sig-email-help"
+    />
+    <p id="sig-email-help" class="field-help">{t.form.emailHelp}</p>
+  </div>
+
+  <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-800 dark:text-slate-300">
+    <input type="checkbox" name="updates" value="1" class="field-check" />
+    <span>{t.form.updates}</span>
+  </label>
+
+  <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-800 dark:text-slate-300">
+    <input type="checkbox" name="consent" value="1" required class="field-check" />
+    <span>
+      {consentBefore}<a href={localePath(lang, 'privacy')} class="link" target="_blank">{t.form.privacyLinkText}<span class="sr-only"> {t.a11y.newTab}</span></a>{consentAfter}
+    </span>
+  </label>
+
+  <div>
+    <div class="cf-turnstile" data-sitekey={siteConfig.turnstileSiteKey} data-language={lang} data-size="flexible" data-appearance="interaction-only"></div>
+    <p class="field-help text-xs">{t.form.humanCheck}</p>
+  </div>
+
+  <noscript>
+    <p class="msg-notice">{t.form.noscript}</p>
+  </noscript>
+
+  <p id="sig-error" data-form-error role="alert" hidden class="msg-error"></p>
+
+  <button type="submit" class="btn-primary w-full text-lg" data-submit>{t.form.submit}</button>
+</form>
+
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<script>
+  type Errors = Record<string, string>;
+
+  const form = document.querySelector<HTMLFormElement>('[data-signature-form]');
+  if (form) {
+    // Without JS the browser's built-in validation applies; with JS we show our own messages.
+    form.noValidate = true;
+    const errors = JSON.parse(form.dataset.errors || '{}') as Errors;
+    const errorBox = form.querySelector<HTMLElement>('[data-form-error]')!;
+    const submit = form.querySelector<HTMLButtonElement>('[data-submit]')!;
+    const submitLabel = submit.textContent;
+
+    // The message is linked to the field, so screen readers read it again when the field is focused.
+    const describedBy = (el: HTMLElement) => (el.getAttribute('aria-describedby') || '').split(' ').filter(Boolean);
+    const setDescribedBy = (el: HTMLElement, ids: string[]) =>
+      ids.length ? el.setAttribute('aria-describedby', ids.join(' ')) : el.removeAttribute('aria-describedby');
+
+    const showError = (code: string, focus?: string) => {
+      errorBox.textContent = errors[code] || errors.generic;
+      errorBox.hidden = false;
+      const field = focus ? form.querySelector<HTMLElement>(`[name="${focus}"]`) : null;
+      if (field) {
+        field.setAttribute('aria-invalid', 'true');
+        setDescribedBy(field, [...describedBy(field).filter((id) => id !== errorBox.id), errorBox.id]);
+        field.focus();
+      } else errorBox.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    };
+
+    // Clear the error state as soon as the visitor changes the field.
+    const clearInvalid = (event: Event) => {
+      const field = event.target as HTMLElement;
+      if (field.getAttribute('aria-invalid') !== 'true') return;
+      field.removeAttribute('aria-invalid');
+      setDescribedBy(field, describedBy(field).filter((id) => id !== errorBox.id));
+    };
+    form.addEventListener('input', clearInvalid);
+    form.addEventListener('change', clearInvalid);
+
+    // Quick client-side checks; the server validates everything again.
+    const validate = (data: FormData): [string, string] | null => {
+      const name = String(data.get('name') || '').trim();
+      const email = String(data.get('email') || '').trim();
+      if (name.length < 2 || name.length > 100) return ['invalid_name', 'name'];
+      if (!data.get('country')) return ['invalid_country', 'country'];
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return ['invalid_email', 'email'];
+      if (!data.get('consent')) return ['consent_required', 'consent'];
+      return null;
+    };
+
+    // Turnstile runs invisibly and may still be working when a fast visitor submits.
+    // Wait briefly for its token; without one the signature is stored as unverified.
+    const waitForToken = async (timeoutMs = 8000) => {
+      const field = () => form.querySelector<HTMLInputElement>('[name="cf-turnstile-response"]');
+      const started = Date.now();
+      while (!field()?.value && Date.now() - started < timeoutMs) {
+        await new Promise((resolve) => setTimeout(resolve, 250));
+      }
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      errorBox.hidden = true;
+
+      const invalid = validate(new FormData(form));
+      if (invalid) return showError(...invalid);
+
+      submit.disabled = true;
+      submit.textContent = form.dataset.submitting || submitLabel;
+
+      try {
+        await waitForToken();
+        const data = new FormData(form);
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' },
+        });
+        const result = (await res.json().catch(() => ({}))) as {
+          ok?: boolean;
+          error?: string;
+          code?: string;
+          verified?: boolean;
+        };
+
+        if (res.ok && result.ok) {
+          try {
+            sessionStorage.setItem('signature', JSON.stringify({ code: result.code, verified: result.verified }));
+          } catch {
+            /* the thanks page then shows a generic message */
+          }
+          window.location.href = form.dataset.thanksUrl!;
+          return;
+        }
+
+        showError(result.error || (res.status === 429 ? 'rate_limited' : 'generic'));
+        // A Turnstile token can only be used once.
+        (window as unknown as { turnstile?: { reset: () => void } }).turnstile?.reset();
+      } catch {
+        showError('network');
+      } finally {
+        submit.disabled = false;
+        submit.textContent = submitLabel;
+      }
+    });
+  }
+</script>

@@ -1,0 +1,28 @@
+---
+import type { Locale } from '../i18n/locales';
+import { getDictionary } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+const t = getDictionary(lang);
+const nf = new Intl.NumberFormat(lang, { minimumIntegerDigits: 2 });
+---
+
+<!-- An ordered list already says "1 of 5"; the large numerals are decoration. -->
+<ol class="border-t border-rule dark:border-navy-800">
+  {
+    t.home.points.map((point, i) => (
+      <li class="grid gap-x-6 gap-y-1 border-b border-rule py-6 sm:grid-cols-[4rem_1fr] dark:border-navy-800">
+        <span class="font-serif text-3xl leading-none font-semibold text-accent-700 tabular-nums sm:text-4xl dark:text-accent-400" aria-hidden="true">
+          {nf.format(i + 1)}
+        </span>
+        <div>
+          <h3 class="text-xl font-semibold">{point.title}</h3>
+          <p class="mt-2 max-w-2xl text-slate-700 dark:text-slate-300">{point.text}</p>
+        </div>
+      </li>
+    ))
+  }
+</ol>

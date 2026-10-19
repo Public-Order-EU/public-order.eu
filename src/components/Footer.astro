@@ -1,0 +1,54 @@
+---
+import Logo from './Logo.astro';
+import { siteConfig } from '../site.config';
+import type { Locale } from '../i18n/locales';
+import { getDictionary, localePath } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+const t = getDictionary(lang);
+const year = new Date().getFullYear();
+
+const linkClass = 'text-navy-100 underline decoration-navy-400 underline-offset-[0.2em] hover:text-white hover:decoration-white';
+const headingClass = 'font-sans text-xs font-bold tracking-[0.14em] text-white uppercase';
+---
+
+<footer class="on-dark bg-navy-950 text-navy-100 dark:border-t dark:border-navy-800">
+  <div class="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div class="max-w-sm">
+      <div class="flex items-center gap-2.5">
+        <Logo class="size-9" inverse />
+        <span class="font-serif text-xl font-semibold text-white">{t.meta.siteName}</span>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed">{t.footer.about}</p>
+    </div>
+
+    <nav aria-label={t.footer.rights}>
+      <h2 class={headingClass}>{t.footer.rights}</h2>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li><a class={linkClass} href={localePath(lang, 'petition')}>{t.nav.petition}</a></li>
+        <li><a class={linkClass} href={localePath(lang, 'faq')}>{t.nav.faq}</a></li>
+        <li><a class={linkClass} href={localePath(lang, 'privacy')}>{t.nav.privacy}</a></li>
+        <li><a class={linkClass} href={localePath(lang, 'legal')}>{t.nav.legal}</a></li>
+        <li><a class={linkClass} href={localePath(lang, 'delete')}>{t.nav.delete}</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <h2 class={headingClass}>{t.footer.contact}</h2>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li><a class={linkClass} href={`mailto:${siteConfig.contact.general}`}>{siteConfig.contact.general}</a></li>
+        <li><a class={linkClass} href={`mailto:${siteConfig.contact.privacy}`}>{siteConfig.contact.privacy}</a></li>
+        <li><a class={linkClass} href={localePath(lang, 'press')}>{t.footer.pressKit}</a></li>
+        <li><a class={linkClass} href={siteConfig.sourceUrl}>{t.footer.source}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/15">
+    <p class="container-page py-5 text-xs leading-relaxed text-navy-200">
+      © {year} {t.meta.siteName} · {t.rights.short}
+    </p>
+  </div>
+</footer>

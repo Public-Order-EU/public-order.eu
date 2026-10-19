@@ -1,0 +1,56 @@
+---
+/**
+ * Fallback for "/". In production, functions/index.ts answers "/" first and
+ * redirects to the visitor's language using the Accept-Language header. This
+ * static page is only used if that function is not deployed (or in `astro dev`).
+ */
+import '../styles/global.css';
+import Logo from '../components/Logo.astro';
+import { siteConfig } from '../site.config';
+import { defaultLocale, localeInfo, localesByNativeName } from '../i18n/locales';
+import { getDictionary, isLocaleComplete, localePath } from '../i18n/utils';
+
+const t = getDictionary(defaultLocale);
+const ready = localesByNativeName.filter(isLocaleComplete);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.meta.siteName}</title>
+    <meta name="description" content={t.meta.description} />
+    <link rel="canonical" href={new URL(localePath(defaultLocale), siteConfig.url).href} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta http-equiv="refresh" content={`3; url=${localePath(defaultLocale)}`} />
+    <script is:inline define:vars={{ ready }}>
+      var langs = navigator.languages || [navigator.language || 'en'];
+      var target = 'en';
+      for (var i = 0; i < langs.length; i++) {
+        var base = String(langs[i]).toLowerCase().split('-')[0];
+        if (base === 'nb' || base === 'nn') base = 'no';
+        if (ready.indexOf(base) !== -1) { target = base; break; }
+      }
+      location.replace('/' + target + '/');
+    </script>
+  </head>
+  <body class="flex min-h-screen items-center justify-center bg-navy-900 p-6 text-white">
+    <main class="max-w-xl text-center">
+      <Logo class="mx-auto size-16" />
+      <h1 class="mt-4 text-2xl font-bold">{t.meta.siteName}</h1>
+      <ul class="mt-8 flex flex-wrap justify-center gap-2">
+        {
+          localesByNativeName.map((l) => (
+            <li>
+              <a href={localePath(l)} hreflang={l} lang={l} class="inline-block rounded border border-white/30 px-3 py-1.5 text-sm hover:bg-white/10">
+                {localeInfo[l].nativeName}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      {ready.length === 0 && <p>…</p>}
+    </main>
+  </body>
+</html>

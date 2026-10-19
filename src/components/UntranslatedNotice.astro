@@ -1,0 +1,18 @@
+---
+import { siteConfig } from '../site.config';
+import { localeInfo, type Locale } from '../i18n/locales';
+import { format, getDictionary } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+const t = getDictionary(lang);
+---
+
+<div class="border-b border-accent-500/60 bg-accent-400/20 text-ink dark:bg-accent-400/10 dark:text-slate-100">
+  <p class="container-page py-3 text-sm">
+    {format(t.notice.untranslated, { language: localeInfo[lang].nativeName })}
+    <a href={siteConfig.translationsUrl} class="ml-1 font-semibold underline underline-offset-2">{t.notice.help}</a>
+  </p>
+</div>

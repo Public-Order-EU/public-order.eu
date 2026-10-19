@@ -1,0 +1,72 @@
+---
+/**
+ * Shown after signing with JavaScript enabled. The withdrawal code is passed via
+ * sessionStorage (never in the URL, so it doesn't end up in logs or history).
+ * Visitors without JavaScript get an equivalent page rendered by /api/sign.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import type { Locale } from '../../i18n/locales';
+import { getDictionary, localePath, localeStaticPaths } from '../../i18n/utils';
+
+export const getStaticPaths = localeStaticPaths;
+
+const lang = Astro.params.lang as Locale;
+const t = getDictionary(lang);
+---
+
+<BaseLayout lang={lang} slug="thanks" title={t.thanks.title} noindex>
+  <PageIntro title={t.thanks.title} lead={t.thanks.lead} narrow />
+
+  <div class="container-page py-12 md:py-16">
+    <div class="mx-auto max-w-2xl">
+      <p data-pending hidden class="msg-notice mb-8 text-base">{t.thanks.pending}</p>
+
+      <section data-code-box hidden class="box mb-12 border-t-4 border-t-navy-800 dark:border-t-accent-400" aria-labelledby="code-title">
+        <h2 id="code-title" class="text-xl font-semibold">{t.thanks.codeTitle}</h2>
+        <p class="mt-2 text-sm text-slate-700 dark:text-slate-400">{t.thanks.codeText}</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <code data-code class="border border-rule bg-paper px-4 py-3 font-mono text-xl font-bold tracking-wider text-navy-900 select-all dark:border-navy-700 dark:bg-navy-950 dark:text-white"></code>
+          <button type="button" class="btn-secondary min-h-10 px-4 py-2 text-sm" data-copy-code data-copied-label={t.thanks.codeCopied}>
+            {t.thanks.codeCopy}
+          </button>
+        </div>
+        <p class="mt-5 text-sm">
+          <a href={localePath(lang, 'delete')} class="link">{t.nav.delete}</a>
+        </p>
+      </section>
+
+      <section aria-labelledby="next-title">
+        <h2 id="next-title" class="text-2xl font-semibold">{t.thanks.nextTitle}</h2>
+        <p class="mt-2 text-slate-700 dark:text-slate-300">{t.thanks.nextText}</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href={localePath(lang, 'share')} class="btn-primary">{t.thanks.shareButton}</a>
+          <a href={localePath(lang)} class="btn-secondary">{t.thanks.backHome}</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  import { copyWithFeedback } from '../../scripts/copy';
+
+  let data: { code?: string; verified?: boolean } = {};
+  try {
+    data = JSON.parse(sessionStorage.getItem('signature') || '{}');
+  } catch {
+    /* storage unavailable */
+  }
+
+  if (data.code) {
+    const box = document.querySelector<HTMLElement>('[data-code-box]')!;
+    box.querySelector('[data-code]')!.textContent = data.code;
+    box.hidden = false;
+
+    const copy = box.querySelector<HTMLButtonElement>('[data-copy-code]')!;
+    copy.addEventListener('click', () => copyWithFeedback(copy, data.code!, copy.dataset.copiedLabel || ''));
+  }
+  if (data.verified === false) {
+    document.querySelector<HTMLElement>('[data-pending]')!.hidden = false;
+  }
+</script>

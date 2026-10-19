@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import ShareButtons from '../../components/ShareButtons.astro';
+import { siteConfig } from '../../site.config';
+import type { Locale } from '../../i18n/locales';
+import { getDictionary, localePath, localeStaticPaths } from '../../i18n/utils';
+
+export const getStaticPaths = localeStaticPaths;
+
+const lang = Astro.params.lang as Locale;
+const t = getDictionary(lang);
+const url = new URL(localePath(lang), siteConfig.url).href;
+---
+
+<BaseLayout lang={lang} slug="share" title={t.share.title} description={t.share.lead}>
+  <PageIntro title={t.share.title} lead={t.share.lead} />
+
+  <div class="container-page py-12 md:py-16">
+    <div class="max-w-3xl">
+      <section aria-labelledby="links-title">
+        <h2 id="links-title" class="text-2xl font-semibold">{t.share.linksTitle}</h2>
+        <div class="mt-5">
+          <ShareButtons lang={lang} />
+        </div>
+      </section>
+
+      <section class="mt-14" aria-labelledby="messages-title">
+        <h2 id="messages-title" class="text-2xl font-semibold">{t.share.messagesTitle}</h2>
+        <p class="mt-2 text-slate-700 dark:text-slate-300">{t.share.messagesIntro}</p>
+        <ul class="mt-6 border-t border-rule dark:border-navy-800">
+          {
+            t.share.messages.map((message) => (
+              <li class="border-b border-rule py-5 dark:border-navy-800">
+                <blockquote class="border-l-4 border-accent-500 pl-5 font-serif text-lg leading-relaxed text-ink dark:text-slate-100">
+                  {message} <span class="break-all text-navy-700 dark:text-navy-200">{url}</span>
+                </blockquote>
+                <button
+                  type="button"
+                  class="btn-secondary mt-4 min-h-10 px-4 py-2 text-sm"
+                  data-copy-text={`${message} ${url}`}
+                  data-copied-label={t.share.copied}
+                  hidden
+                >
+                  {t.share.copyMessage}
+                </button>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <div class="mt-14 grid gap-10 md:grid-cols-2">
+        <section aria-labelledby="offline-title">
+          <h2 id="offline-title" class="text-xl font-semibold">{t.share.offlineTitle}</h2>
+          <p class="mt-2 text-slate-700 dark:text-slate-300">{t.share.offlineText}</p>
+        </section>
+        <section aria-labelledby="guidelines-title">
+          <h2 id="guidelines-title" class="text-xl font-semibold">{t.share.guidelinesTitle}</h2>
+          <p class="mt-2 text-slate-700 dark:text-slate-300">{t.share.guidelinesText}</p>
+        </section>
+      </div>
+
+      <p class="mt-12 text-sm font-semibold text-slate-700 dark:text-slate-400">#{siteConfig.hashtag}</p>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import { siteConfig } from '../../site.config';
+import type { Locale } from '../../i18n/locales';
+import { getDictionary, localeStaticPaths } from '../../i18n/utils';
+
+export const getStaticPaths = localeStaticPaths;
+
+const lang = Astro.params.lang as Locale;
+const t = getDictionary(lang);
+const [noCodeBefore, noCodeAfter] = t.delete.noCodeText.split('{email}');
+---
+
+<BaseLayout lang={lang} slug="delete" title={t.delete.title} description={t.delete.lead} noindex>
+  <PageIntro title={t.delete.title} lead={t.delete.lead} narrow />
+
+  <div class="container-page py-12 md:py-16">
+    <div class="mx-auto max-w-2xl">
+      <form
+        action="/api/delete"
+        method="post"
+        class="box space-y-5 border-t-4 border-t-navy-800 dark:border-t-accent-400"
+        data-delete-form
+        data-messages={JSON.stringify({ success: t.delete.success, not_found: t.delete.notFound, invalid: t.delete.invalid, generic: t.form.errors.generic, network: t.form.errors.network, forbidden: t.form.errors.forbidden, rate_limited: t.form.errors.rate_limited })}
+      >
+        <input type="hidden" name="lang" value={lang} />
+        <div>
+          <label for="del-code" class="field-label">{t.delete.codeLabel}</label>
+          <input
+            id="del-code"
+            name="code"
+            type="text"
+            class="field-input font-mono tracking-wider uppercase"
+            required
+            autocomplete="off"
+            autocapitalize="characters"
+            spellcheck="false"
+            maxlength="24"
+            placeholder="XXXX-XXXX-XXXX-XXXX"
+            aria-describedby="del-code-help"
+          />
+          <p id="del-code-help" class="field-help">{t.delete.codeHelp}</p>
+        </div>
+        <p data-result role="status" hidden></p>
+        <button type="submit" class="btn-primary">{t.delete.submit}</button>
+      </form>
+
+      <section class="mt-12" aria-labelledby="no-code-title">
+        <h2 id="no-code-title" class="text-2xl font-semibold">{t.delete.noCodeTitle}</h2>
+        <p class="mt-2 text-slate-700 dark:text-slate-300">
+          {noCodeBefore}<a href={`mailto:${siteConfig.contact.privacy}`} class="link">{siteConfig.contact.privacy}</a>{noCodeAfter}
+        </p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-delete-form]');
+  if (form) {
+    const messages = JSON.parse(form.dataset.messages || '{}') as Record<string, string>;
+    const result = form.querySelector<HTMLElement>('[data-result]')!;
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+
+    const show = (key: string, ok: boolean) => {
+      result.textContent = messages[key] || messages.generic;
+      result.className = ok ? 'msg-success' : 'msg-error';
+      result.hidden = false;
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      button.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+        if (res.ok && data.ok) {
+          show('success', true);
+          form.reset();
+          try {
+            sessionStorage.removeItem('signature');
+          } catch {
+            /* ignore */
+          }
+        } else {
+          show(data.error || 'generic', false);
+        }
+      } catch {
+        show('network', false);
+      } finally {
+        button.disabled = false;
+      }
+    });
+  }
+</script>

@@ -1,0 +1,63 @@
+---
+import { localeInfo, localesByNativeName, type Locale } from '../i18n/locales';
+import { getDictionary, localePath } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+  slug: string;
+  buttonClass?: string;
+}
+
+const { lang, slug, buttonClass } = Astro.props;
+const t = getDictionary(lang);
+---
+
+<!-- A <details> dropdown: accessible and fully functional without JavaScript. -->
+<details class="group relative" data-close-outside>
+  <summary class:list={[buttonClass, 'list-none [&::-webkit-details-marker]:hidden']}>
+    <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"></path>
+    </svg>
+    <span class="sr-only">{t.nav.language}:</span>
+    <span class="uppercase">{lang}</span>
+    <svg class="size-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fill-rule="evenodd" d="M5.2 7.2a.75.75 0 0 1 1.06 0L10 10.94l3.74-3.74a.75.75 0 1 1 1.06 1.06l-4.27 4.27a.75.75 0 0 1-1.06 0L5.2 8.26a.75.75 0 0 1 0-1.06Z"></path>
+    </svg>
+  </summary>
+  <ul
+    class="absolute right-0 z-40 mt-2 grid max-h-[calc(100dvh-5.5rem)] w-60 grid-cols-1 overflow-y-auto border border-rule bg-white p-1.5 shadow-[0_8px_24px_-12px_rgb(0_0_0/0.25)] dark:border-navy-700 dark:bg-navy-900"
+  >
+    {
+      localesByNativeName.map((l) => (
+        <li>
+          <a
+            href={localePath(l, slug)}
+            hreflang={l}
+            lang={l}
+            aria-current={l === lang ? 'true' : undefined}
+            class="flex min-h-10 items-center justify-between border-l-4 border-transparent px-3 text-sm text-ink hover:bg-paper aria-[current=true]:border-navy-800 aria-[current=true]:font-semibold dark:text-slate-100 dark:hover:bg-navy-800 dark:aria-[current=true]:border-accent-400"
+          >
+            <span>{localeInfo[l].nativeName}</span>
+            <span class="text-xs text-slate-600 uppercase dark:text-slate-400">{l}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</details>
+
+<script>
+  // Progressive enhancement: close open dropdowns on outside click or Escape.
+  const close = (except?: Element) =>
+    document.querySelectorAll<HTMLDetailsElement>('details[open]').forEach((d) => {
+      if (d !== except && !d.contains(except ?? null)) d.open = false;
+    });
+  document.addEventListener('click', (e) => {
+    const target = e.target as Element;
+    close(target.closest('details') ?? undefined);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+</script>

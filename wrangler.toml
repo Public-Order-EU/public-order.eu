@@ -1,0 +1,28 @@
+# Cloudflare Pages project configuration.
+# Docs: https://developers.cloudflare.com/pages/functions/wrangler-configuration/
+name = "public-order-eu"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Signatures database. Create it with (EU jurisdiction keeps data in the EU):
+#   pnpm wrangler d1 create public-order-eu --jurisdiction eu
+# then paste the returned database_id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "public-order-eu"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[vars]
+# Public origin, used for the same-origin check on form posts.
+SITE_ORIGIN = "https://public-order.eu"
+# Store signatures that arrive without a Turnstile token (visitors without
+# JavaScript) as unverified, to be reviewed before they are counted.
+# Set to "false" to reject them instead.
+ACCEPT_UNVERIFIED = "true"
+
+# Secrets — never commit them. Set with:
+#   pnpm wrangler pages secret put TURNSTILE_SECRET_KEY
+#   pnpm wrangler pages secret put HASH_SALT
+# For local development, copy .dev.vars.example to .dev.vars.

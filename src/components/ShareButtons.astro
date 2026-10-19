@@ -1,0 +1,85 @@
+---
+/**
+ * Plain share links: no third-party scripts, widgets or tracking pixels are
+ * loaded. Each link only opens the network's own share page when clicked.
+ */
+import { siteConfig } from '../site.config';
+import type { Locale } from '../i18n/locales';
+import { getDictionary, localePath } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+  /** Text to pre-fill; defaults to the first suggested message. */
+  text?: string;
+}
+const { lang, text } = Astro.props;
+const t = getDictionary(lang);
+
+const url = new URL(localePath(lang), siteConfig.url).href;
+const message = text ?? t.share.messages[0];
+const e = encodeURIComponent;
+
+const networks = [
+  { name: 'X', href: `https://x.com/intent/post?text=${e(message)}&url=${e(url)}&hashtags=${e(siteConfig.hashtag)}` },
+  { name: 'Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${e(url)}` },
+  { name: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${e(url)}` },
+  { name: 'WhatsApp', href: `https://wa.me/?text=${e(`${message} ${url}`)}` },
+  { name: 'Telegram', href: `https://t.me/share/url?url=${e(url)}&text=${e(message)}` },
+  { name: 'Bluesky', href: `https://bsky.app/intent/compose?text=${e(`${message} ${url}`)}` },
+  { name: 'Reddit', href: `https://www.reddit.com/submit?url=${e(url)}&title=${e(t.share.emailSubject)}` },
+  { name: 'E-mail', href: `mailto:?subject=${e(t.share.emailSubject)}&body=${e(`${message}\n\n${url}`)}` },
+];
+---
+
+<div data-share data-url={url} data-title={t.meta.siteName} data-text={message} data-copied={t.share.copied}>
+  <ul class="flex flex-wrap gap-2">
+    {
+      networks.map((n) => (
+        <li>
+          <a
+            href={n.href}
+            class="btn-secondary px-4 py-2 text-sm"
+            target={n.href.startsWith('mailto:') ? undefined : '_blank'}
+            rel="noopener noreferrer"
+          >
+            {n.name}
+            {!n.href.startsWith('mailto:') && <span class="sr-only"> {t.a11y.newTab}</span>}
+          </a>
+        </li>
+      ))
+    }
+    <!-- Shown by the script only when the browser supports them. -->
+    <li hidden>
+      <button type="button" class="btn-secondary px-4 py-2 text-sm" data-copy-link>{t.share.copyButton}</button>
+    </li>
+    <li hidden>
+      <button type="button" class="btn-primary px-4 py-2 text-sm" data-native-share>{t.share.nativeShare}</button>
+    </li>
+  </ul>
+  <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">
+    <span class="sr-only">URL: </span><code class="border border-rule bg-white px-2 py-1 break-all dark:border-navy-700 dark:bg-navy-900">{url}</code>
+  </p>
+</div>
+
+<script>
+  import { copyWithFeedback, initCopyButtons } from '../scripts/copy';
+
+  document.querySelectorAll<HTMLElement>('[data-share]').forEach((root) => {
+    const { url = '', title = '', text = '', copied = '' } = root.dataset;
+
+    const copy = root.querySelector<HTMLButtonElement>('[data-copy-link]');
+    if (copy && navigator.clipboard) {
+      copy.parentElement!.hidden = false;
+      copy.addEventListener('click', () => copyWithFeedback(copy, url, copied));
+    }
+
+    const native = root.querySelector<HTMLButtonElement>('[data-native-share]');
+    if (native && typeof navigator.share === 'function') {
+      native.parentElement!.hidden = false;
+      native.addEventListener('click', () => navigator.share({ title, text, url }).catch(() => {}));
+    }
+  });
+
+  // "Copy message" buttons elsewhere on the page.
+  initCopyButtons();
+</script>

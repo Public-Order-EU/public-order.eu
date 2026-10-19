@@ -1,0 +1,22 @@
+---
+/**
+ * Neutral emblem: a shield (protection) with a check mark (lawful order).
+ * Deliberately avoids the EU's circle of stars, so nothing suggests official
+ * EU affiliation. On dark backgrounds the outer rim turns cream so the shape
+ * stays visible (`inverse`, or automatically in dark mode).
+ */
+interface Props {
+  class?: string;
+  /** Always draw the light-rim version (for permanently dark panels). */
+  inverse?: boolean;
+}
+const { class: className, inverse = false } = Astro.props;
+---
+
+<svg class={className} viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <path
+    d="M32 4 8 12v18c0 15.5 10.2 26.4 24 30 13.8-3.6 24-14.5 24-30V12L32 4Z"
+    class={inverse ? 'fill-paper' : 'fill-navy-800 dark:fill-paper'}></path>
+  <path d="M32 9.5 13 15.8V30c0 12.6 8.1 21.6 19 24.8 10.9-3.2 19-12.2 19-24.8V15.8L32 9.5Z" fill="#2f4a85"></path>
+  <path d="M22.5 31.5l6.5 6.5 13-14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>

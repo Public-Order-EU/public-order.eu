@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Source for public/og/default.png. Re-render with: pnpm og -->
+  <rect width="1200" height="630" fill="#13265c"/>
+  <rect x="0" y="590" width="1200" height="40" fill="#0b1533"/>
+  <g fill="#ffffff" opacity="0.9" transform="translate(960 315)">
+    <circle cx="0" cy="-150" r="11"/><circle cx="75" cy="-130" r="11"/><circle cx="130" cy="-75" r="11"/>
+    <circle cx="150" cy="0" r="11"/><circle cx="130" cy="75" r="11"/><circle cx="75" cy="130" r="11"/>
+    <circle cx="0" cy="150" r="11"/><circle cx="-75" cy="130" r="11"/><circle cx="-130" cy="75" r="11"/>
+    <circle cx="-150" cy="0" r="11"/><circle cx="-130" cy="-75" r="11"/><circle cx="-75" cy="-130" r="11"/>
+    <path d="M0 -72 l64 28 v48 c0 40-27 69-64 80-37-11-64-40-64-80 v-48z" fill="none" stroke="#ffffff" stroke-width="12" stroke-linejoin="round"/>
+  </g>
+  <g font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" fill="#ffffff">
+    <text x="80" y="150" font-size="28" font-weight="700" letter-spacing="4" fill="#c7d2fe">EUROPEAN PETITION</text>
+    <text x="80" y="245" font-size="68" font-weight="700">European Public</text>
+    <text x="80" y="325" font-size="68" font-weight="700">Order Initiative</text>
+    <text x="80" y="410" font-size="32" fill="#e2e8f0">Protect peaceful protest.</text>
+    <text x="80" y="455" font-size="32" fill="#e2e8f0">Stop the violent minority.</text>
+    <text x="80" y="540" font-size="30" font-weight="700">public-order.eu</text>
+  </g>
+</svg>

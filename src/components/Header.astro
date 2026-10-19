@@ -1,0 +1,94 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import Logo from './Logo.astro';
+import type { Locale } from '../i18n/locales';
+import { getDictionary, localePath } from '../i18n/utils';
+
+interface Props {
+  lang: Locale;
+  slug: string;
+}
+
+const { lang, slug } = Astro.props;
+const t = getDictionary(lang);
+
+const links = [
+  { slug: '', label: t.nav.home },
+  { slug: 'petition', label: t.nav.petition },
+  { slug: 'faq', label: t.nav.faq },
+  { slug: 'share', label: t.nav.share },
+  { slug: 'press', label: t.nav.press },
+];
+const signHref = `${localePath(lang)}#sign`;
+const iconButton =
+  'flex min-h-11 min-w-11 cursor-pointer items-center justify-center gap-1.5 rounded-[3px] px-2 text-sm font-medium text-slate-800 hover:bg-paper-deep dark:text-slate-200 dark:hover:bg-navy-900';
+---
+
+<!-- Sticky, so "Sign" stays one tap away; html scroll-padding keeps anchors and focus clear of it. -->
+<header class="sticky top-0 z-30 border-b border-rule bg-paper dark:border-navy-800 dark:bg-navy-950">
+  <div class="h-1 bg-navy-800 dark:bg-accent-400" aria-hidden="true"></div>
+  <div class="container-page flex h-16 items-center justify-between gap-4">
+    <a href={localePath(lang)} class="flex min-w-0 items-center gap-2.5 text-navy-900 no-underline dark:text-white">
+      <Logo class="size-8 shrink-0" />
+      <span class="truncate font-serif text-lg leading-tight font-semibold sm:text-xl">
+        <span class="hidden sm:inline">{t.meta.siteName}</span>
+        <span class="sm:hidden">{t.meta.shortName}</span>
+      </span>
+    </a>
+
+    <nav aria-label={t.nav.mainNavigation} class="hidden items-center xl:flex">
+      {
+        links.map((l) => (
+          <a
+            href={localePath(lang, l.slug)}
+            aria-current={l.slug === slug ? 'page' : undefined}
+            class="px-3 py-2 text-[0.9375rem] font-medium text-slate-800 decoration-navy-800 decoration-2 underline-offset-[0.6em] hover:underline aria-[current=page]:font-semibold aria-[current=page]:text-navy-900 aria-[current=page]:underline dark:text-slate-200 dark:decoration-accent-400 dark:aria-[current=page]:text-white"
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-1">
+      <LanguageSwitcher lang={lang} slug={slug} buttonClass={iconButton} />
+      <ThemeToggle label={t.nav.darkMode} title={t.nav.themeToggle} buttonClass={iconButton} />
+      <a href={signHref} class="btn-primary ml-2 hidden min-h-10 px-4 py-2 text-sm sm:inline-flex">{t.nav.sign}</a>
+
+      <!-- Mobile menu: <details> works without JavaScript. -->
+      <details class="group relative xl:hidden" data-close-outside>
+        <summary class:list={[iconButton, 'list-none [&::-webkit-details-marker]:hidden']}>
+          <span class="sr-only">{t.nav.menu}</span>
+          <svg class="size-6 group-open:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="square" d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="hidden size-6 group-open:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="square" d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </summary>
+        <nav
+          aria-label={t.nav.mainNavigation}
+          class="absolute right-0 z-40 mt-2 max-h-[calc(100dvh-5.5rem)] w-72 overflow-y-auto overscroll-contain border border-rule bg-white p-2 shadow-[0_8px_24px_-12px_rgb(0_0_0/0.25)] dark:border-navy-700 dark:bg-navy-900"
+        >
+          <ul>
+            {
+              links.map((l) => (
+                <li>
+                  <a
+                    href={localePath(lang, l.slug)}
+                    aria-current={l.slug === slug ? 'page' : undefined}
+                    class="flex min-h-11 items-center border-l-4 border-transparent px-3 font-medium text-ink hover:bg-paper aria-[current=page]:border-navy-800 aria-[current=page]:font-semibold dark:text-slate-100 dark:hover:bg-navy-800 dark:aria-[current=page]:border-accent-400"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+          <a href={signHref} class="btn-primary mt-2 w-full">{t.nav.sign}</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
