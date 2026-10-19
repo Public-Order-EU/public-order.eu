@@ -1,0 +1,13 @@
+---
+/**
+ * Missing pages under /<lang>/. Cloudflare Pages serves the nearest 404.html up
+ * the requested path, so this is written to /<lang>/404.html (see astro.config.mjs).
+ */
+import NotFound from '../../components/NotFound.astro';
+import type { Locale } from '../../i18n/locales';
+import { localeStaticPaths } from '../../i18n/utils';
+
+export const getStaticPaths = localeStaticPaths;
+---
+
+<NotFound lang={Astro.params.lang as Locale} />

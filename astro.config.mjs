@@ -1,6 +1,13 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import { existsSync, readFileSync, readdirSync } from "node:fs";
+import {
+  existsSync,
+  readFileSync,
+  readdirSync,
+  renameSync,
+  rmdirSync,
+} from "node:fs";
+import { fileURLToPath } from "node:url";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
@@ -40,7 +47,7 @@ const completeLocales = new Set(
 );
 
 const CONTENT_PAGES = ["petition", "privacy", "legal"];
-const NOINDEX_PAGES = ["thanks", "delete"];
+const NOINDEX_PAGES = ["thanks", "delete", "404"];
 
 /**
  * Only list pages in the sitemap that are actually translated, so search engines
@@ -56,6 +63,29 @@ function includeInSitemap(page) {
     return existsSync(`./src/content/pages/${lang}/${slug}.md`);
   if (slug === "faq") return existsSync(`./src/content/faq/${lang}.yaml`);
   return true;
+}
+
+/**
+ * Cloudflare Pages answers a missing URL with the nearest 404.html up the path,
+ * so each locale's not-found page has to be /<lang>/404.html, not the
+ * /<lang>/404/index.html Astro writes. Moved after the build.
+ */
+function localized404() {
+  return {
+    name: "localized-404",
+    hooks: {
+      /** @param {{ dir: URL }} options */
+      "astro:build:done": ({ dir }) => {
+        const dist = fileURLToPath(dir);
+        for (const lang of locales) {
+          const from = `${dist}${lang}/404/index.html`;
+          if (!existsSync(from)) continue;
+          renameSync(from, `${dist}${lang}/404.html`);
+          rmdirSync(`${dist}${lang}/404`);
+        }
+      },
+    },
+  };
 }
 
 /**
@@ -142,6 +172,7 @@ export default defineConfig({
     },
   },
   integrations: [
+    localized404(),
     sitemap({
       filter: includeInSitemap,
       i18n: {

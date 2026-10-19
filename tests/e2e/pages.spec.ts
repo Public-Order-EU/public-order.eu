@@ -30,6 +30,29 @@ test('unknown pages return the 404 page', async ({ page }) => {
   await expect(page.locator('h1')).toBeVisible();
 });
 
+test('unknown pages under a language get the 404 page in that language', async ({ request }) => {
+  for (const lang of locales) {
+    const res = await request.get(`/${lang}/does-not-exist/`);
+    expect(res.status(), `/${lang}/does-not-exist/`).toBe(404);
+    const html = await res.text();
+    expect(html, `/${lang}/does-not-exist/`).toContain(`<html lang="${lang}"`);
+    expect(html).toContain('noindex');
+    expect(html).toContain(`href="/${lang}/"`);
+    // The language switcher offers the other homepages, not their (missing) /404/ pages.
+    expect(html).not.toMatch(/<a [^>]*href="\/[a-z]{2}\/404\//);
+  }
+  const fr = await (await request.get('/fr/does-not-exist/')).text();
+  expect(fr).toContain('Page introuvable');
+});
+
+test('unknown pages outside any language get the English 404 page', async ({ request }) => {
+  const res = await request.get('/does-not-exist/');
+  expect(res.status()).toBe(404);
+  const html = await res.text();
+  expect(html).toContain('<html lang="en"');
+  expect(html).toContain('Page not found');
+});
+
 test('the legal pages name no person, association or registration', async ({ request }) => {
   for (const lang of locales) {
     for (const path of ['legal/', 'privacy/']) {

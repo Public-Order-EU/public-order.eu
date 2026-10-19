@@ -10,6 +10,8 @@ interface Props {
 
 const { lang, slug, buttonClass } = Astro.props;
 const t = getDictionary(lang);
+// A not-found page has no counterpart in other languages: offer their homepages.
+const target = slug === '404' ? '' : slug;
 ---
 
 <!-- A <details> dropdown: accessible and fully functional without JavaScript. -->
@@ -32,7 +34,7 @@ const t = getDictionary(lang);
       localesByNativeName.map((l) => (
         <li>
           <a
-            href={localePath(l, slug)}
+            href={localePath(l, target)}
             hreflang={l}
             lang={l}
             aria-current={l === lang ? 'true' : undefined}
