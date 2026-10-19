@@ -17,10 +17,6 @@ migrations_dir = "migrations"
 [vars]
 # Public origin, used for the same-origin check on form posts.
 SITE_ORIGIN = "https://public-order.eu"
-# Store signatures that arrive without a Turnstile token (visitors without
-# JavaScript) as unverified, to be reviewed before they are counted.
-# Set to "false" to reject them instead.
-ACCEPT_UNVERIFIED = "true"
 
 # Secrets — never commit them. Set with:
 #   pnpm wrangler pages secret put TURNSTILE_SECRET_KEY

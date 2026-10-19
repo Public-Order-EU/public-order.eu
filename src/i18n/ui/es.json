@@ -85,7 +85,7 @@
     "submit": "Firmar la petición",
     "submitting": "Firmando…",
     "humanCheck": "Control de seguridad de Cloudflare Turnstile: respeta la privacidad y no usa cookies de seguimiento.",
-    "noscript": "JavaScript está desactivado. Aun así puede firmar: su firma se guardará y se contabilizará tras una comprobación manual, porque el control de seguridad automático necesita JavaScript.",
+    "noscript": "Para firmar se necesita JavaScript, porque ejecuta el control de seguridad automático que impide firmar a los robots. Active JavaScript para firmar. Puede leer todo y retirar una firma sin JavaScript.",
     "errors": {
       "generic": "Algo ha salido mal. Inténtelo de nuevo en unos instantes.",
       "network": "No hemos podido conectar con el servidor. Compruebe su conexión e inténtelo de nuevo.",
@@ -94,6 +94,8 @@
       "invalid_email": "Introduzca una dirección de correo electrónico válida o deje el campo vacío.",
       "consent_required": "Confirme su consentimiento para firmar.",
       "captcha_failed": "El control de seguridad ha fallado. Recargue la página e inténtelo de nuevo.",
+      "captcha_missing": "No se ha podido ejecutar el control de seguridad. Compruebe que JavaScript está activado y que nada bloquea challenges.cloudflare.com, recargue la página e inténtelo de nuevo.",
+      "captcha_unavailable": "El control de seguridad no está disponible en este momento. Inténtelo de nuevo dentro de unos minutos.",
       "duplicate": "Esta dirección de correo electrónico ya se ha utilizado para firmar la petición. ¡Gracias!",
       "forbidden": "Se ha rechazado esta solicitud. Firme directamente en public-order.eu.",
       "rate_limited": "Demasiados intentos. Espere unos minutos e inténtelo de nuevo."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Gracias por firmar",
     "lead": "Su firma ha quedado registrada. Gracias por defender a la vez el derecho a la protesta y la seguridad de nuestras comunidades.",
-    "pending": "Como no se ha podido ejecutar el control de seguridad automático, su firma se contabilizará tras una revisión manual.",
     "codeTitle": "Su código personal de retirada",
     "codeText": "Conserve este código por si más adelante desea retirar su firma. Lo guardamos únicamente de forma cifrada (mediante hash), por lo que no podemos mostrárselo de nuevo.",
     "codeCopy": "Copiar código",

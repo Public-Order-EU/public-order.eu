@@ -85,7 +85,7 @@
     "submit": "Skriv under uppropet",
     "submitting": "Skriver under …",
     "humanCheck": "Säkerhetskontroll med Cloudflare Turnstile – integritetsvänlig, utan spårningskakor.",
-    "noscript": "JavaScript är inaktiverat. Du kan ändå skriva under: din underskrift sparas och räknas efter en manuell kontroll, eftersom den automatiska säkerhetskontrollen kräver JavaScript.",
+    "noscript": "Det krävs JavaScript för att skriva under, eftersom den automatiska säkerhetskontrollen som håller bottar borta körs med det. Aktivera JavaScript för att skriva under. Du kan läsa allt och återkalla en underskrift utan JavaScript.",
     "errors": {
       "generic": "Något gick fel. Försök igen om en stund.",
       "network": "Vi fick ingen kontakt med servern. Kontrollera din anslutning och försök igen.",
@@ -94,6 +94,8 @@
       "invalid_email": "Ange en giltig e-postadress eller lämna fältet tomt.",
       "consent_required": "Bekräfta ditt samtycke för att skriva under.",
       "captcha_failed": "Säkerhetskontrollen misslyckades. Ladda om sidan och försök igen.",
+      "captcha_missing": "Säkerhetskontrollen kunde inte köras. Kontrollera att JavaScript är aktiverat och att inget blockerar challenges.cloudflare.com, ladda sedan om sidan och försök igen.",
+      "captcha_unavailable": "Säkerhetskontrollen är tillfälligt otillgänglig. Försök igen om några minuter.",
       "duplicate": "Den här e-postadressen har redan använts för att skriva under uppropet. Tack!",
       "forbidden": "Begäran avvisades. Skriv under direkt på public-order.eu.",
       "rate_limited": "För många försök. Vänta några minuter och försök igen."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Tack för din underskrift",
     "lead": "Din underskrift har registrerats. Tack för att du står upp för både demonstrationsrätten och tryggheten i våra samhällen.",
-    "pending": "Eftersom den automatiska säkerhetskontrollen inte kunde genomföras räknas din underskrift efter en manuell granskning.",
     "codeTitle": "Din personliga återkallelsekod",
     "codeText": "Spara koden om du vill kunna återkalla din underskrift senare. Vi lagrar den bara i krypterad form (som hash), så vi kan inte visa den för dig igen.",
     "codeCopy": "Kopiera koden",

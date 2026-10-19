@@ -32,77 +32,81 @@ const [consentBefore, consentAfter] = t.form.consent.split('{privacyLink}');
 >
   <input type="hidden" name="lang" value={lang} />
 
-  <!-- Honeypot: hidden from people, often filled in by bots. -->
-  <div class="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
-    <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
-  </div>
+  <!-- Shown until JavaScript runs (rather than <noscript>, which script blockers and
+       some browsers skip). -->
+  <p class="msg-notice in-[.js]:hidden" data-nojs-notice>{t.form.noscript}</p>
 
-  <div>
-    <label for="sig-name" class="field-label">{t.form.name}</label>
-    <input
-      id="sig-name"
-      name="name"
-      type="text"
-      class="field-input"
-      autocomplete="name"
-      required
-      minlength="2"
-      maxlength="100"
-      aria-describedby="sig-name-help"
-    />
-    <p id="sig-name-help" class="field-help">{t.form.nameHelp}</p>
-  </div>
+  <!-- Every signature needs the Turnstile check, which needs JavaScript: the fields
+       stay disabled until the script below enables them. -->
+  <fieldset disabled data-fields class="min-w-0 space-y-5 disabled:opacity-60">
+    <!-- Honeypot: hidden from people, often filled in by bots. -->
+    <div class="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
+      <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+    </div>
 
-  <div>
-    <label for="sig-country" class="field-label">{t.form.country}</label>
-    <select id="sig-country" name="country" class="field-input field-select" autocomplete="country" required>
-      <option value="" disabled selected>{t.form.countryPlaceholder}</option>
-      {countries.map((c) => <option value={c.code}>{c.name}</option>)}
-      <option value={OTHER_COUNTRY}>{t.form.otherCountry}</option>
-    </select>
-  </div>
+    <div>
+      <label for="sig-name" class="field-label">{t.form.name}</label>
+      <input
+        id="sig-name"
+        name="name"
+        type="text"
+        class="field-input"
+        autocomplete="name"
+        required
+        minlength="2"
+        maxlength="100"
+        aria-describedby="sig-name-help"
+      />
+      <p id="sig-name-help" class="field-help">{t.form.nameHelp}</p>
+    </div>
 
-  <div>
-    <label for="sig-email" class="field-label">
-      {t.form.email} <span class="font-normal text-slate-600 dark:text-slate-400">({t.form.optional})</span>
+    <div>
+      <label for="sig-country" class="field-label">{t.form.country}</label>
+      <select id="sig-country" name="country" class="field-input field-select" autocomplete="country" required>
+        <option value="" disabled selected>{t.form.countryPlaceholder}</option>
+        {countries.map((c) => <option value={c.code}>{c.name}</option>)}
+        <option value={OTHER_COUNTRY}>{t.form.otherCountry}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="sig-email" class="field-label">
+        {t.form.email} <span class="font-normal text-slate-600 dark:text-slate-400">({t.form.optional})</span>
+      </label>
+      <input
+        id="sig-email"
+        name="email"
+        type="email"
+        class="field-input"
+        autocomplete="email"
+        inputmode="email"
+        maxlength="254"
+        aria-describedby="sig-email-help"
+      />
+      <p id="sig-email-help" class="field-help">{t.form.emailHelp}</p>
+    </div>
+
+    <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-800 dark:text-slate-300">
+      <input type="checkbox" name="updates" value="1" class="field-check" />
+      <span>{t.form.updates}</span>
     </label>
-    <input
-      id="sig-email"
-      name="email"
-      type="email"
-      class="field-input"
-      autocomplete="email"
-      inputmode="email"
-      maxlength="254"
-      aria-describedby="sig-email-help"
-    />
-    <p id="sig-email-help" class="field-help">{t.form.emailHelp}</p>
-  </div>
 
-  <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-800 dark:text-slate-300">
-    <input type="checkbox" name="updates" value="1" class="field-check" />
-    <span>{t.form.updates}</span>
-  </label>
+    <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-800 dark:text-slate-300">
+      <input type="checkbox" name="consent" value="1" required class="field-check" />
+      <span>
+        {consentBefore}<a href={localePath(lang, 'privacy')} class="link" target="_blank">{t.form.privacyLinkText}<span class="sr-only"> {t.a11y.newTab}</span></a>{consentAfter}
+      </span>
+    </label>
 
-  <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-800 dark:text-slate-300">
-    <input type="checkbox" name="consent" value="1" required class="field-check" />
-    <span>
-      {consentBefore}<a href={localePath(lang, 'privacy')} class="link" target="_blank">{t.form.privacyLinkText}<span class="sr-only"> {t.a11y.newTab}</span></a>{consentAfter}
-    </span>
-  </label>
+    <div>
+      <div class="cf-turnstile" data-sitekey={siteConfig.turnstileSiteKey} data-language={lang} data-size="flexible" data-appearance="interaction-only"></div>
+      <p class="field-help text-xs">{t.form.humanCheck}</p>
+    </div>
 
-  <div>
-    <div class="cf-turnstile" data-sitekey={siteConfig.turnstileSiteKey} data-language={lang} data-size="flexible" data-appearance="interaction-only"></div>
-    <p class="field-help text-xs">{t.form.humanCheck}</p>
-  </div>
+    <p id="sig-error" data-form-error role="alert" hidden class="msg-error"></p>
 
-  <noscript>
-    <p class="msg-notice">{t.form.noscript}</p>
-  </noscript>
-
-  <p id="sig-error" data-form-error role="alert" hidden class="msg-error"></p>
-
-  <button type="submit" class="btn-primary w-full text-lg" data-submit>{t.form.submit}</button>
+    <button type="submit" class="btn-primary w-full text-lg" data-submit>{t.form.submit}</button>
+  </fieldset>
 </form>
 
 <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -112,8 +116,8 @@ const [consentBefore, consentAfter] = t.form.consent.split('{privacyLink}');
 
   const form = document.querySelector<HTMLFormElement>('[data-signature-form]');
   if (form) {
-    // Without JS the browser's built-in validation applies; with JS we show our own messages.
-    form.noValidate = true;
+    form.noValidate = true; // we show our own messages
+    form.querySelector<HTMLFieldSetElement>('[data-fields]')!.disabled = false;
     const errors = JSON.parse(form.dataset.errors || '{}') as Errors;
     const errorBox = form.querySelector<HTMLElement>('[data-form-error]')!;
     const submit = form.querySelector<HTMLButtonElement>('[data-submit]')!;
@@ -157,7 +161,7 @@ const [consentBefore, consentAfter] = t.form.consent.split('{privacyLink}');
     };
 
     // Turnstile runs invisibly and may still be working when a fast visitor submits.
-    // Wait briefly for its token; without one the signature is stored as unverified.
+    // Wait briefly for its token; without one the server refuses the signature.
     const waitForToken = async (timeoutMs = 8000) => {
       const field = () => form.querySelector<HTMLInputElement>('[name="cf-turnstile-response"]');
       const started = Date.now();
@@ -188,12 +192,11 @@ const [consentBefore, consentAfter] = t.form.consent.split('{privacyLink}');
           ok?: boolean;
           error?: string;
           code?: string;
-          verified?: boolean;
         };
 
         if (res.ok && result.ok) {
           try {
-            sessionStorage.setItem('signature', JSON.stringify({ code: result.code, verified: result.verified }));
+            sessionStorage.setItem('signature', JSON.stringify({ code: result.code }));
           } catch {
             /* the thanks page then shows a generic message */
           }

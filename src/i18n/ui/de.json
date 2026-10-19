@@ -85,7 +85,7 @@
     "submit": "Petition unterzeichnen",
     "submitting": "Wird gesendet …",
     "humanCheck": "Sicherheitsprüfung durch Cloudflare Turnstile – datenschutzfreundlich, ohne Tracking-Cookies.",
-    "noscript": "JavaScript ist deaktiviert. Sie können trotzdem unterschreiben: Ihre Unterschrift wird gespeichert und nach einer manuellen Prüfung mitgezählt, da die automatische Sicherheitsprüfung JavaScript benötigt.",
+    "noscript": "Zum Unterschreiben wird JavaScript benötigt, denn damit läuft die automatische Sicherheitsprüfung, die Bots fernhält. Bitte aktivieren Sie JavaScript, um zu unterschreiben. Lesen und eine Unterschrift zurückziehen können Sie auch ohne JavaScript.",
     "errors": {
       "generic": "Etwas ist schiefgegangen. Bitte versuchen Sie es gleich noch einmal.",
       "network": "Der Server ist nicht erreichbar. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
@@ -94,6 +94,8 @@
       "invalid_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein oder lassen Sie das Feld leer.",
       "consent_required": "Bitte bestätigen Sie Ihre Einwilligung, um zu unterschreiben.",
       "captcha_failed": "Die Sicherheitsprüfung ist fehlgeschlagen. Bitte laden Sie die Seite neu und versuchen Sie es erneut.",
+      "captcha_missing": "Die Sicherheitsprüfung konnte nicht ausgeführt werden. Bitte stellen Sie sicher, dass JavaScript aktiviert ist und nichts challenges.cloudflare.com blockiert, laden Sie die Seite neu und versuchen Sie es erneut.",
+      "captcha_unavailable": "Die Sicherheitsprüfung ist vorübergehend nicht erreichbar. Bitte versuchen Sie es in einigen Minuten erneut.",
       "duplicate": "Mit dieser E-Mail-Adresse wurde die Petition bereits unterzeichnet. Vielen Dank!",
       "forbidden": "Diese Anfrage wurde abgelehnt. Bitte unterschreiben Sie direkt auf public-order.eu.",
       "rate_limited": "Zu viele Versuche. Bitte warten Sie einige Minuten und versuchen Sie es erneut."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Vielen Dank für Ihre Unterschrift",
     "lead": "Ihre Unterschrift wurde erfasst. Vielen Dank, dass Sie sich sowohl für das Recht auf Protest als auch für die Sicherheit unserer Gemeinschaften einsetzen.",
-    "pending": "Da die automatische Sicherheitsprüfung nicht durchgeführt werden konnte, wird Ihre Unterschrift nach einer manuellen Prüfung mitgezählt.",
     "codeTitle": "Ihr persönlicher Rückzugscode",
     "codeText": "Bewahren Sie diesen Code auf, falls Sie Ihre Unterschrift später zurückziehen möchten. Wir speichern ihn nur verschlüsselt (als Hash) und können ihn Ihnen deshalb nicht noch einmal anzeigen.",
     "codeCopy": "Code kopieren",

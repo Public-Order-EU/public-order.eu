@@ -85,7 +85,7 @@
     "submit": "Parakstīt",
     "submitting": "Paraksta…",
     "humanCheck": "Drošības pārbaude, ko nodrošina Cloudflare Turnstile — saudzē privātumu, bez izsekošanas sīkdatnēm.",
-    "noscript": "JavaScript ir atspējots. Jūs tomēr varat parakstīties: jūsu paraksts tiks saglabāts un ieskaitīts pēc manuālas pārbaudes, jo automātiskajai drošības pārbaudei nepieciešams JavaScript.",
+    "noscript": "Lai parakstītos, nepieciešams JavaScript, jo ar to darbojas automātiskā drošības pārbaude, kas attur robotus. Lūdzu, ieslēdziet JavaScript, lai parakstītos. Lasīt visu un atsaukt parakstu varat arī bez JavaScript.",
     "errors": {
       "generic": "Radās kļūda. Lūdzu, pēc brīža mēģiniet vēlreiz.",
       "network": "Neizdevās sazināties ar serveri. Lūdzu, pārbaudiet interneta savienojumu un mēģiniet vēlreiz.",
@@ -94,6 +94,8 @@
       "invalid_email": "Lūdzu, ievadiet derīgu e-pasta adresi vai atstājiet lauku tukšu.",
       "consent_required": "Lai parakstītos, lūdzu, apstipriniet savu piekrišanu.",
       "captcha_failed": "Drošības pārbaude neizdevās. Lūdzu, pārlādējiet lapu un mēģiniet vēlreiz.",
+      "captcha_missing": "Drošības pārbaudi neizdevās palaist. Pārliecinieties, ka JavaScript ir ieslēgts un nekas nebloķē challenges.cloudflare.com, tad pārlādējiet lapu un mēģiniet vēlreiz.",
+      "captcha_unavailable": "Drošības pārbaude īslaicīgi nav pieejama. Lūdzu, mēģiniet vēlreiz pēc dažām minūtēm.",
       "duplicate": "Ar šo e-pasta adresi petīcija jau ir parakstīta. Paldies!",
       "forbidden": "Šis pieprasījums tika noraidīts. Lūdzu, parakstieties tieši vietnē public-order.eu.",
       "rate_limited": "Pārāk daudz mēģinājumu. Lūdzu, uzgaidiet dažas minūtes un mēģiniet vēlreiz."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Paldies par parakstu",
     "lead": "Jūsu paraksts ir reģistrēts. Paldies, ka iestājaties gan par tiesībām protestēt, gan par mūsu kopienu drošību.",
-    "pending": "Tā kā automātisko drošības pārbaudi nevarēja veikt, jūsu paraksts tiks ieskaitīts pēc manuālas pārskatīšanas.",
     "codeTitle": "Jūsu personiskais atsaukšanas kods",
     "codeText": "Saglabājiet šo kodu, ja vēlāk vēlēsieties atsaukt savu parakstu. Mēs to glabājam tikai šifrētā (jaucējkoda) veidā, tāpēc nevaram to parādīt vēlreiz.",
     "codeCopy": "Kopēt kodu",

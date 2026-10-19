@@ -85,7 +85,7 @@
     "submit": "Onderteken de petitie",
     "submitting": "Bezig met ondertekenen…",
     "humanCheck": "Beveiligingscontrole door Cloudflare Turnstile – privacyvriendelijk, zonder trackingcookies.",
-    "noscript": "JavaScript is uitgeschakeld. U kunt toch ondertekenen: uw handtekening wordt opgeslagen en na een handmatige controle meegeteld, omdat de automatische beveiligingscontrole JavaScript nodig heeft.",
+    "noscript": "Ondertekenen vereist JavaScript, omdat daarmee de automatische beveiligingscontrole draait die bots buitenhoudt. Schakel JavaScript in om te ondertekenen. Lezen en een handtekening intrekken kan ook zonder JavaScript.",
     "errors": {
       "generic": "Er is iets misgegaan. Probeer het over enkele ogenblikken opnieuw.",
       "network": "We konden de server niet bereiken. Controleer uw verbinding en probeer het opnieuw.",
@@ -94,6 +94,8 @@
       "invalid_email": "Vul een geldig e-mailadres in of laat het veld leeg.",
       "consent_required": "Bevestig uw toestemming om te ondertekenen.",
       "captcha_failed": "De beveiligingscontrole is mislukt. Laad de pagina opnieuw en probeer het nogmaals.",
+      "captcha_missing": "De beveiligingscontrole kon niet worden uitgevoerd. Controleer of JavaScript is ingeschakeld en niets challenges.cloudflare.com blokkeert, laad de pagina opnieuw en probeer het nogmaals.",
+      "captcha_unavailable": "De beveiligingscontrole is tijdelijk niet beschikbaar. Probeer het over een paar minuten opnieuw.",
       "duplicate": "Met dit e-mailadres is de petitie al ondertekend. Dank u wel!",
       "forbidden": "Dit verzoek is geweigerd. Onderteken rechtstreeks op public-order.eu.",
       "rate_limited": "Te veel pogingen. Wacht een paar minuten en probeer het opnieuw."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Bedankt voor uw handtekening",
     "lead": "Uw handtekening is geregistreerd. Bedankt dat u opkomt voor zowel het recht om te protesteren als de veiligheid van onze gemeenschappen.",
-    "pending": "Omdat de automatische beveiligingscontrole niet kon worden uitgevoerd, wordt uw handtekening na een handmatige beoordeling meegeteld.",
     "codeTitle": "Uw persoonlijke intrekkingscode",
     "codeText": "Bewaar deze code als u uw handtekening later misschien wilt intrekken. We slaan hem alleen versleuteld (als hash) op en kunnen hem u dus niet opnieuw tonen.",
     "codeCopy": "Code kopiëren",

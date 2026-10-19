@@ -215,7 +215,7 @@ Fixed costs outside Cloudflare's usage pricing:
 
 ## Useful SQL
 
-The `just stats`, `countries`, `pending`, `recount`, `find-email` and `sql` recipes cover
+The `just stats`, `countries`, `recount`, `find-email` and `sql` recipes cover
 most of these queries. Pass `remote` as the last argument to query production.
 
 Run these with `pnpm wrangler d1 execute public-order-eu --remote --command "…"`.
@@ -226,18 +226,6 @@ Add `--local` instead of `--remote` to work on the local database.
 ```sql
 UPDATE stats SET value = (SELECT COUNT(*) FROM signatures WHERE verified = 1)
  WHERE key = 'verified_count';
-```
-
-**Review signatures sent without Turnstile** (visitors without JavaScript):
-
-```sql
-SELECT id, name, country, created_at FROM signatures WHERE verified = 0 ORDER BY id;
-
--- Accept the ones that look genuine (adjust the id list), then recount (above):
-UPDATE signatures SET verified = 1 WHERE verified = 0 AND id IN (12, 15, 19);
-
--- Delete obvious spam:
-DELETE FROM signatures WHERE verified = 0 AND id IN (13, 14);
 ```
 
 **Totals per country**, for the hand-over:

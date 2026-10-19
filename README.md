@@ -5,7 +5,7 @@ Astro site served by Cloudflare Pages, with a small Pages Functions API that sto
 signatures in Cloudflare D1 and checks them with Cloudflare Turnstile.
 
 - **Static first.** Every page is pre-rendered HTML. The only server code is the signature
-  API. The form works without JavaScript.
+  API. Everything works without JavaScript except signing, which needs the Turnstile check.
 - **15 languages:** en, fr, de, nl, es, it, pt, pl, da, sv, no, fi, et, lv, lt. English
   is the source. Languages that are not yet translated fall back to English and say so.
 - **Minimal data.** We collect a name, a country and an optional e-mail address. We do
@@ -56,7 +56,6 @@ run against production instead of the local database.
 | `just migrate [remote]` | Applies the D1 migrations |
 | `just stats [remote]` | Counter value and signature totals |
 | `just countries [remote]` | Verified signatures per country |
-| `just pending [remote]` | Signatures without Turnstile, waiting for review |
 | `just recount [remote]` | Resets the counter to the real number of verified signatures |
 | `just fake-signatures [1234]` | Adds fake verified signatures to the **local** database (never remote), to see the counter |
 | `just clear-fake-signatures` | Removes them again |
@@ -157,7 +156,7 @@ CHROMIUM_PATH=/usr/bin/chromium pnpm exec playwright test   # use a system brows
 The browser tests start their own server (`tests/e2e/server.mjs`): a fresh local D1
 database, the built site with the Functions through `wrangler pages dev` on port 8790,
 and a mock Turnstile endpoint on port 8799. Nothing talks to Cloudflare. They cover every
-page in every language, signing with and without JavaScript, duplicates, withdrawal,
+page in every language, signing, the form without JavaScript, duplicates, withdrawal,
 the security headers, and an automated accessibility scan (axe, WCAG 2.2 AA) in light
 and dark mode.
 
@@ -172,19 +171,18 @@ without the fonts installed, and it writes the PNGs and the Open Graph image.
 
 ## How signing works
 
-1. The visitor fills in the form. With JavaScript, Turnstile runs invisibly and the form
-   is sent with `fetch`. Without JavaScript, it is a normal HTML form post.
+1. The visitor fills in the form. Turnstile runs invisibly and the form is sent with
+   `fetch`. Without JavaScript the form stays disabled and a notice explains why.
 2. `POST /api/sign` checks, in order: the origin, the body size, a honeypot field, the
    fields themselves, and then the Turnstile token.
 3. The signature is stored. The e-mail address is kept in plain text only if the signer
    asked for updates. Otherwise only a salted hash is kept, to prevent duplicates. The
-   counter is incremented in the same transaction, but only for verified signatures.
+   counter is incremented in the same transaction.
 4. The signer receives a **withdrawal code** (`XXXX-XXXX-XXXX-XXXX`). Only its hash is
    stored. Entering it on `/<lang>/delete/` removes the signature immediately.
 
-Signatures sent without a Turnstile token (usually visitors without JavaScript) are stored
-as **unverified** and are not counted until you review them. Set
-`ACCEPT_UNVERIFIED = "false"` in `wrangler.toml` to reject them instead.
+A signature without a valid Turnstile token is rejected: nothing is stored. If Turnstile
+itself cannot be reached, the visitor is asked to try again later.
 
 ## Further documentation
 

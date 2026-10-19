@@ -85,7 +85,7 @@
     "submit": "Underskriv",
     "submitting": "Underskriver…",
     "humanCheck": "Sikkerhedskontrol fra Cloudflare Turnstile – privatlivsvenlig og uden sporingscookies.",
-    "noscript": "JavaScript er slået fra. Du kan stadig skrive under: din underskrift bliver gemt og talt med efter en manuel kontrol, fordi den automatiske sikkerhedskontrol kræver JavaScript.",
+    "noscript": "Det kræver JavaScript at skrive under, fordi det kører den automatiske sikkerhedskontrol, der holder bots ude. Slå JavaScript til for at skrive under. Du kan læse alt og trække en underskrift tilbage uden JavaScript.",
     "errors": {
       "generic": "Noget gik galt. Prøv igen om et øjeblik.",
       "network": "Vi kunne ikke få forbindelse til serveren. Tjek din internetforbindelse, og prøv igen.",
@@ -94,6 +94,8 @@
       "invalid_email": "Angiv en gyldig e-mailadresse, eller lad feltet stå tomt.",
       "consent_required": "Bekræft dit samtykke for at skrive under.",
       "captcha_failed": "Sikkerhedskontrollen mislykkedes. Genindlæs siden, og prøv igen.",
+      "captcha_missing": "Sikkerhedskontrollen kunne ikke køre. Sørg for, at JavaScript er slået til, og at intet blokerer challenges.cloudflare.com, genindlæs derefter siden, og prøv igen.",
+      "captcha_unavailable": "Sikkerhedskontrollen er midlertidigt utilgængelig. Prøv igen om et par minutter.",
       "duplicate": "Denne e-mailadresse er allerede brugt til at skrive under. Tak!",
       "forbidden": "Anmodningen blev afvist. Skriv under direkte på public-order.eu.",
       "rate_limited": "For mange forsøg. Vent et par minutter, og prøv igen."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Tak for din underskrift",
     "lead": "Din underskrift er registreret. Tak, fordi du står op for både retten til at demonstrere og vores lokalsamfunds sikkerhed.",
-    "pending": "Fordi den automatiske sikkerhedskontrol ikke kunne gennemføres, bliver din underskrift talt med efter en manuel gennemgang.",
     "codeTitle": "Din personlige tilbagetrækningskode",
     "codeText": "Gem denne kode, hvis du senere vil trække din underskrift tilbage. Vi gemmer den kun i krypteret (hashet) form og kan derfor ikke vise den til dig igen.",
     "codeCopy": "Kopiér kode",

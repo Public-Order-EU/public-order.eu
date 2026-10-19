@@ -41,17 +41,3 @@ test('a malformed code is rejected', async ({ page }) => {
   await page.locator('[data-delete-form] button[type="submit"]').click();
   await expect(page.locator('[data-result]')).toHaveText(en.delete.invalid);
 });
-
-test('withdrawing an unverified signature does not change the counter', async ({ request }) => {
-  const { name } = unique('withdraw-unverified');
-  const form = { name, country: 'BE', consent: '1', lang: 'en' };
-  const signed = await request.post('/api/sign', { form, headers: { Accept: 'application/json' } });
-  const { code, verified } = await signed.json();
-  expect(verified).toBe(false);
-
-  const before = counter();
-  const res = await request.post('/api/delete', { form: { code, lang: 'en' }, headers: { Accept: 'application/json' } });
-  expect(res.status()).toBe(200);
-  expect(signaturesByName(name)).toHaveLength(0);
-  expect(counter()).toBe(before);
-});

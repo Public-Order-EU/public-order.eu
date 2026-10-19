@@ -85,7 +85,7 @@
     "submit": "Pasirašyti peticiją",
     "submitting": "Pasirašoma…",
     "humanCheck": "Saugumo patikra „Cloudflare Turnstile“ — draugiška privatumui, be sekimo slapukų.",
-    "noscript": "„JavaScript“ išjungtas. Vis tiek galite pasirašyti: jūsų parašas bus išsaugotas ir įskaičiuotas po patikros rankiniu būdu, nes automatinei saugumo patikrai reikia „JavaScript“.",
+    "noscript": "Norint pasirašyti, reikia „JavaScript“, nes su juo veikia automatinė saugumo patikra, sauganti nuo robotų. Įjunkite „JavaScript“, kad galėtumėte pasirašyti. Skaityti viską ir atšaukti parašą galite ir be „JavaScript“.",
     "errors": {
       "generic": "Kažkas nepavyko. Bandykite dar kartą po akimirkos.",
       "network": "Nepavyko susisiekti su serveriu. Patikrinkite ryšį ir bandykite dar kartą.",
@@ -94,6 +94,8 @@
       "invalid_email": "Įveskite galiojantį el. pašto adresą arba palikite laukelį tuščią.",
       "consent_required": "Norėdami pasirašyti, patvirtinkite sutikimą.",
       "captcha_failed": "Saugumo patikra nepavyko. Iš naujo įkelkite puslapį ir bandykite dar kartą.",
+      "captcha_missing": "Nepavyko paleisti saugumo patikros. Įsitikinkite, kad „JavaScript“ įjungtas ir niekas neblokuoja challenges.cloudflare.com, tada iš naujo įkelkite puslapį ir bandykite dar kartą.",
+      "captcha_unavailable": "Saugumo patikra laikinai nepasiekiama. Bandykite dar kartą po kelių minučių.",
       "duplicate": "Šis el. pašto adresas jau panaudotas peticijai pasirašyti. Dėkojame!",
       "forbidden": "Ši užklausa buvo atmesta. Pasirašykite tiesiogiai svetainėje public-order.eu.",
       "rate_limited": "Per daug bandymų. Palaukite kelias minutes ir bandykite dar kartą."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Dėkojame, kad pasirašėte",
     "lead": "Jūsų parašas užregistruotas. Dėkojame, kad stojate ginti ir teisės protestuoti, ir mūsų bendruomenių saugumo.",
-    "pending": "Kadangi automatinės saugumo patikros atlikti nepavyko, jūsų parašas bus įskaičiuotas po patikros rankiniu būdu.",
     "codeTitle": "Jūsų asmeninis atšaukimo kodas",
     "codeText": "Išsaugokite šį kodą, jei vėliau norėtumėte atšaukti parašą. Jį saugome tik užšifruotą (kaip maišos reikšmę), todėl negalime jo parodyti dar kartą.",
     "codeCopy": "Kopijuoti kodą",

@@ -85,7 +85,7 @@
     "submit": "Firmare la petizione",
     "submitting": "Firma in corso…",
     "humanCheck": "Controllo di sicurezza di Cloudflare Turnstile: rispettoso della privacy, senza cookie di tracciamento.",
-    "noscript": "JavaScript è disattivato. Può comunque firmare: la sua firma sarà registrata e conteggiata dopo una verifica manuale, perché il controllo di sicurezza automatico richiede JavaScript.",
+    "noscript": "Per firmare serve JavaScript, perché esegue il controllo di sicurezza automatico che tiene lontani i bot. Attivi JavaScript per firmare. Può leggere tutto e ritirare una firma anche senza JavaScript.",
     "errors": {
       "generic": "Si è verificato un errore. Riprovi tra qualche istante.",
       "network": "Impossibile raggiungere il server. Controlli la connessione e riprovi.",
@@ -94,6 +94,8 @@
       "invalid_email": "Inserisca un indirizzo e-mail valido oppure lasci il campo vuoto.",
       "consent_required": "Confermi il suo consenso per firmare.",
       "captcha_failed": "Il controllo di sicurezza non è riuscito. Ricarichi la pagina e riprovi.",
+      "captcha_missing": "Non è stato possibile eseguire il controllo di sicurezza. Verifichi che JavaScript sia attivo e che nulla blocchi challenges.cloudflare.com, poi ricarichi la pagina e riprovi.",
+      "captcha_unavailable": "Il controllo di sicurezza è momentaneamente non disponibile. Riprovi tra qualche minuto.",
       "duplicate": "Questo indirizzo e-mail è già stato usato per firmare la petizione. Grazie!",
       "forbidden": "La richiesta è stata respinta. Firmi direttamente su public-order.eu.",
       "rate_limited": "Troppi tentativi. Attenda qualche minuto e riprovi."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Grazie per aver firmato",
     "lead": "La sua firma è stata registrata. Grazie per l’impegno a favore sia del diritto di manifestare sia della sicurezza delle nostre comunità.",
-    "pending": "Poiché non è stato possibile eseguire il controllo di sicurezza automatico, la sua firma sarà conteggiata dopo una verifica manuale.",
     "codeTitle": "Il suo codice personale di ritiro",
     "codeText": "Conservi questo codice se desidera ritirare la firma in futuro. Lo memorizziamo solo in forma cifrata (hash), quindi non possiamo mostrarglielo di nuovo.",
     "codeCopy": "Copiare il codice",

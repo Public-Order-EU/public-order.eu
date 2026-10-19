@@ -7,4 +7,6 @@ export const E2E = {
   salt: 'e2e-test-salt',
   /** The mock siteverify endpoint accepts this token and rejects every other one. */
   passToken: 'test-pass',
+  /** …and answers this one with a server error, as if Turnstile were down. */
+  downToken: 'test-down',
 };

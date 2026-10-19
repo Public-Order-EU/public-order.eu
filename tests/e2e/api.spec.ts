@@ -1,10 +1,10 @@
 /** The API directly: status codes, origin checks, headers, caching. */
 import { E2E } from './config.mjs';
-import { expect, test, unique } from './fixtures';
-import { signaturesByName } from './db';
+import { en, escapeHtml, expect, test, unique } from './fixtures';
+import { counter, signaturesByName } from './db';
 
 const JSON_HEADERS = { Accept: 'application/json' };
-const valid = (name: string) => ({ name, country: 'BE', consent: '1', lang: 'en' });
+const valid = (name: string, token = E2E.passToken) => ({ name, country: 'BE', consent: '1', lang: 'en', 'cf-turnstile-response': token });
 
 const expectSecurityHeaders = (headers: Record<string, string>) => {
   expect(headers['content-security-policy']).toContain("default-src 'self'");
@@ -40,6 +40,31 @@ test('invalid fields are rejected with 400 and the reason', async ({ request }) 
     expect(await res.json()).toEqual({ ok: false, error });
     expectSecurityHeaders(res.headers());
   }
+});
+
+test('a signature without a valid Turnstile token is never stored', async ({ request }) => {
+  const before = counter();
+  const cases: [string, number, string][] = [
+    ['', 400, 'captcha_missing'],
+    ['forged', 400, 'captcha_failed'],
+    [E2E.downToken, 503, 'captcha_unavailable'],
+  ];
+  for (const [token, status, error] of cases) {
+    const { name } = unique(`token-${error}`);
+    const res = await request.post('/api/sign', { form: valid(name, token), headers: JSON_HEADERS });
+    expect(res.status(), error).toBe(status);
+    expect(await res.json()).toEqual({ ok: false, error });
+    expect(signaturesByName(name)).toHaveLength(0);
+  }
+
+  // A plain form post (no JavaScript) gets the same answer as a page.
+  const { name } = unique('token-html');
+  const html = await request.post('/api/sign', { form: valid(name, '') });
+  expect(html.status()).toBe(400);
+  expect(html.headers()['content-type']).toContain('text/html');
+  expect(await html.text()).toContain(escapeHtml(en.form.errors.captcha_missing));
+  expect(signaturesByName(name)).toHaveLength(0);
+  expect(counter()).toBe(before);
 });
 
 test('posts from another site are rejected (JSON and HTML)', async ({ request }) => {

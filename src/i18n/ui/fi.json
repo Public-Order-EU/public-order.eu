@@ -85,7 +85,7 @@
     "submit": "Allekirjoita adressi",
     "submitting": "Allekirjoitetaan…",
     "humanCheck": "Cloudflare Turnstile -turvatarkistus – yksityisyyttä kunnioittava, ei seurantaevästeitä.",
-    "noscript": "JavaScript on poistettu käytöstä. Voit silti allekirjoittaa: allekirjoituksesi tallennetaan ja lasketaan käsin tehdyn tarkistuksen jälkeen, koska automaattinen turvatarkistus vaatii JavaScriptin.",
+    "noscript": "Allekirjoittaminen vaatii JavaScriptin, koska sillä toimii automaattinen turvatarkistus, joka pitää botit poissa. Ota JavaScript käyttöön allekirjoittaaksesi. Voit lukea kaiken ja perua allekirjoituksen ilman JavaScriptiä.",
     "errors": {
       "generic": "Jokin meni pieleen. Yritä hetken kuluttua uudelleen.",
       "network": "Palvelimeen ei saatu yhteyttä. Tarkista verkkoyhteytesi ja yritä uudelleen.",
@@ -94,6 +94,8 @@
       "invalid_email": "Anna kelvollinen sähköpostiosoite tai jätä kenttä tyhjäksi.",
       "consent_required": "Vahvista suostumuksesi allekirjoittaaksesi.",
       "captcha_failed": "Turvatarkistus epäonnistui. Lataa sivu uudelleen ja yritä uudelleen.",
+      "captcha_missing": "Turvatarkistusta ei voitu suorittaa. Varmista, että JavaScript on käytössä eikä mikään estä osoitetta challenges.cloudflare.com, lataa sitten sivu uudelleen ja yritä uudelleen.",
+      "captcha_unavailable": "Turvatarkistus ei ole tilapäisesti käytettävissä. Yritä uudelleen muutaman minuutin kuluttua.",
       "duplicate": "Tällä sähköpostiosoitteella on jo allekirjoitettu adressi. Kiitos!",
       "forbidden": "Pyyntö hylättiin. Allekirjoita suoraan osoitteessa public-order.eu.",
       "rate_limited": "Liian monta yritystä. Odota muutama minuutti ja yritä uudelleen."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Kiitos allekirjoituksestasi",
     "lead": "Allekirjoituksesi on tallennettu. Kiitos, että puolustat sekä mielenosoitusoikeutta että yhteisöjemme turvallisuutta.",
-    "pending": "Koska automaattista turvatarkistusta ei voitu suorittaa, allekirjoituksesi lasketaan käsin tehdyn tarkistuksen jälkeen.",
     "codeTitle": "Henkilökohtainen peruutuskoodisi",
     "codeText": "Säilytä tämä koodi, jos haluat ehkä myöhemmin perua allekirjoituksesi. Tallennamme sen vain salatussa (tiivistetyssä) muodossa, joten emme voi näyttää sitä sinulle uudelleen.",
     "codeCopy": "Kopioi koodi",

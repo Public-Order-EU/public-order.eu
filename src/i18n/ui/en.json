@@ -85,7 +85,7 @@
     "submit": "Sign the petition",
     "submitting": "Signing…",
     "humanCheck": "Security check by Cloudflare Turnstile — privacy-friendly, no tracking cookies.",
-    "noscript": "JavaScript is disabled. You can still sign: your signature will be stored and counted after a manual check, because the automated security check needs JavaScript.",
+    "noscript": "Signing needs JavaScript, because it runs the automated security check that keeps bots out. Please enable JavaScript to sign. You can read everything and withdraw a signature without it.",
     "errors": {
       "generic": "Something went wrong. Please try again in a moment.",
       "network": "We could not reach the server. Please check your connection and try again.",
@@ -94,6 +94,8 @@
       "invalid_email": "Please enter a valid e-mail address, or leave the field empty.",
       "consent_required": "Please confirm your consent to sign.",
       "captcha_failed": "The security check failed. Please reload the page and try again.",
+      "captcha_missing": "The security check could not run. Please make sure JavaScript is enabled and nothing blocks challenges.cloudflare.com, then reload the page and try again.",
+      "captcha_unavailable": "The security check is temporarily unavailable. Please try again in a few minutes.",
       "duplicate": "This e-mail address has already been used to sign the petition. Thank you!",
       "forbidden": "This request was rejected. Please sign directly on public-order.eu.",
       "rate_limited": "Too many attempts. Please wait a few minutes and try again."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Thank you for signing",
     "lead": "Your signature has been recorded. Thank you for standing up for both the right to protest and the safety of our communities.",
-    "pending": "Because the automated security check could not run, your signature will be counted after a manual review.",
     "codeTitle": "Your personal withdrawal code",
     "codeText": "Keep this code if you may want to withdraw your signature later. We store it only in encrypted (hashed) form, so we cannot show it to you again.",
     "codeCopy": "Copy code",

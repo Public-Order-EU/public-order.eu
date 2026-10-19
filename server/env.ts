@@ -12,12 +12,6 @@ export interface Env {
   HASH_SALT: string;
   /** Public origin, e.g. https://public-order.eu. */
   SITE_ORIGIN: string;
-  /**
-   * "true" (default) stores signatures that come without a Turnstile token —
-   * e.g. from visitors without JavaScript — as unverified, for manual review.
-   * Set to "false" to reject them instead (useful under a spam wave).
-   */
-  ACCEPT_UNVERIFIED?: string;
   /** Tests only: a loopback URL of a mock siteverify endpoint (see server/turnstile.ts). */
   TURNSTILE_VERIFY_URL?: string;
 }

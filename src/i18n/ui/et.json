@@ -85,7 +85,7 @@
     "submit": "Allkirjasta",
     "submitting": "Allkirjastan…",
     "humanCheck": "Turvakontroll: Cloudflare Turnstile – privaatsust säästev, ilma jälgimisküpsisteta.",
-    "noscript": "JavaScript on keelatud. Saate siiski allkirjastada: teie allkiri salvestatakse ja arvestatakse pärast käsitsi kontrolli, sest automaatne turvakontroll vajab JavaScripti.",
+    "noscript": "Allkirjastamiseks on vaja JavaScripti, sest selle abil töötab automaatne turvakontroll, mis hoiab robotid eemal. Allkirjastamiseks lubage JavaScript. Lugeda ja allkirja tagasi võtta saate ka ilma JavaScriptita.",
     "errors": {
       "generic": "Midagi läks valesti. Proovige hetke pärast uuesti.",
       "network": "Serveriga ei õnnestunud ühendust luua. Kontrollige internetiühendust ja proovige uuesti.",
@@ -94,6 +94,8 @@
       "invalid_email": "Sisestage kehtiv e-posti aadress või jätke väli tühjaks.",
       "consent_required": "Allkirjastamiseks kinnitage oma nõusolek.",
       "captcha_failed": "Turvakontroll ebaõnnestus. Laadige leht uuesti ja proovige veel kord.",
+      "captcha_missing": "Turvakontrolli ei õnnestunud käivitada. Veenduge, et JavaScript on lubatud ja miski ei blokeeri aadressi challenges.cloudflare.com, seejärel laadige leht uuesti ja proovige veel kord.",
+      "captcha_unavailable": "Turvakontroll pole ajutiselt saadaval. Proovige mõne minuti pärast uuesti.",
       "duplicate": "Selle e-posti aadressiga on petitsioon juba allkirjastatud. Täname!",
       "forbidden": "Päring lükati tagasi. Allkirjastage otse veebilehel public-order.eu.",
       "rate_limited": "Liiga palju katseid. Oodake mõni minut ja proovige uuesti."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Täname allkirja eest",
     "lead": "Teie allkiri on registreeritud. Täname, et seisate nii õiguse protestida kui ka meie kogukondade turvalisuse eest.",
-    "pending": "Kuna automaatset turvakontrolli ei õnnestunud teha, arvestatakse teie allkiri pärast käsitsi läbivaatamist.",
     "codeTitle": "Teie isiklik tagasivõtmiskood",
     "codeText": "Hoidke see kood alles, kui soovite oma allkirja hiljem tagasi võtta. Salvestame selle ainult krüpteeritud (räsitud) kujul, mistõttu me ei saa seda teile uuesti näidata.",
     "codeCopy": "Kopeeri kood",

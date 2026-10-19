@@ -85,7 +85,7 @@
     "submit": "Skriv under",
     "submitting": "Skriver under…",
     "humanCheck": "Sikkerhetskontroll fra Cloudflare Turnstile – personvernvennlig og uten sporingsinformasjonskapsler.",
-    "noscript": "JavaScript er slått av. Du kan fortsatt skrive under: underskriften din blir lagret og telt etter en manuell kontroll, fordi den automatiske sikkerhetskontrollen krever JavaScript.",
+    "noscript": "Det kreves JavaScript for å skrive under, fordi det kjører den automatiske sikkerhetskontrollen som holder roboter ute. Slå på JavaScript for å skrive under. Du kan lese alt og trekke tilbake en underskrift uten JavaScript.",
     "errors": {
       "generic": "Noe gikk galt. Prøv igjen om litt.",
       "network": "Vi fikk ikke kontakt med serveren. Sjekk tilkoblingen din og prøv igjen.",
@@ -94,6 +94,8 @@
       "invalid_email": "Skriv inn en gyldig e-postadresse, eller la feltet stå tomt.",
       "consent_required": "Bekreft samtykket ditt for å skrive under.",
       "captcha_failed": "Sikkerhetskontrollen mislyktes. Last inn siden på nytt og prøv igjen.",
+      "captcha_missing": "Sikkerhetskontrollen kunne ikke kjøres. Sjekk at JavaScript er slått på og at ingenting blokkerer challenges.cloudflare.com, last deretter inn siden på nytt og prøv igjen.",
+      "captcha_unavailable": "Sikkerhetskontrollen er midlertidig utilgjengelig. Prøv igjen om noen minutter.",
       "duplicate": "Denne e-postadressen er allerede brukt til å skrive under. Takk!",
       "forbidden": "Forespørselen ble avvist. Skriv under direkte på public-order.eu.",
       "rate_limited": "For mange forsøk. Vent noen minutter og prøv igjen."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Takk for at du skrev under",
     "lead": "Underskriften din er registrert. Takk for at du står opp for både retten til å demonstrere og tryggheten i lokalsamfunnene våre.",
-    "pending": "Fordi den automatiske sikkerhetskontrollen ikke kunne utføres, blir underskriften din telt etter en manuell gjennomgang.",
     "codeTitle": "Din personlige tilbaketrekkingskode",
     "codeText": "Ta vare på denne koden hvis du senere vil trekke underskriften din tilbake. Vi lagrer den bare i kryptert (hashet) form, så vi kan ikke vise den til deg igjen.",
     "codeCopy": "Kopier kode",

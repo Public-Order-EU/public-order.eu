@@ -39,6 +39,7 @@ const mock = createServer((req, res) => {
   req.on('end', () => {
     // The body is multipart/form-data; the token is the "response" field.
     const token = /name="response"\r\n\r\n([^\r]*)/.exec(body)?.[1];
+    if (token === E2E.downToken) return res.writeHead(500).end();
     const success = token === E2E.passToken;
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(success ? { success } : { success, 'error-codes': ['invalid-input-response'] }));
@@ -51,7 +52,6 @@ const bindings = {
   SITE_ORIGIN: E2E.origin,
   TURNSTILE_SECRET_KEY: 'e2e-secret',
   TURNSTILE_VERIFY_URL: `http://127.0.0.1:${E2E.mockPort}/siteverify`,
-  ACCEPT_UNVERIFIED: 'true',
 };
 const site = spawn(
   wrangler,

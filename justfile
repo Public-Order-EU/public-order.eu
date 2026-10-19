@@ -65,10 +65,6 @@ stats target="local":
 countries target="local":
     pnpm wrangler d1 execute {{db}} --{{target}} --command "SELECT country, COUNT(*) AS signatures FROM signatures WHERE verified = 1 GROUP BY country ORDER BY signatures DESC;"
 
-# Signatures sent without Turnstile, waiting for review
-pending target="local":
-    pnpm wrangler d1 execute {{db}} --{{target}} --command "SELECT id, name, country, created_at FROM signatures WHERE verified = 0 ORDER BY id;"
-
 # Reset the counter to the real number of verified signatures
 recount target="local":
     pnpm wrangler d1 execute {{db}} --{{target}} --command "UPDATE stats SET value = (SELECT COUNT(*) FROM signatures WHERE verified = 1) WHERE key = 'verified_count';"

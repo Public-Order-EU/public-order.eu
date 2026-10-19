@@ -8,6 +8,8 @@ export type SignError =
   | 'invalid_email'
   | 'consent_required'
   | 'captcha_failed'
+  | 'captcha_missing'
+  | 'captcha_unavailable'
   | 'duplicate'
   | 'forbidden'
   | 'rate_limited'

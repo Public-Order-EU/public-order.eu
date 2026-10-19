@@ -85,7 +85,7 @@
     "submit": "Signer la pétition",
     "submitting": "Signature en cours…",
     "humanCheck": "Contrôle de sécurité par Cloudflare Turnstile : respectueux de la vie privée, sans cookies de suivi.",
-    "noscript": "JavaScript est désactivé. Vous pouvez tout de même signer : votre signature sera enregistrée et comptabilisée après une vérification manuelle, car le contrôle de sécurité automatique nécessite JavaScript.",
+    "noscript": "La signature nécessite JavaScript, car il exécute le contrôle de sécurité automatique qui empêche les robots de signer. Veuillez activer JavaScript pour signer. Vous pouvez tout lire et retirer une signature sans JavaScript.",
     "errors": {
       "generic": "Une erreur s’est produite. Veuillez réessayer dans un instant.",
       "network": "Impossible de joindre le serveur. Veuillez vérifier votre connexion et réessayer.",
@@ -94,6 +94,8 @@
       "invalid_email": "Veuillez saisir une adresse e-mail valide ou laisser le champ vide.",
       "consent_required": "Veuillez confirmer votre consentement pour signer.",
       "captcha_failed": "Le contrôle de sécurité a échoué. Veuillez recharger la page et réessayer.",
+      "captcha_missing": "Le contrôle de sécurité n'a pas pu s'exécuter. Vérifiez que JavaScript est activé et que rien ne bloque challenges.cloudflare.com, puis rechargez la page et réessayez.",
+      "captcha_unavailable": "Le contrôle de sécurité est temporairement indisponible. Veuillez réessayer dans quelques minutes.",
       "duplicate": "Cette adresse e-mail a déjà servi à signer la pétition. Merci !",
       "forbidden": "Cette requête a été rejetée. Veuillez signer directement sur public-order.eu.",
       "rate_limited": "Trop de tentatives. Veuillez patienter quelques minutes avant de réessayer."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Merci d’avoir signé",
     "lead": "Votre signature a bien été enregistrée. Merci de vous engager à la fois pour le droit de manifester et pour la sécurité de nos communautés.",
-    "pending": "Le contrôle de sécurité automatique n’ayant pas pu s’exécuter, votre signature sera comptabilisée après une vérification manuelle.",
     "codeTitle": "Votre code personnel de retrait",
     "codeText": "Conservez ce code si vous souhaitez retirer votre signature plus tard. Nous ne le conservons que sous forme chiffrée (hachée) ; nous ne pourrons donc pas vous l’afficher à nouveau.",
     "codeCopy": "Copier le code",

@@ -46,6 +46,10 @@ export const unique = (label: string) => {
   return { name: `E2E ${label} ${id}`, email: `e2e-${id}@example.eu` };
 };
 
+/** As server/http.ts escapes text in the pages rendered by the Functions. */
+export const escapeHtml = (value: string) =>
+  value.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+
 export const CODE_RE = /^[0-9A-HJKMNP-TV-Z]{4}(-[0-9A-HJKMNP-TV-Z]{4}){3}$/;
 
 export const test = base.extend<{ thirdParty: string[]; cookiesSet: string[] }>({

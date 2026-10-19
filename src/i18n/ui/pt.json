@@ -85,7 +85,7 @@
     "submit": "Assinar a petição",
     "submitting": "A assinar…",
     "humanCheck": "Verificação de segurança do Cloudflare Turnstile: respeita a privacidade e não utiliza cookies de rastreamento.",
-    "noscript": "O JavaScript está desativado. Pode ainda assim assinar: a sua assinatura será guardada e contabilizada após uma verificação manual, porque a verificação de segurança automática necessita de JavaScript.",
+    "noscript": "Para assinar é necessário JavaScript, porque executa a verificação de segurança automática que impede os robôs de assinar. Ative o JavaScript para assinar. Pode ler tudo e retirar uma assinatura sem JavaScript.",
     "errors": {
       "generic": "Ocorreu um erro. Tente novamente dentro de instantes.",
       "network": "Não foi possível contactar o servidor. Verifique a ligação e tente novamente.",
@@ -94,6 +94,8 @@
       "invalid_email": "Introduza um endereço de e-mail válido ou deixe o campo em branco.",
       "consent_required": "Confirme o seu consentimento para assinar.",
       "captcha_failed": "A verificação de segurança falhou. Recarregue a página e tente novamente.",
+      "captcha_missing": "Não foi possível executar a verificação de segurança. Confirme que o JavaScript está ativado e que nada bloqueia challenges.cloudflare.com, recarregue a página e tente novamente.",
+      "captcha_unavailable": "A verificação de segurança está temporariamente indisponível. Tente novamente dentro de alguns minutos.",
       "duplicate": "Este endereço de e-mail já foi utilizado para assinar a petição. Obrigado!",
       "forbidden": "Este pedido foi rejeitado. Assine diretamente em public-order.eu.",
       "rate_limited": "Demasiadas tentativas. Aguarde alguns minutos e tente novamente."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Obrigado por assinar",
     "lead": "A sua assinatura foi registada. Obrigado por defender simultaneamente o direito de protesto e a segurança das nossas comunidades.",
-    "pending": "Como a verificação de segurança automática não pôde ser executada, a sua assinatura será contabilizada após uma análise manual.",
     "codeTitle": "O seu código pessoal de retirada",
     "codeText": "Guarde este código caso queira retirar a assinatura mais tarde. Armazenamo-lo apenas de forma cifrada (hash), pelo que não podemos voltar a mostrá-lo.",
     "codeCopy": "Copiar código",

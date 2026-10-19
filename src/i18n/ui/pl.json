@@ -85,7 +85,7 @@
     "submit": "Podpisz petycję",
     "submitting": "Podpisywanie…",
     "humanCheck": "Weryfikacja bezpieczeństwa Cloudflare Turnstile — szanuje prywatność, bez śledzących plików cookie.",
-    "noscript": "JavaScript jest wyłączony. Nadal możesz podpisać petycję: Twój podpis zostanie zapisany i policzony po ręcznej weryfikacji, ponieważ automatyczna weryfikacja bezpieczeństwa wymaga JavaScriptu.",
+    "noscript": "Do podpisania potrzebny jest JavaScript, ponieważ uruchamia automatyczną weryfikację bezpieczeństwa, która chroni przed botami. Włącz JavaScript, aby podpisać. Czytać i wycofać podpis możesz także bez JavaScriptu.",
     "errors": {
       "generic": "Coś poszło nie tak. Spróbuj ponownie za chwilę.",
       "network": "Nie udało się połączyć z serwerem. Sprawdź połączenie i spróbuj ponownie.",
@@ -94,6 +94,8 @@
       "invalid_email": "Podaj prawidłowy adres e-mail lub pozostaw to pole puste.",
       "consent_required": "Aby podpisać, potwierdź swoją zgodę.",
       "captcha_failed": "Weryfikacja bezpieczeństwa nie powiodła się. Odśwież stronę i spróbuj ponownie.",
+      "captcha_missing": "Nie udało się uruchomić weryfikacji bezpieczeństwa. Upewnij się, że JavaScript jest włączony i nic nie blokuje challenges.cloudflare.com, a następnie odśwież stronę i spróbuj ponownie.",
+      "captcha_unavailable": "Weryfikacja bezpieczeństwa jest chwilowo niedostępna. Spróbuj ponownie za kilka minut.",
       "duplicate": "Ten adres e-mail został już użyty do podpisania petycji. Dziękujemy!",
       "forbidden": "To żądanie zostało odrzucone. Podpisz petycję bezpośrednio na stronie public-order.eu.",
       "rate_limited": "Zbyt wiele prób. Odczekaj kilka minut i spróbuj ponownie."
@@ -102,7 +104,6 @@
   "thanks": {
     "title": "Dziękujemy za podpis",
     "lead": "Twój podpis został zapisany. Dziękujemy, że stajesz w obronie zarówno prawa do protestu, jak i bezpieczeństwa naszych społeczności.",
-    "pending": "Ponieważ automatyczna weryfikacja bezpieczeństwa nie mogła zostać przeprowadzona, Twój podpis zostanie policzony po ręcznej weryfikacji.",
     "codeTitle": "Twój osobisty kod wycofania podpisu",
     "codeText": "Zachowaj ten kod na wypadek, gdybyś później chciał(a) wycofać podpis. Przechowujemy go wyłącznie w postaci zaszyfrowanej (skrótu), więc nie możemy pokazać go ponownie.",
     "codeCopy": "Kopiuj kod",

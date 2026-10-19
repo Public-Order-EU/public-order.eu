@@ -3,11 +3,12 @@ import { CODE_RE, en, expect, fillForm, test, unique } from './fixtures';
 import { counter, emailHash, signaturesByName } from './db';
 
 test.describe('signing with JavaScript', () => {
-  test('a verified signature is stored, counted and gets a withdrawal code @mobile', async ({ page }) => {
+  test('a signature is stored, counted and gets a withdrawal code @mobile', async ({ page }) => {
     const before = counter();
     const { name, email } = unique('sign');
 
     await page.goto('/en/');
+    await expect(page.locator('[data-nojs-notice]')).toBeHidden();
     await fillForm(page, { name, email, country: 'DE' });
     await page.locator('[data-submit]').click();
 
@@ -15,7 +16,6 @@ test.describe('signing with JavaScript', () => {
     const code = (await page.locator('[data-code]').textContent())?.trim() ?? '';
     expect(code).toMatch(CODE_RE);
     await expect(page.locator('[data-code-box]')).toBeVisible();
-    await expect(page.locator('[data-pending]')).toBeHidden();
 
     const rows = signaturesByName(name);
     expect(rows).toHaveLength(1);
@@ -28,7 +28,7 @@ test.describe('signing with JavaScript', () => {
 
     // The code is kept only in this tab, for the thanks page.
     const stored = await page.evaluate(() => sessionStorage.getItem('signature'));
-    expect(JSON.parse(stored!)).toEqual({ code, verified: true });
+    expect(JSON.parse(stored!)).toEqual({ code });
   });
 
   test('without e-mail, nothing about an address is stored', async ({ page }) => {
