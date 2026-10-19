@@ -26,6 +26,8 @@ We believe that protecting the right to protest and stopping riot violence are n
 
 - Give police and emergency services the staff, training and equipment they need to stop arson, looting and attacks on people quickly.
 - Prosecute serious public-order offences consistently and without undue delay, with fair trials for every suspect.
+- Hold minors who take part in riot violence accountable in a way suited to their age, through youth justice that combines real consequences with prevention, and involve their parents or guardians in that process.
+- Ensure that victims are compensated for damage caused by minors, including through the parental civil liability that most countries already provide, and prosecute adults — parents included — who incite, organise or knowingly enable a minor's participation in violence.
 - Support the victims of riot violence — residents, workers, business owners and emergency personnel — quickly and adequately.
 
 ### 3. Allow military support under a clear legal framework, as a last resort
