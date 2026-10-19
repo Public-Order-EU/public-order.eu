@@ -1,10 +1,225 @@
 {
-  "_status": "untranslated",
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "Una petizione europea per tutelare il diritto di manifestare pacificamente fermando con decisione la violenza dei disordini di piazza, nel rispetto dello Stato di diritto e della Convenzione europea dei diritti dell’uomo.",
+    "ogImageAlt": "European Public Order Initiative: tutelare la protesta pacifica, fermare la violenza dei disordini di piazza."
+  },
   "nav": {
-    "language": "Lingua"
+    "home": "Home",
+    "petition": "Petizione",
+    "faq": "FAQ",
+    "share": "Condivisione",
+    "press": "Stampa",
+    "privacy": "Privacy",
+    "legal": "Note legali",
+    "delete": "Ritirare la firma",
+    "sign": "Firmare la petizione",
+    "menu": "Menu",
+    "skipToContent": "Passare al contenuto",
+    "language": "Lingua",
+    "mainNavigation": "Navigazione principale",
+    "themeToggle": "Passa dalla modalità chiara a quella scura",
+    "darkMode": "Modalità scura"
+  },
+  "home": {
+    "title": "Tutelare la protesta pacifica. Fermare la violenza dei disordini di piazza.",
+    "eyebrow": "Una petizione rivolta ai decisori europei e nazionali",
+    "headline": "Tutelare il diritto di manifestare. Fermare la violenza che lo mina.",
+    "lead": "La protesta pacifica è un diritto fondamentale in ogni democrazia europea. Incendi dolosi, saccheggi e aggressioni alle persone mettono in pericolo residenti, soccorritori e manifestanti pacifici. Chiediamo misure chiare e conformi alla legge che fermino la minoranza violenta, perché tutti gli altri possano continuare a esercitare i propri diritti in sicurezza.",
+    "readFull": "Leggere la petizione completa",
+    "pointsTitle": "Che cosa chiediamo",
+    "pointsIntro": "Cinque proposte, da adottare attraverso processi democratici e da applicare con tutte le garanzie giuridiche.",
+    "points": [
+      {
+        "title": "Tutelare la protesta pacifica",
+        "text": "La libertà di riunione pacifica deve essere garantita e attivamente protetta. I partecipanti pacifici non devono mai essere trattati come responsabili di reati perché altri hanno fatto ricorso alla violenza."
+      },
+      {
+        "title": "Fermare la violenza con fermezza",
+        "text": "Incendi dolosi, saccheggi e aggressioni contro persone, forze di polizia, servizi di emergenza o beni devono essere fermati tempestivamente e perseguiti in modo coerente."
+      },
+      {
+        "title": "Il supporto militare come ultima risorsa",
+        "text": "Quando le ordinarie risorse di polizia sono palesemente insufficienti, le forze armate dovrebbero poter sostenere le autorità civili, soltanto nell’ambito di un quadro giuridico chiaro, sotto comando civile e con il controllo del Parlamento."
+      },
+      {
+        "title": "Trattenimento e rimpatrio, nel rispetto del giusto processo",
+        "text": "Le persone prive di un titolo di soggiorno che partecipano a violenze gravi dovrebbero poter essere trattenute temporaneamente in strutture semplici e dignitose e, al termine di un giusto processo, essere rimpatriate in via prioritaria, mai in violazione del principio di non respingimento."
+      },
+      {
+        "title": "Un divieto d’ingresso europeo condiviso",
+        "text": "Rafforzare un meccanismo europeo comune affinché le persone condannate per gravi reati contro l’ordine pubblico commessi durante disordini possano vedersi negare l’ingresso in tutta Europa, sulla base di una valutazione individuale e con controllo giurisdizionale."
+      }
+    ],
+    "goalTitle": "Il nostro obiettivo",
+    "goalText": "Tutelare il diritto di manifestare allontanando da esso la minoranza violenta.",
+    "ctaTitle": "Aggiunga il suo nome",
+    "ctaText": "Ogni firma rafforza la richiesta di una risposta ferma, legittima e rispettosa dei diritti alla violenza dei disordini di piazza.",
+    "ctaButton": "Firmare la petizione",
+    "shareTitle": "Aiuti la petizione a raggiungere più persone",
+    "shareText": "Condivida la petizione con amici, familiari e colleghi a cui stanno a cuore la sicurezza delle strade e il diritto di manifestare.",
+    "shareButton": "Come condividere"
+  },
+  "counter": {
+    "label": "firme",
+    "goal": "Obiettivo: {goal}",
+    "progress": "{percent}% dell’obiettivo",
+    "approx": "Il contatore viene aggiornato ogni minuto e può essere approssimativo."
+  },
+  "form": {
+    "title": "Firma della petizione",
+    "intro": "Bastano meno di un minuto. Chiediamo solo ciò che è necessario.",
+    "name": "Nome e cognome",
+    "nameHelp": "Il suo nome non viene mai pubblicato.",
+    "country": "Paese di residenza",
+    "countryPlaceholder": "Selezioni il suo Paese",
+    "otherCountry": "Altro Paese",
+    "email": "Indirizzo e-mail",
+    "optional": "facoltativo",
+    "emailHelp": "Usato soltanto per evitare firme duplicate, a meno che non spunti la casella qui sotto.",
+    "updates": "Desidero ricevere un breve aggiornamento quando la petizione verrà consegnata (al massimo qualche e-mail).",
+    "consent": "Ho almeno 16 anni e acconsento esplicitamente al trattamento del mio nome, del mio Paese e, se indicato, del mio indirizzo e-mail per questa petizione, come descritto nell’{privacyLink}.",
+    "privacyLinkText": "informativa sulla privacy",
+    "submit": "Firmare la petizione",
+    "submitting": "Firma in corso…",
+    "humanCheck": "Controllo di sicurezza di Cloudflare Turnstile: rispettoso della privacy, senza cookie di tracciamento.",
+    "noscript": "JavaScript è disattivato. Può comunque firmare: la sua firma sarà registrata e conteggiata dopo una verifica manuale, perché il controllo di sicurezza automatico richiede JavaScript.",
+    "errors": {
+      "generic": "Si è verificato un errore. Riprovi tra qualche istante.",
+      "network": "Impossibile raggiungere il server. Controlli la connessione e riprovi.",
+      "invalid_name": "Inserisca il suo nome (da 2 a 100 caratteri).",
+      "invalid_country": "Selezioni il suo Paese.",
+      "invalid_email": "Inserisca un indirizzo e-mail valido oppure lasci il campo vuoto.",
+      "consent_required": "Confermi il suo consenso per firmare.",
+      "captcha_failed": "Il controllo di sicurezza non è riuscito. Ricarichi la pagina e riprovi.",
+      "duplicate": "Questo indirizzo e-mail è già stato usato per firmare la petizione. Grazie!",
+      "forbidden": "La richiesta è stata respinta. Firmi direttamente su public-order.eu.",
+      "rate_limited": "Troppi tentativi. Attenda qualche minuto e riprovi."
+    }
+  },
+  "thanks": {
+    "title": "Grazie per aver firmato",
+    "lead": "La sua firma è stata registrata. Grazie per l’impegno a favore sia del diritto di manifestare sia della sicurezza delle nostre comunità.",
+    "pending": "Poiché non è stato possibile eseguire il controllo di sicurezza automatico, la sua firma sarà conteggiata dopo una verifica manuale.",
+    "codeTitle": "Il suo codice personale di ritiro",
+    "codeText": "Conservi questo codice se desidera ritirare la firma in futuro. Lo memorizziamo solo in forma cifrata (hash), quindi non possiamo mostrarglielo di nuovo.",
+    "codeCopy": "Copiare il codice",
+    "codeCopied": "Copiato",
+    "nextTitle": "E ora?",
+    "nextText": "La cosa più utile che può fare ora è condividere la petizione con le persone che conosce.",
+    "shareButton": "Condividere la petizione",
+    "backHome": "Tornare alla home page"
+  },
+  "delete": {
+    "title": "Ritiro della firma",
+    "lead": "Può ritirare la firma in qualsiasi momento. Verrà eliminata definitivamente e il contatore sarà aggiornato.",
+    "codeLabel": "Codice di ritiro",
+    "codeHelp": "Il codice mostrato dopo la firma, ad esempio ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Eliminare la mia firma",
+    "noCodeTitle": "Ha perso il codice?",
+    "noCodeText": "Scriva a {email} dall’indirizzo e-mail con cui ha firmato oppure, se ha firmato senza indicare un indirizzo e-mail, ci comunichi il suo nome, il suo Paese e la data approssimativa della firma. Esamineremo la sua richiesta entro 30 giorni.",
+    "success": "La sua firma è stata eliminata.",
+    "notFound": "Nessuna firma trovata per questo codice. Lo controlli e riprovi.",
+    "invalid": "Inserisca un codice di ritiro valido."
+  },
+  "share": {
+    "title": "Come condividere",
+    "lead": "La petizione funziona solo se raggiunge le persone. Ecco alcuni modi semplici per aiutare: nessuno di essi carica script di tracciamento su questo sito.",
+    "linksTitle": "Condivisione sui social media",
+    "copyTitle": "Copiare il link",
+    "copyButton": "Copiare il link",
+    "copied": "Link copiato",
+    "nativeShare": "Condividere…",
+    "messagesTitle": "Messaggi suggeriti",
+    "messagesIntro": "Può copiarli, adattarli o tradurli liberamente.",
+    "messages": [
+      "Protestare pacificamente è un diritto. La violenza dei disordini di piazza no. Ho firmato la European Public Order Initiative: e tu?",
+      "Tuteliamo il diritto di manifestare fermando la minoranza violenta, nel rispetto dello Stato di diritto e dei diritti umani. Firma qui:",
+      "Incendi dolosi, saccheggi e aggressioni alle persone mettono tutti in pericolo, compresi i manifestanti pacifici. Sostengo misure ferme e conformi alla legge. Aggiungi il tuo nome:"
+    ],
+    "copyMessage": "Copiare il messaggio",
+    "offlineTitle": "Ne parli",
+    "offlineText": "Le conversazioni con amici, colleghi e rappresentanti locali contano più di qualsiasi post. Condivida la petizione con onestà e rispetto, anche con chi la pensa diversamente.",
+    "guidelinesTitle": "Si mantenga rispettoso",
+    "guidelinesText": "Non usi la petizione per prendere di mira singoli o gruppi. Siamo contro la violenza da chiunque provenga e a favore dei diritti di tutti.",
+    "emailSubject": "Da firmare: European Public Order Initiative"
+  },
+  "press": {
+    "title": "Stampa e media",
+    "lead": "Informazioni di contesto, testi pronti all’uso e l’emblema della European Public Order Initiative. Può citarli e riprodurli liberamente.",
+    "contactTitle": "Richieste della stampa",
+    "contactText": "Per domande, dichiarazioni e informazioni di contesto, scriva a {email}.",
+    "anonymity": "Per la loro sicurezza, non pubblichiamo i nomi delle persone che promuovono l’iniziativa. Invii ogni richiesta all’indirizzo per la stampa.",
+    "factsTitle": "Dati essenziali",
+    "facts": {
+      "name": "Nome",
+      "website": "Sito web",
+      "type": "Natura",
+      "typeText": "Una petizione civica indipendente e apartitica. Non è un’iniziativa dei cittadini europei registrata ai sensi del regolamento (UE) 2019/788 e non è affiliata all’Unione europea né ad alcuna sua istituzione.",
+      "addressees": "Destinatari",
+      "addresseesText": "I membri del Parlamento europeo, la Commissione europea, il Consiglio dell’Unione europea, nonché i governi e i parlamenti degli Stati membri dell’Unione europea e dello Spazio economico europeo.",
+      "goal": "Obiettivo",
+      "goalText": "{goal} firme",
+      "data": "Dati raccolti",
+      "dataText": "Nome, Paese di residenza e, facoltativamente, un indirizzo e-mail. I nomi non vengono mai pubblicati; vengono comunicati solo i totali e il numero di firme per Paese."
+    },
+    "boilerplateTitle": "Informazioni sull’iniziativa",
+    "boilerplateIntro": "Usi questi testi così come sono, oppure li abbrevi secondo le necessità.",
+    "shortLabel": "Versione breve",
+    "short": "La European Public Order Initiative è una petizione civica indipendente e apartitica che chiede misure ferme e conformi alla legge contro la violenza dei disordini di piazza, per tutelare il diritto di manifestare pacificamente.",
+    "longLabel": "Versione estesa",
+    "long": "La European Public Order Initiative è una petizione civica indipendente e apartitica rivolta ai decisori europei e nazionali. Chiede cinque misure: tutelare la protesta pacifica; fermare tempestivamente incendi dolosi, saccheggi e aggressioni alle persone e perseguirli in modo coerente; consentire alle forze armate di sostenere le autorità civili come ultima risorsa, sotto comando civile e con il controllo del Parlamento; trattenere temporaneamente in strutture dignitose le persone prive di un titolo di soggiorno che partecipano a violenze gravi e, al termine di un giusto processo, rimpatriarle in via prioritaria, mai in violazione del principio di non respingimento; e rafforzare un divieto d’ingresso europeo condiviso per le persone condannate per gravi reati contro l’ordine pubblico, sulla base di una valutazione individuale e con controllo giurisdizionale. Ogni misura deve essere adottata democraticamente e nel rispetto delle costituzioni nazionali, della Convenzione europea dei diritti dell’uomo e della Carta dei diritti fondamentali dell’Unione europea. La petizione non è affiliata all’Unione europea né ad alcuna sua istituzione.",
+    "copyText": "Copiare il testo",
+    "copied": "Copiato",
+    "assetsTitle": "Emblema e immagini",
+    "assetsIntro": "I file SVG si adattano a qualsiasi dimensione. Usi i file PNG dove l’SVG non è supportato.",
+    "assets": {
+      "emblem": "Emblema",
+      "emblemInverse": "Emblema per sfondi scuri",
+      "wordmark": "Emblema con nome",
+      "wordmarkInverse": "Emblema con nome, per sfondi scuri",
+      "social": "Immagine per i social media"
+    },
+    "usageTitle": "Uso dell’emblema",
+    "usage": [
+      "Non alteri, ricolori, ritagli o deformi l’emblema.",
+      "Lasci intorno ad esso uno spazio libero pari ad almeno un quarto della sua larghezza.",
+      "Non lo usi in modo da suggerire un sostegno da parte dell’Unione europea o di una sua istituzione, o un’affiliazione ad esse.",
+      "Non lo usi per promuovere un partito politico, un candidato o un prodotto commerciale."
+    ]
+  },
+  "rights": {
+    "title": "Il nostro impegno per lo Stato di diritto",
+    "text": "Questa petizione non invoca alcuna azione illegale. Ogni misura che propone deve essere adottata attraverso processi democratici e legittimi e applicata nel pieno rispetto delle costituzioni nazionali, della Convenzione europea dei diritti dell’uomo, della Carta dei diritti fondamentali dell’Unione europea e del diritto internazionale dei rifugiati, compreso il principio di non respingimento. Le misure devono riguardare i comportamenti, mai la nazionalità, l’origine etnica, la religione o le opinioni politiche.",
+    "short": "Questa petizione non invoca alcuna azione illegale e rispetta pienamente le costituzioni nazionali e la Convenzione europea dei diritti dell’uomo."
+  },
+  "faq": {
+    "title": "Domande frequenti",
+    "lead": "Risposte oneste alle domande e alle obiezioni che sentiamo più spesso."
+  },
+  "petition": {
+    "signCta": "È d’accordo? Aggiunga il suo nome."
+  },
+  "footer": {
+    "about": "Una petizione civica indipendente e apartitica. Non affiliata all’Unione europea né ad alcuna sua istituzione.",
+    "contact": "Contatti",
+    "rights": "Diritti e regole",
+    "pressKit": "Stampa e media",
+    "source": "Codice sorgente"
   },
   "notice": {
-    "untranslated": "Questa pagina non è ancora disponibile in italiano. Di seguito è riportata la versione inglese.",
-    "help": "Aiutateci a tradurre"
+    "untranslated": "Questa pagina non è ancora disponibile in questa lingua ({language}). Di seguito è mostrata la versione inglese.",
+    "help": "Collabori alla traduzione"
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "text": "La pagina che cerca non esiste o è stata spostata.",
+    "back": "Andare alla home page"
+  },
+  "a11y": {
+    "newTab": "(si apre in una nuova scheda)",
+    "download": "Scarica {name}"
   }
 }

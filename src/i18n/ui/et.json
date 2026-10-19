@@ -1,10 +1,225 @@
 {
-  "_status": "untranslated",
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "Euroopa petitsioon rahumeelse protestimise õiguse kaitseks, peatades jõuliselt rahutustega kaasneva vägivalla – õigusriigi põhimõtete ja Euroopa inimõiguste konventsiooni raamides.",
+    "ogImageAlt": "European Public Order Initiative – Kaitskem rahumeelset protesti. Peatagem rahutustega kaasnev vägivald."
+  },
   "nav": {
-    "language": "Keel"
+    "home": "Avaleht",
+    "petition": "Petitsioon",
+    "faq": "KKK",
+    "share": "Jagamine",
+    "press": "Meedia",
+    "privacy": "Privaatsus",
+    "legal": "Õigusteave",
+    "delete": "Allkirja tagasivõtmine",
+    "sign": "Allkirjasta",
+    "menu": "Menüü",
+    "skipToContent": "Liigu sisu juurde",
+    "language": "Keel",
+    "mainNavigation": "Peamenüü",
+    "themeToggle": "Vaheta hele ja tume kujundus",
+    "darkMode": "Tume kujundus"
+  },
+  "home": {
+    "title": "Kaitskem rahumeelset protesti. Peatagem rahutustega kaasnev vägivald.",
+    "eyebrow": "Petitsioon Euroopa ja riiklikele otsustajatele",
+    "headline": "Kaitskem õigust protestida. Peatagem vägivald, mis seda õigust õõnestab.",
+    "lead": "Rahumeelne protest on põhiõigus igas Euroopa demokraatias. Süütamised, rüüstamine ja rünnakud inimeste vastu ohustavad võrdselt elanikke, päästjaid ja rahumeelseid meeleavaldajaid. Me palume selgeid ja seaduslikke meetmeid, mis peatavad vägivaldse vähemuse, et kõik teised saaksid oma õigusi ohutult kasutada.",
+    "readFull": "Loe petitsiooni täistekst",
+    "pointsTitle": "Mida me palume",
+    "pointsIntro": "Viis ettepanekut, millest igaüks tuleb vastu võtta demokraatlikus korras ja rakendada kõigi õiguslike tagatistega.",
+    "points": [
+      {
+        "title": "Rahumeelse protesti kaitse",
+        "text": "Rahumeelse kogunemise vabadus tuleb tagada ja seda tuleb aktiivselt kaitsta. Rahumeelseid osalejaid ei tohi kunagi kohelda õigusrikkujatena sellepärast, et teised muutusid vägivaldseks."
+      },
+      {
+        "title": "Vägivalla jõuline peatamine",
+        "text": "Süütamised, rüüstamine ning rünnakud inimeste, politsei, päästeteenistuste või vara vastu tuleb kiiresti peatada ja järjekindlalt süüdistuse alla võtta."
+      },
+      {
+        "title": "Sõjaväe tugi viimase abinõuna",
+        "text": "Kui tavapärased politseiressursid on selgelt ülekoormatud, peaksid relvajõud saama toetada tsiviilasutusi – ainult selge õigusraamistiku, tsiviiljuhtimise ja parlamentaarse järelevalve all."
+      },
+      {
+        "title": "Kinnipidamine ja tagasisaatmine pärast nõuetekohast menetlust",
+        "text": "Seadusliku elamisõiguseta isikuid, kes osalevad raskes vägivallas, tuleks ajutiselt pidada lihtsates, inimlikes tingimustes ja pärast nõuetekohast menetlust eelisjärjekorras tagasi saata – mitte kunagi tagasisaatmise keelu põhimõtet rikkudes."
+      },
+      {
+        "title": "Ühine Euroopa sissesõidukeeld",
+        "text": "Tuleb tugevdada ühist Euroopa mehhanismi, et rahutuste ajal raske avaliku korra rikkumise eest süüdi mõistetud isikutelt saaks kogu Euroopas sissesõidu keelata – üksikjuhtumi hindamise ja kohtuliku kontrolliga."
+      }
+    ],
+    "goalTitle": "Meie eesmärk",
+    "goalText": "Kaitsta õigust protestida, eemaldades sellest vägivaldse vähemuse.",
+    "ctaTitle": "Lisage oma nimi",
+    "ctaText": "Iga allkiri tugevdab üleskutset anda rahutustega kaasnevale vägivallale jõuline, seaduslik ja õigusi austav vastus.",
+    "ctaButton": "Allkirjasta",
+    "shareTitle": "Aidake petitsioonil jõuda rohkemate inimesteni",
+    "shareText": "Jagage petitsiooni sõprade, pereliikmete ja kolleegidega, kellele on olulised turvalised tänavad ja õigus protestida.",
+    "shareButton": "Jagamisviisid"
+  },
+  "counter": {
+    "label": "allkirja",
+    "goal": "Eesmärk: {goal}",
+    "progress": "{percent}% eesmärgist",
+    "approx": "Loendurit uuendatakse iga minut ja see võib olla ligikaudne."
+  },
+  "form": {
+    "title": "Allkirjastage petitsioon",
+    "intro": "See võtab alla minuti. Küsime ainult seda, mis on vajalik.",
+    "name": "Täisnimi",
+    "nameHelp": "Teie nime ei avaldata kunagi.",
+    "country": "Elukohariik",
+    "countryPlaceholder": "Valige oma riik",
+    "otherCountry": "Muu riik",
+    "email": "E-posti aadress",
+    "optional": "valikuline",
+    "emailHelp": "Kasutatakse ainult korduvate allkirjade vältimiseks – välja arvatud juhul, kui märgite alloleva ruudu.",
+    "updates": "Saatke mulle lühike teavitus, kui petitsioon üle antakse (kõige rohkem paar e-kirja).",
+    "consent": "Olen vähemalt 16-aastane ja annan selgesõnalise nõusoleku oma nime, riigi ja (kui olen selle esitanud) e-posti aadressi töötlemiseks selle petitsiooni jaoks, nagu on kirjeldatud {privacyLink}.",
+    "privacyLinkText": "privaatsuspoliitikas",
+    "submit": "Allkirjasta",
+    "submitting": "Allkirjastan…",
+    "humanCheck": "Turvakontroll: Cloudflare Turnstile – privaatsust säästev, ilma jälgimisküpsisteta.",
+    "noscript": "JavaScript on keelatud. Saate siiski allkirjastada: teie allkiri salvestatakse ja arvestatakse pärast käsitsi kontrolli, sest automaatne turvakontroll vajab JavaScripti.",
+    "errors": {
+      "generic": "Midagi läks valesti. Proovige hetke pärast uuesti.",
+      "network": "Serveriga ei õnnestunud ühendust luua. Kontrollige internetiühendust ja proovige uuesti.",
+      "invalid_name": "Sisestage oma nimi (2 kuni 100 märki).",
+      "invalid_country": "Valige oma riik.",
+      "invalid_email": "Sisestage kehtiv e-posti aadress või jätke väli tühjaks.",
+      "consent_required": "Allkirjastamiseks kinnitage oma nõusolek.",
+      "captcha_failed": "Turvakontroll ebaõnnestus. Laadige leht uuesti ja proovige veel kord.",
+      "duplicate": "Selle e-posti aadressiga on petitsioon juba allkirjastatud. Täname!",
+      "forbidden": "Päring lükati tagasi. Allkirjastage otse veebilehel public-order.eu.",
+      "rate_limited": "Liiga palju katseid. Oodake mõni minut ja proovige uuesti."
+    }
+  },
+  "thanks": {
+    "title": "Täname allkirja eest",
+    "lead": "Teie allkiri on registreeritud. Täname, et seisate nii õiguse protestida kui ka meie kogukondade turvalisuse eest.",
+    "pending": "Kuna automaatset turvakontrolli ei õnnestunud teha, arvestatakse teie allkiri pärast käsitsi läbivaatamist.",
+    "codeTitle": "Teie isiklik tagasivõtmiskood",
+    "codeText": "Hoidke see kood alles, kui soovite oma allkirja hiljem tagasi võtta. Salvestame selle ainult krüpteeritud (räsitud) kujul, mistõttu me ei saa seda teile uuesti näidata.",
+    "codeCopy": "Kopeeri kood",
+    "codeCopied": "Kopeeritud",
+    "nextTitle": "Mis edasi?",
+    "nextText": "Kõige kasulikum, mida saate nüüd teha, on petitsiooni oma tuttavatega jagada.",
+    "shareButton": "Jaga petitsiooni",
+    "backHome": "Tagasi avalehele"
+  },
+  "delete": {
+    "title": "Võtke oma allkiri tagasi",
+    "lead": "Allkirja saab tagasi võtta igal ajal. See kustutatakse jäädavalt ja loendurit korrigeeritakse.",
+    "codeLabel": "Tagasivõtmiskood",
+    "codeHelp": "Kood, mis kuvati pärast allkirjastamist, näiteks ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Kustuta minu allkiri",
+    "noCodeTitle": "Kood kadunud?",
+    "noCodeText": "Kirjutage aadressile {email} samalt e-posti aadressilt, millega allkirjastasite, või – kui allkirjastasite ilma e-posti aadressita – teatage meile oma nimi, riik ja ligikaudne allkirjastamise kuupäev. Käsitleme teie taotlust 30 päeva jooksul.",
+    "success": "Teie allkiri on kustutatud.",
+    "notFound": "Selle koodi järgi ei leitud ühtegi allkirja. Kontrollige koodi ja proovige uuesti.",
+    "invalid": "Sisestage kehtiv tagasivõtmiskood."
+  },
+  "share": {
+    "title": "Kuidas jagada",
+    "lead": "Petitsioon toimib ainult siis, kui see inimesteni jõuab. Siin on mõned lihtsad viisid, kuidas aidata – ükski neist ei laadi sellel veebilehel jälgimisskripte.",
+    "linksTitle": "Jaga sotsiaalmeedias",
+    "copyTitle": "Kopeeri link",
+    "copyButton": "Kopeeri link",
+    "copied": "Link kopeeritud",
+    "nativeShare": "Jaga…",
+    "messagesTitle": "Sõnumisoovitused",
+    "messagesIntro": "Võite neid vabalt kopeerida, kohandada või tõlkida.",
+    "messages": [
+      "Rahumeelne protest on õigus. Rahutustega kaasnev vägivald ei ole. Ma allkirjastasin European Public Order Initiative’i – kas teie allkirjastate?",
+      "Kaitskem õigust protestida, peatades vägivaldse vähemuse – õigusriigi ja inimõiguste raamides. Allkirjastage siin:",
+      "Süütamised, rüüstamine ja rünnakud inimeste vastu ohustavad kõiki, ka rahumeelseid meeleavaldajaid. Toetan jõulisi ja seaduslikke meetmeid. Lisage oma nimi:"
+    ],
+    "copyMessage": "Kopeeri sõnum",
+    "offlineTitle": "Rääkige sellest",
+    "offlineText": "Vestlused sõprade, kolleegide ja kohalike esindajatega loevad rohkem kui ükski postitus. Jagage petitsiooni ausalt ja lugupidavalt – ka nendega, kes on teisel arvamusel.",
+    "guidelinesTitle": "Jääge palun lugupidavaks",
+    "guidelinesText": "Ärge kasutage petitsiooni üksikisikute või rühmade vastu suunatud tegevuseks. Me oleme vastu kõigi toime pandud vägivallale ja kõigi õiguste poolt.",
+    "emailSubject": "Palun allkirjastage: European Public Order Initiative"
+  },
+  "press": {
+    "title": "Meedia ja ajakirjandus",
+    "lead": "Taustateave, kasutusvalmis tekstid ja European Public Order Initiative’i embleem. Võite neid vabalt tsiteerida ja reprodutseerida.",
+    "contactTitle": "Ajakirjanike päringud",
+    "contactText": "Küsimuste, avalduste ja taustateabe saamiseks kirjutage aadressile {email}.",
+    "anonymity": "Nende turvalisuse huvides me algatuse taga olevate inimeste nimesid ei avalda. Saatke kõik päringud meediapäringute aadressile.",
+    "factsTitle": "Põhiandmed",
+    "facts": {
+      "name": "Nimi",
+      "website": "Veebisait",
+      "type": "Liik",
+      "typeText": "Sõltumatu ja parteipoliitiliselt erapooletu kodanike petitsioon. See ei ole määruse (EL) 2019/788 alusel registreeritud Euroopa kodanikualgatus ega ole seotud Euroopa Liidu ega ühegi tema institutsiooniga.",
+      "addressees": "Adressaadid",
+      "addresseesText": "Euroopa Parlamendi liikmed, Euroopa Komisjon, Euroopa Liidu Nõukogu ning Euroopa Liidu ja Euroopa Majanduspiirkonna liikmesriikide valitsused ja parlamendid.",
+      "goal": "Eesmärk",
+      "goalText": "{goal} allkirja",
+      "data": "Kogutavad andmed",
+      "dataText": "Nimi, elukohariik ja soovi korral e-posti aadress. Nimesid ei avaldata kunagi; esitatakse ainult koondarvud ja allkirjade arv riikide kaupa."
+    },
+    "boilerplateTitle": "Algatusest",
+    "boilerplateIntro": "Kasutage neid tekste sellisel kujul või lühendage neid vastavalt vajadusele.",
+    "shortLabel": "Lühiversioon",
+    "short": "European Public Order Initiative on sõltumatu ja parteipoliitiliselt erapooletu kodanike petitsioon, mis kutsub üles võtma rahutustega kaasneva vägivalla vastu jõulisi ja seaduslikke meetmeid, et kaitsta õigust rahumeelsele protestile.",
+    "longLabel": "Pikk versioon",
+    "long": "European Public Order Initiative on sõltumatu ja parteipoliitiliselt erapooletu kodanike petitsioon, mis on adresseeritud Euroopa ja riiklikele otsustajatele. Selles palutakse viit meedet: kaitsta rahumeelset protesti; peatada süütamised, rüüstamine ja rünnakud inimeste vastu kiiresti ning võtta need järjekindlalt süüdistuse alla; võimaldada relvajõududel viimase abinõuna toetada tsiviilasutusi tsiviiljuhtimise ja parlamentaarse järelevalve all; pidada seadusliku elamisõiguseta isikuid, kes osalevad raskes vägivallas, ajutiselt inimlikes tingimustes ning pärast nõuetekohast menetlust saata nad eelisjärjekorras tagasi, mitte kunagi tagasisaatmise keelu põhimõtet rikkudes; ning tugevdada ühist Euroopa sissesõidukeeldu raskete avaliku korra rikkumiste eest süüdi mõistetud isikute suhtes, üksikjuhtumi hindamise ja kohtuliku kontrolliga. Iga meede tuleb vastu võtta demokraatlikus korras ning see peab austama riikide põhiseadusi, Euroopa inimõiguste konventsiooni ja Euroopa Liidu põhiõiguste hartat. Petitsioon ei ole seotud Euroopa Liidu ega ühegi tema institutsiooniga.",
+    "copyText": "Kopeeri tekst",
+    "copied": "Kopeeritud",
+    "assetsTitle": "Embleem ja pildid",
+    "assetsIntro": "SVG-failid skaleeruvad igasse suurusesse. Kasutage PNG-faile seal, kus SVG-d ei toetata.",
+    "assets": {
+      "emblem": "Embleem",
+      "emblemInverse": "Embleem tumedale taustale",
+      "wordmark": "Embleem koos nimega",
+      "wordmarkInverse": "Embleem koos nimega tumedale taustale",
+      "social": "Sotsiaalmeedia pilt"
+    },
+    "usageTitle": "Embleemi kasutamine",
+    "usage": [
+      "Ärge muutke embleemi, värvige seda ümber, kärpige ega moonutage.",
+      "Jätke selle ümber vaba ruumi vähemalt veerand embleemi laiusest.",
+      "Ärge kasutage seda viisil, mis viitab Euroopa Liidu või mõne tema institutsiooni toetusele või sidemele nendega.",
+      "Ärge kasutage seda erakonna, kandidaadi või kaubandusliku toote reklaamimiseks."
+    ]
+  },
+  "rights": {
+    "title": "Meie pühendumus õigusriigile",
+    "text": "See petitsioon ei kutsu üles ühelegi ebaseaduslikule tegevusele. Iga selles esitatud meede tuleb vastu võtta demokraatlikus ja seaduslikus korras ning rakendada riikide põhiseadusi, Euroopa inimõiguste konventsiooni, Euroopa Liidu põhiõiguste hartat ja rahvusvahelist pagulasõigust, sealhulgas tagasisaatmise keelu põhimõtet, täielikult austades. Meetmed peavad olema suunatud käitumisele – mitte kunagi kodakondsusele, etnilisele päritolule, usule ega poliitilistele arvamustele.",
+    "short": "See petitsioon ei kutsu üles ebaseaduslikule tegevusele ning austab täielikult riikide põhiseadusi ja Euroopa inimõiguste konventsiooni."
+  },
+  "faq": {
+    "title": "Korduma kippuvad küsimused",
+    "lead": "Ausad vastused küsimustele ja vastuväidetele, mida kuuleme kõige sagedamini."
+  },
+  "petition": {
+    "signCta": "Nõustute? Lisage oma nimi."
+  },
+  "footer": {
+    "about": "Sõltumatu ja parteipoliitiliselt erapooletu kodanike petitsioon. Ei ole seotud Euroopa Liidu ega ühegi tema institutsiooniga.",
+    "contact": "Kontakt",
+    "rights": "Õigused ja reeglid",
+    "pressKit": "Meedia ja ajakirjandus",
+    "source": "Lähtekood"
   },
   "notice": {
-    "untranslated": "See lehekülg ei ole veel eesti keeles saadaval. Allpool on ingliskeelne versioon.",
+    "untranslated": "Selle lehe tõlge ei ole veel saadaval (keel: {language}). Allpool on ingliskeelne versioon.",
     "help": "Aidake meil tõlkida"
+  },
+  "notFound": {
+    "title": "Lehte ei leitud",
+    "text": "Lehte, mida otsite, ei ole olemas või see on teise kohta viidud.",
+    "back": "Mine avalehele"
+  },
+  "a11y": {
+    "newTab": "(avaneb uuel vahekaardil)",
+    "download": "Laadi alla {name}"
   }
 }

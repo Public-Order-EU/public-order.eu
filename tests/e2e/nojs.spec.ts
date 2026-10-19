@@ -1,5 +1,5 @@
 /** The form must work without JavaScript: a plain HTML post, answered with an HTML page. */
-import { CODE_RE, en, expect, fillForm, test, unique } from './fixtures';
+import { CODE_RE, de, en, expect, fillForm, test, unique } from './fixtures';
 import { counter, signaturesByName } from './db';
 
 test.use({ javaScriptEnabled: false });
@@ -15,7 +15,7 @@ test('signing without JavaScript stores an unverified signature @mobile', async 
   await expect(page.locator('html')).toHaveAttribute('lang', 'de');
   const code = (await page.locator('span.code').textContent())!.trim();
   expect(code).toMatch(CODE_RE);
-  await expect(page.getByText(en.thanks.pending)).toBeVisible();
+  await expect(page.getByText(de.thanks.pending)).toBeVisible();
 
   expect(signaturesByName(name)[0]).toMatchObject({ verified: 0, lang: 'de', country: 'AT' });
   expect(counter()).toBe(before); // counted only after review
@@ -25,7 +25,7 @@ test('signing without JavaScript stores an unverified signature @mobile', async 
   await page.locator('#del-code').fill(code);
   await page.locator('[data-delete-form] button[type="submit"]').click();
   await page.waitForURL('**/api/delete');
-  await expect(page.getByText(en.delete.success)).toBeVisible();
+  await expect(page.getByText(de.delete.success)).toBeVisible();
   expect(signaturesByName(name)).toHaveLength(0);
 });
 

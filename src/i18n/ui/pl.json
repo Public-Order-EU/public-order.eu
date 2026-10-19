@@ -1,10 +1,225 @@
 {
-  "_status": "untranslated",
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "Europejska petycja w obronie prawa do pokojowych protestów: stanowcze powstrzymanie przemocy podczas zamieszek — w granicach praworządności i Europejskiej Konwencji Praw Człowieka.",
+    "ogImageAlt": "European Public Order Initiative — Chrońmy pokojowe protesty. Powstrzymajmy przemoc podczas zamieszek."
+  },
   "nav": {
-    "language": "Język"
+    "home": "Strona główna",
+    "petition": "Petycja",
+    "faq": "FAQ",
+    "share": "Udostępnij",
+    "press": "Prasa",
+    "privacy": "Prywatność",
+    "legal": "Nota prawna",
+    "delete": "Wycofaj podpis",
+    "sign": "Podpisz petycję",
+    "menu": "Menu",
+    "skipToContent": "Przejdź do treści",
+    "language": "Język",
+    "mainNavigation": "Nawigacja główna",
+    "themeToggle": "Przełącz między jasnym a ciemnym motywem",
+    "darkMode": "Ciemny motyw"
+  },
+  "home": {
+    "title": "Chrońmy pokojowe protesty. Powstrzymajmy przemoc podczas zamieszek.",
+    "eyebrow": "Petycja do decydentów europejskich i krajowych",
+    "headline": "Chrońmy prawo do protestu. Powstrzymajmy przemoc, która je podważa.",
+    "lead": "Pokojowy protest jest prawem podstawowym w każdej europejskiej demokracji. Podpalenia, grabieże i ataki na ludzi zagrażają mieszkańcom, służbom ratunkowym i uczestnikom pokojowych manifestacji. Domagamy się jasnych, zgodnych z prawem działań, które powstrzymają przemocową mniejszość — aby wszyscy pozostali mogli nadal bezpiecznie korzystać ze swoich praw.",
+    "readFull": "Przeczytaj pełny tekst petycji",
+    "pointsTitle": "Czego się domagamy",
+    "pointsIntro": "Pięć postulatów, z których każdy ma być wprowadzony w drodze procedur demokratycznych i stosowany z zachowaniem wszelkich gwarancji prawnych.",
+    "points": [
+      {
+        "title": "Chrońmy pokojowe protesty",
+        "text": "Wolność pokojowych zgromadzeń musi być gwarantowana i aktywnie chroniona. Uczestnicy pokojowi nigdy nie mogą być traktowani jak sprawcy tylko dlatego, że inni sięgnęli po przemoc."
+      },
+      {
+        "title": "Stanowczo powstrzymujmy przemoc",
+        "text": "Podpalenia, grabieże oraz ataki na ludzi, policję, służby ratunkowe i mienie muszą być szybko powstrzymywane, a ich sprawcy konsekwentnie ścigani."
+      },
+      {
+        "title": "Wsparcie wojska jako ostateczność",
+        "text": "Gdy siły policyjne są wyraźnie niewystarczające, siły zbrojne powinny mieć możliwość wspierania władz cywilnych — wyłącznie w jasnych ramach prawnych, pod dowództwem cywilnym i z nadzorem parlamentu."
+      },
+      {
+        "title": "Zatrzymanie i powrót, po przeprowadzeniu procedury",
+        "text": "Osoby bez legalnego pobytu, które uczestniczą w poważnej przemocy, powinny być czasowo przetrzymywane w prostych, humanitarnych ośrodkach, a po przeprowadzeniu należytej procedury — w pierwszej kolejności odsyłane do kraju powrotu, nigdy z naruszeniem zasady non-refoulement."
+      },
+      {
+        "title": "Wspólny europejski zakaz wjazdu",
+        "text": "Wzmocnienie wspólnego europejskiego mechanizmu, tak aby osobom skazanym za poważne przestępstwa przeciwko porządkowi publicznemu popełnione podczas zamieszek można było odmówić wjazdu w całej Europie, po indywidualnej ocenie i z możliwością kontroli sądowej."
+      }
+    ],
+    "goalTitle": "Nasz cel",
+    "goalText": "Chronić prawo do protestu, eliminując z niego przemocową mniejszość.",
+    "ctaTitle": "Dodaj swoje imię i nazwisko",
+    "ctaText": "Każdy podpis wzmacnia apel o stanowczą, zgodną z prawem i szanującą prawa człowieka reakcję na przemoc podczas zamieszek.",
+    "ctaButton": "Podpisz petycję",
+    "shareTitle": "Pomóż dotrzeć petycji do większej liczby osób",
+    "shareText": "Podziel się petycją ze znajomymi, rodziną i współpracownikami, którym zależy na bezpiecznych ulicach i prawie do protestu.",
+    "shareButton": "Jak udostępnić"
+  },
+  "counter": {
+    "label": "podpisów",
+    "goal": "Cel: {goal}",
+    "progress": "{percent}% celu",
+    "approx": "Licznik jest aktualizowany co minutę i może być przybliżony."
+  },
+  "form": {
+    "title": "Podpisz petycję",
+    "intro": "Zajmie to mniej niż minutę. Prosimy tylko o niezbędne dane.",
+    "name": "Imię i nazwisko",
+    "nameHelp": "Twoje imię i nazwisko nigdy nie jest publikowane.",
+    "country": "Kraj zamieszkania",
+    "countryPlaceholder": "Wybierz kraj",
+    "otherCountry": "Inny kraj",
+    "email": "Adres e-mail",
+    "optional": "opcjonalnie",
+    "emailHelp": "Służy wyłącznie do zapobiegania podwójnym podpisom — chyba że zaznaczysz pole poniżej.",
+    "updates": "Chcę otrzymać krótką wiadomość po przekazaniu petycji (najwyżej kilka e-maili).",
+    "consent": "Mam co najmniej 16 lat i wyraźnie zgadzam się na przetwarzanie mojego imienia i nazwiska, kraju oraz — jeśli go podałem(-am) — adresu e-mail na potrzeby tej petycji, zgodnie z opisem w {privacyLink}.",
+    "privacyLinkText": "polityce prywatności",
+    "submit": "Podpisz petycję",
+    "submitting": "Podpisywanie…",
+    "humanCheck": "Weryfikacja bezpieczeństwa Cloudflare Turnstile — szanuje prywatność, bez śledzących plików cookie.",
+    "noscript": "JavaScript jest wyłączony. Nadal możesz podpisać petycję: Twój podpis zostanie zapisany i policzony po ręcznej weryfikacji, ponieważ automatyczna weryfikacja bezpieczeństwa wymaga JavaScriptu.",
+    "errors": {
+      "generic": "Coś poszło nie tak. Spróbuj ponownie za chwilę.",
+      "network": "Nie udało się połączyć z serwerem. Sprawdź połączenie i spróbuj ponownie.",
+      "invalid_name": "Podaj swoje imię i nazwisko (od 2 do 100 znaków).",
+      "invalid_country": "Wybierz swój kraj.",
+      "invalid_email": "Podaj prawidłowy adres e-mail lub pozostaw to pole puste.",
+      "consent_required": "Aby podpisać, potwierdź swoją zgodę.",
+      "captcha_failed": "Weryfikacja bezpieczeństwa nie powiodła się. Odśwież stronę i spróbuj ponownie.",
+      "duplicate": "Ten adres e-mail został już użyty do podpisania petycji. Dziękujemy!",
+      "forbidden": "To żądanie zostało odrzucone. Podpisz petycję bezpośrednio na stronie public-order.eu.",
+      "rate_limited": "Zbyt wiele prób. Odczekaj kilka minut i spróbuj ponownie."
+    }
+  },
+  "thanks": {
+    "title": "Dziękujemy za podpis",
+    "lead": "Twój podpis został zapisany. Dziękujemy, że stajesz w obronie zarówno prawa do protestu, jak i bezpieczeństwa naszych społeczności.",
+    "pending": "Ponieważ automatyczna weryfikacja bezpieczeństwa nie mogła zostać przeprowadzona, Twój podpis zostanie policzony po ręcznej weryfikacji.",
+    "codeTitle": "Twój osobisty kod wycofania podpisu",
+    "codeText": "Zachowaj ten kod na wypadek, gdybyś później chciał(a) wycofać podpis. Przechowujemy go wyłącznie w postaci zaszyfrowanej (skrótu), więc nie możemy pokazać go ponownie.",
+    "codeCopy": "Kopiuj kod",
+    "codeCopied": "Skopiowano",
+    "nextTitle": "Co dalej?",
+    "nextText": "Najbardziej pomocne, co możesz teraz zrobić, to podzielić się petycją ze znajomymi.",
+    "shareButton": "Udostępnij petycję",
+    "backHome": "Wróć na stronę główną"
+  },
+  "delete": {
+    "title": "Wycofaj swój podpis",
+    "lead": "Możesz wycofać swój podpis w każdej chwili. Zostanie on trwale usunięty, a licznik odpowiednio zmniejszony.",
+    "codeLabel": "Kod wycofania",
+    "codeHelp": "Kod wyświetlony po podpisaniu petycji, na przykład ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Usuń mój podpis",
+    "noCodeTitle": "Zgubiony kod?",
+    "noCodeText": "Napisz na adres {email} z adresu e-mail, którego użyto do podpisania petycji, albo — jeśli podpisano bez adresu e-mail — podaj swoje imię i nazwisko, kraj oraz przybliżoną datę podpisania. Rozpatrzymy Twoją prośbę w ciągu 30 dni.",
+    "success": "Twój podpis został usunięty.",
+    "notFound": "Nie znaleziono podpisu dla tego kodu. Sprawdź kod i spróbuj ponownie.",
+    "invalid": "Wpisz prawidłowy kod wycofania."
+  },
+  "share": {
+    "title": "Jak udostępnić",
+    "lead": "Petycja ma sens tylko wtedy, gdy dotrze do ludzi. Oto kilka prostych sposobów pomocy — żaden z nich nie ładuje na tej stronie skryptów śledzących.",
+    "linksTitle": "Udostępnij w mediach społecznościowych",
+    "copyTitle": "Skopiuj link",
+    "copyButton": "Kopiuj link",
+    "copied": "Skopiowano link",
+    "nativeShare": "Udostępnij…",
+    "messagesTitle": "Proponowane wiadomości",
+    "messagesIntro": "Możesz je swobodnie kopiować, dostosowywać lub tłumaczyć.",
+    "messages": [
+      "Pokojowy protest to prawo. Przemoc podczas zamieszek nim nie jest. Podpisałem(-am) European Public Order Initiative — a Ty?",
+      "Chrońmy prawo do protestu, powstrzymując przemocową mniejszość — w granicach praworządności i praw człowieka. Podpisz tutaj:",
+      "Podpalenia, grabieże i ataki na ludzi zagrażają wszystkim, także uczestnikom pokojowych manifestacji. Popieram stanowcze, zgodne z prawem działania. Dodaj swoje imię i nazwisko:"
+    ],
+    "copyMessage": "Kopiuj wiadomość",
+    "offlineTitle": "Porozmawiaj o tym",
+    "offlineText": "Rozmowy ze znajomymi, współpracownikami i lokalnymi przedstawicielami znaczą więcej niż jakikolwiek wpis. Dziel się petycją uczciwie i z szacunkiem — także z osobami, które się z nią nie zgadzają.",
+    "guidelinesTitle": "Zachowajmy wzajemny szacunek",
+    "guidelinesText": "Nie wykorzystuj petycji do wskazywania konkretnych osób ani grup. Sprzeciwiamy się przemocy ze strony kogokolwiek i stoimy na straży praw każdego.",
+    "emailSubject": "Podpisz, proszę: European Public Order Initiative"
+  },
+  "press": {
+    "title": "Prasa i media",
+    "lead": "Informacje podstawowe, gotowe do użycia teksty i godło European Public Order Initiative. Możesz je swobodnie cytować i powielać.",
+    "contactTitle": "Zapytania prasowe",
+    "contactText": "W sprawie pytań, oświadczeń i informacji podstawowych prosimy pisać na adres {email}.",
+    "anonymity": "Dla ich bezpieczeństwa nie podajemy nazwisk osób stojących za inicjatywą. Wszystkie zapytania prosimy kierować na adres prasowy.",
+    "factsTitle": "Najważniejsze fakty",
+    "facts": {
+      "name": "Nazwa",
+      "website": "Strona internetowa",
+      "type": "Charakter",
+      "typeText": "Niezależna, bezpartyjna petycja obywatelska. Nie jest zarejestrowaną europejską inicjatywą obywatelską w rozumieniu rozporządzenia (UE) 2019/788 i nie jest powiązana z Unią Europejską ani z żadną z jej instytucji.",
+      "addressees": "Adresaci",
+      "addresseesText": "Posłowie do Parlamentu Europejskiego, Komisja Europejska, Rada Unii Europejskiej oraz rządy i parlamenty państw członkowskich Unii Europejskiej i Europejskiego Obszaru Gospodarczego.",
+      "goal": "Cel",
+      "goalText": "Podpisów: {goal}",
+      "data": "Zbierane dane",
+      "dataText": "Imię i nazwisko, kraj zamieszkania oraz, opcjonalnie, adres e-mail. Imiona i nazwiska nigdy nie są publikowane; podawane są wyłącznie sumy oraz liczba podpisów w poszczególnych krajach."
+    },
+    "boilerplateTitle": "O inicjatywie",
+    "boilerplateIntro": "Użyj tych tekstów w obecnej postaci lub skróć je według potrzeb.",
+    "shortLabel": "Wersja krótka",
+    "short": "European Public Order Initiative to niezależna, bezpartyjna petycja obywatelska, która domaga się stanowczych, zgodnych z prawem środków przeciwko przemocy podczas zamieszek, aby chronić prawo do pokojowego protestu.",
+    "longLabel": "Wersja długa",
+    "long": "European Public Order Initiative to niezależna, bezpartyjna petycja obywatelska skierowana do decydentów europejskich i krajowych. Domaga się pięciu działań: ochrony pokojowych protestów; szybkiego powstrzymywania podpaleń, grabieży i ataków na ludzi oraz konsekwentnego ich ścigania; umożliwienia siłom zbrojnym wspierania władz cywilnych jako środka ostatecznego, pod dowództwem cywilnym i z nadzorem parlamentu; czasowego przetrzymywania osób bez legalnego pobytu, które uczestniczą w poważnej przemocy, w humanitarnych ośrodkach oraz — po przeprowadzeniu należytej procedury — nadania priorytetu ich powrotowi, nigdy z naruszeniem zasady non-refoulement; a także wzmocnienia wspólnego europejskiego zakazu wjazdu dla osób skazanych za poważne przestępstwa przeciwko porządkowi publicznemu, po indywidualnej ocenie i z możliwością kontroli sądowej. Każdy środek musi zostać przyjęty w sposób demokratyczny oraz respektować konstytucje krajowe, Europejską Konwencję Praw Człowieka i Kartę praw podstawowych Unii Europejskiej. Petycja nie jest powiązana z Unią Europejską ani z żadną z jej instytucji.",
+    "copyText": "Kopiuj tekst",
+    "copied": "Skopiowano",
+    "assetsTitle": "Godło i obrazy",
+    "assetsIntro": "Pliki SVG skalują się do dowolnego rozmiaru. Pliki PNG stosuj tam, gdzie SVG nie jest obsługiwany.",
+    "assets": {
+      "emblem": "Godło",
+      "emblemInverse": "Godło na ciemne tło",
+      "wordmark": "Godło z nazwą",
+      "wordmarkInverse": "Godło z nazwą, na ciemne tło",
+      "social": "Obraz do mediów społecznościowych"
+    },
+    "usageTitle": "Zasady używania godła",
+    "usage": [
+      "Nie zmieniaj, nie przebarwiaj, nie przycinaj ani nie zniekształcaj godła.",
+      "Zachowaj wokół niego wolne miejsce o szerokości co najmniej jednej czwartej jego szerokości.",
+      "Nie używaj go w sposób sugerujący poparcie ze strony Unii Europejskiej lub którejkolwiek z jej instytucji albo powiązanie z nimi.",
+      "Nie używaj go do promowania partii politycznej, kandydata ani produktu komercyjnego."
+    ]
+  },
+  "rights": {
+    "title": "Nasze zobowiązanie do przestrzegania praworządności",
+    "text": "Ta petycja nie wzywa do żadnych działań niezgodnych z prawem. Każdy proponowany w niej środek musi zostać przyjęty w demokratycznych, zgodnych z prawem procedurach i stosowany z pełnym poszanowaniem konstytucji krajowych, Europejskiej Konwencji Praw Człowieka, Karty praw podstawowych Unii Europejskiej oraz międzynarodowego prawa uchodźczego, w tym zasady non-refoulement. Środki muszą być skierowane przeciwko zachowaniom — nigdy przeciwko narodowości, pochodzeniu etnicznemu, religii ani poglądom politycznym.",
+    "short": "Ta petycja nie wzywa do żadnych działań niezgodnych z prawem i w pełni respektuje konstytucje krajowe oraz Europejską Konwencję Praw Człowieka."
+  },
+  "faq": {
+    "title": "Najczęściej zadawane pytania",
+    "lead": "Szczere odpowiedzi na pytania i zarzuty, które słyszymy najczęściej."
+  },
+  "petition": {
+    "signCta": "Zgadzasz się? Dodaj swoje imię i nazwisko."
+  },
+  "footer": {
+    "about": "Niezależna, bezpartyjna petycja obywatelska. Niepowiązana z Unią Europejską ani z żadną z jej instytucji.",
+    "contact": "Kontakt",
+    "rights": "Prawa i zasady",
+    "pressKit": "Prasa i media",
+    "source": "Kod źródłowy"
   },
   "notice": {
-    "untranslated": "Ta strona nie jest jeszcze dostępna w języku polskim. Poniżej wyświetlana jest wersja angielska.",
+    "untranslated": "Ta strona nie jest jeszcze dostępna w wybranym języku ({language}). Poniżej wyświetlana jest wersja angielska.",
     "help": "Pomóż nam tłumaczyć"
+  },
+  "notFound": {
+    "title": "Nie znaleziono strony",
+    "text": "Strona, której szukasz, nie istnieje lub została przeniesiona.",
+    "back": "Przejdź na stronę główną"
+  },
+  "a11y": {
+    "newTab": "(otwiera się w nowej karcie)",
+    "download": "Pobierz: {name}"
   }
 }

@@ -1,10 +1,225 @@
 {
-  "_status": "untranslated",
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "Uma petição europeia para proteger o direito de protesto pacífico, travando com firmeza a violência nos motins, no respeito do Estado de direito e da Convenção Europeia dos Direitos Humanos.",
+    "ogImageAlt": "European Public Order Initiative: proteger o protesto pacífico. Travar a violência nos motins."
+  },
   "nav": {
-    "language": "Idioma"
+    "home": "Início",
+    "petition": "Petição",
+    "faq": "Perguntas frequentes",
+    "share": "Partilhar",
+    "press": "Imprensa",
+    "privacy": "Privacidade",
+    "legal": "Aviso legal",
+    "delete": "Retirar a assinatura",
+    "sign": "Assinar a petição",
+    "menu": "Menu",
+    "skipToContent": "Saltar para o conteúdo",
+    "language": "Idioma",
+    "mainNavigation": "Navegação principal",
+    "themeToggle": "Alternar entre modo claro e modo escuro",
+    "darkMode": "Modo escuro"
+  },
+  "home": {
+    "title": "Proteger o protesto pacífico. Travar a violência nos motins.",
+    "eyebrow": "Uma petição aos decisores europeus e nacionais",
+    "headline": "Proteger o direito de protesto. Travar a violência que o compromete.",
+    "lead": "O protesto pacífico é um direito fundamental em todas as democracias europeias. Os incêndios criminosos, a pilhagem e as agressões a pessoas põem em perigo, por igual, os residentes, os profissionais de emergência e os manifestantes pacíficos. Pedimos medidas claras e conformes com a lei que travem a minoria violenta, para que todos os outros possam continuar a exercer os seus direitos em segurança.",
+    "readFull": "Ler a petição completa",
+    "pointsTitle": "O que pedimos",
+    "pointsIntro": "Cinco propostas, todas a adotar por vias democráticas e a aplicar com todas as garantias jurídicas.",
+    "points": [
+      {
+        "title": "Proteger o protesto pacífico",
+        "text": "A liberdade de reunião pacífica deve ser garantida e ativamente protegida. Os participantes pacíficos nunca devem ser tratados como infratores pelo facto de outros recorrerem à violência."
+      },
+      {
+        "title": "Travar a violência com firmeza",
+        "text": "Os incêndios criminosos, a pilhagem e as agressões a pessoas, à polícia, aos serviços de emergência ou a bens devem ser travados com prontidão e perseguidos de forma coerente."
+      },
+      {
+        "title": "Apoio militar como último recurso",
+        "text": "Quando os meios policiais ordinários estiverem comprovadamente esgotados, as forças armadas deverão poder apoiar as autoridades civis, mas apenas com um quadro jurídico claro, comando civil e fiscalização parlamentar."
+      },
+      {
+        "title": "Detenção e regresso, após o devido processo",
+        "text": "As pessoas sem residência legal que participem em atos de violência grave deverão ser temporariamente retidas em instalações simples e humanas e, após o devido processo, ser objeto de regresso com prioridade, nunca em violação do princípio da não repulsão."
+      },
+      {
+        "title": "Uma proibição de entrada europeia comum",
+        "text": "Reforçar um mecanismo europeu comum para que às pessoas condenadas por crimes graves contra a ordem pública durante motins possa ser recusada a entrada em toda a Europa, com avaliação individual e controlo jurisdicional."
+      }
+    ],
+    "goalTitle": "O nosso objetivo",
+    "goalText": "Proteger o direito de protesto, afastando dele a minoria violenta.",
+    "ctaTitle": "Junte o seu nome",
+    "ctaText": "Cada assinatura reforça o apelo a uma resposta firme, conforme com a lei e respeitadora dos direitos face à violência nos motins.",
+    "ctaButton": "Assinar a petição",
+    "shareTitle": "Ajude a petição a chegar a mais pessoas",
+    "shareText": "Partilhe a petição com amigos, familiares e colegas que se preocupam com a segurança nas ruas e com o direito de protesto.",
+    "shareButton": "Formas de partilhar"
+  },
+  "counter": {
+    "label": "assinaturas",
+    "goal": "Objetivo: {goal}",
+    "progress": "{percent} % do objetivo",
+    "approx": "O contador é atualizado a cada minuto e pode ser aproximado."
+  },
+  "form": {
+    "title": "Assinar a petição",
+    "intro": "Demora menos de um minuto. Pedimos apenas o que é necessário.",
+    "name": "Nome completo",
+    "nameHelp": "O seu nome nunca é publicado.",
+    "country": "País de residência",
+    "countryPlaceholder": "Selecione o seu país",
+    "otherCountry": "Outro país",
+    "email": "Endereço de e-mail",
+    "optional": "opcional",
+    "emailHelp": "Utilizado apenas para evitar assinaturas duplicadas, a menos que assinale a caixa abaixo.",
+    "updates": "Enviar-me uma breve informação quando a petição for entregue (no máximo, alguns e-mails).",
+    "consent": "Tenho pelo menos 16 anos e consinto expressamente que o meu nome, o meu país e, se o tiver indicado, o meu endereço de e-mail sejam tratados para esta petição, conforme descrito na {privacyLink}.",
+    "privacyLinkText": "política de privacidade",
+    "submit": "Assinar a petição",
+    "submitting": "A assinar…",
+    "humanCheck": "Verificação de segurança do Cloudflare Turnstile: respeita a privacidade e não utiliza cookies de rastreamento.",
+    "noscript": "O JavaScript está desativado. Pode ainda assim assinar: a sua assinatura será guardada e contabilizada após uma verificação manual, porque a verificação de segurança automática necessita de JavaScript.",
+    "errors": {
+      "generic": "Ocorreu um erro. Tente novamente dentro de instantes.",
+      "network": "Não foi possível contactar o servidor. Verifique a ligação e tente novamente.",
+      "invalid_name": "Introduza o seu nome (2 a 100 carateres).",
+      "invalid_country": "Selecione o seu país.",
+      "invalid_email": "Introduza um endereço de e-mail válido ou deixe o campo em branco.",
+      "consent_required": "Confirme o seu consentimento para assinar.",
+      "captcha_failed": "A verificação de segurança falhou. Recarregue a página e tente novamente.",
+      "duplicate": "Este endereço de e-mail já foi utilizado para assinar a petição. Obrigado!",
+      "forbidden": "Este pedido foi rejeitado. Assine diretamente em public-order.eu.",
+      "rate_limited": "Demasiadas tentativas. Aguarde alguns minutos e tente novamente."
+    }
+  },
+  "thanks": {
+    "title": "Obrigado por assinar",
+    "lead": "A sua assinatura foi registada. Obrigado por defender simultaneamente o direito de protesto e a segurança das nossas comunidades.",
+    "pending": "Como a verificação de segurança automática não pôde ser executada, a sua assinatura será contabilizada após uma análise manual.",
+    "codeTitle": "O seu código pessoal de retirada",
+    "codeText": "Guarde este código caso queira retirar a assinatura mais tarde. Armazenamo-lo apenas de forma cifrada (hash), pelo que não podemos voltar a mostrá-lo.",
+    "codeCopy": "Copiar código",
+    "codeCopied": "Copiado",
+    "nextTitle": "E agora?",
+    "nextText": "O mais útil que pode fazer agora é partilhar a petição com as pessoas que conhece.",
+    "shareButton": "Partilhar a petição",
+    "backHome": "Voltar à página inicial"
+  },
+  "delete": {
+    "title": "Retirar a assinatura",
+    "lead": "Pode retirar a sua assinatura em qualquer momento. Será eliminada de forma definitiva e o contador será ajustado.",
+    "codeLabel": "Código de retirada",
+    "codeHelp": "O código apresentado após assinar, por exemplo ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Eliminar a minha assinatura",
+    "noCodeTitle": "Perdeu o código?",
+    "noCodeText": "Escreva para {email} a partir do endereço de e-mail com que assinou ou, se assinou sem indicar um endereço de e-mail, indique-nos o seu nome, o país e a data aproximada da assinatura. Trataremos o seu pedido no prazo de 30 dias.",
+    "success": "A sua assinatura foi eliminada.",
+    "notFound": "Não foi encontrada nenhuma assinatura com este código. Verifique-o e tente novamente.",
+    "invalid": "Introduza um código de retirada válido."
+  },
+  "share": {
+    "title": "Como partilhar",
+    "lead": "A petição só funciona se chegar às pessoas. Eis algumas formas simples de ajudar; nenhuma delas carrega scripts de rastreamento neste sítio.",
+    "linksTitle": "Partilhar nas redes sociais",
+    "copyTitle": "Copiar a ligação",
+    "copyButton": "Copiar ligação",
+    "copied": "Ligação copiada",
+    "nativeShare": "Partilhar…",
+    "messagesTitle": "Mensagens sugeridas",
+    "messagesIntro": "Pode copiá-las, adaptá-las ou traduzi-las livremente.",
+    "messages": [
+      "O protesto pacífico é um direito. A violência nos motins não é. Assinei a European Public Order Initiative. Também assina?",
+      "Protejamos o direito de protesto travando a minoria violenta, no respeito do Estado de direito e dos direitos humanos. Assine aqui:",
+      "Os incêndios criminosos, a pilhagem e as agressões a pessoas põem todos em perigo, incluindo os manifestantes pacíficos. Apoio medidas firmes e conformes com a lei. Junte o seu nome:"
+    ],
+    "copyMessage": "Copiar mensagem",
+    "offlineTitle": "Fale sobre o assunto",
+    "offlineText": "As conversas com amigos, colegas e representantes locais contam mais do que qualquer publicação. Partilhe a petição com honestidade e respeito, inclusivamente com quem discorda.",
+    "guidelinesTitle": "Mantenha o respeito",
+    "guidelinesText": "Não utilize a petição para visar pessoas ou grupos. Opomo-nos à violência, venha de quem vier, e defendemos os direitos de todos.",
+    "emailSubject": "Assine, por favor: European Public Order Initiative"
+  },
+  "press": {
+    "title": "Imprensa e meios de comunicação",
+    "lead": "Informação de contexto, textos prontos a utilizar e o emblema da European Public Order Initiative. Pode citá-los e reproduzi-los livremente.",
+    "contactTitle": "Pedidos da imprensa",
+    "contactText": "Para perguntas, declarações e informação de contexto, escreva para {email}.",
+    "anonymity": "Pela sua segurança, não publicamos os nomes das pessoas por detrás da iniciativa. Envie todos os pedidos para o endereço de imprensa.",
+    "factsTitle": "Dados essenciais",
+    "facts": {
+      "name": "Nome",
+      "website": "Sítio Web",
+      "type": "Natureza",
+      "typeText": "Uma petição de cidadãos independente e apartidária. Não é uma Iniciativa de Cidadania Europeia registada ao abrigo do Regulamento (UE) 2019/788 e não está associada à União Europeia nem a nenhuma das suas instituições.",
+      "addressees": "Dirigida a",
+      "addresseesText": "Os deputados ao Parlamento Europeu, a Comissão Europeia, o Conselho da União Europeia e os governos e parlamentos dos Estados-Membros da União Europeia e do Espaço Económico Europeu.",
+      "goal": "Objetivo",
+      "goalText": "{goal} assinaturas",
+      "data": "Dados recolhidos",
+      "dataText": "Nome, país de residência e, opcionalmente, um endereço de e-mail. Os nomes nunca são publicados; apenas são comunicados os totais e o número de assinaturas por país."
+    },
+    "boilerplateTitle": "Sobre a iniciativa",
+    "boilerplateIntro": "Utilize estes textos tal como estão ou encurte-os conforme necessário.",
+    "shortLabel": "Versão curta",
+    "short": "A European Public Order Initiative é uma petição de cidadãos independente e apartidária que apela a medidas firmes e conformes com a lei contra a violência nos motins, a fim de proteger o direito de protesto pacífico.",
+    "longLabel": "Versão longa",
+    "long": "A European Public Order Initiative é uma petição de cidadãos independente e apartidária, dirigida aos decisores europeus e nacionais. Solicita cinco medidas: proteger o protesto pacífico; travar com prontidão os incêndios criminosos, a pilhagem e as agressões a pessoas e persegui-los de forma coerente; permitir que as forças armadas apoiem as autoridades civis como último recurso, sob comando civil e fiscalização parlamentar; reter temporariamente em instalações humanas as pessoas sem residência legal que participem em atos de violência grave e, após o devido processo, dar prioridade ao seu regresso, nunca em violação do princípio da não repulsão; e reforçar uma proibição de entrada europeia comum para as pessoas condenadas por crimes graves contra a ordem pública, com avaliação individual e controlo jurisdicional. Qualquer medida deve ser adotada democraticamente e respeitar as constituições nacionais, a Convenção Europeia dos Direitos Humanos e a Carta dos Direitos Fundamentais da União Europeia. A petição não está associada à União Europeia nem a nenhuma das suas instituições.",
+    "copyText": "Copiar texto",
+    "copied": "Copiado",
+    "assetsTitle": "Emblema e imagens",
+    "assetsIntro": "Os ficheiros SVG ajustam-se a qualquer tamanho. Utilize os ficheiros PNG quando o SVG não for suportado.",
+    "assets": {
+      "emblem": "Emblema",
+      "emblemInverse": "Emblema para fundos escuros",
+      "wordmark": "Emblema com nome",
+      "wordmarkInverse": "Emblema com nome, para fundos escuros",
+      "social": "Imagem para redes sociais"
+    },
+    "usageTitle": "Utilização do emblema",
+    "usage": [
+      "Não altere, recolora, corte nem deforme o emblema.",
+      "Deixe à sua volta um espaço livre de, pelo menos, um quarto da sua largura.",
+      "Não o utilize de forma que sugira o apoio da União Europeia ou de qualquer das suas instituições, ou uma associação a estas.",
+      "Não o utilize para promover um partido político, um candidato ou um produto comercial."
+    ]
+  },
+  "rights": {
+    "title": "O nosso compromisso com o Estado de direito",
+    "text": "Esta petição não apela a nenhuma ação ilegal. Todas as medidas que propõe devem ser adotadas através de processos democráticos e legais e aplicadas no pleno respeito das constituições nacionais, da Convenção Europeia dos Direitos Humanos, da Carta dos Direitos Fundamentais da União Europeia e do direito internacional dos refugiados, incluindo o princípio da não repulsão. As medidas devem visar condutas, nunca a nacionalidade, a origem étnica, a religião ou as opiniões políticas.",
+    "short": "Esta petição não apela a nenhuma ação ilegal e respeita plenamente as constituições nacionais e a Convenção Europeia dos Direitos Humanos."
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "lead": "Respostas sinceras às perguntas e objeções que mais ouvimos."
+  },
+  "petition": {
+    "signCta": "Concorda? Junte o seu nome."
+  },
+  "footer": {
+    "about": "Uma petição de cidadãos independente e apartidária. Sem qualquer associação à União Europeia nem a nenhuma das suas instituições.",
+    "contact": "Contacto",
+    "rights": "Direitos e regras",
+    "pressKit": "Imprensa e meios de comunicação",
+    "source": "Código-fonte"
   },
   "notice": {
-    "untranslated": "Esta página ainda não está disponível em português. É apresentada abaixo a versão em inglês.",
+    "untranslated": "Esta página ainda não está disponível neste idioma ({language}). É apresentada abaixo a versão em inglês.",
     "help": "Ajude-nos a traduzir"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "text": "A página que procura não existe ou mudou de endereço.",
+    "back": "Ir para a página inicial"
+  },
+  "a11y": {
+    "newTab": "(abre num novo separador)",
+    "download": "Transferir {name}"
   }
 }

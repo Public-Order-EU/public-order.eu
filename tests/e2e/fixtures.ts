@@ -12,6 +12,7 @@ import { test as base, expect } from '@playwright/test';
 import { E2E } from './config.mjs';
 
 export const en = JSON.parse(readFileSync('src/i18n/ui/en.json', 'utf8'));
+export const de = JSON.parse(readFileSync('src/i18n/ui/de.json', 'utf8'));
 
 export const locales = ['en', 'fr', 'de', 'nl', 'es', 'it', 'pt', 'pl', 'da', 'sv', 'no', 'fi', 'et', 'lv', 'lt'];
 

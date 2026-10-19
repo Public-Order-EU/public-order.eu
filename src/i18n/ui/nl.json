@@ -1,10 +1,225 @@
 {
-  "_status": "untranslated",
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "Een Europese petitie om het recht op vreedzaam protest te beschermen door rellengeweld vastberaden te stoppen – binnen de rechtsstaat en het Europees Verdrag voor de Rechten van de Mens.",
+    "ogImageAlt": "European Public Order Initiative – Bescherm vreedzaam protest. Stop rellengeweld."
+  },
   "nav": {
-    "language": "Taal"
+    "home": "Home",
+    "petition": "Petitie",
+    "faq": "FAQ",
+    "share": "Delen",
+    "press": "Pers",
+    "privacy": "Privacy",
+    "legal": "Juridische informatie",
+    "delete": "Handtekening intrekken",
+    "sign": "Onderteken de petitie",
+    "menu": "Menu",
+    "skipToContent": "Naar de inhoud",
+    "language": "Taal",
+    "mainNavigation": "Hoofdnavigatie",
+    "themeToggle": "Wisselen tussen lichte en donkere modus",
+    "darkMode": "Donkere modus"
+  },
+  "home": {
+    "title": "Bescherm vreedzaam protest. Stop rellengeweld.",
+    "eyebrow": "Een petitie aan Europese en nationale besluitvormers",
+    "headline": "Bescherm het recht om te protesteren. Stop het geweld dat het ondermijnt.",
+    "lead": "Vreedzaam protest is in elke Europese democratie een grondrecht. Brandstichting, plundering en aanvallen op mensen brengen omwonenden, hulpverleners en vreedzame demonstranten in gevaar. Wij vragen om duidelijke, wettige maatregelen die de gewelddadige minderheid een halt toeroepen – zodat alle anderen hun rechten veilig kunnen blijven uitoefenen.",
+    "readFull": "Lees de volledige petitie",
+    "pointsTitle": "Wat wij vragen",
+    "pointsIntro": "Vijf voorstellen, elk te besluiten via democratische procedures en toe te passen met alle juridische waarborgen.",
+    "points": [
+      {
+        "title": "Bescherm vreedzaam protest",
+        "text": "De vrijheid van vreedzame vergadering moet worden gewaarborgd en actief beschermd. Vreedzame deelnemers mogen nooit als daders worden behandeld omdat anderen gewelddadig worden."
+      },
+      {
+        "title": "Stop geweld vastberaden",
+        "text": "Brandstichting, plundering en aanvallen op mensen, politie, hulpdiensten of eigendommen moeten snel worden gestopt en consequent worden vervolgd."
+      },
+      {
+        "title": "Militaire steun als laatste redmiddel",
+        "text": "Wanneer de gewone politiecapaciteit aantoonbaar tekortschiet, moeten de strijdkrachten de civiele autoriteiten kunnen ondersteunen – uitsluitend binnen een duidelijk wettelijk kader, onder civiel gezag en met parlementair toezicht."
+      },
+      {
+        "title": "Detentie en terugkeer, na een eerlijke procedure",
+        "text": "Personen zonder wettig verblijf die deelnemen aan ernstig geweld, moeten tijdelijk kunnen worden vastgehouden in sobere, humane voorzieningen en, na een eerlijke procedure, met voorrang worden teruggestuurd – nooit in strijd met het beginsel van non-refoulement."
+      },
+      {
+        "title": "Een gezamenlijk Europees inreisverbod",
+        "text": "Versterk een gemeenschappelijk Europees mechanisme, zodat personen die tijdens rellen zijn veroordeeld voor ernstige strafbare feiten tegen de openbare orde in heel Europa de toegang kan worden geweigerd, met een individuele beoordeling en rechterlijke toetsing."
+      }
+    ],
+    "goalTitle": "Ons doel",
+    "goalText": "Het recht om te protesteren beschermen door de gewelddadige minderheid ervan uit te sluiten.",
+    "ctaTitle": "Zet uw naam eronder",
+    "ctaText": "Elke handtekening versterkt de oproep tot een vastberaden, wettige en de rechten respecterende aanpak van rellengeweld.",
+    "ctaButton": "Onderteken de petitie",
+    "shareTitle": "Help de petitie meer mensen te bereiken",
+    "shareText": "Deel de petitie met vrienden, familie en collega’s die veilige straten en het recht om te protesteren belangrijk vinden.",
+    "shareButton": "Manieren om te delen"
+  },
+  "counter": {
+    "label": "handtekeningen",
+    "goal": "Doel: {goal}",
+    "progress": "{percent}% van het doel",
+    "approx": "De teller wordt elke minuut bijgewerkt en kan afwijken."
+  },
+  "form": {
+    "title": "Onderteken de petitie",
+    "intro": "Het kost minder dan een minuut. We vragen alleen wat nodig is.",
+    "name": "Volledige naam",
+    "nameHelp": "Uw naam wordt nooit gepubliceerd.",
+    "country": "Woonland",
+    "countryPlaceholder": "Kies uw land",
+    "otherCountry": "Ander land",
+    "email": "E-mailadres",
+    "optional": "optioneel",
+    "emailHelp": "Wordt alleen gebruikt om dubbele handtekeningen te voorkomen – tenzij u hieronder het vakje aanvinkt.",
+    "updates": "Stuur mij een kort bericht wanneer de petitie wordt aangeboden (hooguit een paar e-mails).",
+    "consent": "Ik ben minstens 16 jaar oud en geef uitdrukkelijk toestemming voor de verwerking van mijn naam, mijn land en, indien opgegeven, mijn e-mailadres voor deze petitie, zoals beschreven in het {privacyLink}.",
+    "privacyLinkText": "privacybeleid",
+    "submit": "Onderteken de petitie",
+    "submitting": "Bezig met ondertekenen…",
+    "humanCheck": "Beveiligingscontrole door Cloudflare Turnstile – privacyvriendelijk, zonder trackingcookies.",
+    "noscript": "JavaScript is uitgeschakeld. U kunt toch ondertekenen: uw handtekening wordt opgeslagen en na een handmatige controle meegeteld, omdat de automatische beveiligingscontrole JavaScript nodig heeft.",
+    "errors": {
+      "generic": "Er is iets misgegaan. Probeer het over enkele ogenblikken opnieuw.",
+      "network": "We konden de server niet bereiken. Controleer uw verbinding en probeer het opnieuw.",
+      "invalid_name": "Vul uw naam in (2 tot 100 tekens).",
+      "invalid_country": "Kies uw land.",
+      "invalid_email": "Vul een geldig e-mailadres in of laat het veld leeg.",
+      "consent_required": "Bevestig uw toestemming om te ondertekenen.",
+      "captcha_failed": "De beveiligingscontrole is mislukt. Laad de pagina opnieuw en probeer het nogmaals.",
+      "duplicate": "Met dit e-mailadres is de petitie al ondertekend. Dank u wel!",
+      "forbidden": "Dit verzoek is geweigerd. Onderteken rechtstreeks op public-order.eu.",
+      "rate_limited": "Te veel pogingen. Wacht een paar minuten en probeer het opnieuw."
+    }
+  },
+  "thanks": {
+    "title": "Bedankt voor uw handtekening",
+    "lead": "Uw handtekening is geregistreerd. Bedankt dat u opkomt voor zowel het recht om te protesteren als de veiligheid van onze gemeenschappen.",
+    "pending": "Omdat de automatische beveiligingscontrole niet kon worden uitgevoerd, wordt uw handtekening na een handmatige beoordeling meegeteld.",
+    "codeTitle": "Uw persoonlijke intrekkingscode",
+    "codeText": "Bewaar deze code als u uw handtekening later misschien wilt intrekken. We slaan hem alleen versleuteld (als hash) op en kunnen hem u dus niet opnieuw tonen.",
+    "codeCopy": "Code kopiëren",
+    "codeCopied": "Gekopieerd",
+    "nextTitle": "Wat nu?",
+    "nextText": "Het nuttigste wat u nu kunt doen, is de petitie delen met mensen die u kent.",
+    "shareButton": "Deel de petitie",
+    "backHome": "Terug naar de homepage"
+  },
+  "delete": {
+    "title": "Uw handtekening intrekken",
+    "lead": "U kunt uw handtekening op elk moment intrekken. Ze wordt definitief verwijderd en de teller wordt aangepast.",
+    "codeLabel": "Intrekkingscode",
+    "codeHelp": "De code die na het ondertekenen is getoond, bijvoorbeeld ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Mijn handtekening verwijderen",
+    "noCodeTitle": "Code kwijt?",
+    "noCodeText": "Schrijf naar {email} vanaf het e-mailadres waarmee u hebt ondertekend, of – als u zonder e-mailadres hebt ondertekend – vermeld uw naam, uw land en bij benadering de datum van ondertekening. We handelen uw verzoek binnen 30 dagen af.",
+    "success": "Uw handtekening is verwijderd.",
+    "notFound": "Er is geen handtekening gevonden bij deze code. Controleer de code en probeer het opnieuw.",
+    "invalid": "Vul een geldige intrekkingscode in."
+  },
+  "share": {
+    "title": "Zo kunt u delen",
+    "lead": "De petitie werkt alleen als ze mensen bereikt. Hier zijn enkele eenvoudige manieren om te helpen – geen ervan laadt trackingscripts op deze site.",
+    "linksTitle": "Delen op sociale media",
+    "copyTitle": "Kopieer de link",
+    "copyButton": "Link kopiëren",
+    "copied": "Link gekopieerd",
+    "nativeShare": "Delen…",
+    "messagesTitle": "Voorgestelde berichten",
+    "messagesIntro": "U mag ze vrij kopiëren, aanpassen of vertalen.",
+    "messages": [
+      "Vreedzaam protest is een recht. Rellengeweld niet. Ik heb de European Public Order Initiative ondertekend – u ook?",
+      "Bescherm het recht om te protesteren door de gewelddadige minderheid te stoppen – binnen de rechtsstaat en met respect voor de mensenrechten. Teken hier:",
+      "Brandstichting, plundering en aanvallen op mensen brengen iedereen in gevaar, ook vreedzame demonstranten. Ik steun vastberaden, wettige maatregelen. Zet ook uw naam eronder:"
+    ],
+    "copyMessage": "Bericht kopiëren",
+    "offlineTitle": "Praat erover",
+    "offlineText": "Gesprekken met vrienden, collega’s en lokale vertegenwoordigers wegen zwaarder dan welk bericht ook. Deel de petitie eerlijk en respectvol – ook met mensen die er anders over denken.",
+    "guidelinesTitle": "Houd het respectvol",
+    "guidelinesText": "Gebruik de petitie niet om individuen of groepen aan te vallen. Wij zijn tegen geweld door wie dan ook, en voor de rechten van iedereen.",
+    "emailSubject": "Onderteken alstublieft: European Public Order Initiative"
+  },
+  "press": {
+    "title": "Pers en media",
+    "lead": "Achtergrondinformatie, kant-en-klare teksten en het embleem van de European Public Order Initiative. U mag ze vrij citeren en overnemen.",
+    "contactTitle": "Persvragen",
+    "contactText": "Voor vragen, verklaringen en achtergrondinformatie kunt u schrijven naar {email}.",
+    "anonymity": "Voor hun veiligheid publiceren we de namen van de mensen achter het initiatief niet. Stuur alle vragen naar het persadres.",
+    "factsTitle": "Kerngegevens",
+    "facts": {
+      "name": "Naam",
+      "website": "Website",
+      "type": "Soort",
+      "typeText": "Een onafhankelijke, partijloze burgerpetitie. Het is geen geregistreerd Europees burgerinitiatief in de zin van Verordening (EU) 2019/788 en het heeft geen banden met de Europese Unie of een van haar instellingen.",
+      "addressees": "Gericht aan",
+      "addresseesText": "De leden van het Europees Parlement, de Europese Commissie, de Raad van de Europese Unie, en de regeringen en parlementen van de lidstaten van de Europese Unie en de Europese Economische Ruimte.",
+      "goal": "Doel",
+      "goalText": "{goal} handtekeningen",
+      "data": "Verzamelde gegevens",
+      "dataText": "Naam, woonland en, optioneel, een e-mailadres. Namen worden nooit gepubliceerd; alleen de totalen en het aantal handtekeningen per land worden gerapporteerd."
+    },
+    "boilerplateTitle": "Over het initiatief",
+    "boilerplateIntro": "Gebruik deze teksten zoals ze zijn, of kort ze in waar nodig.",
+    "shortLabel": "Korte versie",
+    "short": "De European Public Order Initiative is een onafhankelijke, partijloze burgerpetitie die oproept tot vastberaden, wettige maatregelen tegen rellengeweld om het recht op vreedzaam protest te beschermen.",
+    "longLabel": "Lange versie",
+    "long": "De European Public Order Initiative is een onafhankelijke, partijloze burgerpetitie gericht aan Europese en nationale besluitvormers. Ze vraagt om vijf maatregelen: vreedzaam protest beschermen; brandstichting, plundering en aanvallen op mensen snel stoppen en consequent vervolgen; de strijdkrachten als laatste redmiddel de civiele autoriteiten laten ondersteunen, onder civiel gezag en met parlementair toezicht; personen zonder wettig verblijf die deelnemen aan ernstig geweld tijdelijk vasthouden in humane voorzieningen en, na een eerlijke procedure, met voorrang terugsturen, nooit in strijd met het beginsel van non-refoulement; en een gezamenlijk Europees inreisverbod versterken voor personen die zijn veroordeeld voor ernstige strafbare feiten tegen de openbare orde, met een individuele beoordeling en rechterlijke toetsing. Elke maatregel moet democratisch worden besloten en de nationale grondwetten, het Europees Verdrag voor de Rechten van de Mens en het Handvest van de grondrechten van de Europese Unie respecteren. De petitie heeft geen banden met de Europese Unie of een van haar instellingen.",
+    "copyText": "Tekst kopiëren",
+    "copied": "Gekopieerd",
+    "assetsTitle": "Embleem en afbeeldingen",
+    "assetsIntro": "De SVG-bestanden schalen naar elk formaat. Gebruik de PNG-bestanden waar SVG niet wordt ondersteund.",
+    "assets": {
+      "emblem": "Embleem",
+      "emblemInverse": "Embleem voor donkere achtergronden",
+      "wordmark": "Embleem met naam",
+      "wordmarkInverse": "Embleem met naam, voor donkere achtergronden",
+      "social": "Afbeelding voor sociale media"
+    },
+    "usageTitle": "Het embleem gebruiken",
+    "usage": [
+      "Pas het embleem niet aan, geef het geen andere kleur, snijd het niet bij en vervorm het niet.",
+      "Laat er minstens een kwart van de breedte als vrije ruimte omheen.",
+      "Gebruik het niet op een manier die wijst op steun van of banden met de Europese Unie of een van haar instellingen.",
+      "Gebruik het niet om reclame te maken voor een politieke partij, een kandidaat of een commercieel product."
+    ]
+  },
+  "rights": {
+    "title": "Onze toewijding aan de rechtsstaat",
+    "text": "Deze petitie roept niet op tot onwettige handelingen. Elke voorgestelde maatregel moet via democratische, wettige procedures worden besloten en worden toegepast met volledige eerbiediging van de nationale grondwetten, het Europees Verdrag voor de Rechten van de Mens, het Handvest van de grondrechten van de Europese Unie en het internationale vluchtelingenrecht, waaronder het beginsel van non-refoulement. Maatregelen moeten gericht zijn op gedrag – nooit op nationaliteit, etnische afkomst, godsdienst of politieke overtuiging.",
+    "short": "Deze petitie roept niet op tot onwettige handelingen en eerbiedigt de nationale grondwetten en het Europees Verdrag voor de Rechten van de Mens volledig."
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "lead": "Eerlijke antwoorden op de vragen en bezwaren die we het vaakst horen."
+  },
+  "petition": {
+    "signCta": "Eens? Zet uw naam eronder."
+  },
+  "footer": {
+    "about": "Een onafhankelijke, partijloze burgerpetitie. Geen banden met de Europese Unie of een van haar instellingen.",
+    "contact": "Contact",
+    "rights": "Rechten en regels",
+    "pressKit": "Pers en media",
+    "source": "Broncode"
   },
   "notice": {
-    "untranslated": "Deze pagina is nog niet beschikbaar in het Nederlands. Hieronder staat de Engelse versie.",
+    "untranslated": "Deze pagina is nog niet beschikbaar in het {language}. Hieronder staat de Engelse versie.",
     "help": "Help ons vertalen"
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "text": "De pagina die u zoekt, bestaat niet of is verplaatst.",
+    "back": "Naar de homepage"
+  },
+  "a11y": {
+    "newTab": "(opent in een nieuw tabblad)",
+    "download": "{name} downloaden"
   }
 }

@@ -1,10 +1,225 @@
 {
-  "_status": "untranslated",
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "Ett europeiskt upprop för att skydda rätten till fredlig demonstration genom att resolut stoppa kravallvåld – inom rättsstatens ramar och Europakonventionen.",
+    "ogImageAlt": "European Public Order Initiative – Skydda fredliga protester. Stoppa kravallvåldet."
+  },
   "nav": {
-    "language": "Språk"
+    "home": "Startsida",
+    "petition": "Uppropet",
+    "faq": "Vanliga frågor",
+    "share": "Dela",
+    "press": "Press",
+    "privacy": "Integritet",
+    "legal": "Juridisk information",
+    "delete": "Återkalla underskrift",
+    "sign": "Skriv under",
+    "menu": "Meny",
+    "skipToContent": "Hoppa till innehållet",
+    "language": "Språk",
+    "mainNavigation": "Huvudnavigering",
+    "themeToggle": "Växla mellan ljust och mörkt läge",
+    "darkMode": "Mörkt läge"
+  },
+  "home": {
+    "title": "Skydda fredliga protester. Stoppa kravallvåldet.",
+    "eyebrow": "Ett upprop till europeiska och nationella beslutsfattare",
+    "headline": "Skydda demonstrationsrätten. Stoppa våldet som undergräver den.",
+    "lead": "Fredliga protester är en grundläggande rättighet i alla europeiska demokratier. Mordbränder, plundring och attacker mot människor utsätter boende, räddningspersonal och fredliga demonstranter för fara. Vi kräver tydliga, lagliga åtgärder som stoppar den våldsamma minoriteten – så att alla andra tryggt kan fortsätta utöva sina rättigheter.",
+    "readFull": "Läs hela uppropet",
+    "pointsTitle": "Det här kräver vi",
+    "pointsIntro": "Fem förslag, som alla ska antas genom demokratiska beslutsprocesser och tillämpas med full rättssäkerhet.",
+    "points": [
+      {
+        "title": "Skydda fredliga protester",
+        "text": "Mötesfriheten måste garanteras och aktivt skyddas. Fredliga deltagare får aldrig behandlas som gärningsmän för att andra blir våldsamma."
+      },
+      {
+        "title": "Stoppa våldet med fasthet",
+        "text": "Mordbränder, plundring och attacker mot människor, poliser, räddningstjänst eller egendom måste stoppas skyndsamt och beivras konsekvent."
+      },
+      {
+        "title": "Militärt stöd som sista utväg",
+        "text": "När polisens ordinarie resurser uppenbart inte räcker till bör försvarsmakten kunna stödja de civila myndigheterna – men bara inom en tydlig rättslig ram, under civil ledning och med parlamentarisk insyn."
+      },
+      {
+        "title": "Förvar och återvändande, efter rättssäker prövning",
+        "text": "Personer utan laglig vistelse som deltar i grovt våld bör tillfälligt kunna hållas i enkla, humana lokaler och, efter rättssäker prövning, prioriteras för återvändande – aldrig i strid med principen om non-refoulement."
+      },
+      {
+        "title": "Ett gemensamt europeiskt inreseförbud",
+        "text": "Stärk en gemensam europeisk mekanism så att personer som dömts för grova ordningsbrott under kravaller kan nekas inresa i hela Europa, med individuell prövning och möjlighet till domstolsprövning."
+      }
+    ],
+    "goalTitle": "Vårt mål",
+    "goalText": "Att skydda demonstrationsrätten genom att utesluta den våldsamma minoriteten från den.",
+    "ctaTitle": "Skriv under",
+    "ctaText": "Varje underskrift stärker kravet på ett fast, lagligt och rättighetsrespekterande svar på kravallvåld.",
+    "ctaButton": "Skriv under uppropet",
+    "shareTitle": "Hjälp uppropet att nå fler",
+    "shareText": "Dela uppropet med vänner, familj och kollegor som bryr sig om trygga gator och demonstrationsrätten.",
+    "shareButton": "Så kan du dela"
+  },
+  "counter": {
+    "label": "underskrifter",
+    "goal": "Mål: {goal}",
+    "progress": "{percent} % av målet",
+    "approx": "Räknaren uppdateras varje minut och kan vara ungefärlig."
+  },
+  "form": {
+    "title": "Skriv under uppropet",
+    "intro": "Det tar mindre än en minut. Vi frågar bara efter det som är nödvändigt.",
+    "name": "Fullständigt namn",
+    "nameHelp": "Ditt namn publiceras aldrig.",
+    "country": "Bosättningsland",
+    "countryPlaceholder": "Välj ditt land",
+    "otherCountry": "Annat land",
+    "email": "E-postadress",
+    "optional": "valfritt",
+    "emailHelp": "Används endast för att förhindra dubbla underskrifter – om du inte kryssar i rutan nedan.",
+    "updates": "Skicka mig ett kort meddelande när uppropet överlämnas (högst några e-postmeddelanden).",
+    "consent": "Jag är minst 16 år och samtycker uttryckligen till att mitt namn, mitt land och, om jag har angett den, min e-postadress behandlas för detta upprop enligt beskrivningen i {privacyLink}.",
+    "privacyLinkText": "integritetspolicyn",
+    "submit": "Skriv under uppropet",
+    "submitting": "Skriver under …",
+    "humanCheck": "Säkerhetskontroll med Cloudflare Turnstile – integritetsvänlig, utan spårningskakor.",
+    "noscript": "JavaScript är inaktiverat. Du kan ändå skriva under: din underskrift sparas och räknas efter en manuell kontroll, eftersom den automatiska säkerhetskontrollen kräver JavaScript.",
+    "errors": {
+      "generic": "Något gick fel. Försök igen om en stund.",
+      "network": "Vi fick ingen kontakt med servern. Kontrollera din anslutning och försök igen.",
+      "invalid_name": "Ange ditt namn (2 till 100 tecken).",
+      "invalid_country": "Välj ditt land.",
+      "invalid_email": "Ange en giltig e-postadress eller lämna fältet tomt.",
+      "consent_required": "Bekräfta ditt samtycke för att skriva under.",
+      "captcha_failed": "Säkerhetskontrollen misslyckades. Ladda om sidan och försök igen.",
+      "duplicate": "Den här e-postadressen har redan använts för att skriva under uppropet. Tack!",
+      "forbidden": "Begäran avvisades. Skriv under direkt på public-order.eu.",
+      "rate_limited": "För många försök. Vänta några minuter och försök igen."
+    }
+  },
+  "thanks": {
+    "title": "Tack för din underskrift",
+    "lead": "Din underskrift har registrerats. Tack för att du står upp för både demonstrationsrätten och tryggheten i våra samhällen.",
+    "pending": "Eftersom den automatiska säkerhetskontrollen inte kunde genomföras räknas din underskrift efter en manuell granskning.",
+    "codeTitle": "Din personliga återkallelsekod",
+    "codeText": "Spara koden om du vill kunna återkalla din underskrift senare. Vi lagrar den bara i krypterad form (som hash), så vi kan inte visa den för dig igen.",
+    "codeCopy": "Kopiera koden",
+    "codeCopied": "Kopierad",
+    "nextTitle": "Vad händer nu?",
+    "nextText": "Det mest hjälpsamma du kan göra nu är att dela uppropet med människor du känner.",
+    "shareButton": "Dela uppropet",
+    "backHome": "Tillbaka till startsidan"
+  },
+  "delete": {
+    "title": "Återkalla din underskrift",
+    "lead": "Du kan när som helst återkalla din underskrift. Den raderas permanent och räknaren justeras.",
+    "codeLabel": "Återkallelsekod",
+    "codeHelp": "Koden som visades när du skrev under, till exempel ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Radera min underskrift",
+    "noCodeTitle": "Har du tappat bort koden?",
+    "noCodeText": "Skriv till {email} från den e-postadress du skrev under med. Om du skrev under utan e-postadress, uppge ditt namn, ditt land och ungefär när du skrev under. Vi behandlar din begäran inom 30 dagar.",
+    "success": "Din underskrift har raderats.",
+    "notFound": "Ingen underskrift hittades för den här koden. Kontrollera koden och försök igen.",
+    "invalid": "Ange en giltig återkallelsekod."
+  },
+  "share": {
+    "title": "Så delar du",
+    "lead": "Uppropet fungerar bara om det når människor. Här är några enkla sätt att hjälpa till – inget av dem läser in spårningsskript på den här webbplatsen.",
+    "linksTitle": "Dela i sociala medier",
+    "copyTitle": "Kopiera länken",
+    "copyButton": "Kopiera länk",
+    "copied": "Länken kopierades",
+    "nativeShare": "Dela …",
+    "messagesTitle": "Förslag på meddelanden",
+    "messagesIntro": "Du får gärna kopiera, anpassa eller översätta dem.",
+    "messages": [
+      "Fredliga protester är en rättighet. Kravallvåld är det inte. Jag har skrivit under European Public Order Initiative – gör du det också?",
+      "Skydda demonstrationsrätten genom att stoppa den våldsamma minoriteten – inom rättsstatens och de mänskliga rättigheternas ramar. Skriv under här:",
+      "Mordbränder, plundring och attacker mot människor utsätter alla för fara, även fredliga demonstranter. Jag stöder resoluta, lagliga åtgärder. Skriv under du också:"
+    ],
+    "copyMessage": "Kopiera meddelandet",
+    "offlineTitle": "Prata om det",
+    "offlineText": "Samtal med vänner, kollegor och lokala företrädare betyder mer än något inlägg. Dela uppropet ärligt och respektfullt – även med personer som tycker annorlunda.",
+    "guidelinesTitle": "Håll tonen respektfull",
+    "guidelinesText": "Använd inte uppropet för att peka ut enskilda personer eller grupper. Vi är emot våld oavsett vem som utövar det och för allas rättigheter.",
+    "emailSubject": "Skriv under: European Public Order Initiative"
+  },
+  "press": {
+    "title": "Press och media",
+    "lead": "Bakgrundsinformation, färdiga texter och emblemet för European Public Order Initiative. Du får gärna citera och återge dem.",
+    "contactTitle": "Pressförfrågningar",
+    "contactText": "För frågor, uttalanden och bakgrundsinformation, skriv till {email}.",
+    "anonymity": "Av säkerhetsskäl publicerar vi inte namnen på personerna bakom initiativet. Skicka alla förfrågningar till pressadressen.",
+    "factsTitle": "Fakta i korthet",
+    "facts": {
+      "name": "Namn",
+      "website": "Webbplats",
+      "type": "Typ",
+      "typeText": "Ett oberoende, partipolitiskt obundet medborgarupprop. Det är inte ett registrerat europeiskt medborgarinitiativ enligt förordning (EU) 2019/788 och är inte knutet till Europeiska unionen eller någon av dess institutioner.",
+      "addressees": "Riktat till",
+      "addresseesText": "Ledamöterna av Europaparlamentet, Europeiska kommissionen, Europeiska unionens råd samt regeringarna och parlamenten i Europeiska unionens och Europeiska ekonomiska samarbetsområdets medlemsstater.",
+      "goal": "Mål",
+      "goalText": "{goal} underskrifter",
+      "data": "Insamlade uppgifter",
+      "dataText": "Namn, bosättningsland och, om du vill, en e-postadress. Namn publiceras aldrig; endast totalsummor och antalet underskrifter per land redovisas."
+    },
+    "boilerplateTitle": "Om initiativet",
+    "boilerplateIntro": "Använd texterna som de är eller korta ner dem efter behov.",
+    "shortLabel": "Kort version",
+    "short": "European Public Order Initiative är ett oberoende, partipolitiskt obundet medborgarupprop som kräver resoluta, lagliga åtgärder mot kravallvåld för att skydda rätten till fredlig demonstration.",
+    "longLabel": "Lång version",
+    "long": "European Public Order Initiative är ett oberoende, partipolitiskt obundet medborgarupprop riktat till europeiska och nationella beslutsfattare. Det kräver fem åtgärder: att skydda fredliga protester; att skyndsamt stoppa och konsekvent beivra mordbränder, plundring och attacker mot människor; att som sista utväg låta försvarsmakten stödja de civila myndigheterna, under civil ledning och med parlamentarisk insyn; att tillfälligt hålla personer utan laglig vistelse som deltar i grovt våld i humana lokaler och, efter rättssäker prövning, prioritera deras återvändande, aldrig i strid med principen om non-refoulement; samt att stärka ett gemensamt europeiskt inreseförbud för personer som dömts för grova ordningsbrott, med individuell prövning och möjlighet till domstolsprövning. Varje åtgärd måste antas på demokratisk väg och respektera nationella konstitutioner, Europakonventionen och Europeiska unionens stadga om de grundläggande rättigheterna. Uppropet är inte knutet till Europeiska unionen eller någon av dess institutioner.",
+    "copyText": "Kopiera texten",
+    "copied": "Kopierad",
+    "assetsTitle": "Emblem och bilder",
+    "assetsIntro": "SVG-filerna kan skalas till valfri storlek. Använd PNG-filerna där SVG inte stöds.",
+    "assets": {
+      "emblem": "Emblem",
+      "emblemInverse": "Emblem för mörk bakgrund",
+      "wordmark": "Emblem med namn",
+      "wordmarkInverse": "Emblem med namn, för mörk bakgrund",
+      "social": "Bild för sociala medier"
+    },
+    "usageTitle": "Använda emblemet",
+    "usage": [
+      "Ändra, färga om, beskär eller förvränga inte emblemet.",
+      "Lämna fritt utrymme runt det på minst en fjärdedel av dess bredd.",
+      "Använd det inte på ett sätt som antyder att Europeiska unionen eller någon av dess institutioner stöder eller är knuten till initiativet.",
+      "Använd det inte för att göra reklam för ett politiskt parti, en kandidat eller en kommersiell produkt."
+    ]
+  },
+  "rights": {
+    "title": "Vårt åtagande för rättsstaten",
+    "text": "Det här uppropet kräver ingen olaglig handling. Varje åtgärd som föreslås måste antas genom demokratiska, lagliga processer och tillämpas med full respekt för nationella konstitutioner, Europakonventionen, Europeiska unionens stadga om de grundläggande rättigheterna och internationell flyktingrätt, inklusive principen om non-refoulement. Åtgärderna ska rikta sig mot handlingar – aldrig mot nationalitet, etniskt ursprung, religion eller politisk uppfattning.",
+    "short": "Uppropet kräver ingen olaglig handling och respekterar fullt ut nationella konstitutioner och Europakonventionen."
+  },
+  "faq": {
+    "title": "Vanliga frågor",
+    "lead": "Ärliga svar på de frågor och invändningar vi oftast möter."
+  },
+  "petition": {
+    "signCta": "Håller du med? Skriv under."
+  },
+  "footer": {
+    "about": "Ett oberoende, partipolitiskt obundet medborgarupprop. Inte knutet till Europeiska unionen eller någon av dess institutioner.",
+    "contact": "Kontakt",
+    "rights": "Rättigheter och regler",
+    "pressKit": "Press och media",
+    "source": "Källkod"
   },
   "notice": {
-    "untranslated": "Den här sidan finns ännu inte på svenska. Den engelska versionen visas nedan.",
+    "untranslated": "Den här sidan är ännu inte översatt ({language}). Den engelska versionen visas nedan.",
     "help": "Hjälp oss att översätta"
+  },
+  "notFound": {
+    "title": "Sidan hittades inte",
+    "text": "Sidan du letar efter finns inte eller har flyttats.",
+    "back": "Gå till startsidan"
+  },
+  "a11y": {
+    "newTab": "(öppnas i en ny flik)",
+    "download": "Ladda ned {name}"
   }
 }

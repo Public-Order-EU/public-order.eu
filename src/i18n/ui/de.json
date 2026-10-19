@@ -1,10 +1,225 @@
 {
-  "_status": "untranslated",
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "Eine europäische Petition zum Schutz des Rechts auf friedlichen Protest durch konsequentes Vorgehen gegen Krawallgewalt – im Rahmen des Rechtsstaats und der Europäischen Menschenrechtskonvention.",
+    "ogImageAlt": "European Public Order Initiative – Friedlichen Protest schützen. Krawallgewalt stoppen."
+  },
   "nav": {
-    "language": "Sprache"
+    "home": "Startseite",
+    "petition": "Petition",
+    "faq": "FAQ",
+    "share": "Teilen",
+    "press": "Presse",
+    "privacy": "Datenschutz",
+    "legal": "Rechtliche Hinweise",
+    "delete": "Unterschrift zurückziehen",
+    "sign": "Petition unterzeichnen",
+    "menu": "Menü",
+    "skipToContent": "Zum Inhalt springen",
+    "language": "Sprache",
+    "mainNavigation": "Hauptnavigation",
+    "themeToggle": "Zwischen hellem und dunklem Modus wechseln",
+    "darkMode": "Dunkelmodus"
+  },
+  "home": {
+    "title": "Friedlichen Protest schützen. Krawallgewalt stoppen.",
+    "eyebrow": "Eine Petition an europäische und nationale Entscheidungsträger",
+    "headline": "Das Recht auf Protest schützen. Die Gewalt stoppen, die es untergräbt.",
+    "lead": "Friedlicher Protest ist in jeder europäischen Demokratie ein Grundrecht. Brandstiftung, Plünderungen und Angriffe auf Menschen gefährden Anwohnende, Einsatzkräfte und friedliche Demonstrierende gleichermaßen. Wir fordern klare, rechtmäßige Maßnahmen, die die gewalttätige Minderheit stoppen – damit alle anderen ihre Rechte weiterhin sicher ausüben können.",
+    "readFull": "Die ganze Petition lesen",
+    "pointsTitle": "Was wir fordern",
+    "pointsIntro": "Fünf Vorschläge, die jeweils auf demokratischem Weg beschlossen und unter Wahrung aller rechtsstaatlichen Garantien angewendet werden sollen.",
+    "points": [
+      {
+        "title": "Friedlichen Protest schützen",
+        "text": "Die Versammlungsfreiheit muss gewährleistet und aktiv geschützt werden. Friedliche Teilnehmende dürfen nie als Straftäter behandelt werden, nur weil andere gewalttätig werden."
+      },
+      {
+        "title": "Gewalt konsequent stoppen",
+        "text": "Brandstiftung, Plünderungen und Angriffe auf Menschen, Polizei, Rettungsdienste oder Eigentum müssen zügig unterbunden und konsequent strafrechtlich verfolgt werden."
+      },
+      {
+        "title": "Militärische Unterstützung als letztes Mittel",
+        "text": "Wenn die regulären Polizeikräfte nachweislich überfordert sind, sollten die Streitkräfte die zivilen Behörden unterstützen können – nur auf klarer gesetzlicher Grundlage, unter ziviler Führung und parlamentarischer Kontrolle."
+      },
+      {
+        "title": "Haft und Rückführung nach rechtsstaatlichem Verfahren",
+        "text": "Personen ohne rechtmäßigen Aufenthalt, die sich an schwerer Gewalt beteiligen, sollten vorübergehend in einfachen, menschenwürdigen Einrichtungen untergebracht und nach rechtsstaatlichem Verfahren vorrangig zurückgeführt werden – niemals unter Verstoß gegen den Grundsatz der Nichtzurückweisung."
+      },
+      {
+        "title": "Ein gemeinsames europäisches Einreiseverbot",
+        "text": "Einen gemeinsamen europäischen Mechanismus stärken, damit Personen, die bei Krawallen wegen schwerer Straftaten gegen die öffentliche Ordnung verurteilt wurden, europaweit die Einreise verweigert werden kann – mit Einzelfallprüfung und gerichtlicher Kontrolle."
+      }
+    ],
+    "goalTitle": "Unser Ziel",
+    "goalText": "Das Recht auf Protest schützen, indem die gewalttätige Minderheit davon ausgeschlossen wird.",
+    "ctaTitle": "Unterschreiben Sie mit",
+    "ctaText": "Jede Unterschrift stärkt die Forderung nach einer konsequenten, rechtmäßigen und die Rechte wahrenden Antwort auf Krawallgewalt.",
+    "ctaButton": "Petition unterzeichnen",
+    "shareTitle": "Helfen Sie, die Petition bekannter zu machen",
+    "shareText": "Teilen Sie die Petition mit Freunden, Familie und Kollegen, denen sichere Straßen und das Recht auf Protest am Herzen liegen.",
+    "shareButton": "So können Sie teilen"
+  },
+  "counter": {
+    "label": "Unterschriften",
+    "goal": "Ziel: {goal}",
+    "progress": "{percent} % des Ziels",
+    "approx": "Der Zähler wird jede Minute aktualisiert und kann ungenau sein."
+  },
+  "form": {
+    "title": "Petition unterzeichnen",
+    "intro": "Es dauert weniger als eine Minute. Wir fragen nur nach dem Nötigsten.",
+    "name": "Vollständiger Name",
+    "nameHelp": "Ihr Name wird nie veröffentlicht.",
+    "country": "Wohnsitzland",
+    "countryPlaceholder": "Land auswählen",
+    "otherCountry": "Anderes Land",
+    "email": "E-Mail-Adresse",
+    "optional": "freiwillig",
+    "emailHelp": "Wird nur verwendet, um doppelte Unterschriften zu verhindern – es sei denn, Sie setzen unten den Haken.",
+    "updates": "Senden Sie mir eine kurze Nachricht, wenn die Petition übergeben wird (höchstens einige wenige E-Mails).",
+    "consent": "Ich bin mindestens 16 Jahre alt und willige ausdrücklich ein, dass mein Name, mein Land und gegebenenfalls meine E-Mail-Adresse für diese Petition wie in der {privacyLink} beschrieben verarbeitet werden.",
+    "privacyLinkText": "Datenschutzerklärung",
+    "submit": "Petition unterzeichnen",
+    "submitting": "Wird gesendet …",
+    "humanCheck": "Sicherheitsprüfung durch Cloudflare Turnstile – datenschutzfreundlich, ohne Tracking-Cookies.",
+    "noscript": "JavaScript ist deaktiviert. Sie können trotzdem unterschreiben: Ihre Unterschrift wird gespeichert und nach einer manuellen Prüfung mitgezählt, da die automatische Sicherheitsprüfung JavaScript benötigt.",
+    "errors": {
+      "generic": "Etwas ist schiefgegangen. Bitte versuchen Sie es gleich noch einmal.",
+      "network": "Der Server ist nicht erreichbar. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+      "invalid_name": "Bitte geben Sie Ihren Namen ein (2 bis 100 Zeichen).",
+      "invalid_country": "Bitte wählen Sie Ihr Land aus.",
+      "invalid_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein oder lassen Sie das Feld leer.",
+      "consent_required": "Bitte bestätigen Sie Ihre Einwilligung, um zu unterschreiben.",
+      "captcha_failed": "Die Sicherheitsprüfung ist fehlgeschlagen. Bitte laden Sie die Seite neu und versuchen Sie es erneut.",
+      "duplicate": "Mit dieser E-Mail-Adresse wurde die Petition bereits unterzeichnet. Vielen Dank!",
+      "forbidden": "Diese Anfrage wurde abgelehnt. Bitte unterschreiben Sie direkt auf public-order.eu.",
+      "rate_limited": "Zu viele Versuche. Bitte warten Sie einige Minuten und versuchen Sie es erneut."
+    }
+  },
+  "thanks": {
+    "title": "Vielen Dank für Ihre Unterschrift",
+    "lead": "Ihre Unterschrift wurde erfasst. Vielen Dank, dass Sie sich sowohl für das Recht auf Protest als auch für die Sicherheit unserer Gemeinschaften einsetzen.",
+    "pending": "Da die automatische Sicherheitsprüfung nicht durchgeführt werden konnte, wird Ihre Unterschrift nach einer manuellen Prüfung mitgezählt.",
+    "codeTitle": "Ihr persönlicher Rückzugscode",
+    "codeText": "Bewahren Sie diesen Code auf, falls Sie Ihre Unterschrift später zurückziehen möchten. Wir speichern ihn nur verschlüsselt (als Hash) und können ihn Ihnen deshalb nicht noch einmal anzeigen.",
+    "codeCopy": "Code kopieren",
+    "codeCopied": "Kopiert",
+    "nextTitle": "Und jetzt?",
+    "nextText": "Am meisten helfen Sie jetzt, indem Sie die Petition an Menschen in Ihrem Umfeld weitergeben.",
+    "shareButton": "Petition teilen",
+    "backHome": "Zurück zur Startseite"
+  },
+  "delete": {
+    "title": "Unterschrift zurückziehen",
+    "lead": "Sie können Ihre Unterschrift jederzeit zurückziehen. Sie wird dauerhaft gelöscht und der Zähler entsprechend angepasst.",
+    "codeLabel": "Rückzugscode",
+    "codeHelp": "Der Code, der nach Ihrer Unterschrift angezeigt wurde, zum Beispiel ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Meine Unterschrift löschen",
+    "noCodeTitle": "Code verloren?",
+    "noCodeText": "Schreiben Sie an {email} von der E-Mail-Adresse, mit der Sie unterschrieben haben, oder – falls Sie ohne E-Mail-Adresse unterschrieben haben – nennen Sie uns Ihren Namen, Ihr Land und ungefähr das Datum der Unterschrift. Wir bearbeiten Ihre Anfrage innerhalb von 30 Tagen.",
+    "success": "Ihre Unterschrift wurde gelöscht.",
+    "notFound": "Zu diesem Code wurde keine Unterschrift gefunden. Bitte prüfen Sie ihn und versuchen Sie es erneut.",
+    "invalid": "Bitte geben Sie einen gültigen Rückzugscode ein."
+  },
+  "share": {
+    "title": "So können Sie teilen",
+    "lead": "Die Petition wirkt nur, wenn sie Menschen erreicht. Hier sind ein paar einfache Möglichkeiten zu helfen – keine davon lädt Tracking-Skripte auf dieser Website.",
+    "linksTitle": "In sozialen Netzwerken teilen",
+    "copyTitle": "Link kopieren",
+    "copyButton": "Link kopieren",
+    "copied": "Link kopiert",
+    "nativeShare": "Teilen …",
+    "messagesTitle": "Textvorschläge",
+    "messagesIntro": "Sie können sie gern kopieren, anpassen oder übersetzen.",
+    "messages": [
+      "Friedlicher Protest ist ein Recht. Krawallgewalt nicht. Ich habe die European Public Order Initiative unterzeichnet – Sie auch?",
+      "Das Recht auf Protest schützen, indem die gewalttätige Minderheit gestoppt wird – im Rahmen des Rechtsstaats und der Menschenrechte. Hier unterschreiben:",
+      "Brandstiftung, Plünderungen und Angriffe auf Menschen gefährden alle, auch friedlich Demonstrierende. Ich unterstütze konsequente, rechtmäßige Maßnahmen. Unterschreiben Sie mit:"
+    ],
+    "copyMessage": "Text kopieren",
+    "offlineTitle": "Sprechen Sie darüber",
+    "offlineText": "Gespräche mit Freunden, Kollegen und Abgeordneten vor Ort zählen mehr als jeder Beitrag. Bitte teilen Sie die Petition ehrlich und respektvoll – auch mit Menschen, die anderer Meinung sind.",
+    "guidelinesTitle": "Bitte bleiben Sie respektvoll",
+    "guidelinesText": "Nutzen Sie die Petition nicht, um einzelne Personen oder Gruppen ins Visier zu nehmen. Wir sind gegen Gewalt, von wem auch immer, und für die Rechte aller.",
+    "emailSubject": "Bitte unterschreiben: European Public Order Initiative"
+  },
+  "press": {
+    "title": "Presse und Medien",
+    "lead": "Hintergrundinformationen, gebrauchsfertige Texte und das Emblem der European Public Order Initiative. Sie dürfen sie gern zitieren und vervielfältigen.",
+    "contactTitle": "Presseanfragen",
+    "contactText": "Für Fragen, Stellungnahmen und Hintergrundinformationen schreiben Sie bitte an {email}.",
+    "anonymity": "Zu ihrer Sicherheit veröffentlichen wir die Namen der Menschen hinter der Initiative nicht. Bitte richten Sie alle Anfragen an die Presseadresse.",
+    "factsTitle": "Eckdaten",
+    "facts": {
+      "name": "Name",
+      "website": "Website",
+      "type": "Art",
+      "typeText": "Eine unabhängige, überparteiliche Bürgerpetition. Sie ist keine eingetragene Europäische Bürgerinitiative im Sinne der Verordnung (EU) 2019/788 und steht in keiner Verbindung zur Europäischen Union oder zu einem ihrer Organe.",
+      "addressees": "Adressaten",
+      "addresseesText": "Die Mitglieder des Europäischen Parlaments, die Europäische Kommission, der Rat der Europäischen Union sowie die Regierungen und Parlamente der Mitgliedstaaten der Europäischen Union und des Europäischen Wirtschaftsraums.",
+      "goal": "Ziel",
+      "goalText": "{goal} Unterschriften",
+      "data": "Erhobene Daten",
+      "dataText": "Name, Wohnsitzland und optional eine E-Mail-Adresse. Namen werden nie veröffentlicht; gemeldet werden nur die Gesamtzahl und die Zahl der Unterschriften je Land."
+    },
+    "boilerplateTitle": "Über die Initiative",
+    "boilerplateIntro": "Verwenden Sie diese Texte unverändert oder kürzen Sie sie nach Bedarf.",
+    "shortLabel": "Kurzfassung",
+    "short": "Die European Public Order Initiative ist eine unabhängige, überparteiliche Bürgerpetition, die konsequente, rechtmäßige Maßnahmen gegen Krawallgewalt fordert, um das Recht auf friedlichen Protest zu schützen.",
+    "longLabel": "Langfassung",
+    "long": "Die European Public Order Initiative ist eine unabhängige, überparteiliche Bürgerpetition an europäische und nationale Entscheidungsträger. Sie fordert fünf Maßnahmen: friedlichen Protest zu schützen; Brandstiftung, Plünderungen und Angriffe auf Menschen zügig zu unterbinden und konsequent strafrechtlich zu verfolgen; den Streitkräften als letztes Mittel die Unterstützung der zivilen Behörden unter ziviler Führung und parlamentarischer Kontrolle zu ermöglichen; Personen ohne rechtmäßigen Aufenthalt, die sich an schwerer Gewalt beteiligen, vorübergehend in menschenwürdigen Einrichtungen unterzubringen und nach rechtsstaatlichem Verfahren vorrangig zurückzuführen, niemals unter Verstoß gegen den Grundsatz der Nichtzurückweisung; sowie ein gemeinsames europäisches Einreiseverbot für Personen zu stärken, die wegen schwerer Straftaten gegen die öffentliche Ordnung verurteilt wurden, mit Einzelfallprüfung und gerichtlicher Kontrolle. Jede Maßnahme muss demokratisch beschlossen werden und die nationalen Verfassungen, die Europäische Menschenrechtskonvention und die Charta der Grundrechte der Europäischen Union achten. Die Petition steht in keiner Verbindung zur Europäischen Union oder zu einem ihrer Organe.",
+    "copyText": "Text kopieren",
+    "copied": "Kopiert",
+    "assetsTitle": "Emblem und Bilder",
+    "assetsIntro": "Die SVG-Dateien lassen sich beliebig skalieren. Verwenden Sie die PNG-Dateien, wo SVG nicht unterstützt wird.",
+    "assets": {
+      "emblem": "Emblem",
+      "emblemInverse": "Emblem für dunkle Hintergründe",
+      "wordmark": "Emblem mit Namen",
+      "wordmarkInverse": "Emblem mit Namen, für dunkle Hintergründe",
+      "social": "Bild für soziale Medien"
+    },
+    "usageTitle": "Verwendung des Emblems",
+    "usage": [
+      "Das Emblem nicht verändern, umfärben, beschneiden oder verzerren.",
+      "Rundherum einen Freiraum von mindestens einem Viertel seiner Breite lassen.",
+      "Es nicht so verwenden, dass der Eindruck einer Unterstützung durch oder einer Verbindung zur Europäischen Union oder einem ihrer Organe entsteht.",
+      "Es nicht zur Werbung für eine politische Partei, einen Kandidaten oder ein kommerzielles Produkt verwenden."
+    ]
+  },
+  "rights": {
+    "title": "Unser Bekenntnis zum Rechtsstaat",
+    "text": "Diese Petition fordert keine rechtswidrige Handlung. Jede vorgeschlagene Maßnahme muss auf demokratischem, rechtmäßigem Weg beschlossen und unter uneingeschränkter Achtung der nationalen Verfassungen, der Europäischen Menschenrechtskonvention, der Charta der Grundrechte der Europäischen Union und des internationalen Flüchtlingsrechts angewendet werden, einschließlich des Grundsatzes der Nichtzurückweisung. Die Maßnahmen müssen an das Verhalten anknüpfen – nie an Staatsangehörigkeit, ethnische Herkunft, Religion oder politische Überzeugung.",
+    "short": "Diese Petition fordert keine rechtswidrige Handlung und achtet die nationalen Verfassungen und die Europäische Menschenrechtskonvention uneingeschränkt."
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "lead": "Ehrliche Antworten auf die Fragen und Einwände, die wir am häufigsten hören."
+  },
+  "petition": {
+    "signCta": "Einverstanden? Unterschreiben Sie mit."
+  },
+  "footer": {
+    "about": "Eine unabhängige, überparteiliche Bürgerpetition. Keine Verbindung zur Europäischen Union oder zu einem ihrer Organe.",
+    "contact": "Kontakt",
+    "rights": "Rechte und Regeln",
+    "pressKit": "Presse und Medien",
+    "source": "Quellcode"
   },
   "notice": {
-    "untranslated": "Diese Seite ist noch nicht auf Deutsch verfügbar. Unten wird die englische Fassung angezeigt.",
+    "untranslated": "Diese Seite ist noch nicht auf {language} verfügbar. Unten wird die englische Fassung angezeigt.",
     "help": "Helfen Sie beim Übersetzen"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "text": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "back": "Zur Startseite"
+  },
+  "a11y": {
+    "newTab": "(öffnet in einem neuen Tab)",
+    "download": "{name} herunterladen"
   }
 }

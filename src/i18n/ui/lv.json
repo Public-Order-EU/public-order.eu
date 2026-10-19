@@ -1,10 +1,225 @@
 {
-  "_status": "untranslated",
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "Eiropas petīcija, lai aizsargātu tiesības uz mierīgu protestu, noteikti apturot vardarbību nekārtību laikā — tiesiskuma un Eiropas Cilvēktiesību konvencijas ietvaros.",
+    "ogImageAlt": "European Public Order Initiative — Aizsargāsim mierīgu protestu. Apturēsim vardarbību nekārtību laikā."
+  },
   "nav": {
-    "language": "Valoda"
+    "home": "Sākums",
+    "petition": "Petīcija",
+    "faq": "BUJ",
+    "share": "Dalīties",
+    "press": "Prese",
+    "privacy": "Privātums",
+    "legal": "Juridiskā informācija",
+    "delete": "Atsaukt parakstu",
+    "sign": "Parakstīt",
+    "menu": "Izvēlne",
+    "skipToContent": "Pāriet uz saturu",
+    "language": "Valoda",
+    "mainNavigation": "Galvenā navigācija",
+    "themeToggle": "Pārslēgt gaišo un tumšo režīmu",
+    "darkMode": "Tumšais režīms"
+  },
+  "home": {
+    "title": "Aizsargāsim mierīgu protestu. Apturēsim vardarbību nekārtību laikā.",
+    "eyebrow": "Petīcija Eiropas un valstu lēmumu pieņēmējiem",
+    "headline": "Aizsargāsim tiesības protestēt. Apturēsim vardarbību, kas tās grauj.",
+    "lead": "Mierīgs protests ir pamattiesības ikvienā Eiropas demokrātiskā valstī. Dedzināšana, laupīšana un uzbrukumi cilvēkiem vienlīdz apdraud iedzīvotājus, neatliekamās palīdzības darbiniekus un mierīgus demonstrantus. Mēs aicinām ieviest skaidrus, likumīgus pasākumus, kas apturētu vardarbīgo mazākumu, lai visi pārējie varētu droši turpināt īstenot savas tiesības.",
+    "readFull": "Lasīt visu petīcijas tekstu",
+    "pointsTitle": "Ko mēs prasām",
+    "pointsIntro": "Pieci priekšlikumi, no kuriem katrs jāpieņem demokrātiskā kārtībā un jāpiemēro, pilnībā ievērojot tiesiskās garantijas.",
+    "points": [
+      {
+        "title": "Aizsargāt mierīgu protestu",
+        "text": "Mierīgas pulcēšanās brīvība ir jāgarantē un aktīvi jāaizsargā. Mierīgus dalībniekus nekad nedrīkst uzskatīt par likumpārkāpējiem tikai tāpēc, ka citi kļuvuši vardarbīgi."
+      },
+      {
+        "title": "Noteikti apturēt vardarbību",
+        "text": "Dedzināšana, laupīšana un uzbrukumi cilvēkiem, policijai, neatliekamās palīdzības dienestiem vai īpašumam ir nekavējoties jāaptur, un par tiem konsekventi jāsauc pie atbildības."
+      },
+      {
+        "title": "Militārs atbalsts kā galējs līdzeklis",
+        "text": "Ja parastie policijas resursi acīmredzami ir nepietiekami, bruņotajiem spēkiem jābūt iespējai atbalstīt civilās iestādes — vienīgi skaidra tiesiskā regulējuma ietvaros, civilā vadībā un parlamentārā uzraudzībā."
+      },
+      {
+        "title": "Aizturēšana un atgriešana pēc pienācīgas procedūras",
+        "text": "Personas bez likumīgas uzturēšanās tiesībām, kas piedalās smagā vardarbībā, būtu uz laiku jāaiztur vienkāršos, humānos apstākļos un pēc pienācīgas procedūras prioritārā kārtā jāatgriež — nekad nepārkāpjot neizraidīšanas principu."
+      },
+      {
+        "title": "Kopīgs Eiropas ieceļošanas aizliegums",
+        "text": "Stiprināt kopīgu Eiropas mehānismu, lai personām, kas nekārtību laikā notiesātas par smagiem sabiedriskās kārtības pārkāpumiem, varētu atteikt ieceļošanu visā Eiropā — izvērtējot katru gadījumu atsevišķi un nodrošinot tiesu kontroli."
+      }
+    ],
+    "goalTitle": "Mūsu mērķis",
+    "goalText": "Aizsargāt tiesības protestēt, no tām izslēdzot vardarbīgo mazākumu.",
+    "ctaTitle": "Pievienojiet savu vārdu",
+    "ctaText": "Katrs paraksts pastiprina aicinājumu uz stingru, likumīgu un tiesības ievērojošu reakciju pret vardarbību nekārtību laikā.",
+    "ctaButton": "Parakstīt",
+    "shareTitle": "Palīdziet petīcijai sasniegt vairāk cilvēku",
+    "shareText": "Dalieties ar petīciju ar draugiem, ģimeni un kolēģiem, kuriem svarīgas drošas ielas un tiesības protestēt.",
+    "shareButton": "Kā dalīties"
+  },
+  "counter": {
+    "label": "parakstu",
+    "goal": "Mērķis: {goal}",
+    "progress": "{percent}% no mērķa",
+    "approx": "Skaitītājs tiek atjaunināts ik minūti un var būt aptuvens."
+  },
+  "form": {
+    "title": "Parakstiet petīciju",
+    "intro": "Tas aizņem mazāk nekā minūti. Mēs prasām tikai nepieciešamo.",
+    "name": "Vārds, uzvārds",
+    "nameHelp": "Jūsu vārds nekad netiek publicēts.",
+    "country": "Dzīvesvietas valsts",
+    "countryPlaceholder": "Izvēlieties savu valsti",
+    "otherCountry": "Cita valsts",
+    "email": "E-pasta adrese",
+    "optional": "neobligāti",
+    "emailHelp": "Izmanto tikai dublētu parakstu novēršanai — ja vien neatzīmējat zemāk esošo lodziņu.",
+    "updates": "Atsūtiet man īsu ziņu, kad petīcija tiks iesniegta (ne vairāk kā pāris e-pasta ziņojumu).",
+    "consent": "Man ir vismaz 16 gadu, un es skaidri piekrītu, ka mans vārds, uzvārds, valsts un, ja norādīta, e-pasta adrese tiek apstrādāti šīs petīcijas vajadzībām, kā aprakstīts {privacyLink}.",
+    "privacyLinkText": "privātuma politikā",
+    "submit": "Parakstīt",
+    "submitting": "Paraksta…",
+    "humanCheck": "Drošības pārbaude, ko nodrošina Cloudflare Turnstile — saudzē privātumu, bez izsekošanas sīkdatnēm.",
+    "noscript": "JavaScript ir atspējots. Jūs tomēr varat parakstīties: jūsu paraksts tiks saglabāts un ieskaitīts pēc manuālas pārbaudes, jo automātiskajai drošības pārbaudei nepieciešams JavaScript.",
+    "errors": {
+      "generic": "Radās kļūda. Lūdzu, pēc brīža mēģiniet vēlreiz.",
+      "network": "Neizdevās sazināties ar serveri. Lūdzu, pārbaudiet interneta savienojumu un mēģiniet vēlreiz.",
+      "invalid_name": "Lūdzu, ievadiet savu vārdu un uzvārdu (no 2 līdz 100 rakstzīmēm).",
+      "invalid_country": "Lūdzu, izvēlieties savu valsti.",
+      "invalid_email": "Lūdzu, ievadiet derīgu e-pasta adresi vai atstājiet lauku tukšu.",
+      "consent_required": "Lai parakstītos, lūdzu, apstipriniet savu piekrišanu.",
+      "captcha_failed": "Drošības pārbaude neizdevās. Lūdzu, pārlādējiet lapu un mēģiniet vēlreiz.",
+      "duplicate": "Ar šo e-pasta adresi petīcija jau ir parakstīta. Paldies!",
+      "forbidden": "Šis pieprasījums tika noraidīts. Lūdzu, parakstieties tieši vietnē public-order.eu.",
+      "rate_limited": "Pārāk daudz mēģinājumu. Lūdzu, uzgaidiet dažas minūtes un mēģiniet vēlreiz."
+    }
+  },
+  "thanks": {
+    "title": "Paldies par parakstu",
+    "lead": "Jūsu paraksts ir reģistrēts. Paldies, ka iestājaties gan par tiesībām protestēt, gan par mūsu kopienu drošību.",
+    "pending": "Tā kā automātisko drošības pārbaudi nevarēja veikt, jūsu paraksts tiks ieskaitīts pēc manuālas pārskatīšanas.",
+    "codeTitle": "Jūsu personiskais atsaukšanas kods",
+    "codeText": "Saglabājiet šo kodu, ja vēlāk vēlēsieties atsaukt savu parakstu. Mēs to glabājam tikai šifrētā (jaucējkoda) veidā, tāpēc nevaram to parādīt vēlreiz.",
+    "codeCopy": "Kopēt kodu",
+    "codeCopied": "Nokopēts",
+    "nextTitle": "Kas tālāk?",
+    "nextText": "Visnoderīgākais, ko tagad varat darīt, ir dalīties ar petīciju ar saviem pazīstamajiem.",
+    "shareButton": "Dalīties ar petīciju",
+    "backHome": "Atpakaļ uz sākumlapu"
+  },
+  "delete": {
+    "title": "Atsauciet savu parakstu",
+    "lead": "Parakstu varat atsaukt jebkurā laikā. Tas tiks neatgriezeniski dzēsts, un skaitītājs tiks koriģēts.",
+    "codeLabel": "Atsaukšanas kods",
+    "codeHelp": "Kods, kas tika parādīts pēc parakstīšanās, piemēram, ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Dzēst manu parakstu",
+    "noCodeTitle": "Kods pazaudēts?",
+    "noCodeText": "Rakstiet uz {email} no e-pasta adreses, ar kuru parakstījāties, vai — ja parakstījāties bez e-pasta adreses — norādiet mums savu vārdu, uzvārdu, valsti un aptuveno parakstīšanās datumu. Mēs izskatīsim jūsu pieprasījumu 30 dienu laikā.",
+    "success": "Jūsu paraksts ir izdzēsts.",
+    "notFound": "Šim kodam nav atrasts neviens paraksts. Lūdzu, pārbaudiet kodu un mēģiniet vēlreiz.",
+    "invalid": "Lūdzu, ievadiet derīgu atsaukšanas kodu."
+  },
+  "share": {
+    "title": "Kā dalīties",
+    "lead": "Petīcija darbojas tikai tad, ja tā sasniedz cilvēkus. Šeit ir daži vienkārši veidi, kā palīdzēt — neviens no tiem neielādē izsekošanas skriptus šajā vietnē.",
+    "linksTitle": "Dalīties sociālajos tīklos",
+    "copyTitle": "Kopēt saiti",
+    "copyButton": "Kopēt saiti",
+    "copied": "Saite nokopēta",
+    "nativeShare": "Dalīties…",
+    "messagesTitle": "Ieteicamie ziņojumi",
+    "messagesIntro": "Droši kopējiet, pielāgojiet vai tulkojiet tos.",
+    "messages": [
+      "Mierīgs protests ir tiesības. Vardarbība nekārtību laikā — nē. Es parakstīju European Public Order Initiative — vai jūs parakstīsiet?",
+      "Aizsargāsim tiesības protestēt, apturot vardarbīgo mazākumu — tiesiskuma un cilvēktiesību ietvaros. Parakstieties šeit:",
+      "Dedzināšana, laupīšana un uzbrukumi cilvēkiem apdraud ikvienu, arī mierīgus demonstrantus. Es atbalstu stingrus, likumīgus pasākumus. Pievienojiet savu vārdu:"
+    ],
+    "copyMessage": "Kopēt ziņojumu",
+    "offlineTitle": "Parunājiet par to",
+    "offlineText": "Sarunas ar draugiem, kolēģiem un vietējiem pārstāvjiem ir svarīgākas par jebkuru ierakstu. Lūdzu, dalieties ar petīciju godīgi un cieņpilni — arī ar cilvēkiem, kuri tai nepiekrīt.",
+    "guidelinesTitle": "Lūdzu, saglabājiet cieņpilnu toni",
+    "guidelinesText": "Neizmantojiet petīciju, lai vērstos pret atsevišķiem cilvēkiem vai grupām. Mēs iestājamies pret ikviena īstenotu vardarbību un par ikviena tiesībām.",
+    "emailSubject": "Lūdzu, parakstiet: European Public Order Initiative"
+  },
+  "press": {
+    "title": "Prese un mediji",
+    "lead": "Pamatinformācija, gatavi lietošanai paredzēti teksti un European Public Order Initiative emblēma. Jūs varat tos brīvi citēt un pavairot.",
+    "contactTitle": "Preses pieprasījumi",
+    "contactText": "Jautājumu, paziņojumu un pamatinformācijas vajadzībām rakstiet uz {email}.",
+    "anonymity": "Viņu drošības labad mēs nepublicējam iniciatīvas veidotāju vārdus. Lūdzu, sūtiet visus pieprasījumus uz preses adresi.",
+    "factsTitle": "Galvenie fakti",
+    "facts": {
+      "name": "Nosaukums",
+      "website": "Vietne",
+      "type": "Veids",
+      "typeText": "Neatkarīga, bezpartejiska pilsoņu petīcija. Tā nav Regulas (ES) 2019/788 kārtībā reģistrēta Eiropas pilsoņu iniciatīva, un tai nav saistību ar Eiropas Savienību vai kādu no tās iestādēm.",
+      "addressees": "Adresāti",
+      "addresseesText": "Eiropas Parlamenta deputāti, Eiropas Komisija, Eiropas Savienības Padome, kā arī Eiropas Savienības un Eiropas Ekonomikas zonas dalībvalstu valdības un parlamenti.",
+      "goal": "Mērķis",
+      "goalText": "{goal} parakstu",
+      "data": "Vāktie dati",
+      "dataText": "Vārds, uzvārds, dzīvesvietas valsts un, pēc izvēles, e-pasta adrese. Vārdi un uzvārdi nekad netiek publicēti; tiek ziņots tikai par kopējo parakstu skaitu un parakstu skaitu pa valstīm."
+    },
+    "boilerplateTitle": "Par iniciatīvu",
+    "boilerplateIntro": "Izmantojiet šos tekstus bez izmaiņām vai saīsiniet pēc vajadzības.",
+    "shortLabel": "Īsā versija",
+    "short": "European Public Order Initiative ir neatkarīga, bezpartejiska pilsoņu petīcija, kas aicina veikt stingrus, likumīgus pasākumus pret vardarbību nekārtību laikā, lai aizsargātu tiesības uz mierīgu protestu.",
+    "longLabel": "Garā versija",
+    "long": "European Public Order Initiative ir neatkarīga, bezpartejiska pilsoņu petīcija, kas adresēta Eiropas un valstu lēmumu pieņēmējiem. Tajā lūgti pieci pasākumi: aizsargāt mierīgu protestu; nekavējoties apturēt dedzināšanu, laupīšanu un uzbrukumus cilvēkiem un par tiem konsekventi saukt pie atbildības; ļaut bruņotajiem spēkiem kā galējam līdzeklim atbalstīt civilās iestādes civilā vadībā un parlamentārā uzraudzībā; personas bez likumīgas uzturēšanās tiesībām, kas piedalās smagā vardarbībā, uz laiku aizturēt humānos apstākļos un pēc pienācīgas procedūras prioritārā kārtā atgriezt, nekad nepārkāpjot neizraidīšanas principu; un stiprināt kopīgu Eiropas ieceļošanas aizliegumu personām, kas notiesātas par smagiem sabiedriskās kārtības pārkāpumiem, izvērtējot katru gadījumu atsevišķi un nodrošinot tiesu kontroli. Katrs pasākums jāpieņem demokrātiskā kārtībā, ievērojot valstu konstitūcijas, Eiropas Cilvēktiesību konvenciju un Eiropas Savienības Pamattiesību hartu. Petīcijai nav saistību ar Eiropas Savienību vai kādu no tās iestādēm.",
+    "copyText": "Kopēt tekstu",
+    "copied": "Nokopēts",
+    "assetsTitle": "Emblēma un attēli",
+    "assetsIntro": "SVG faili ir mērogojami jebkuram izmēram. Izmantojiet PNG failus tur, kur SVG netiek atbalstīts.",
+    "assets": {
+      "emblem": "Emblēma",
+      "emblemInverse": "Emblēma tumšam fonam",
+      "wordmark": "Emblēma ar nosaukumu",
+      "wordmarkInverse": "Emblēma ar nosaukumu tumšam fonam",
+      "social": "Attēls sociālajiem tīkliem"
+    },
+    "usageTitle": "Emblēmas izmantošana",
+    "usage": [
+      "Nemainiet emblēmu, nepārkrāsojiet, neapgrieziet un neizkropļojiet to.",
+      "Atstājiet ap to brīvu vietu, kas ir vismaz ceturtdaļa no emblēmas platuma.",
+      "Neizmantojiet to tā, lai radītu iespaidu, ka Eiropas Savienība vai kāda no tās iestādēm to atbalsta vai ar to ir saistīta.",
+      "Neizmantojiet to politiskas partijas, kandidāta vai komerciāla produkta reklamēšanai."
+    ]
+  },
+  "rights": {
+    "title": "Mūsu apņemšanās ievērot tiesiskumu",
+    "text": "Šī petīcija neaicina uz nekādām pretlikumīgām darbībām. Katrs tajā ierosinātais pasākums jāpieņem demokrātiskā, likumīgā kārtībā un jāpiemēro, pilnībā ievērojot valstu konstitūcijas, Eiropas Cilvēktiesību konvenciju, Eiropas Savienības Pamattiesību hartu un starptautiskās bēgļu tiesības, tostarp neizraidīšanas principu. Pasākumiem jābūt vērstiem pret rīcību — nekad pret tautību, etnisko izcelsmi, reliģiju vai politiskajiem uzskatiem.",
+    "short": "Šī petīcija neaicina uz pretlikumīgām darbībām un pilnībā ievēro valstu konstitūcijas un Eiropas Cilvēktiesību konvenciju."
+  },
+  "faq": {
+    "title": "Biežāk uzdotie jautājumi",
+    "lead": "Godīgas atbildes uz jautājumiem un iebildumiem, ko dzirdam visbiežāk."
+  },
+  "petition": {
+    "signCta": "Piekrītat? Pievienojiet savu vārdu."
+  },
+  "footer": {
+    "about": "Neatkarīga, bezpartejiska pilsoņu petīcija. Tai nav saistību ar Eiropas Savienību vai kādu no tās iestādēm.",
+    "contact": "Kontakti",
+    "rights": "Tiesības un noteikumi",
+    "pressKit": "Prese un mediji",
+    "source": "Pirmkods"
   },
   "notice": {
-    "untranslated": "Šī lapa vēl nav pieejama latviešu valodā. Zemāk ir redzama angļu valodas versija.",
+    "untranslated": "Šīs lapas tulkojums vēl nav pieejams (valoda: {language}). Zemāk ir redzama angļu valodas versija.",
     "help": "Palīdziet mums tulkot"
+  },
+  "notFound": {
+    "title": "Lapa nav atrasta",
+    "text": "Lapa, ko meklējat, neeksistē vai ir pārvietota.",
+    "back": "Uz sākumlapu"
+  },
+  "a11y": {
+    "newTab": "(atveras jaunā cilnē)",
+    "download": "Lejupielādēt: {name}"
   }
 }

@@ -1,10 +1,225 @@
 {
-  "_status": "untranslated",
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "Une pétition européenne pour protéger le droit de manifester pacifiquement en mettant fermement fin aux violences émeutières, dans le respect de l’État de droit et de la Convention européenne des droits de l’homme.",
+    "ogImageAlt": "European Public Order Initiative : protéger la manifestation pacifique, mettre fin aux violences émeutières."
+  },
   "nav": {
-    "language": "Langue"
+    "home": "Accueil",
+    "petition": "Pétition",
+    "faq": "FAQ",
+    "share": "Partager",
+    "press": "Presse",
+    "privacy": "Confidentialité",
+    "legal": "Mentions légales",
+    "delete": "Retirer ma signature",
+    "sign": "Signer la pétition",
+    "menu": "Menu",
+    "skipToContent": "Aller au contenu",
+    "language": "Langue",
+    "mainNavigation": "Navigation principale",
+    "themeToggle": "Basculer entre le mode clair et le mode sombre",
+    "darkMode": "Mode sombre"
+  },
+  "home": {
+    "title": "Protéger la manifestation pacifique. Mettre fin aux violences émeutières.",
+    "eyebrow": "Une pétition adressée aux décideurs européens et nationaux",
+    "headline": "Protéger le droit de manifester. Mettre fin aux violences qui le menacent.",
+    "lead": "La manifestation pacifique est un droit fondamental dans toutes les démocraties européennes. Les incendies volontaires, les pillages et les agressions mettent en danger les habitants, les secouristes et les manifestants pacifiques. Nous demandons des mesures claires et conformes au droit pour mettre fin aux agissements d’une minorité violente, afin que tous les autres puissent continuer à exercer leurs droits en toute sécurité.",
+    "readFull": "Lire la pétition complète",
+    "pointsTitle": "Ce que nous demandons",
+    "pointsIntro": "Cinq propositions, à adopter par des voies démocratiques et à appliquer avec toutes les garanties juridiques.",
+    "points": [
+      {
+        "title": "Protéger la manifestation pacifique",
+        "text": "La liberté de réunion pacifique doit être garantie et activement protégée. Les participants pacifiques ne doivent jamais être traités en contrevenants parce que d’autres sont devenus violents."
+      },
+      {
+        "title": "Mettre fin fermement à la violence",
+        "text": "Les incendies volontaires, les pillages et les agressions contre des personnes, la police, les services de secours ou les biens doivent être rapidement stoppés et poursuivis de manière cohérente."
+      },
+      {
+        "title": "L’appui militaire en dernier recours",
+        "text": "Lorsque les moyens ordinaires de la police sont manifestement dépassés, les forces armées devraient pouvoir appuyer les autorités civiles, uniquement dans un cadre juridique clair, sous commandement civil et sous contrôle parlementaire."
+      },
+      {
+        "title": "Rétention et retour, dans le respect d’une procédure régulière",
+        "text": "Les personnes en séjour irrégulier qui participent à des violences graves devraient pouvoir être retenues temporairement dans des structures simples et humaines puis, au terme d’une procédure régulière, être renvoyées en priorité, sans jamais enfreindre le principe de non-refoulement."
+      },
+      {
+        "title": "Une interdiction d’entrée commune à l’échelle européenne",
+        "text": "Renforcer un mécanisme européen commun afin que les personnes condamnées pour des infractions graves à l’ordre public commises lors d’émeutes puissent se voir refuser l’entrée dans toute l’Europe, sur la base d’une évaluation individuelle et avec un contrôle juridictionnel."
+      }
+    ],
+    "goalTitle": "Notre objectif",
+    "goalText": "Protéger le droit de manifester en en écartant la minorité violente.",
+    "ctaTitle": "Ajoutez votre nom",
+    "ctaText": "Chaque signature renforce l’appel à une réponse ferme, légale et respectueuse des droits face aux violences émeutières.",
+    "ctaButton": "Signer la pétition",
+    "shareTitle": "Aidez la pétition à toucher plus de monde",
+    "shareText": "Partagez la pétition avec vos amis, votre famille et vos collègues qui tiennent à la sécurité dans nos rues et au droit de manifester.",
+    "shareButton": "Comment partager"
+  },
+  "counter": {
+    "label": "signatures",
+    "goal": "Objectif : {goal}",
+    "progress": "{percent} % de l’objectif",
+    "approx": "Le compteur est mis à jour chaque minute et peut être approximatif."
+  },
+  "form": {
+    "title": "Signer la pétition",
+    "intro": "Cela prend moins d’une minute. Nous ne demandons que le strict nécessaire.",
+    "name": "Nom et prénom",
+    "nameHelp": "Votre nom n’est jamais publié.",
+    "country": "Pays de résidence",
+    "countryPlaceholder": "Sélectionnez votre pays",
+    "otherCountry": "Autre pays",
+    "email": "Adresse e-mail",
+    "optional": "facultatif",
+    "emailHelp": "Utilisée uniquement pour éviter les doublons, sauf si vous cochez la case ci-dessous.",
+    "updates": "Je souhaite recevoir un bref message lors de la remise de la pétition (quelques e-mails au plus).",
+    "consent": "J’ai au moins 16 ans et je consens expressément à ce que mon nom, mon pays et, le cas échéant, mon adresse e-mail soient traités pour cette pétition comme décrit dans la {privacyLink}.",
+    "privacyLinkText": "politique de confidentialité",
+    "submit": "Signer la pétition",
+    "submitting": "Signature en cours…",
+    "humanCheck": "Contrôle de sécurité par Cloudflare Turnstile : respectueux de la vie privée, sans cookies de suivi.",
+    "noscript": "JavaScript est désactivé. Vous pouvez tout de même signer : votre signature sera enregistrée et comptabilisée après une vérification manuelle, car le contrôle de sécurité automatique nécessite JavaScript.",
+    "errors": {
+      "generic": "Une erreur s’est produite. Veuillez réessayer dans un instant.",
+      "network": "Impossible de joindre le serveur. Veuillez vérifier votre connexion et réessayer.",
+      "invalid_name": "Veuillez saisir votre nom (de 2 à 100 caractères).",
+      "invalid_country": "Veuillez sélectionner votre pays.",
+      "invalid_email": "Veuillez saisir une adresse e-mail valide ou laisser le champ vide.",
+      "consent_required": "Veuillez confirmer votre consentement pour signer.",
+      "captcha_failed": "Le contrôle de sécurité a échoué. Veuillez recharger la page et réessayer.",
+      "duplicate": "Cette adresse e-mail a déjà servi à signer la pétition. Merci !",
+      "forbidden": "Cette requête a été rejetée. Veuillez signer directement sur public-order.eu.",
+      "rate_limited": "Trop de tentatives. Veuillez patienter quelques minutes avant de réessayer."
+    }
+  },
+  "thanks": {
+    "title": "Merci d’avoir signé",
+    "lead": "Votre signature a bien été enregistrée. Merci de vous engager à la fois pour le droit de manifester et pour la sécurité de nos communautés.",
+    "pending": "Le contrôle de sécurité automatique n’ayant pas pu s’exécuter, votre signature sera comptabilisée après une vérification manuelle.",
+    "codeTitle": "Votre code personnel de retrait",
+    "codeText": "Conservez ce code si vous souhaitez retirer votre signature plus tard. Nous ne le conservons que sous forme chiffrée (hachée) ; nous ne pourrons donc pas vous l’afficher à nouveau.",
+    "codeCopy": "Copier le code",
+    "codeCopied": "Copié",
+    "nextTitle": "Et maintenant ?",
+    "nextText": "Le plus utile que vous puissiez faire à présent est de partager la pétition avec vos proches.",
+    "shareButton": "Partager la pétition",
+    "backHome": "Retour à l’accueil"
+  },
+  "delete": {
+    "title": "Retirer votre signature",
+    "lead": "Vous pouvez retirer votre signature à tout moment. Elle sera supprimée définitivement et le compteur sera ajusté.",
+    "codeLabel": "Code de retrait",
+    "codeHelp": "Le code affiché après votre signature, par exemple ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Supprimer ma signature",
+    "noCodeTitle": "Code perdu ?",
+    "noCodeText": "Écrivez à {email} depuis l’adresse e-mail avec laquelle vous avez signé ou, si vous avez signé sans adresse e-mail, indiquez-nous votre nom, votre pays et la date approximative de votre signature. Nous traiterons votre demande dans un délai de 30 jours.",
+    "success": "Votre signature a été supprimée.",
+    "notFound": "Aucune signature n’a été trouvée pour ce code. Veuillez le vérifier et réessayer.",
+    "invalid": "Veuillez saisir un code de retrait valide."
+  },
+  "share": {
+    "title": "Comment partager",
+    "lead": "La pétition n’a d’effet que si elle touche un large public. Voici quelques moyens simples d’y contribuer ; aucun ne charge de script de suivi sur ce site.",
+    "linksTitle": "Partager sur les réseaux sociaux",
+    "copyTitle": "Copier le lien",
+    "copyButton": "Copier le lien",
+    "copied": "Lien copié",
+    "nativeShare": "Partager…",
+    "messagesTitle": "Messages suggérés",
+    "messagesIntro": "N’hésitez pas à les copier, les adapter ou les traduire.",
+    "messages": [
+      "Manifester pacifiquement est un droit. Les violences émeutières n’en sont pas un. J’ai signé la European Public Order Initiative. Et vous ?",
+      "Protégeons le droit de manifester en mettant fin aux agissements de la minorité violente, dans le respect de l’État de droit et des droits de l’homme. Signez ici :",
+      "Les incendies volontaires, les pillages et les agressions mettent tout le monde en danger, y compris les manifestants pacifiques. Je soutiens des mesures fermes et conformes au droit. Ajoutez votre nom :"
+    ],
+    "copyMessage": "Copier le message",
+    "offlineTitle": "Parlez-en autour de vous",
+    "offlineText": "Les conversations avec des amis, des collègues et des élus locaux comptent plus que n’importe quelle publication. Merci de partager la pétition honnêtement et avec respect, y compris avec les personnes qui ne sont pas d’accord.",
+    "guidelinesTitle": "Merci de rester respectueux",
+    "guidelinesText": "N’utilisez pas la pétition pour viser des personnes ou des groupes. Nous nous opposons à la violence, d’où qu’elle vienne, et défendons les droits de chacun.",
+    "emailSubject": "À signer : European Public Order Initiative"
+  },
+  "press": {
+    "title": "Presse et médias",
+    "lead": "Informations générales, textes prêts à l’emploi et emblème de la European Public Order Initiative. Vous pouvez les citer et les reproduire librement.",
+    "contactTitle": "Demandes de la presse",
+    "contactText": "Pour toute question, déclaration ou information complémentaire, veuillez écrire à {email}.",
+    "anonymity": "Pour des raisons de sécurité, nous ne publions pas le nom des personnes à l’origine de l’initiative. Veuillez adresser toutes vos demandes à l’adresse de contact presse.",
+    "factsTitle": "L’essentiel",
+    "facts": {
+      "name": "Nom",
+      "website": "Site web",
+      "type": "Nature",
+      "typeText": "Une pétition citoyenne indépendante et non partisane. Il ne s’agit pas d’une initiative citoyenne européenne enregistrée au titre du règlement (UE) 2019/788, et elle n’est affiliée ni à l’Union européenne ni à aucune de ses institutions.",
+      "addressees": "Destinataires",
+      "addresseesText": "Les députés au Parlement européen, la Commission européenne, le Conseil de l’Union européenne, ainsi que les gouvernements et les parlements des États membres de l’Union européenne et de l’Espace économique européen.",
+      "goal": "Objectif",
+      "goalText": "{goal} signatures",
+      "data": "Données collectées",
+      "dataText": "Nom, pays de résidence et, facultativement, une adresse e-mail. Les noms ne sont jamais publiés ; seuls les totaux et le nombre de signatures par pays sont communiqués."
+    },
+    "boilerplateTitle": "À propos de l’initiative",
+    "boilerplateIntro": "Utilisez ces textes tels quels ou raccourcissez-les selon vos besoins.",
+    "shortLabel": "Version courte",
+    "short": "La European Public Order Initiative est une pétition citoyenne indépendante et non partisane qui demande des mesures fermes et conformes au droit contre les violences émeutières, afin de protéger le droit de manifester pacifiquement.",
+    "longLabel": "Version longue",
+    "long": "La European Public Order Initiative est une pétition citoyenne indépendante et non partisane, adressée aux décideurs européens et nationaux. Elle demande cinq mesures : protéger la manifestation pacifique ; mettre rapidement fin aux incendies volontaires, aux pillages et aux agressions contre des personnes, et les poursuivre de manière cohérente ; permettre aux forces armées d’appuyer les autorités civiles en dernier recours, sous commandement civil et sous contrôle parlementaire ; retenir temporairement dans des structures humaines les personnes en séjour irrégulier qui participent à des violences graves et, au terme d’une procédure régulière, les renvoyer en priorité, sans jamais enfreindre le principe de non-refoulement ; et renforcer une interdiction d’entrée commune à l’échelle européenne pour les personnes condamnées pour des infractions graves à l’ordre public, sur la base d’une évaluation individuelle et avec un contrôle juridictionnel. Chaque mesure doit être adoptée démocratiquement et respecter les constitutions nationales, la Convention européenne des droits de l’homme et la Charte des droits fondamentaux de l’Union européenne. La pétition n’est affiliée ni à l’Union européenne ni à aucune de ses institutions.",
+    "copyText": "Copier le texte",
+    "copied": "Copié",
+    "assetsTitle": "Emblème et images",
+    "assetsIntro": "Les fichiers SVG s’adaptent à toutes les tailles. Utilisez les fichiers PNG lorsque le SVG n’est pas pris en charge.",
+    "assets": {
+      "emblem": "Emblème",
+      "emblemInverse": "Emblème pour fonds sombres",
+      "wordmark": "Emblème avec nom",
+      "wordmarkInverse": "Emblème avec nom, pour fonds sombres",
+      "social": "Image pour les réseaux sociaux"
+    },
+    "usageTitle": "Utilisation de l’emblème",
+    "usage": [
+      "Ne modifiez, ne recolorez, ne recadrez et ne déformez pas l’emblème.",
+      "Laissez autour de lui un espace libre d’au moins un quart de sa largeur.",
+      "Ne l’utilisez pas d’une manière qui laisse entendre un soutien de l’Union européenne ou de l’une de ses institutions, ou une affiliation à celles-ci.",
+      "Ne l’utilisez pas pour promouvoir un parti politique, un candidat ou un produit commercial."
+    ]
+  },
+  "rights": {
+    "title": "Notre engagement envers l’État de droit",
+    "text": "Cette pétition n’appelle à aucune action illégale. Chacune des mesures qu’elle propose doit être adoptée par des voies démocratiques et légales, et appliquée dans le plein respect des constitutions nationales, de la Convention européenne des droits de l’homme, de la Charte des droits fondamentaux de l’Union européenne et du droit international des réfugiés, y compris le principe de non-refoulement. Les mesures doivent viser des comportements, jamais la nationalité, l’origine ethnique, la religion ou les opinions politiques.",
+    "short": "Cette pétition n’appelle à aucune action illégale et respecte pleinement les constitutions nationales et la Convention européenne des droits de l’homme."
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "lead": "Des réponses honnêtes aux questions et aux objections que nous entendons le plus souvent."
+  },
+  "petition": {
+    "signCta": "Vous êtes d’accord ? Ajoutez votre nom."
+  },
+  "footer": {
+    "about": "Une pétition citoyenne indépendante et non partisane. Non affiliée à l’Union européenne ni à aucune de ses institutions.",
+    "contact": "Contact",
+    "rights": "Droits et règles",
+    "pressKit": "Presse et médias",
+    "source": "Code source"
   },
   "notice": {
-    "untranslated": "Cette page n’est pas encore disponible en français. La version anglaise est affichée ci-dessous.",
+    "untranslated": "Cette page n’est pas encore disponible dans cette langue ({language}). La version anglaise est affichée ci-dessous.",
     "help": "Aidez-nous à traduire"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "La page que vous cherchez n’existe pas ou a été déplacée.",
+    "back": "Aller à l’accueil"
+  },
+  "a11y": {
+    "newTab": "(s’ouvre dans un nouvel onglet)",
+    "download": "Télécharger {name}"
   }
 }

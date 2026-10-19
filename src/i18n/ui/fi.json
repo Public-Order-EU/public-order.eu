@@ -1,10 +1,225 @@
 {
-  "_status": "untranslated",
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "Eurooppalainen kansalaisadressi rauhanomaisen mielenosoitusoikeuden suojelemiseksi pysäyttämällä mellakkaväkivalta päättäväisesti – oikeusvaltion ja Euroopan ihmisoikeussopimuksen puitteissa.",
+    "ogImageAlt": "European Public Order Initiative – Suojele rauhanomaista mielenosoitusoikeutta. Pysäytä mellakkaväkivalta."
+  },
   "nav": {
-    "language": "Kieli"
+    "home": "Etusivu",
+    "petition": "Adressi",
+    "faq": "UKK",
+    "share": "Jaa",
+    "press": "Lehdistö",
+    "privacy": "Tietosuoja",
+    "legal": "Oikeudelliset tiedot",
+    "delete": "Peru allekirjoitus",
+    "sign": "Allekirjoita adressi",
+    "menu": "Valikko",
+    "skipToContent": "Siirry sisältöön",
+    "language": "Kieli",
+    "mainNavigation": "Päävalikko",
+    "themeToggle": "Vaihda vaalean ja tumman tilan välillä",
+    "darkMode": "Tumma tila"
+  },
+  "home": {
+    "title": "Suojele rauhanomaista mielenosoitusoikeutta. Pysäytä mellakkaväkivalta.",
+    "eyebrow": "Adressi Euroopan unionin ja jäsenvaltioiden päättäjille",
+    "headline": "Suojele mielenosoitusoikeutta. Pysäytä sitä horjuttava väkivalta.",
+    "lead": "Rauhanomainen mielenosoittaminen on perusoikeus jokaisessa Euroopan demokratiassa. Tuhopoltot, ryöstely ja ihmisiin kohdistuvat hyökkäykset vaarantavat niin asukkaat, pelastustyöntekijät kuin rauhanomaiset mielenosoittajatkin. Vaadimme selkeitä, laillisia toimia, jotka pysäyttävät väkivaltaisen vähemmistön, jotta kaikki muut voivat jatkaa oikeuksiensa turvallista käyttämistä.",
+    "readFull": "Lue koko adressi",
+    "pointsTitle": "Vaatimuksemme",
+    "pointsIntro": "Viisi ehdotusta, jotka kaikki on hyväksyttävä demokraattisissa päätöksentekoprosesseissa ja joita on sovellettava täysin oikeusturvatakein.",
+    "points": [
+      {
+        "title": "Suojele rauhanomaista mielenosoittamista",
+        "text": "Rauhanomaisen kokoontumisen vapaus on taattava ja sitä on suojeltava aktiivisesti. Rauhanomaisia osallistujia ei saa koskaan kohdella rikoksentekijöinä sen vuoksi, että muut turvautuvat väkivaltaan."
+      },
+      {
+        "title": "Pysäytä väkivalta päättäväisesti",
+        "text": "Tuhopoltot, ryöstely sekä ihmisiin, poliiseihin, pelastuspalveluihin tai omaisuuteen kohdistuvat hyökkäykset on pysäytettävä viipymättä ja rikokset on saatettava johdonmukaisesti syyteharkintaan."
+      },
+      {
+        "title": "Sotilaallinen tuki viimeisenä keinona",
+        "text": "Kun tavanomaiset poliisivoimavarat eivät osoitettavasti riitä, asevoimien tulee voida tukea siviiliviranomaisia – mutta vain selkeän oikeudellisen kehyksen, siviilijohdon ja parlamentaarisen valvonnan alaisena."
+      },
+      {
+        "title": "Säilöönotto ja palauttaminen asianmukaisen menettelyn jälkeen",
+        "text": "Ilman laillista oleskeluoikeutta olevat henkilöt, jotka osallistuvat vakavaan väkivaltaan, olisi voitava pitää tilapäisesti yksinkertaisissa, inhimillisissä tiloissa ja asianmukaisen menettelyn jälkeen asettaa palautuksessa etusijalle – palaamattomuuden periaatetta (non-refoulement) koskaan rikkomatta."
+      },
+      {
+        "title": "Yhteinen eurooppalainen maahantulokielto",
+        "text": "Vahvistetaan yhteistä eurooppalaista mekanismia, jotta mellakoiden aikana vakavista yleisen järjestyksen rikoksista tuomituilta voidaan evätä maahantulo kaikkialla Euroopassa yksilöllisen arvioinnin ja oikeudellisen tarkastelun turvin."
+      }
+    ],
+    "goalTitle": "Tavoitteemme",
+    "goalText": "Suojella mielenosoitusoikeutta sulkemalla väkivaltainen vähemmistö sen ulkopuolelle.",
+    "ctaTitle": "Lisää nimesi",
+    "ctaText": "Jokainen allekirjoitus vahvistaa vaatimusta päättäväisestä, laillisesta ja oikeuksia kunnioittavasta vastauksesta mellakkaväkivaltaan.",
+    "ctaButton": "Allekirjoita adressi",
+    "shareTitle": "Auta adressia tavoittamaan useampia",
+    "shareText": "Jaa adressi ystävillesi, perheellesi ja työtovereillesi, jotka välittävät turvallisista kaduista ja mielenosoitusoikeudesta.",
+    "shareButton": "Jakamistavat"
+  },
+  "counter": {
+    "label": "allekirjoitusta",
+    "goal": "Tavoite: {goal}",
+    "progress": "{percent} % tavoitteesta",
+    "approx": "Laskuri päivittyy minuutin välein, eikä sen lukema välttämättä ole tarkka."
+  },
+  "form": {
+    "title": "Allekirjoita adressi",
+    "intro": "Se vie alle minuutin. Kysymme vain välttämättömät tiedot.",
+    "name": "Koko nimi",
+    "nameHelp": "Nimeäsi ei julkaista koskaan.",
+    "country": "Asuinmaa",
+    "countryPlaceholder": "Valitse maasi",
+    "otherCountry": "Muu maa",
+    "email": "Sähköpostiosoite",
+    "optional": "vapaaehtoinen",
+    "emailHelp": "Käytetään vain päällekkäisten allekirjoitusten estämiseen – ellet valitse alla olevaa ruutua.",
+    "updates": "Lähetä minulle lyhyt tiedote, kun adressi luovutetaan (enintään muutama sähköposti).",
+    "consent": "Olen vähintään 16-vuotias ja annan nimenomaisen suostumukseni siihen, että nimeäni, asuinmaatani ja antamaani sähköpostiosoitetta käsitellään tätä adressia varten {privacyLink} kuvatulla tavalla.",
+    "privacyLinkText": "tietosuojaselosteessa",
+    "submit": "Allekirjoita adressi",
+    "submitting": "Allekirjoitetaan…",
+    "humanCheck": "Cloudflare Turnstile -turvatarkistus – yksityisyyttä kunnioittava, ei seurantaevästeitä.",
+    "noscript": "JavaScript on poistettu käytöstä. Voit silti allekirjoittaa: allekirjoituksesi tallennetaan ja lasketaan käsin tehdyn tarkistuksen jälkeen, koska automaattinen turvatarkistus vaatii JavaScriptin.",
+    "errors": {
+      "generic": "Jokin meni pieleen. Yritä hetken kuluttua uudelleen.",
+      "network": "Palvelimeen ei saatu yhteyttä. Tarkista verkkoyhteytesi ja yritä uudelleen.",
+      "invalid_name": "Anna nimesi (2–100 merkkiä).",
+      "invalid_country": "Valitse maasi.",
+      "invalid_email": "Anna kelvollinen sähköpostiosoite tai jätä kenttä tyhjäksi.",
+      "consent_required": "Vahvista suostumuksesi allekirjoittaaksesi.",
+      "captcha_failed": "Turvatarkistus epäonnistui. Lataa sivu uudelleen ja yritä uudelleen.",
+      "duplicate": "Tällä sähköpostiosoitteella on jo allekirjoitettu adressi. Kiitos!",
+      "forbidden": "Pyyntö hylättiin. Allekirjoita suoraan osoitteessa public-order.eu.",
+      "rate_limited": "Liian monta yritystä. Odota muutama minuutti ja yritä uudelleen."
+    }
+  },
+  "thanks": {
+    "title": "Kiitos allekirjoituksestasi",
+    "lead": "Allekirjoituksesi on tallennettu. Kiitos, että puolustat sekä mielenosoitusoikeutta että yhteisöjemme turvallisuutta.",
+    "pending": "Koska automaattista turvatarkistusta ei voitu suorittaa, allekirjoituksesi lasketaan käsin tehdyn tarkistuksen jälkeen.",
+    "codeTitle": "Henkilökohtainen peruutuskoodisi",
+    "codeText": "Säilytä tämä koodi, jos haluat ehkä myöhemmin perua allekirjoituksesi. Tallennamme sen vain salatussa (tiivistetyssä) muodossa, joten emme voi näyttää sitä sinulle uudelleen.",
+    "codeCopy": "Kopioi koodi",
+    "codeCopied": "Kopioitu",
+    "nextTitle": "Mitä seuraavaksi?",
+    "nextText": "Hyödyllisintä, mitä voit nyt tehdä, on jakaa adressi tuntemillesi ihmisille.",
+    "shareButton": "Jaa adressi",
+    "backHome": "Takaisin etusivulle"
+  },
+  "delete": {
+    "title": "Peru allekirjoituksesi",
+    "lead": "Voit perua allekirjoituksesi milloin tahansa. Se poistetaan pysyvästi ja laskuria oikaistaan.",
+    "codeLabel": "Peruutuskoodi",
+    "codeHelp": "Allekirjoituksen jälkeen näytetty koodi, esimerkiksi ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Poista allekirjoitukseni",
+    "noCodeTitle": "Koodi hukassa?",
+    "noCodeText": "Kirjoita osoitteeseen {email} samasta sähköpostiosoitteesta, jolla allekirjoitit. Jos allekirjoitit ilman sähköpostiosoitetta, kerro nimesi, asuinmaasi ja suunnilleen allekirjoitusajankohta. Käsittelemme pyyntösi 30 päivän kuluessa.",
+    "success": "Allekirjoituksesi on poistettu.",
+    "notFound": "Tällä koodilla ei löytynyt allekirjoitusta. Tarkista koodi ja yritä uudelleen.",
+    "invalid": "Anna kelvollinen peruutuskoodi."
+  },
+  "share": {
+    "title": "Näin jaat adressin",
+    "lead": "Adressi toimii vain, jos se tavoittaa ihmisiä. Tässä muutamia yksinkertaisia tapoja auttaa – yksikään niistä ei lataa tällä sivustolla seurantaskriptejä.",
+    "linksTitle": "Jaa sosiaalisessa mediassa",
+    "copyTitle": "Kopioi linkki",
+    "copyButton": "Kopioi linkki",
+    "copied": "Linkki kopioitu",
+    "nativeShare": "Jaa…",
+    "messagesTitle": "Viestiehdotuksia",
+    "messagesIntro": "Voit vapaasti kopioida, muokata tai kääntää ne.",
+    "messages": [
+      "Rauhanomainen mielenosoittaminen on oikeus. Mellakkaväkivalta ei ole. Allekirjoitin European Public Order Initiative -adressin – allekirjoitatko sinäkin?",
+      "Suojele mielenosoitusoikeutta pysäyttämällä väkivaltainen vähemmistö – oikeusvaltion ja ihmisoikeuksien puitteissa. Allekirjoita täällä:",
+      "Tuhopoltot, ryöstely ja ihmisiin kohdistuvat hyökkäykset vaarantavat kaikki, myös rauhanomaiset mielenosoittajat. Kannatan päättäväisiä, laillisia toimia. Lisää nimesi:"
+    ],
+    "copyMessage": "Kopioi viesti",
+    "offlineTitle": "Puhu aiheesta",
+    "offlineText": "Keskustelut ystävien, työtovereiden ja paikallisten edustajien kanssa merkitsevät enemmän kuin yksikään julkaisu. Jaa adressi rehellisesti ja kunnioittavasti – myös niille, jotka ovat eri mieltä.",
+    "guidelinesTitle": "Pidetään sävy kunnioittavana",
+    "guidelinesText": "Älä käytä adressia yksittäisten ihmisten tai ryhmien leimaamiseen. Vastustamme kenen tahansa väkivaltaa ja puolustamme kaikkien oikeuksia.",
+    "emailSubject": "Allekirjoita: European Public Order Initiative"
+  },
+  "press": {
+    "title": "Lehdistö ja media",
+    "lead": "Taustatietoja, käyttövalmiita tekstejä ja European Public Order Initiativen tunnus. Saat vapaasti lainata ja jäljentää niitä.",
+    "contactTitle": "Lehdistökyselyt",
+    "contactText": "Kysymykset, lausunnot ja taustatietopyynnöt voi lähettää osoitteeseen {email}.",
+    "anonymity": "Turvallisuussyistä emme julkaise aloitteen takana olevien henkilöiden nimiä. Lähetä kaikki kyselyt lehdistön sähköpostiosoitteeseen.",
+    "factsTitle": "Keskeiset tiedot",
+    "facts": {
+      "name": "Nimi",
+      "website": "Verkkosivusto",
+      "type": "Laji",
+      "typeText": "Itsenäinen, puolueisiin sitoutumaton kansalaisadressi. Se ei ole asetuksen (EU) 2019/788 mukaisesti rekisteröity eurooppalainen kansalaisaloite, eikä se ole sidoksissa Euroopan unioniin tai mihinkään sen toimielimeen.",
+      "addressees": "Osoitettu",
+      "addresseesText": "Euroopan parlamentin jäsenille, Euroopan komissiolle, Euroopan unionin neuvostolle sekä Euroopan unionin ja Euroopan talousalueen jäsenvaltioiden hallituksille ja parlamenteille.",
+      "goal": "Tavoite",
+      "goalText": "{goal} allekirjoitusta",
+      "data": "Kerätyt tiedot",
+      "dataText": "Nimi, asuinmaa ja halutessasi sähköpostiosoite. Nimiä ei julkaista koskaan; raportoidaan vain kokonaismäärät ja allekirjoitusten määrä maittain."
+    },
+    "boilerplateTitle": "Aloitteesta",
+    "boilerplateIntro": "Käytä tekstejä sellaisinaan tai lyhennä niitä tarpeen mukaan.",
+    "shortLabel": "Lyhyt versio",
+    "short": "European Public Order Initiative on itsenäinen, puolueisiin sitoutumaton kansalaisadressi, joka vaatii päättäväisiä, laillisia toimia mellakkaväkivaltaa vastaan rauhanomaisen mielenosoitusoikeuden suojelemiseksi.",
+    "longLabel": "Pitkä versio",
+    "long": "European Public Order Initiative on itsenäinen, puolueisiin sitoutumaton kansalaisadressi, joka on osoitettu Euroopan unionin ja jäsenvaltioiden päättäjille. Siinä vaaditaan viittä toimenpidettä: rauhanomaisen mielenosoittamisen suojelemista; tuhopoltoissa, ryöstelyssä ja ihmisiin kohdistuvissa hyökkäyksissä viipymättä puuttumista ja niiden johdonmukaista syytteeseen saattamista; sitä, että asevoimat voivat viimeisenä keinona tukea siviiliviranomaisia siviilijohdon ja parlamentaarisen valvonnan alaisena; sitä, että ilman laillista oleskeluoikeutta olevat, vakavaan väkivaltaan osallistuvat henkilöt voidaan pitää tilapäisesti inhimillisissä tiloissa ja heidän palauttamisensa asetetaan asianmukaisen menettelyn jälkeen etusijalle palaamattomuuden periaatetta (non-refoulement) koskaan rikkomatta; sekä yhteisen eurooppalaisen maahantulokiellon vahvistamista vakavista yleisen järjestyksen rikoksista tuomituille yksilöllisen arvioinnin ja oikeudellisen tarkastelun turvin. Jokainen toimenpide on hyväksyttävä demokraattisesti, ja sen on kunnioitettava kansallisia perustuslakeja, Euroopan ihmisoikeussopimusta ja Euroopan unionin perusoikeuskirjaa. Adressi ei ole sidoksissa Euroopan unioniin tai mihinkään sen toimielimeen.",
+    "copyText": "Kopioi teksti",
+    "copied": "Kopioitu",
+    "assetsTitle": "Tunnus ja kuvat",
+    "assetsIntro": "SVG-tiedostot skaalautuvat mihin tahansa kokoon. Käytä PNG-tiedostoja, kun SVG ei ole tuettu.",
+    "assets": {
+      "emblem": "Tunnus",
+      "emblemInverse": "Tunnus tummille taustoille",
+      "wordmark": "Tunnus ja nimi",
+      "wordmarkInverse": "Tunnus ja nimi tummille taustoille",
+      "social": "Sosiaalisen median kuva"
+    },
+    "usageTitle": "Tunnuksen käyttö",
+    "usage": [
+      "Älä muuta tunnusta, vaihda sen värejä, rajaa sitä tai vääristä sitä.",
+      "Jätä tunnuksen ympärille vapaata tilaa vähintään neljäsosa sen leveydestä.",
+      "Älä käytä tunnusta tavalla, joka antaa ymmärtää Euroopan unionin tai jonkin sen toimielimen tukevan aloitetta tai olevan siihen sidoksissa.",
+      "Älä käytä tunnusta poliittisen puolueen, ehdokkaan tai kaupallisen tuotteen mainostamiseen."
+    ]
+  },
+  "rights": {
+    "title": "Sitoumuksemme oikeusvaltioon",
+    "text": "Tämä adressi ei vaadi mitään laitonta toimintaa. Jokainen ehdotettu toimenpide on hyväksyttävä demokraattisissa, laillisissa prosesseissa ja sitä on sovellettava täysin kansallisia perustuslakeja, Euroopan ihmisoikeussopimusta, Euroopan unionin perusoikeuskirjaa ja kansainvälistä pakolaisoikeutta, palaamattomuuden periaate (non-refoulement) mukaan lukien, kunnioittaen. Toimenpiteiden on kohdistuttava tekoihin – ei koskaan kansalaisuuteen, etniseen alkuperään, uskontoon tai poliittiseen mielipiteeseen.",
+    "short": "Tämä adressi ei vaadi mitään laitonta toimintaa, ja se kunnioittaa täysin kansallisia perustuslakeja ja Euroopan ihmisoikeussopimusta."
+  },
+  "faq": {
+    "title": "Usein kysytyt kysymykset",
+    "lead": "Rehellisiä vastauksia useimmin kuulemiimme kysymyksiin ja vastaväitteisiin."
+  },
+  "petition": {
+    "signCta": "Oletko samaa mieltä? Lisää nimesi."
+  },
+  "footer": {
+    "about": "Itsenäinen, puolueisiin sitoutumaton kansalaisadressi. Ei ole sidoksissa Euroopan unioniin tai mihinkään sen toimielimeen.",
+    "contact": "Yhteystiedot",
+    "rights": "Oikeudet ja säännöt",
+    "pressKit": "Lehdistö ja media",
+    "source": "Lähdekoodi"
   },
   "notice": {
-    "untranslated": "Tätä sivua ei ole vielä saatavilla suomeksi. Alla on englanninkielinen versio.",
+    "untranslated": "Tämän sivun käännös ei ole vielä valmis (kieli: {language}). Alla näytetään englanninkielinen versio.",
     "help": "Auta meitä kääntämään"
+  },
+  "notFound": {
+    "title": "Sivua ei löydy",
+    "text": "Etsimääsi sivua ei ole olemassa tai se on siirretty.",
+    "back": "Siirry etusivulle"
+  },
+  "a11y": {
+    "newTab": "(avautuu uudelle välilehdelle)",
+    "download": "Lataa {name}"
   }
 }

@@ -1,10 +1,225 @@
 {
-  "_status": "untranslated",
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "Europos peticija, ginanti teisę į taikų protestą ryžtingai sustabdant riaušių smurtą — laikantis teisinės valstybės principų ir Europos žmogaus teisių konvencijos.",
+    "ogImageAlt": "European Public Order Initiative — Apsaugokime taikų protestą. Sustabdykime riaušių smurtą."
+  },
   "nav": {
-    "language": "Kalba"
+    "home": "Pradžia",
+    "petition": "Peticija",
+    "faq": "DUK",
+    "share": "Dalytis",
+    "press": "Spaudai",
+    "privacy": "Privatumas",
+    "legal": "Teisinė informacija",
+    "delete": "Atšaukti parašą",
+    "sign": "Pasirašyti peticiją",
+    "menu": "Meniu",
+    "skipToContent": "Pereiti prie turinio",
+    "language": "Kalba",
+    "mainNavigation": "Pagrindinė naršymo juosta",
+    "themeToggle": "Perjungti šviesų ir tamsų režimą",
+    "darkMode": "Tamsus režimas"
+  },
+  "home": {
+    "title": "Apsaugokime taikų protestą. Sustabdykime riaušių smurtą.",
+    "eyebrow": "Peticija Europos ir nacionaliniams sprendimų priėmėjams",
+    "headline": "Apsaugokime teisę protestuoti. Sustabdykime smurtą, kuris ją griauna.",
+    "lead": "Taikus protestas yra pagrindinė teisė kiekvienoje Europos demokratijoje. Padegimai, plėšimai ir išpuoliai prieš žmones kelia pavojų gyventojams, skubiosios pagalbos darbuotojams ir taikiems demonstrantams. Prašome aiškių, teisėtų priemonių, kurios sustabdytų smurtaujančią mažumą — kad visi kiti galėtų ir toliau saugiai naudotis savo teisėmis.",
+    "readFull": "Skaityti visą peticiją",
+    "pointsTitle": "Ko prašome",
+    "pointsIntro": "Penki pasiūlymai, kuriuos reikia priimti demokratine tvarka ir taikyti laikantis visų teisinių garantijų.",
+    "points": [
+      {
+        "title": "Apsaugoti taikų protestą",
+        "text": "Taikių susirinkimų laisvė turi būti užtikrinama ir aktyviai ginama. Taikių dalyvių niekada negalima laikyti teisės pažeidėjais vien dėl to, kad kiti griebėsi smurto."
+      },
+      {
+        "title": "Ryžtingai stabdyti smurtą",
+        "text": "Padegimai, plėšimai ir išpuoliai prieš žmones, policiją, skubiosios pagalbos tarnybas ar turtą turi būti greitai stabdomi, o kaltininkai nuosekliai baudžiami."
+      },
+      {
+        "title": "Kariuomenės pagalba kaip kraštutinė priemonė",
+        "text": "Kai įprastų policijos pajėgų akivaizdžiai nepakanka, ginkluotosios pajėgos turėtų galėti padėti civilinėms institucijoms — tik pagal aiškią teisinę sistemą, vadovaujant civiliams ir prižiūrint parlamentui."
+      },
+      {
+        "title": "Sulaikymas ir grąžinimas laikantis tinkamo proceso",
+        "text": "Asmenys, neturintys teisėto leidimo gyventi šalyje ir dalyvaujantys sunkiame smurte, turėtų būti laikinai laikomi paprastose, žmogiškose patalpose, o laikantis tinkamo proceso — pirmiausia grąžinami, niekada nepažeidžiant negrąžinimo (non-refoulement) principo."
+      },
+      {
+        "title": "Bendras Europos draudimas atvykti",
+        "text": "Sustiprinti bendrą Europos mechanizmą, kad asmenims, nuteistiems už sunkius viešosios tvarkos pažeidimus riaušių metu, būtų galima atsisakyti leisti atvykti visoje Europoje, atlikus individualų vertinimą ir užtikrinus teisminę peržiūrą."
+      }
+    ],
+    "goalTitle": "Mūsų tikslas",
+    "goalText": "Apsaugoti teisę protestuoti, pašalinant iš jos smurtaujančią mažumą.",
+    "ctaTitle": "Pridėkite savo vardą",
+    "ctaText": "Kiekvienas parašas stiprina raginimą ryžtingai, teisėtai ir gerbiant žmogaus teises reaguoti į riaušių smurtą.",
+    "ctaButton": "Pasirašyti peticiją",
+    "shareTitle": "Padėkite peticijai pasiekti daugiau žmonių",
+    "shareText": "Pasidalykite peticija su draugais, šeima ir kolegomis, kuriems rūpi saugios gatvės ir teisė protestuoti.",
+    "shareButton": "Kaip pasidalyti"
+  },
+  "counter": {
+    "label": "parašų",
+    "goal": "Tikslas: {goal}",
+    "progress": "{percent}% tikslo",
+    "approx": "Skaitiklis atnaujinamas kas minutę ir gali būti apytikslis."
+  },
+  "form": {
+    "title": "Pasirašyti peticiją",
+    "intro": "Tai užtruks mažiau nei minutę. Prašome tik būtinų duomenų.",
+    "name": "Vardas ir pavardė",
+    "nameHelp": "Jūsų vardas ir pavardė niekada neskelbiami.",
+    "country": "Gyvenamoji šalis",
+    "countryPlaceholder": "Pasirinkite šalį",
+    "otherCountry": "Kita šalis",
+    "email": "El. pašto adresas",
+    "optional": "neprivaloma",
+    "emailHelp": "Naudojamas tik pasikartojantiems parašams išvengti — nebent pažymėsite žemiau esantį langelį.",
+    "updates": "Noriu gauti trumpą pranešimą, kai peticija bus įteikta (daugiausia kelis el. laiškus).",
+    "consent": "Man yra bent 16 metų ir aiškiai sutinku, kad mano vardas ir pavardė, šalis ir, jei nurodžiau, el. pašto adresas būtų tvarkomi šios peticijos tikslais, kaip aprašyta {privacyLink}.",
+    "privacyLinkText": "privatumo politikoje",
+    "submit": "Pasirašyti peticiją",
+    "submitting": "Pasirašoma…",
+    "humanCheck": "Saugumo patikra „Cloudflare Turnstile“ — draugiška privatumui, be sekimo slapukų.",
+    "noscript": "„JavaScript“ išjungtas. Vis tiek galite pasirašyti: jūsų parašas bus išsaugotas ir įskaičiuotas po patikros rankiniu būdu, nes automatinei saugumo patikrai reikia „JavaScript“.",
+    "errors": {
+      "generic": "Kažkas nepavyko. Bandykite dar kartą po akimirkos.",
+      "network": "Nepavyko susisiekti su serveriu. Patikrinkite ryšį ir bandykite dar kartą.",
+      "invalid_name": "Įveskite savo vardą ir pavardę (nuo 2 iki 100 simbolių).",
+      "invalid_country": "Pasirinkite savo šalį.",
+      "invalid_email": "Įveskite galiojantį el. pašto adresą arba palikite laukelį tuščią.",
+      "consent_required": "Norėdami pasirašyti, patvirtinkite sutikimą.",
+      "captcha_failed": "Saugumo patikra nepavyko. Iš naujo įkelkite puslapį ir bandykite dar kartą.",
+      "duplicate": "Šis el. pašto adresas jau panaudotas peticijai pasirašyti. Dėkojame!",
+      "forbidden": "Ši užklausa buvo atmesta. Pasirašykite tiesiogiai svetainėje public-order.eu.",
+      "rate_limited": "Per daug bandymų. Palaukite kelias minutes ir bandykite dar kartą."
+    }
+  },
+  "thanks": {
+    "title": "Dėkojame, kad pasirašėte",
+    "lead": "Jūsų parašas užregistruotas. Dėkojame, kad stojate ginti ir teisės protestuoti, ir mūsų bendruomenių saugumo.",
+    "pending": "Kadangi automatinės saugumo patikros atlikti nepavyko, jūsų parašas bus įskaičiuotas po patikros rankiniu būdu.",
+    "codeTitle": "Jūsų asmeninis atšaukimo kodas",
+    "codeText": "Išsaugokite šį kodą, jei vėliau norėtumėte atšaukti parašą. Jį saugome tik užšifruotą (kaip maišos reikšmę), todėl negalime jo parodyti dar kartą.",
+    "codeCopy": "Kopijuoti kodą",
+    "codeCopied": "Nukopijuota",
+    "nextTitle": "Kas toliau?",
+    "nextText": "Naudingiausia, ką dabar galite padaryti, — pasidalyti peticija su pažįstamais žmonėmis.",
+    "shareButton": "Dalytis peticija",
+    "backHome": "Grįžti į pradžią"
+  },
+  "delete": {
+    "title": "Atšaukite savo parašą",
+    "lead": "Savo parašą galite atšaukti bet kada. Jis bus ištrintas visam laikui, o skaitiklis atitinkamai pakoreguotas.",
+    "codeLabel": "Atšaukimo kodas",
+    "codeHelp": "Kodas, parodytas jums pasirašius, pavyzdžiui, ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Ištrinti mano parašą",
+    "noCodeTitle": "Pamiršote kodą?",
+    "noCodeText": "Rašykite adresu {email} iš el. pašto adreso, kuriuo pasirašėte, arba, jei pasirašėte nenurodę el. pašto adreso, nurodykite savo vardą ir pavardę, šalį ir apytikslę pasirašymo datą. Jūsų prašymą išnagrinėsime per 30 dienų.",
+    "success": "Jūsų parašas ištrintas.",
+    "notFound": "Pagal šį kodą parašo nerasta. Patikrinkite kodą ir bandykite dar kartą.",
+    "invalid": "Įveskite galiojantį atšaukimo kodą."
+  },
+  "share": {
+    "title": "Kaip pasidalyti",
+    "lead": "Peticija veikia tik tada, kai ją pasiekia žmonės. Štai keli paprasti būdai padėti — nė vienas jų šioje svetainėje neįkelia sekimo skriptų.",
+    "linksTitle": "Dalytis socialiniuose tinkluose",
+    "copyTitle": "Nukopijuoti nuorodą",
+    "copyButton": "Kopijuoti nuorodą",
+    "copied": "Nuoroda nukopijuota",
+    "nativeShare": "Dalytis…",
+    "messagesTitle": "Siūlomi pranešimai",
+    "messagesIntro": "Drąsiai kopijuokite, pritaikykite ar išverskite.",
+    "messages": [
+      "Taikus protestas yra teisė. Riaušių smurtas — ne. Aš pasirašiau European Public Order Initiative peticiją — o jūs?",
+      "Apsaugokime teisę protestuoti sustabdydami smurtaujančią mažumą — laikantis teisinės valstybės principų ir žmogaus teisių. Pasirašykite čia:",
+      "Padegimai, plėšimai ir išpuoliai prieš žmones kelia pavojų visiems, taip pat ir taikiems demonstrantams. Palaikau ryžtingas, teisėtas priemones. Pridėkite savo vardą:"
+    ],
+    "copyMessage": "Kopijuoti pranešimą",
+    "offlineTitle": "Pasikalbėkite apie tai",
+    "offlineText": "Pokalbiai su draugais, kolegomis ir vietos atstovais svarbesni už bet kokį įrašą. Dalykitės peticija sąžiningai ir pagarbiai — taip pat su žmonėmis, kurie su ja nesutinka.",
+    "guidelinesTitle": "Išlaikykime pagarbą",
+    "guidelinesText": "Nenaudokite peticijos konkretiems asmenims ar grupėms nukreipti. Esame prieš bet kieno smurtą ir už kiekvieno žmogaus teises.",
+    "emailSubject": "Prašome pasirašyti: European Public Order Initiative"
+  },
+  "press": {
+    "title": "Spauda ir žiniasklaida",
+    "lead": "Pagrindinė informacija, paruošti tekstai ir European Public Order Initiative emblema. Maloniai kviečiame juos cituoti ir naudoti.",
+    "contactTitle": "Užklausos spaudai",
+    "contactText": "Klausimais, pareiškimais ir pagrindine informacija rašykite adresu {email}.",
+    "anonymity": "Dėl jų saugumo neskelbiame iniciatyvą rengiančių žmonių vardų. Visas užklausas siųskite spaudos adresu.",
+    "factsTitle": "Pagrindiniai faktai",
+    "facts": {
+      "name": "Pavadinimas",
+      "website": "Svetainė",
+      "type": "Pobūdis",
+      "typeText": "Nepriklausoma, nepartinė piliečių peticija. Tai nėra užregistruota Europos piliečių iniciatyva pagal Reglamentą (ES) 2019/788 ir nesusijusi su Europos Sąjunga ar bet kuria jos institucija.",
+      "addressees": "Adresatai",
+      "addresseesText": "Europos Parlamento nariai, Europos Komisija, Europos Sąjungos Taryba, Europos Sąjungos ir Europos ekonominės erdvės valstybių narių vyriausybės bei parlamentai.",
+      "goal": "Tikslas",
+      "goalText": "Parašų: {goal}",
+      "data": "Renkami duomenys",
+      "dataText": "Vardas ir pavardė, gyvenamoji šalis ir, jei pageidaujama, el. pašto adresas. Vardai ir pavardės niekada neskelbiami; pateikiamos tik bendros sumos ir parašų skaičius pagal šalis."
+    },
+    "boilerplateTitle": "Apie iniciatyvą",
+    "boilerplateIntro": "Naudokite šiuos tekstus tokius, kokie yra, arba sutrumpinkite pagal poreikį.",
+    "shortLabel": "Trumpa versija",
+    "short": "European Public Order Initiative yra nepriklausoma, nepartinė piliečių peticija, raginanti imtis ryžtingų, teisėtų priemonių prieš riaušių smurtą, kad būtų apsaugota teisė į taikų protestą.",
+    "longLabel": "Ilga versija",
+    "long": "European Public Order Initiative yra nepriklausoma, nepartinė piliečių peticija, skirta Europos ir nacionaliniams sprendimų priėmėjams. Joje prašoma penkių priemonių: apsaugoti taikų protestą; greitai stabdyti padegimus, plėšimus ir išpuolius prieš žmones ir nuosekliai už juos bausti; leisti ginkluotosioms pajėgoms kaip kraštutinei priemonei padėti civilinėms institucijoms, vadovaujant civiliams ir prižiūrint parlamentui; asmenis, neturinčius teisėto leidimo gyventi šalyje ir dalyvaujančius sunkiame smurte, laikinai laikyti žmogiškose patalpose ir, laikantis tinkamo proceso, pirmiausia juos grąžinti, niekada nepažeidžiant negrąžinimo (non-refoulement) principo; ir sustiprinti bendrą Europos draudimą atvykti asmenims, nuteistiems už sunkius viešosios tvarkos pažeidimus, atlikus individualų vertinimą ir užtikrinus teisminę peržiūrą. Kiekviena priemonė turi būti priimta demokratiškai ir atitikti nacionalines konstitucijas, Europos žmogaus teisių konvenciją ir Europos Sąjungos pagrindinių teisių chartiją. Peticija nesusijusi su Europos Sąjunga ar bet kuria jos institucija.",
+    "copyText": "Kopijuoti tekstą",
+    "copied": "Nukopijuota",
+    "assetsTitle": "Emblema ir vaizdai",
+    "assetsIntro": "SVG failai keičia dydį be kokybės praradimo. PNG failus naudokite ten, kur SVG nepalaikomas.",
+    "assets": {
+      "emblem": "Emblema",
+      "emblemInverse": "Emblema tamsiam fonui",
+      "wordmark": "Emblema su pavadinimu",
+      "wordmarkInverse": "Emblema su pavadinimu, tamsiam fonui",
+      "social": "Socialinių tinklų vaizdas"
+    },
+    "usageTitle": "Kaip naudoti emblemą",
+    "usage": [
+      "Nekeiskite, neperspalvinkite, neapkirpkite ir neiškraipykite emblemos.",
+      "Aplink ją palikite laisvą vietą, ne mažesnę kaip ketvirtadalis jos pločio.",
+      "Nenaudokite jos taip, kad atrodytų, jog ją remia Europos Sąjunga ar bet kuri jos institucija arba kad su jomis susijusi.",
+      "Nenaudokite jos politinei partijai, kandidatui ar komerciniam produktui reklamuoti."
+    ]
+  },
+  "rights": {
+    "title": "Mūsų įsipareigojimas laikytis teisinės valstybės principų",
+    "text": "Ši peticija nereikalauja jokių neteisėtų veiksmų. Kiekviena joje siūloma priemonė turi būti priimta demokratine, teisėta tvarka ir taikoma visapusiškai gerbiant nacionalines konstitucijas, Europos žmogaus teisių konvenciją, Europos Sąjungos pagrindinių teisių chartiją ir tarptautinę pabėgėlių teisę, įskaitant negrąžinimo (non-refoulement) principą. Priemonės turi būti nukreiptos prieš elgesį — niekada prieš tautybę, etninę kilmę, religiją ar politines pažiūras.",
+    "short": "Ši peticija nereikalauja jokių neteisėtų veiksmų ir visapusiškai gerbia nacionalines konstitucijas bei Europos žmogaus teisių konvenciją."
+  },
+  "faq": {
+    "title": "Dažnai užduodami klausimai",
+    "lead": "Nuoširdūs atsakymai į klausimus ir prieštaravimus, kuriuos girdime dažniausiai."
+  },
+  "petition": {
+    "signCta": "Sutinkate? Pridėkite savo vardą."
+  },
+  "footer": {
+    "about": "Nepriklausoma, nepartinė piliečių peticija. Nesusijusi su Europos Sąjunga ar bet kuria jos institucija.",
+    "contact": "Kontaktai",
+    "rights": "Teisės ir taisyklės",
+    "pressKit": "Spauda ir žiniasklaida",
+    "source": "Šaltinio kodas"
   },
   "notice": {
-    "untranslated": "Šis puslapis dar neprieinamas lietuvių kalba. Žemiau pateikiama versija anglų kalba.",
+    "untranslated": "Šio puslapio dar nėra pasirinkta kalba ({language}). Žemiau rodoma versija anglų kalba.",
     "help": "Padėkite mums išversti"
+  },
+  "notFound": {
+    "title": "Puslapis nerastas",
+    "text": "Puslapio, kurio ieškote, nėra arba jis perkeltas.",
+    "back": "Eiti į pradžią"
+  },
+  "a11y": {
+    "newTab": "(atsidaro naujame skirtuke)",
+    "download": "Atsisiųsti: {name}"
   }
 }

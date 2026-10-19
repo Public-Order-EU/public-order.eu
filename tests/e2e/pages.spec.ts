@@ -10,13 +10,16 @@ for (const lang of locales) {
       expect(res.status(), `/${lang}/${path}`).toBe(200);
       const html = await res.text();
       expect(html, `/${lang}/${path}`).toContain(`<html lang="${lang}"`);
-      // Indexed pages list their language versions. Untranslated (fallback) and
-      // noindex pages (thanks, delete) must not, or search engines index duplicates.
-      // (Only languages marked complete are listed, so while only English is, there are none.)
-      const alternates = html.match(/<link rel="alternate" hreflang="[^"]+"/g) ?? [];
-      if (lang !== 'en' || ['thanks/', 'delete/'].includes(path)) expect(alternates, `/${lang}/${path}`).toEqual([]);
-      if (alternates.length) expect(html, `/${lang}/${path}`).toContain('hreflang="x-default"');
-      if (['thanks/', 'delete/'].includes(path)) expect(html).toContain('name="robots" content="noindex');
+      // Indexed pages list every language version plus x-default (all languages are
+      // marked complete). Noindex pages (thanks, delete) must not, or search engines
+      // index duplicates.
+      const alternates = (html.match(/<link rel="alternate" hreflang="[^"]+"/g) ?? []).map((l) => l.split('"')[3]);
+      if (['thanks/', 'delete/'].includes(path)) {
+        expect(alternates, `/${lang}/${path}`).toEqual([]);
+        expect(html).toContain('name="robots" content="noindex');
+      } else {
+        expect(alternates.sort(), `/${lang}/${path}`).toEqual([...locales, 'x-default'].sort());
+      }
     }
   });
 }

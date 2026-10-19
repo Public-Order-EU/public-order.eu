@@ -1,10 +1,225 @@
 {
-  "_status": "untranslated",
+  "_status": "complete",
+  "meta": {
+    "siteName": "European Public Order Initiative",
+    "shortName": "Public Order Initiative",
+    "description": "En europæisk underskriftindsamling for at beskytte retten til fredelig demonstration ved konsekvent at stoppe uroligheder og vold – inden for rammerne af retsstaten og Den Europæiske Menneskerettighedskonvention.",
+    "ogImageAlt": "European Public Order Initiative – Beskyt fredelig demonstration. Stop vold ved uroligheder."
+  },
   "nav": {
-    "language": "Sprog"
+    "home": "Forside",
+    "petition": "Underskriftindsamling",
+    "faq": "FAQ",
+    "share": "Del",
+    "press": "Presse",
+    "privacy": "Privatliv",
+    "legal": "Juridisk meddelelse",
+    "delete": "Træk underskrift tilbage",
+    "sign": "Underskriv",
+    "menu": "Menu",
+    "skipToContent": "Gå til indholdet",
+    "language": "Sprog",
+    "mainNavigation": "Hovednavigation",
+    "themeToggle": "Skift mellem lys og mørk tilstand",
+    "darkMode": "Mørk tilstand"
+  },
+  "home": {
+    "title": "Beskyt fredelig demonstration. Stop vold ved uroligheder.",
+    "eyebrow": "En underskriftindsamling rettet til europæiske og nationale beslutningstagere",
+    "headline": "Beskyt retten til at demonstrere. Stop den vold, der undergraver den.",
+    "lead": "Fredelig demonstration er en grundlæggende rettighed i ethvert europæisk demokrati. Brandstiftelse, plyndring og angreb på mennesker udsætter beboere, redningspersonale og fredelige demonstranter for fare. Vi efterlyser klare, lovlige foranstaltninger, der stopper det voldelige mindretal, så alle andre trygt kan fortsætte med at udøve deres rettigheder.",
+    "readFull": "Læs hele teksten",
+    "pointsTitle": "Hvad vi beder om",
+    "pointsIntro": "Fem forslag, som hver især skal vedtages gennem demokratiske processer og anvendes med fulde retssikkerhedsgarantier.",
+    "points": [
+      {
+        "title": "Beskyt fredelig demonstration",
+        "text": "Forsamlingsfriheden skal sikres og aktivt beskyttes. Fredelige deltagere må aldrig behandles som lovovertrædere, fordi andre bliver voldelige."
+      },
+      {
+        "title": "Stop volden konsekvent",
+        "text": "Brandstiftelse, plyndring og angreb på mennesker, politi, redningstjenester eller ejendom skal stoppes hurtigt og retsforfølges konsekvent."
+      },
+      {
+        "title": "Militær støtte som sidste udvej",
+        "text": "Når den almindelige politikapacitet påviseligt er overbelastet, bør væbnede styrker kunne støtte de civile myndigheder – kun inden for en klar retlig ramme, under civil kommando og med parlamentarisk kontrol."
+      },
+      {
+        "title": "Tilbageholdelse og udsendelse efter en retfærdig proces",
+        "text": "Personer uden lovligt ophold, der deltager i grov vold, bør midlertidigt kunne tilbageholdes i enkle, humane faciliteter og efter en retfærdig proces udsendes som en prioritet – aldrig i strid med non-refoulement-princippet."
+      },
+      {
+        "title": "Et fælles europæisk indrejseforbud",
+        "text": "Styrk en fælles europæisk mekanisme, så personer, der er dømt for grove brud på den offentlige orden under uroligheder, kan nægtes indrejse i hele Europa, med individuel vurdering og domstolsprøvelse."
+      }
+    ],
+    "goalTitle": "Vores mål",
+    "goalText": "At beskytte retten til at demonstrere ved at fjerne det voldelige mindretal fra demonstrationerne.",
+    "ctaTitle": "Skriv under",
+    "ctaText": "Hver underskrift styrker kravet om en fast, lovlig og rettighedsbeskyttende reaktion på vold ved uroligheder.",
+    "ctaButton": "Underskriv",
+    "shareTitle": "Hjælp indsamlingen med at nå ud til flere",
+    "shareText": "Del underskriftindsamlingen med venner, familie og kolleger, der går op i trygge gader og retten til at demonstrere.",
+    "shareButton": "Sådan deler du"
+  },
+  "counter": {
+    "label": "underskrifter",
+    "goal": "Mål: {goal}",
+    "progress": "{percent} % af målet",
+    "approx": "Tælleren opdateres hvert minut og kan være omtrentlig."
+  },
+  "form": {
+    "title": "Underskriv",
+    "intro": "Det tager under et minut. Vi spørger kun om det nødvendige.",
+    "name": "Fulde navn",
+    "nameHelp": "Dit navn bliver aldrig offentliggjort.",
+    "country": "Bopælsland",
+    "countryPlaceholder": "Vælg dit land",
+    "otherCountry": "Andet land",
+    "email": "E-mailadresse",
+    "optional": "valgfrit",
+    "emailHelp": "Bruges kun til at forhindre dobbelte underskrifter – medmindre du sætter kryds nedenfor.",
+    "updates": "Send mig en kort opdatering, når underskriftindsamlingen overrækkes (højst et par e-mails).",
+    "consent": "Jeg er mindst 16 år og giver udtrykkeligt samtykke til, at mit navn, mit land og, hvis angivet, min e-mailadresse behandles i forbindelse med denne underskriftindsamling som beskrevet i {privacyLink}.",
+    "privacyLinkText": "privatlivspolitikken",
+    "submit": "Underskriv",
+    "submitting": "Underskriver…",
+    "humanCheck": "Sikkerhedskontrol fra Cloudflare Turnstile – privatlivsvenlig og uden sporingscookies.",
+    "noscript": "JavaScript er slået fra. Du kan stadig skrive under: din underskrift bliver gemt og talt med efter en manuel kontrol, fordi den automatiske sikkerhedskontrol kræver JavaScript.",
+    "errors": {
+      "generic": "Noget gik galt. Prøv igen om et øjeblik.",
+      "network": "Vi kunne ikke få forbindelse til serveren. Tjek din internetforbindelse, og prøv igen.",
+      "invalid_name": "Angiv dit navn (2 til 100 tegn).",
+      "invalid_country": "Vælg dit land.",
+      "invalid_email": "Angiv en gyldig e-mailadresse, eller lad feltet stå tomt.",
+      "consent_required": "Bekræft dit samtykke for at skrive under.",
+      "captcha_failed": "Sikkerhedskontrollen mislykkedes. Genindlæs siden, og prøv igen.",
+      "duplicate": "Denne e-mailadresse er allerede brugt til at skrive under. Tak!",
+      "forbidden": "Anmodningen blev afvist. Skriv under direkte på public-order.eu.",
+      "rate_limited": "For mange forsøg. Vent et par minutter, og prøv igen."
+    }
+  },
+  "thanks": {
+    "title": "Tak for din underskrift",
+    "lead": "Din underskrift er registreret. Tak, fordi du står op for både retten til at demonstrere og vores lokalsamfunds sikkerhed.",
+    "pending": "Fordi den automatiske sikkerhedskontrol ikke kunne gennemføres, bliver din underskrift talt med efter en manuel gennemgang.",
+    "codeTitle": "Din personlige tilbagetrækningskode",
+    "codeText": "Gem denne kode, hvis du senere vil trække din underskrift tilbage. Vi gemmer den kun i krypteret (hashet) form og kan derfor ikke vise den til dig igen.",
+    "codeCopy": "Kopiér kode",
+    "codeCopied": "Kopieret",
+    "nextTitle": "Hvad nu?",
+    "nextText": "Det mest nyttige, du kan gøre nu, er at dele underskriftindsamlingen med folk, du kender.",
+    "shareButton": "Del underskriftindsamlingen",
+    "backHome": "Tilbage til forsiden"
+  },
+  "delete": {
+    "title": "Træk din underskrift tilbage",
+    "lead": "Du kan til enhver tid trække din underskrift tilbage. Den slettes permanent, og tælleren justeres.",
+    "codeLabel": "Tilbagetrækningskode",
+    "codeHelp": "Koden, der blev vist, efter du skrev under, for eksempel ABCD-EFGH-JKMN-PQRS.",
+    "submit": "Slet min underskrift",
+    "noCodeTitle": "Har du mistet din kode?",
+    "noCodeText": "Skriv til {email} fra den e-mailadresse, du skrev under med, eller – hvis du skrev under uden e-mailadresse – oplys dit navn, dit land og omtrent hvornår du skrev under. Vi behandler din anmodning inden for 30 dage.",
+    "success": "Din underskrift er slettet.",
+    "notFound": "Der blev ikke fundet nogen underskrift med denne kode. Tjek koden, og prøv igen.",
+    "invalid": "Angiv en gyldig tilbagetrækningskode."
+  },
+  "share": {
+    "title": "Sådan deler du",
+    "lead": "Underskriftindsamlingen virker kun, hvis den når ud til folk. Her er et par enkle måder at hjælpe på – ingen af dem indlæser sporingsscripts på dette websted.",
+    "linksTitle": "Del på sociale medier",
+    "copyTitle": "Kopiér linket",
+    "copyButton": "Kopiér link",
+    "copied": "Linket er kopieret",
+    "nativeShare": "Del…",
+    "messagesTitle": "Forslag til beskeder",
+    "messagesIntro": "Du er velkommen til at kopiere, tilpasse eller oversætte dem.",
+    "messages": [
+      "Fredelig demonstration er en ret. Vold ved uroligheder er det ikke. Jeg har skrevet under på European Public Order Initiative – vil du?",
+      "Beskyt retten til at demonstrere ved at stoppe det voldelige mindretal – inden for retsstatens og menneskerettighedernes rammer. Skriv under her:",
+      "Brandstiftelse, plyndring og angreb på mennesker er en fare for alle, også fredelige demonstranter. Jeg støtter faste, lovlige foranstaltninger. Skriv under:"
+    ],
+    "copyMessage": "Kopiér besked",
+    "offlineTitle": "Tal om det",
+    "offlineText": "Samtaler med venner, kolleger og lokale politikere betyder mere end ethvert opslag. Del underskriftindsamlingen ærligt og respektfuldt – også med folk, der er uenige.",
+    "guidelinesTitle": "Hold tonen respektfuld",
+    "guidelinesText": "Brug ikke underskriftindsamlingen til at udpege enkeltpersoner eller grupper. Vi er imod vold, uanset hvem der udøver den, og for alles rettigheder.",
+    "emailSubject": "Skriv under: European Public Order Initiative"
+  },
+  "press": {
+    "title": "Presse og medier",
+    "lead": "Baggrundsoplysninger, færdige tekster og emblemet for European Public Order Initiative. Du er velkommen til at citere og gengive dem.",
+    "contactTitle": "Pressehenvendelser",
+    "contactText": "Skriv til {email} med spørgsmål, udtalelser og ønsker om baggrundsoplysninger.",
+    "anonymity": "Af hensyn til deres sikkerhed offentliggør vi ikke navnene på dem, der står bag initiativet. Send alle henvendelser til pressemailadressen.",
+    "factsTitle": "Nøgleoplysninger",
+    "facts": {
+      "name": "Navn",
+      "website": "Websted",
+      "type": "Type",
+      "typeText": "En uafhængig, upartisk borgerunderskriftindsamling. Den er ikke et registreret europæisk borgerinitiativ i henhold til forordning (EU) 2019/788 og har ingen tilknytning til Den Europæiske Union eller nogen af dens institutioner.",
+      "addressees": "Rettet til",
+      "addresseesText": "Medlemmerne af Europa-Parlamentet, Europa-Kommissionen, Rådet for Den Europæiske Union samt regeringer og parlamenter i Den Europæiske Unions og Det Europæiske Økonomiske Samarbejdsområdes medlemsstater.",
+      "goal": "Mål",
+      "goalText": "{goal} underskrifter",
+      "data": "Indsamlede data",
+      "dataText": "Navn, bopælsland og eventuelt en e-mailadresse. Navne offentliggøres aldrig; kun totaler og antallet af underskrifter pr. land indberettes."
+    },
+    "boilerplateTitle": "Om initiativet",
+    "boilerplateIntro": "Brug teksterne, som de er, eller forkort dem efter behov.",
+    "shortLabel": "Kort version",
+    "short": "European Public Order Initiative er en uafhængig, upartisk borgerunderskriftindsamling, der opfordrer til faste, lovlige foranstaltninger mod vold ved uroligheder for at beskytte retten til fredelig demonstration.",
+    "longLabel": "Lang version",
+    "long": "European Public Order Initiative er en uafhængig, upartisk borgerunderskriftindsamling rettet til europæiske og nationale beslutningstagere. Den kræver fem foranstaltninger: at beskytte fredelig demonstration; at stoppe brandstiftelse, plyndring og angreb på mennesker hurtigt og retsforfølge dem konsekvent; at lade væbnede styrker støtte de civile myndigheder som sidste udvej, under civil kommando og med parlamentarisk kontrol; at tilbageholde personer uden lovligt ophold, der deltager i grov vold, midlertidigt i humane faciliteter og efter en retfærdig proces prioritere deres udsendelse, aldrig i strid med non-refoulement-princippet; og at styrke et fælles europæisk indrejseforbud for personer, der er dømt for grove brud på den offentlige orden, med individuel vurdering og domstolsprøvelse. Enhver foranstaltning skal vedtages demokratisk og overholde de nationale forfatninger, Den Europæiske Menneskerettighedskonvention og Den Europæiske Unions charter om grundlæggende rettigheder. Underskriftindsamlingen har ingen tilknytning til Den Europæiske Union eller nogen af dens institutioner.",
+    "copyText": "Kopiér tekst",
+    "copied": "Kopieret",
+    "assetsTitle": "Emblem og billeder",
+    "assetsIntro": "SVG-filerne kan skaleres til enhver størrelse. Brug PNG-filerne, hvor SVG ikke understøttes.",
+    "assets": {
+      "emblem": "Emblem",
+      "emblemInverse": "Emblem til mørk baggrund",
+      "wordmark": "Emblem med navn",
+      "wordmarkInverse": "Emblem med navn, til mørk baggrund",
+      "social": "Billede til sociale medier"
+    },
+    "usageTitle": "Brug af emblemet",
+    "usage": [
+      "Emblemet må ikke ændres, omfarves, beskæres eller forvrænges.",
+      "Hold fri plads omkring det på mindst en fjerdedel af dets bredde.",
+      "Brug det ikke på en måde, der antyder, at Den Europæiske Union eller nogen af dens institutioner støtter initiativet eller er tilknyttet det.",
+      "Brug det ikke til at fremme et politisk parti, en kandidat eller et kommercielt produkt."
+    ]
+  },
+  "rights": {
+    "title": "Vores tilsagn om retsstaten",
+    "text": "Denne underskriftindsamling opfordrer ikke til nogen ulovlig handling. Alle foranstaltninger, den foreslår, skal vedtages gennem demokratiske, lovlige processer og anvendes under fuld respekt for de nationale forfatninger, Den Europæiske Menneskerettighedskonvention, Den Europæiske Unions charter om grundlæggende rettigheder og international flygtningeret, herunder non-refoulement-princippet. Foranstaltningerne skal rettes mod adfærd – aldrig mod nationalitet, etnicitet, religion eller politisk overbevisning.",
+    "short": "Denne underskriftindsamling opfordrer ikke til nogen ulovlig handling og respekterer fuldt ud de nationale forfatninger og Den Europæiske Menneskerettighedskonvention."
+  },
+  "faq": {
+    "title": "Ofte stillede spørgsmål",
+    "lead": "Ærlige svar på de spørgsmål og indvendinger, vi hører oftest."
+  },
+  "petition": {
+    "signCta": "Enig? Skriv under."
+  },
+  "footer": {
+    "about": "En uafhængig, upartisk borgerunderskriftindsamling. Ingen tilknytning til Den Europæiske Union eller nogen af dens institutioner.",
+    "contact": "Kontakt",
+    "rights": "Rettigheder og regler",
+    "pressKit": "Presse og medier",
+    "source": "Kildekode"
   },
   "notice": {
-    "untranslated": "Denne side findes endnu ikke på dansk. Den engelske version vises nedenfor.",
+    "untranslated": "Denne side er endnu ikke tilgængelig på det valgte sprog ({language}). Den engelske version vises nedenfor.",
     "help": "Hjælp os med at oversætte"
+  },
+  "notFound": {
+    "title": "Siden blev ikke fundet",
+    "text": "Siden, du leder efter, findes ikke eller er flyttet.",
+    "back": "Gå til forsiden"
+  },
+  "a11y": {
+    "newTab": "(åbner i en ny fane)",
+    "download": "Download {name}"
   }
 }
