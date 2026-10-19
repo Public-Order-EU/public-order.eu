@@ -11,7 +11,7 @@ compatibility_flags = ["nodejs_compat"]
 [[d1_databases]]
 binding = "DB"
 database_name = "public-order-eu"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "31ff3468-5783-43fc-8ded-ee75d0d316a6"
 migrations_dir = "migrations"
 
 [vars]
