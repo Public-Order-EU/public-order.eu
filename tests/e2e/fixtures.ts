@@ -6,6 +6,8 @@
  * - Every request to another origin is blocked and fails the test: the site must
  *   not load anything from third parties except Turnstile (privacy policy, CSP).
  * - Any Set-Cookie header fails the test: the privacy policy promises no cookies.
+ * - Anything the Content Security Policy blocks fails the test, so a changed
+ *   inline script can't silently stop working in production (scripts/csp-hashes.mjs).
  */
 import { readFileSync } from 'node:fs';
 import { test as base, expect } from '@playwright/test';
@@ -52,7 +54,7 @@ export const escapeHtml = (value: string) =>
 
 export const CODE_RE = /^[0-9A-HJKMNP-TV-Z]{4}(-[0-9A-HJKMNP-TV-Z]{4}){3}$/;
 
-export const test = base.extend<{ thirdParty: string[]; cookiesSet: string[] }>({
+export const test = base.extend<{ thirdParty: string[]; cookiesSet: string[]; cspViolations: string[] }>({
   thirdParty: [
     async ({ context }, use) => {
       const blocked: string[] = [];
@@ -80,6 +82,17 @@ export const test = base.extend<{ thirdParty: string[]; cookiesSet: string[] }>(
       await use(seen);
       expect(seen, 'Set-Cookie headers').toEqual([]);
       expect(await context.cookies(), 'cookies in the browser').toEqual([]);
+    },
+    { auto: true },
+  ],
+  cspViolations: [
+    async ({ context }, use) => {
+      const seen: string[] = [];
+      context.on('console', (msg) => {
+        if (msg.type() === 'error' && msg.text().includes('Content Security Policy')) seen.push(msg.text());
+      });
+      await use(seen);
+      expect(seen, 'Content Security Policy violations').toEqual([]);
     },
     { auto: true },
   ],

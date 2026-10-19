@@ -24,7 +24,6 @@ const STATUS: Record<SignError, number> = {
   captcha_failed: 400,
   captcha_missing: 400,
   captcha_unavailable: 503,
-  duplicate: 409,
   forbidden: 403,
   rate_limited: 429,
   generic: 500,
@@ -65,7 +64,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   if (!parsed.ok) return fail(parsed.error);
   const sig = parsed.value;
 
-  const turnstile = await verifyTurnstile(String(form.get('cf-turnstile-response') || ''), env.TURNSTILE_SECRET_KEY, request, env.TURNSTILE_VERIFY_URL);
+  const turnstile = await verifyTurnstile(String(form.get('cf-turnstile-response') || ''), request, env);
   if (turnstile === 'missing') return fail('captcha_missing');
   if (turnstile === 'error') return fail('captcha_unavailable');
   if (turnstile !== 'pass') return fail('captcha_failed');
@@ -95,9 +94,13 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     // A batch runs as one transaction: the counter only moves if the insert succeeds.
     await env.DB.batch([insert, increment]);
   } catch (err) {
-    if (String(err).includes('UNIQUE') && String(err).includes('email_hash')) return fail('duplicate');
-    console.error('sign: database error', err);
-    return fail('generic');
+    if (!(String(err).includes('UNIQUE') && String(err).includes('email_hash'))) {
+      console.error('sign: database error', err);
+      return fail('generic');
+    }
+    // This address has already signed. Nothing is stored, but the answer looks
+    // exactly like a new signature, so the form can't be used to find out
+    // whether someone signed. The code shown matches no signature.
   }
 
   return asJson ? json({ ok: true, code: code.display }) : success(lang, code.display);

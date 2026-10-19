@@ -96,7 +96,6 @@
       "captcha_failed": "A verificação de segurança falhou. Recarregue a página e tente novamente.",
       "captcha_missing": "Não foi possível executar a verificação de segurança. Confirme que o JavaScript está ativado e que nada bloqueia challenges.cloudflare.com, recarregue a página e tente novamente.",
       "captcha_unavailable": "A verificação de segurança está temporariamente indisponível. Tente novamente dentro de alguns minutos.",
-      "duplicate": "Este endereço de e-mail já foi utilizado para assinar a petição. Obrigado!",
       "forbidden": "Este pedido foi rejeitado. Assine diretamente em public-order.eu.",
       "rate_limited": "Demasiadas tentativas. Aguarde alguns minutos e tente novamente."
     }

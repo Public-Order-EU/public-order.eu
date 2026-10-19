@@ -96,7 +96,6 @@
       "captcha_failed": "De beveiligingscontrole is mislukt. Laad de pagina opnieuw en probeer het nogmaals.",
       "captcha_missing": "De beveiligingscontrole kon niet worden uitgevoerd. Controleer of JavaScript is ingeschakeld en niets challenges.cloudflare.com blokkeert, laad de pagina opnieuw en probeer het nogmaals.",
       "captcha_unavailable": "De beveiligingscontrole is tijdelijk niet beschikbaar. Probeer het over een paar minuten opnieuw.",
-      "duplicate": "Met dit e-mailadres is de petitie al ondertekend. Dank u wel!",
       "forbidden": "Dit verzoek is geweigerd. Onderteken rechtstreeks op public-order.eu.",
       "rate_limited": "Te veel pogingen. Wacht een paar minuten en probeer het opnieuw."
     }

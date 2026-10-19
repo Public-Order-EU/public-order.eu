@@ -96,7 +96,6 @@
       "captcha_failed": "The security check failed. Please reload the page and try again.",
       "captcha_missing": "The security check could not run. Please make sure JavaScript is enabled and nothing blocks challenges.cloudflare.com, then reload the page and try again.",
       "captcha_unavailable": "The security check is temporarily unavailable. Please try again in a few minutes.",
-      "duplicate": "This e-mail address has already been used to sign the petition. Thank you!",
       "forbidden": "This request was rejected. Please sign directly on public-order.eu.",
       "rate_limited": "Too many attempts. Please wait a few minutes and try again."
     }

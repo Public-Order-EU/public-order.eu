@@ -28,26 +28,47 @@ export function verifyUrl(override?: string): string {
  */
 export type TurnstileResult = 'pass' | 'fail' | 'missing' | 'error';
 
+/**
+ * Cloudflare's dummy secret keys for local development. Their answers carry
+ * no real hostname, so the hostname check is skipped for them; they pass or
+ * fail any token anyway, so this weakens nothing.
+ * https://developers.cloudflare.com/turnstile/troubleshooting/testing/
+ */
+const TEST_SECRETS = new Set(['1x', '2x', '3x'].map((p) => `${p}0000000000000000000000000000000AA`));
+
+/** The hostnames a token may come from: the public site, and the host this request was sent to (previews). */
+function allowedHosts(request: Request, siteOrigin?: string): Set<string> {
+  const hosts = new Set([new URL(request.url).hostname]);
+  try {
+    if (siteOrigin) hosts.add(new URL(siteOrigin).hostname);
+  } catch {
+    /* invalid SITE_ORIGIN: only the request's own host */
+  }
+  return hosts;
+}
+
 export async function verifyTurnstile(
   token: string,
-  secret: string,
   request: Request,
-  urlOverride?: string,
+  env: { TURNSTILE_SECRET_KEY: string; SITE_ORIGIN?: string; TURNSTILE_VERIFY_URL?: string },
 ): Promise<TurnstileResult> {
   if (!token) return 'missing';
   if (token.length > 2048) return 'fail';
 
   const body = new FormData();
-  body.append('secret', secret);
+  body.append('secret', env.TURNSTILE_SECRET_KEY);
   body.append('response', token);
   const ip = request.headers.get('CF-Connecting-IP');
   if (ip) body.append('remoteip', ip); // passed to Turnstile only, never stored
 
   try {
-    const res = await fetch(verifyUrl(urlOverride), { method: 'POST', body });
+    const res = await fetch(verifyUrl(env.TURNSTILE_VERIFY_URL), { method: 'POST', body });
     if (!res.ok) return 'error';
-    const data = (await res.json()) as { success?: boolean };
-    return data.success ? 'pass' : 'fail';
+    const data = (await res.json()) as { success?: boolean; hostname?: string };
+    if (!data.success) return 'fail';
+    // A token solved on another site that embeds our widget is not ours to accept.
+    if (TEST_SECRETS.has(env.TURNSTILE_SECRET_KEY)) return 'pass';
+    return typeof data.hostname === 'string' && allowedHosts(request, env.SITE_ORIGIN).has(data.hostname) ? 'pass' : 'fail';
   } catch {
     return 'error';
   }

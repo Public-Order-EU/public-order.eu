@@ -96,7 +96,6 @@
       "captcha_failed": "Saugumo patikra nepavyko. Iš naujo įkelkite puslapį ir bandykite dar kartą.",
       "captcha_missing": "Nepavyko paleisti saugumo patikros. Įsitikinkite, kad „JavaScript“ įjungtas ir niekas neblokuoja challenges.cloudflare.com, tada iš naujo įkelkite puslapį ir bandykite dar kartą.",
       "captcha_unavailable": "Saugumo patikra laikinai nepasiekiama. Bandykite dar kartą po kelių minučių.",
-      "duplicate": "Šis el. pašto adresas jau panaudotas peticijai pasirašyti. Dėkojame!",
       "forbidden": "Ši užklausa buvo atmesta. Pasirašykite tiesiogiai svetainėje public-order.eu.",
       "rate_limited": "Per daug bandymų. Palaukite kelias minutes ir bandykite dar kartą."
     }

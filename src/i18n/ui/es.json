@@ -96,7 +96,6 @@
       "captcha_failed": "El control de seguridad ha fallado. Recargue la página e inténtelo de nuevo.",
       "captcha_missing": "No se ha podido ejecutar el control de seguridad. Compruebe que JavaScript está activado y que nada bloquea challenges.cloudflare.com, recargue la página e inténtelo de nuevo.",
       "captcha_unavailable": "El control de seguridad no está disponible en este momento. Inténtelo de nuevo dentro de unos minutos.",
-      "duplicate": "Esta dirección de correo electrónico ya se ha utilizado para firmar la petición. ¡Gracias!",
       "forbidden": "Se ha rechazado esta solicitud. Firme directamente en public-order.eu.",
       "rate_limited": "Demasiados intentos. Espere unos minutos e inténtelo de nuevo."
     }

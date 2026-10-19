@@ -96,7 +96,6 @@
       "captcha_failed": "Weryfikacja bezpieczeństwa nie powiodła się. Odśwież stronę i spróbuj ponownie.",
       "captcha_missing": "Nie udało się uruchomić weryfikacji bezpieczeństwa. Upewnij się, że JavaScript jest włączony i nic nie blokuje challenges.cloudflare.com, a następnie odśwież stronę i spróbuj ponownie.",
       "captcha_unavailable": "Weryfikacja bezpieczeństwa jest chwilowo niedostępna. Spróbuj ponownie za kilka minut.",
-      "duplicate": "Ten adres e-mail został już użyty do podpisania petycji. Dziękujemy!",
       "forbidden": "To żądanie zostało odrzucone. Podpisz petycję bezpośrednio na stronie public-order.eu.",
       "rate_limited": "Zbyt wiele prób. Odczekaj kilka minut i spróbuj ponownie."
     }

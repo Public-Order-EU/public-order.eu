@@ -96,7 +96,6 @@
       "captcha_failed": "Turvatarkistus epäonnistui. Lataa sivu uudelleen ja yritä uudelleen.",
       "captcha_missing": "Turvatarkistusta ei voitu suorittaa. Varmista, että JavaScript on käytössä eikä mikään estä osoitetta challenges.cloudflare.com, lataa sitten sivu uudelleen ja yritä uudelleen.",
       "captcha_unavailable": "Turvatarkistus ei ole tilapäisesti käytettävissä. Yritä uudelleen muutaman minuutin kuluttua.",
-      "duplicate": "Tällä sähköpostiosoitteella on jo allekirjoitettu adressi. Kiitos!",
       "forbidden": "Pyyntö hylättiin. Allekirjoita suoraan osoitteessa public-order.eu.",
       "rate_limited": "Liian monta yritystä. Odota muutama minuutti ja yritä uudelleen."
     }

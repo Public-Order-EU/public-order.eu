@@ -47,6 +47,7 @@ test('a signature without a valid Turnstile token is never stored', async ({ req
   const cases: [string, number, string][] = [
     ['', 400, 'captcha_missing'],
     ['forged', 400, 'captcha_failed'],
+    [E2E.foreignHostToken, 400, 'captcha_failed'],
     [E2E.downToken, 503, 'captcha_unavailable'],
   ];
   for (const [token, status, error] of cases) {
@@ -64,6 +65,33 @@ test('a signature without a valid Turnstile token is never stored', async ({ req
   expect(html.headers()['content-type']).toContain('text/html');
   expect(await html.text()).toContain(escapeHtml(en.form.errors.captcha_missing));
   expect(signaturesByName(name)).toHaveLength(0);
+  expect(counter()).toBe(before);
+});
+
+test('a second signature with the same address looks like a new one but is not stored', async ({ request }) => {
+  const first = unique('dup-api');
+  const signed = await request.post('/api/sign', { form: { ...valid(first.name), email: first.email }, headers: JSON_HEADERS });
+  expect(signed.status()).toBe(200);
+  const before = counter();
+
+  const again = `${first.name} again`;
+  const json = await request.post('/api/sign', { form: { ...valid(again), email: first.email }, headers: JSON_HEADERS });
+  expect(json.status()).toBe(200);
+  const body = await json.json();
+  expect(Object.keys(body)).toEqual(['ok', 'code']);
+  expect(body.ok).toBe(true);
+
+  // The code shown matches no signature.
+  const del = await request.post('/api/delete', { form: { code: body.code }, headers: JSON_HEADERS });
+  expect(await del.json()).toEqual({ ok: false, error: 'not_found' });
+
+  // Without JavaScript: the same thanks page as for a new signature.
+  const html = await request.post('/api/sign', { form: { ...valid(again), email: first.email.toUpperCase() } });
+  expect(html.status()).toBe(200);
+  expect(await html.text()).toContain(escapeHtml(en.thanks.title));
+
+  expect(signaturesByName(again)).toHaveLength(0);
+  expect(signaturesByName(first.name)).toHaveLength(1);
   expect(counter()).toBe(before);
 });
 
@@ -128,4 +156,18 @@ test('static pages carry the security headers', async ({ request }) => {
     expect(res.status(), path).toBe(200);
     expectSecurityHeaders(res.headers());
   }
+});
+
+test('inline scripts run only if their hash is listed', async ({ request }) => {
+  const scriptSrc = (csp: string) => csp.split(';').map((d) => d.trim()).find((d) => d.startsWith('script-src '))!;
+
+  // Static pages: the build swaps 'unsafe-inline' for the hashes of Astro's inline scripts.
+  const page = scriptSrc((await request.get('/en/')).headers()['content-security-policy']);
+  expect(page).not.toContain("'unsafe-inline'");
+  expect(page).toMatch(/'sha256-[A-Za-z0-9+/]+=*'/);
+  expect(page).toContain('https://challenges.cloudflare.com');
+
+  // Pages rendered by the Functions contain no scripts, so none may run.
+  const fn = await request.post('/api/sign', { form: valid('Csp Check', '') });
+  expect(scriptSrc(fn.headers()['content-security-policy'])).toBe("script-src 'none'");
 });

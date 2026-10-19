@@ -96,7 +96,6 @@
       "captcha_failed": "Die Sicherheitsprüfung ist fehlgeschlagen. Bitte laden Sie die Seite neu und versuchen Sie es erneut.",
       "captcha_missing": "Die Sicherheitsprüfung konnte nicht ausgeführt werden. Bitte stellen Sie sicher, dass JavaScript aktiviert ist und nichts challenges.cloudflare.com blockiert, laden Sie die Seite neu und versuchen Sie es erneut.",
       "captcha_unavailable": "Die Sicherheitsprüfung ist vorübergehend nicht erreichbar. Bitte versuchen Sie es in einigen Minuten erneut.",
-      "duplicate": "Mit dieser E-Mail-Adresse wurde die Petition bereits unterzeichnet. Vielen Dank!",
       "forbidden": "Diese Anfrage wurde abgelehnt. Bitte unterschreiben Sie direkt auf public-order.eu.",
       "rate_limited": "Zu viele Versuche. Bitte warten Sie einige Minuten und versuchen Sie es erneut."
     }

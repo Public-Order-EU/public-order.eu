@@ -4,7 +4,7 @@
  *
  * 1. Creates a fresh local D1 database in .wrangler/e2e and applies the migrations.
  * 2. Starts a mock Turnstile siteverify endpoint on 127.0.0.1:8799:
- *    the token "test-pass" passes, every other token fails.
+ *    the token "test-pass" passes, every other token fails (see config.mjs).
  * 3. Serves the built site (dist/) with the Functions through `wrangler pages dev`.
  *
  * Nothing here talks to Cloudflare: the database is local and the Turnstile
@@ -40,9 +40,11 @@ const mock = createServer((req, res) => {
     // The body is multipart/form-data; the token is the "response" field.
     const token = /name="response"\r\n\r\n([^\r]*)/.exec(body)?.[1];
     if (token === E2E.downToken) return res.writeHead(500).end();
-    const success = token === E2E.passToken;
+    const success = token === E2E.passToken || token === E2E.foreignHostToken;
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(success ? { success } : { success, 'error-codes': ['invalid-input-response'] }));
+    // Like Cloudflare, a passing answer names the hostname the widget ran on.
+    const hostname = token === E2E.foreignHostToken ? 'evil.example' : new URL(E2E.origin).hostname;
+    res.end(JSON.stringify(success ? { success, hostname } : { success, 'error-codes': ['invalid-input-response'] }));
   });
 });
 mock.listen(E2E.mockPort, '127.0.0.1');

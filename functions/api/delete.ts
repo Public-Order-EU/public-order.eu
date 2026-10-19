@@ -55,10 +55,12 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   try {
     const [, deleted] = await env.DB.batch([
       // Runs first, while the row still exists: subtract 1 only if it was counted.
+      // An unknown code changes nothing, so guessing codes causes no writes.
       env.DB.prepare(
         `UPDATE stats
-            SET value = MAX(0, value - (SELECT COUNT(*) FROM signatures WHERE delete_hash = ?1 AND verified = 1))
-          WHERE key = 'verified_count'`,
+            SET value = MAX(0, value - 1)
+          WHERE key = 'verified_count'
+            AND EXISTS (SELECT 1 FROM signatures WHERE delete_hash = ?1 AND verified = 1)`,
       ).bind(hash),
       env.DB.prepare(`DELETE FROM signatures WHERE delete_hash = ?1`).bind(hash),
     ]);

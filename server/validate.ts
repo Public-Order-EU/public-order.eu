@@ -10,7 +10,6 @@ export type SignError =
   | 'captcha_failed'
   | 'captcha_missing'
   | 'captcha_unavailable'
-  | 'duplicate'
   | 'forbidden'
   | 'rate_limited'
   | 'generic';

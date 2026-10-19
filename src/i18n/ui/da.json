@@ -96,7 +96,6 @@
       "captcha_failed": "Sikkerhedskontrollen mislykkedes. Genindlæs siden, og prøv igen.",
       "captcha_missing": "Sikkerhedskontrollen kunne ikke køre. Sørg for, at JavaScript er slået til, og at intet blokerer challenges.cloudflare.com, genindlæs derefter siden, og prøv igen.",
       "captcha_unavailable": "Sikkerhedskontrollen er midlertidigt utilgængelig. Prøv igen om et par minutter.",
-      "duplicate": "Denne e-mailadresse er allerede brugt til at skrive under. Tak!",
       "forbidden": "Anmodningen blev afvist. Skriv under direkte på public-order.eu.",
       "rate_limited": "For mange forsøg. Vent et par minutter, og prøv igen."
     }

@@ -96,7 +96,6 @@
       "captcha_failed": "Säkerhetskontrollen misslyckades. Ladda om sidan och försök igen.",
       "captcha_missing": "Säkerhetskontrollen kunde inte köras. Kontrollera att JavaScript är aktiverat och att inget blockerar challenges.cloudflare.com, ladda sedan om sidan och försök igen.",
       "captcha_unavailable": "Säkerhetskontrollen är tillfälligt otillgänglig. Försök igen om några minuter.",
-      "duplicate": "Den här e-postadressen har redan använts för att skriva under uppropet. Tack!",
       "forbidden": "Begäran avvisades. Skriv under direkt på public-order.eu.",
       "rate_limited": "För många försök. Vänta några minuter och försök igen."
     }

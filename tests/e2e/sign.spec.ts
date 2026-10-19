@@ -53,7 +53,7 @@ test.describe('signing with JavaScript', () => {
     expect(row).toMatchObject({ email, wants_updates: 1, email_hash: emailHash(email) });
   });
 
-  test('an address can sign only once, whatever its case', async ({ page }) => {
+  test('an address can sign only once, whatever its case, without revealing it', async ({ page }) => {
     const first = unique('dup');
     await page.goto('/en/');
     await fillForm(page, first);
@@ -65,11 +65,14 @@ test.describe('signing with JavaScript', () => {
     await fillForm(page, { name: `${first.name} again`, email: first.email.toUpperCase() });
     await page.locator('[data-submit]').click();
 
-    await expect(page.locator('[data-form-error]')).toHaveText(en.form.errors.duplicate);
+    // Same answer as a new signature, so the form can't tell who has signed…
+    await page.waitForURL('**/en/thanks/');
+    const code = (await page.locator('[data-code]').textContent())?.trim() ?? '';
+    expect(code).toMatch(CODE_RE);
+    // …but nothing is stored or counted.
     expect(signaturesByName(`${first.name} again`)).toHaveLength(0);
+    expect(signaturesByName(first.name)).toHaveLength(1);
     expect(counter()).toBe(before);
-    // The Turnstile token is single-use, so the widget is reset for the next try.
-    expect(await page.evaluate(() => (window as any).__turnstileResets)).toBe(1);
   });
 
   test('a rejected Turnstile token is refused and nothing is stored', async ({ page }) => {

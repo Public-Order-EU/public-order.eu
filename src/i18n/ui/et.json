@@ -96,7 +96,6 @@
       "captcha_failed": "Turvakontroll ebaõnnestus. Laadige leht uuesti ja proovige veel kord.",
       "captcha_missing": "Turvakontrolli ei õnnestunud käivitada. Veenduge, et JavaScript on lubatud ja miski ei blokeeri aadressi challenges.cloudflare.com, seejärel laadige leht uuesti ja proovige veel kord.",
       "captcha_unavailable": "Turvakontroll pole ajutiselt saadaval. Proovige mõne minuti pärast uuesti.",
-      "duplicate": "Selle e-posti aadressiga on petitsioon juba allkirjastatud. Täname!",
       "forbidden": "Päring lükati tagasi. Allkirjastage otse veebilehel public-order.eu.",
       "rate_limited": "Liiga palju katseid. Oodake mõni minut ja proovige uuesti."
     }

@@ -119,7 +119,8 @@ const structuredData = [
     <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={ogImage} />
 
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <!-- "<" is escaped so no text in the data can ever close this script element. -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')} />
 
     <!--
       Apply the colour scheme before first paint (no flash): the visitor's saved choice,
