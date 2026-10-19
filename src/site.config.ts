@@ -29,8 +29,15 @@ export const siteConfig = {
     press: 'press@public-order.eu',
   },
 
-  /** Cloudflare Turnstile public site key (falls back to Cloudflare's always-pass test key). */
-  turnstileSiteKey: import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA',
+  /**
+   * Cloudflare Turnstile site key. It is public (every page contains it). Builds on
+   * Cloudflare Pages (CF_PAGES is set) use the real key; local builds use Cloudflare's
+   * always-pass test key, which matches the test secret in .dev.vars.example.
+   * PUBLIC_TURNSTILE_SITE_KEY overrides both.
+   */
+  turnstileSiteKey:
+    import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ||
+    (process.env.CF_PAGES ? '0x4AAAAAAFbkJ37jCD4RKJK_' : '1x00000000000000000000AA'),
 
   /** The site's public source code, linked in the footer. */
   sourceUrl: 'https://github.com/Public-Order-EU/public-order.eu',

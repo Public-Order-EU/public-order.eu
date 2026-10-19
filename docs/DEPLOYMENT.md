@@ -43,10 +43,15 @@ directory". If that happened, delete the Worker and create a Pages project inste
 | Framework preset | Astro |
 | Build command | `pnpm build:pages` |
 | Build output directory | `dist` |
-| Environment variable (build) | `PUBLIC_TURNSTILE_SITE_KEY` = your Turnstile site key |
-| Environment variable | `PNPM_VERSION` = `11.3.0` (same as `packageManager` in `package.json`) |
+| Secret | `PNPM_VERSION` = `11.3.0` (same as `packageManager` in `package.json`) |
 | Secret | `CLOUDFLARE_API_TOKEN` = an API token that can only edit D1 (see below) |
-| Environment variable | `CLOUDFLARE_ACCOUNT_ID` = your account ID |
+| Secret | `CLOUDFLARE_ACCOUNT_ID` = your account ID |
+
+Because `wrangler.toml` defines the project's plain variables (`[vars]`), the dashboard
+only lets you add Secrets. Secrets are also available to the build, so add these three as
+Secrets. The Turnstile site key is public, so it is in the repository instead
+(`turnstileSiteKey` in `src/site.config.ts`): builds on Pages use it, local builds use
+Cloudflare's test key.
 
 Pages detects pnpm from `pnpm-lock.yaml`. Its default pnpm version is older and cannot
 read this lockfile, which is why `PNPM_VERSION` is needed. The Node version comes from
@@ -163,8 +168,8 @@ Push to the production branch. Pages builds and deploys automatically. Then chec
 - `https://public-order.eu/api/count` returns `{"count":…}`;
 - your `*.pages.dev` address sends `X-Robots-Tag: noindex`.
 
-Manual deploys are also possible with `pnpm run deploy`. The build reads the site key from
-`.env` (see `.env.example`).
+Manual deploys are also possible with `pnpm run deploy`. It sets `CF_PAGES=1` for the build,
+like Pages does, so the real Turnstile site key is used.
 
 ## Costs
 

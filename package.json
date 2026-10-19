@@ -20,7 +20,7 @@
     "i18n:check": "node scripts/check-translations.mjs",
     "db:migrate:local": "wrangler d1 migrations apply public-order-eu --local",
     "db:migrate:remote": "wrangler d1 migrations apply public-order-eu --remote",
-    "deploy": "pnpm build && wrangler pages deploy",
+    "deploy": "CF_PAGES=1 pnpm build && wrangler pages deploy",
     "brand": "scripts/brand/render.sh",
     "hash-email": "node scripts/hash-email.mjs"
   },
