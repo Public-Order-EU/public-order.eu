@@ -8,7 +8,7 @@ interface Props {
 const { label, title = label, buttonClass } = Astro.props;
 ---
 
-<!-- Hidden without JavaScript (the theme then simply follows the system setting). -->
+<!-- Hidden without JavaScript (the theme then follows the system setting, in CSS). -->
 <button type="button" data-theme-toggle hidden aria-label={label} aria-pressed="false" title={title} class={buttonClass}>
   <svg class="size-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
     <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
@@ -20,18 +20,15 @@ const { label, title = label, buttonClass } = Astro.props;
 </button>
 
 <script>
+  // The theme logic lives in the inline script in BaseLayout (window.__theme).
+  const root = document.documentElement;
+  const theme = (window as unknown as { __theme: { set(dark: boolean): void } }).__theme;
   document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
-    const sync = () => btn.setAttribute('aria-pressed', String(document.documentElement.classList.contains('dark')));
+    const sync = () => btn.setAttribute('aria-pressed', String(root.classList.contains('dark')));
     sync();
+    // The theme can also change without a click (system setting, another tab).
+    new MutationObserver(sync).observe(root, { attributeFilter: ['class'] });
     btn.hidden = false;
-    btn.addEventListener('click', () => {
-      const dark = document.documentElement.classList.toggle('dark');
-      sync();
-      try {
-        localStorage.setItem('theme', dark ? 'dark' : 'light');
-      } catch {
-        /* storage unavailable — the choice just isn't remembered */
-      }
-    });
+    btn.addEventListener('click', () => theme.set(!root.classList.contains('dark')));
   });
 </script>

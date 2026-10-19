@@ -121,14 +121,45 @@ const structuredData = [
 
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
-    <!-- Apply the saved / preferred colour scheme before first paint (no flash). -->
+    <!--
+      Apply the colour scheme before first paint (no flash): the visitor's saved choice,
+      else the system setting. It follows later changes of either (system switching at
+      sunset, a choice made in another tab). The toggle uses window.__theme.
+    -->
     <script is:inline>
       (function () {
-        var stored = null;
-        try { stored = localStorage.getItem('theme'); } catch (e) {}
-        var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.toggle('dark', dark);
-        document.documentElement.classList.add('js');
+        var root = document.documentElement;
+        var system = window.matchMedia('(prefers-color-scheme: dark)');
+        var themeColor = root.querySelectorAll('meta[name="theme-color"]');
+        var choice = null; // for this page only, when storage is blocked
+        function saved() {
+          try { return localStorage.getItem('theme'); } catch (e) { return choice; }
+        }
+        function apply() {
+          var choice = saved();
+          var dark = choice ? choice === 'dark' : system.matches;
+          root.classList.toggle('dark', dark);
+          // Browser UI colour: the media queries only know the system setting.
+          for (var i = 0; i < themeColor.length; i++) {
+            themeColor[i].content = dark ? '#0b142a' : '#f8f6f1';
+          }
+        }
+        window.__theme = {
+          // Saving the system's own setting would pin it; forget the choice instead,
+          // so the site follows the system again.
+          set: function (dark) {
+            choice = dark === system.matches ? null : dark ? 'dark' : 'light';
+            try {
+              if (choice) localStorage.setItem('theme', choice);
+              else localStorage.removeItem('theme');
+            } catch (e) {}
+            apply();
+          },
+        };
+        apply();
+        system.addEventListener('change', apply);
+        window.addEventListener('storage', function (e) { if (e.key === 'theme' || e.key === null) apply(); });
+        root.classList.add('js');
       })();
     </script>
   </head>

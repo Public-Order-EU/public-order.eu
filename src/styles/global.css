@@ -1,8 +1,21 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Dark mode follows the `.dark` class set on <html> by the inline theme script. */
-@custom-variant dark (&:where(.dark, .dark *));
+/*
+ * Dark mode follows the `.dark` class that the inline theme script sets on <html>
+ * (the saved choice, else the system setting). Without JavaScript there is no `.js`
+ * class, and the system setting applies directly.
+ */
+@custom-variant dark {
+  &:where(.dark, .dark *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(html:not(.js), html:not(.js) *) {
+      @slot;
+    }
+  }
+}
 
 @theme {
   /*
@@ -48,8 +61,10 @@
     scroll-padding-top: 5.5rem;
   }
 
-  html.dark {
-    color-scheme: dark;
+  html {
+    @variant dark {
+      color-scheme: dark;
+    }
   }
 
   body {
@@ -188,9 +203,9 @@
     background-position: right 0.75rem center;
     background-repeat: no-repeat;
     background-size: 1.25rem;
-  }
-  .dark .field-select {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2397abd3' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    @variant dark {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2397abd3' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    }
   }
   /* "Select your country" (the empty, required option) looks like a placeholder. */
   .field-select:invalid {
@@ -214,9 +229,9 @@
   }
   .field-check:checked {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m3.5 8.5 3 3 6-7'/%3e%3c/svg%3e");
-  }
-  .dark .field-check:checked {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%230b142a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m3.5 8.5 3 3 6-7'/%3e%3c/svg%3e");
+    @variant dark {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%230b142a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m3.5 8.5 3 3 6-7'/%3e%3c/svg%3e");
+    }
   }
   /* High-contrast mode drops our colours; fall back to the system checkbox. */
   @media (forced-colors: active) {
