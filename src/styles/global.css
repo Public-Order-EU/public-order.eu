@@ -55,6 +55,12 @@
   body {
     @apply bg-paper font-sans text-[1.0625rem] leading-relaxed text-ink antialiased
       dark:bg-navy-950 dark:text-slate-200;
+    /* Long compound words (German, Finnish, Danish, …) must not widen the page on a
+       phone: hyphenate by the page language, and break a word that still does not fit. */
+    overflow-wrap: anywhere;
+    @media (width < 40rem) {
+      hyphens: auto;
+    }
   }
 
   h1,
